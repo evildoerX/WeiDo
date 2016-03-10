@@ -8,39 +8,102 @@
 
 import UIKit
 
+
+let WDSwitchRootViewControllerKey = "WDSwitchRootViewControllerKey"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+//创建视图
     var window: UIWindow?
-
-
+    
+    
+   
+     let bgColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
+    
+    
+    
+    func applicationDidEnterBackground(application: UIApplication) {
+       
+        // 清空过期数据
+        StatusDAO.cleanStatuses()
+    }
+    
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // 打开数据库
+        SQLiteManager.shareManager().openDB("status.sqlite")
+        // 注册一个通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchRootViewController:", name: WDSwitchRootViewControllerKey, object: nil)
+        
+        // 设置导航条和工具条的外观
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        UITabBar.appearance().tintColor = bgColor
+        UINavigationBar.appearance().barTintColor = bgColor
+          UITabBar.appearance().barTintColor = UIColor.whiteColor()
+  
+        // 1.创建window
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.backgroundColor = UIColor.whiteColor()
+        // 2.创建根控制器
+        window?.rootViewController = defaultContoller()
+        window?.makeKeyAndVisible()
+        
+      
+        
         return true
     }
-
-    func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-
-    func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    /**
+     选择界面
+     
+     */
+    func switchRootViewController(notify: NSNotification){
+        //        print(notify.object)
+        if notify.object as! Bool
+        {
+            window?.rootViewController = WDMainViewController()
+        }else
+        {
+            window?.rootViewController = WDWelcomeViewController()
+        }
     }
-
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    /**
+     用于获取默认界面
+     
+     :returns: 默认界面
+     */
+    private func defaultContoller() ->UIViewController
+    {
+        // 1.检测用户是否登录
+        if userAccount.userlogin(){
+            return isNewupdate() ? WDNewfeatureViewController() : WDWelcomeViewController()
+        }
+        return WDMainViewController()
     }
-
-    func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    private func isNewupdate() -> Bool{
+        // 1.获取当前软件的版本号 --> info.plist
+        let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+        
+        // 2.获取以前的软件版本号 --> 从本地文件中读取(以前自己存储的)
+        let sandboxVersion =  NSUserDefaults.standardUserDefaults().objectForKey("CFBundleShortVersionString") as? String ?? ""
+        print("current = \(currentVersion) sandbox = \(sandboxVersion)")
+        
+        // 3.比较当前版本号和以前版本号
+        
+        if currentVersion.compare(sandboxVersion) == NSComparisonResult.OrderedDescending
+        {
+            // 3.1.1存储当前最新的版本号
+            NSUserDefaults.standardUserDefaults().setObject(currentVersion, forKey: "CFBundleShortVersionString")
+            return true
+        }
+        
+        return false
     }
-
-    func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-
+    
 }
 
