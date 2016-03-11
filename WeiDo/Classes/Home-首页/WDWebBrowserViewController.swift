@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SVProgressHUD
 
-class WDWebBrowserViewController: UIViewController {
+class WDWebBrowserViewController: UIViewController, UIWebViewDelegate {
     
     
     
@@ -36,6 +37,7 @@ class WDWebBrowserViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
         wv.loadRequest(urlRequest!)
         view = wv
+        wv.delegate = self
         
     }
 
@@ -47,4 +49,13 @@ class WDWebBrowserViewController: UIViewController {
        dismissViewControllerAnimated(true, completion: nil)
     }
 
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+              SVProgressHUD.showWithStatus("正在拼命加载...")
+    }
+    func webViewDidFinishLoad(webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
+    
+  
 }

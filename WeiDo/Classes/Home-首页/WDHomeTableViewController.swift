@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import AFNetworking
 
 let WDHomeReuseIdentifier = "WDHomeReuseIdentifier"
 class WDHomeTableViewController: WDBaseTableViewController {
@@ -46,12 +47,12 @@ class WDHomeTableViewController: WDBaseTableViewController {
         
         //加载微博数据
         loadData()
-        
-        
-        
-        
-        
+    
+     
     }
+    
+    
+    
     /**
      注册通知, 监听菜单
      */
@@ -239,7 +240,8 @@ class WDHomeTableViewController: WDBaseTableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_pop", target: self, action: "rightBtnClick")
         //设置标题按钮
         let titleBtn = TitleButton()
-        titleBtn.setTitle("Bubble-luliangxiao ", forState: UIControlState.Normal)
+        titleBtn.setTitle("首页", forState: UIControlState.Normal)
+        titleBtn.titleLabel?.font = UIFont.systemFontOfSize(17)
         titleBtn.addTarget(self, action: "titleBtnClick:", forControlEvents: UIControlEvents.TouchUpInside)
         navigationItem.titleView = titleBtn
     }
@@ -270,7 +272,7 @@ class WDHomeTableViewController: WDBaseTableViewController {
         let vc = WDFriendViewController()
         let nav = UINavigationController(rootViewController: vc)
         presentViewController(nav, animated: true, completion: nil)
-    }
+           }
     /**
      右边按钮监听
      */
@@ -280,7 +282,9 @@ class WDHomeTableViewController: WDBaseTableViewController {
         let vc = sb.instantiateInitialViewController()
         presentViewController(vc!, animated: true, completion: nil)
     }
-    
+    /**
+     返回
+     */
     func backToHome()
     {
      dismissViewControllerAnimated(true, completion: nil)

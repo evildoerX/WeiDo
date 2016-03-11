@@ -33,13 +33,10 @@ class WDPopmenuPresentationController: UIPresentationController {
     override func containerViewWillLayoutSubviews()
     {
         // 1.修改弹出视图的大小
-        if presentFrame == CGRectZero{
-            
-            presentedView()?.frame = CGRect(x: 100, y: 56, width: 200, height: 200)
-        }else
-        {
-            presentedView()?.frame = presentFrame
-        }
+
+        
+            presentedView()?.frame = CGRect(x: 65, y: 250, width: 250, height: 200)
+
         
         // 2.在容器视图上添加一个蒙版, 插入到展现视图的下面
         containerView?.insertSubview(coverView, atIndex: 0)

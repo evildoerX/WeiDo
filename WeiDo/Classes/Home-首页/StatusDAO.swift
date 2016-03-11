@@ -46,8 +46,6 @@ class StatusDAO: NSObject {
             
             NetworkTools.shareNetworkTools().GET(path, parameters: params, success: { (_, JSON) -> Void in
                 let array = JSON!["statuses"] as! [[String : AnyObject]]
-             //   let array2 = JSON!["id"] as! [[String: AnyObject]]
-              
                 // 4.将从网络获取的数据缓存起来
                 cacheStatuses(array)
                 
@@ -55,6 +53,7 @@ class StatusDAO: NSObject {
                 finished(array, error: nil)
                 
                 StatusDAO.cacheStatuses(JSON!["statuses"] as! [[String: AnyObject]])
+                
                 
                 }) { (_, error) -> Void in
                     print(error)

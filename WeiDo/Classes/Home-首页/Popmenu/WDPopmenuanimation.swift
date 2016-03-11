@@ -64,7 +64,7 @@ class WDPopmenuanimation: NSObject, UIViewControllerTransitioningDelegate, UIVie
     */
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval
     {
-        return 0.5
+        return 0.75
         
     }
     /**
@@ -80,7 +80,7 @@ class WDPopmenuanimation: NSObject, UIViewControllerTransitioningDelegate, UIVie
             // 展开
            
             let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
-            toView.transform = CGAffineTransformMakeScale(1.0, 0.0);
+            toView.transform = CGAffineTransformMakeScale(3.0, 0.0);
             
             // 注意: 一定要将视图添加到容器上
             transitionContext.containerView()?.addSubview(toView)
@@ -106,7 +106,7 @@ class WDPopmenuanimation: NSObject, UIViewControllerTransitioningDelegate, UIVie
             UIView.animateWithDuration(transitionDuration(transitionContext), animations: { () -> Void in
               
                 // 压扁
-                fromView?.transform = CGAffineTransformMakeScale(1.0, 0.000001)
+                fromView?.transform = CGAffineTransformMakeScale(3.0, 0.000001)
                 }, completion: { (_) -> Void in
               
                     transitionContext.completeTransition(true)

@@ -40,6 +40,10 @@
 		B24E9CB61C892A4700A40408 /* WDMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24E9CB41C892A4700A40408 /* WDMineViewController.xib */; };
 		B25992701C8469F500402E99 /* WDPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B259926E1C8469F500402E99 /* WDPictureCell.swift */; };
 		B25992711C8469F500402E99 /* WDPictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B259926F1C8469F500402E99 /* WDPictureCell.xib */; };
+		B25A47951C92B98900D36A9D /* WDSportNewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A47941C92B98900D36A9D /* WDSportNewTableViewController.swift */; };
+		B25A47991C92B9C800D36A9D /* WDNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A47971C92B9C800D36A9D /* WDNewsCell.swift */; };
+		B25A479A1C92B9C800D36A9D /* WDNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B25A47981C92B9C800D36A9D /* WDNewsCell.xib */; };
+		B25A479D1C92BD3200D36A9D /* WDNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A479C1C92BD3200D36A9D /* WDNews.swift */; };
 		B25AC5E31C8DCA0700225B61 /* WDCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AC5E11C8DCA0700225B61 /* WDCommentCell.swift */; };
 		B25AC5E41C8DCA0700225B61 /* WDCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B25AC5E21C8DCA0700225B61 /* WDCommentCell.xib */; };
 		B25AC6261C8ECCA600225B61 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25AC6251C8ECCA600225B61 /* MediaPlayer.framework */; };
@@ -66,6 +70,8 @@
 		B27FD4DB1C6A0D1100A9DDA1 /* UILabel+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27FD4DA1C6A0D1100A9DDA1 /* UILabel+Category.swift */; };
 		B27FD4DD1C6A0D3D00A9DDA1 /* UIButton+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27FD4DC1C6A0D3D00A9DDA1 /* UIButton+Category.swift */; };
 		B27FD4DF1C6A2F7000A9DDA1 /* NSDate+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27FD4DE1C6A2F7000A9DDA1 /* NSDate+Category.swift */; };
+		B2821DD11C92EEA700D9D060 /* WDAmusementNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2821DD01C92EEA700D9D060 /* WDAmusementNewsViewController.swift */; };
+		B2821DD41C92F33A00D9D060 /* WDTechnologyNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2821DD31C92F33A00D9D060 /* WDTechnologyNewsViewController.swift */; };
 		B297772B1C64C0A700CB2521 /* Pods.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 359D18043EDA62BFBFC846CD /* Pods.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B297772E1C64C3E100CB2521 /* WDOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297772D1C64C3E100CB2521 /* WDOauthViewController.swift */; };
 		B29777301C65894200CB2521 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297772F1C65894200CB2521 /* NetworkTools.swift */; };
@@ -181,6 +187,10 @@
 		B24E9CB41C892A4700A40408 /* WDMineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDMineViewController.xib; sourceTree = "<group>"; };
 		B259926E1C8469F500402E99 /* WDPictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDPictureCell.swift; sourceTree = "<group>"; };
 		B259926F1C8469F500402E99 /* WDPictureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDPictureCell.xib; sourceTree = "<group>"; };
+		B25A47941C92B98900D36A9D /* WDSportNewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDSportNewTableViewController.swift; sourceTree = "<group>"; };
+		B25A47971C92B9C800D36A9D /* WDNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDNewsCell.swift; sourceTree = "<group>"; };
+		B25A47981C92B9C800D36A9D /* WDNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDNewsCell.xib; sourceTree = "<group>"; };
+		B25A479C1C92BD3200D36A9D /* WDNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDNews.swift; sourceTree = "<group>"; };
 		B25AC5E11C8DCA0700225B61 /* WDCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCommentCell.swift; sourceTree = "<group>"; };
 		B25AC5E21C8DCA0700225B61 /* WDCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDCommentCell.xib; sourceTree = "<group>"; };
 		B25AC6251C8ECCA600225B61 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -212,6 +222,8 @@
 		B27FD4DA1C6A0D1100A9DDA1 /* UILabel+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Category.swift"; sourceTree = "<group>"; };
 		B27FD4DC1C6A0D3D00A9DDA1 /* UIButton+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Category.swift"; sourceTree = "<group>"; };
 		B27FD4DE1C6A2F7000A9DDA1 /* NSDate+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Category.swift"; sourceTree = "<group>"; };
+		B2821DD01C92EEA700D9D060 /* WDAmusementNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDAmusementNewsViewController.swift; sourceTree = "<group>"; };
+		B2821DD31C92F33A00D9D060 /* WDTechnologyNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDTechnologyNewsViewController.swift; sourceTree = "<group>"; };
 		B297772D1C64C3E100CB2521 /* WDOauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDOauthViewController.swift; sourceTree = "<group>"; };
 		B297772F1C65894200CB2521 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		B29777311C6597A200CB2521 /* userAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userAccount.swift; sourceTree = "<group>"; };
@@ -460,12 +472,32 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		B25A47961C92B99200D36A9D /* News-新闻 */ = {
+			isa = PBXGroup;
+			children = (
+				B2821DD21C92F30700D9D060 /* Controller */,
+				B2821DCF1C92BE8500D9D060 /* View */,
+				B25A479B1C92BD2300D36A9D /* Model */,
+			);
+			name = "News-新闻";
+			path = "Home-首页";
+			sourceTree = "<group>";
+		};
+		B25A479B1C92BD2300D36A9D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B25A479C1C92BD3200D36A9D /* WDNews.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		B25AC6691C900C8500225B61 /* WebBrowser-网页浏览器 */ = {
 			isa = PBXGroup;
 			children = (
 				B25AC66A1C90118300225B61 /* WDWebBrowserViewController.swift */,
 			);
 			name = "WebBrowser-网页浏览器";
+			path = "Home-首页";
 			sourceTree = "<group>";
 		};
 		B25B880F1C830B030010B55D /* YZDisplayViewController */ = {
@@ -546,6 +578,25 @@
 			name = "SlideView-侧边栏";
 			sourceTree = "<group>";
 		};
+		B2821DCF1C92BE8500D9D060 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B25A47971C92B9C800D36A9D /* WDNewsCell.swift */,
+				B25A47981C92B9C800D36A9D /* WDNewsCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		B2821DD21C92F30700D9D060 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B25A47941C92B98900D36A9D /* WDSportNewTableViewController.swift */,
+				B2821DD01C92EEA700D9D060 /* WDAmusementNewsViewController.swift */,
+				B2821DD31C92F33A00D9D060 /* WDTechnologyNewsViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		B297772C1C64C38B00CB2521 /* Oauth-认证 */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +623,8 @@
 				B23222BF1C6CC2C00081E912 /* Compose-发送界面 */,
 				B29777371C66018800CB2521 /* Newfeature-新特性 */,
 				B297772C1C64C38B00CB2521 /* Oauth-认证 */,
+				B25A47961C92B99200D36A9D /* News-新闻 */,
+				B25AC6691C900C8500225B61 /* WebBrowser-网页浏览器 */,
 				B2A7488B1C61C59400FC3478 /* Home-首页 */,
 				B2A7488A1C61C59400FC3478 /* Discover-广场 */,
 				B2A7488F1C61C59400FC3478 /* Mine-我 */,
@@ -598,7 +651,6 @@
 			isa = PBXGroup;
 			children = (
 				B2792D081C910AFB004022D3 /* SlideView-侧边栏 */,
-				B25AC6691C900C8500225B61 /* WebBrowser-网页浏览器 */,
 				B2AE8A411C8D9A9400A6AB14 /* Friend-好友管理 */,
 				B23222BA1C6C5A460081E912 /* PhotoBrowser-图片浏览器 */,
 				B23222B21C6C2A730081E912 /* RefreshControl-刷新控件 */,
@@ -892,6 +944,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B273CB3A1C89A7F200F69F56 /* WDMyStatusCell.xib in Resources */,
+				B25A479A1C92B9C800D36A9D /* WDNewsCell.xib in Resources */,
 				B2A748B11C622F7000FC3478 /* Popmenu.storyboard in Resources */,
 				B2AE8A381C8D327400A6AB14 /* WDMessageCell.xib in Resources */,
 				B2A7489F1C61D78400FC3478 /* MainVCSettings.json in Resources */,
@@ -980,6 +1033,7 @@
 				B27FD4DF1C6A2F7000A9DDA1 /* NSDate+Category.swift in Sources */,
 				B25B881A1C830B030010B55D /* YZDisplayTitleLabel.m in Sources */,
 				B2FDE6E31C6EF5D2000E50F0 /* EmoticonPackage.swift in Sources */,
+				B2821DD41C92F33A00D9D060 /* WDTechnologyNewsViewController.swift in Sources */,
 				B20315931C6B01280091A270 /* WDStatusTableViewTopView.swift in Sources */,
 				B2FDE7041C6F07E3000E50F0 /* SQLiteManager.swift in Sources */,
 				B24E9CB51C892A4700A40408 /* WDMineViewController.swift in Sources */,
@@ -997,11 +1051,13 @@
 				B2A748B51C6241C100FC3478 /* WDPopmenuPresentationController.swift in Sources */,
 				B200B6151C8BBF3100674700 /* WDMessageController.swift in Sources */,
 				B211517C1C6DB81E00FD2DB0 /* PhotoSelectorViewController.swift in Sources */,
+				B25A47991C92B9C800D36A9D /* WDNewsCell.swift in Sources */,
 				B273CB391C89A7F200F69F56 /* WDMyStatusCell.swift in Sources */,
 				B23222C11C6CC2E60081E912 /* WDComposeViewController.swift in Sources */,
 				B25B881E1C830B3C0010B55D /* WDDiscoverTableViewController.swift in Sources */,
 				B2A748AA1C621F5800FC3478 /* UIBarButtonItem+Category.swift in Sources */,
 				B29777391C6601DA00CB2521 /* WDNewfeatureViewController.swift in Sources */,
+				B25A47951C92B98900D36A9D /* WDSportNewTableViewController.swift in Sources */,
 				B2AE8A431C8D9BAD00A6AB14 /* WDMyFansTableViewController.swift in Sources */,
 				B200B6191C8BC28A00674700 /* WDMentionMeTableViewController.swift in Sources */,
 				B275A8BC1C6B0E0300807CC0 /* WDForwardTableViewCell.swift in Sources */,
@@ -1020,6 +1076,7 @@
 				B23222B41C6C2A9B0081E912 /* HomeRefreshControl.swift in Sources */,
 				B29777321C6597A200CB2521 /* userAccount.swift in Sources */,
 				B2FDE6E71C6EF5D2000E50F0 /* UITextView+Category.swift in Sources */,
+				B2821DD11C92EEA700D9D060 /* WDAmusementNewsViewController.swift in Sources */,
 				B2AE8A3C1C8D3C7B00A6AB14 /* WDByMe.swift in Sources */,
 				B2FDE7161C701CE6000E50F0 /* FMDatabase.m in Sources */,
 				B2FDE71A1C701CE6000E50F0 /* FMResultSet.m in Sources */,
@@ -1057,6 +1114,7 @@
 				B275A8BE1C6B6BE800807CC0 /* WDNormalTableViewCell.swift in Sources */,
 				B297772E1C64C3E100CB2521 /* WDOauthViewController.swift in Sources */,
 				B20315911C6B01190091A270 /* WDStatusTableViewBottomView.swift in Sources */,
+				B25A479D1C92BD3200D36A9D /* WDNews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 import UIKit
 
 
+
 let WDSwitchRootViewControllerKey = "WDSwitchRootViewControllerKey"
 
 @UIApplicationMain
@@ -46,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.whiteColor()
         // 2.创建根控制器
         window?.rootViewController = defaultContoller()
+      
+        
         window?.makeKeyAndVisible()
         
       
