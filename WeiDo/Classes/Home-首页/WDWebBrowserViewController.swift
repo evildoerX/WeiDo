@@ -9,14 +9,12 @@
 import UIKit
 import SVProgressHUD
 
+
 class WDWebBrowserViewController: UIViewController, UIWebViewDelegate {
     
-    
-    
+ 
     var urlRequest: NSURLRequest?
  
-    
-    
     init(request:NSURLRequest)
     {
         // Swift语法规定, 必须先初始化本类属性, 再初始化父类
@@ -41,8 +39,6 @@ class WDWebBrowserViewController: UIViewController, UIWebViewDelegate {
         
     }
 
-  
-    
     
     func backToStatus()
     {
@@ -50,12 +46,6 @@ class WDWebBrowserViewController: UIViewController, UIWebViewDelegate {
     }
 
     
-    func webViewDidStartLoad(webView: UIWebView) {
-              SVProgressHUD.showWithStatus("正在拼命加载...")
-    }
-    func webViewDidFinishLoad(webView: UIWebView) {
-        SVProgressHUD.dismiss()
-    }
-    
+   
   
 }

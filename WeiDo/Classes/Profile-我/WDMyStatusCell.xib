@@ -42,10 +42,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOP-MG-AFR">
-                        <rect key="frame" x="0.0" y="159.5" width="320" height="2"/>
-                        <color key="backgroundColor" red="0.12549019607843137" green="0.55686274509803924" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="0.0" y="160.5" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.1529411765" green="0.60784313729999995" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="2" id="kGE-0z-r4O"/>
+                            <constraint firstAttribute="height" constant="1" id="kGE-0z-r4O"/>
                         </constraints>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="nearby_map_people" translatesAutoresizingMaskIntoConstraints="NO" id="i5M-yh-b17">

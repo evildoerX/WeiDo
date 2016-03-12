@@ -20,7 +20,7 @@
      "imageName": "tabbar_discover"
  },
  {
-     "vcName": "WDMineViewController",
+     "vcName": "WDMySettingViewController",
      "title": "我",
      "imageName": "tabbar_profile"
  }
