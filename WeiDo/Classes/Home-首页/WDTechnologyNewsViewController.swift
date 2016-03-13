@@ -65,8 +65,7 @@ class WDTechnologyNewsViewController: UITableViewController {
         navigationItem.title = "科技新闻"
         let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
         self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: "back")
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
+            navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: "back")
         
     }
     

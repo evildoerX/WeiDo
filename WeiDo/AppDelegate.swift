@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchRootViewController:", name: WDSwitchRootViewControllerKey, object: nil)
         
         // 设置导航条和工具条的外观
+        
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         UITabBar.appearance().tintColor = bgColor
         UINavigationBar.appearance().barTintColor = bgColor

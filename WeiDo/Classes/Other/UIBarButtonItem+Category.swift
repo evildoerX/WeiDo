@@ -21,5 +21,18 @@ extension UIBarButtonItem
         return UIBarButtonItem(customView: btn)
        
     }
+    
+    
+    class func   createBackBarButtonItem(target:AnyObject? , action:Selector) ->UIBarButtonItem
+    {
+        
+        let btn = UIButton()
+        btn.setImage(UIImage(named: "button_back_white"), forState: UIControlState.Normal)
+        btn.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        btn.sizeToFit()
+        return UIBarButtonItem(customView: btn)
+        
+    }
+
    
 }

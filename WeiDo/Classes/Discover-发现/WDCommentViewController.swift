@@ -11,10 +11,9 @@ import MJRefresh
 import AFNetworking
 
 let WDCommentCellReuseIdentifier = "WDCommentCell"
-class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegate {
+class WDCommentViewController: UITableViewController {
     
-    /**  评论当前页  */
-    var page = 0
+ 
     /**  header  */
     var header:MJRefreshNormalHeader{
         return (self.tableView.tableHeaderView as? MJRefreshNormalHeader)!
@@ -29,7 +28,8 @@ class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegat
     var latestComments = [WDLatestComments]()
     /**  当前正在请求的参数  */
     var params = NSMutableDictionary()
-    
+    /**  评论当前页  */
+    var page = 0
     /// 数据源
     var texttopic: WDTopic?
    
@@ -57,7 +57,48 @@ class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegat
     
     }
     
-    
+    /**
+     获取数据
+     */
+    func setUpRefrshControl()
+    {
+        /**
+        上拉刷新
+        */
+        tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
+            
+            let path = requestPath
+            var params = [String:AnyObject]()
+            params["a"] = "dataList";
+            params["c"] = "comment";
+            params["data_id"] = self.texttopic!.id
+            params["hot"] = "1"
+            
+            
+            self.params.setDictionary(params);
+            let manager = AFHTTPSessionManager()
+            manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
+                let hotarray = JSON!["hot"] as? [[String:AnyObject]]
+                let dataarray = JSON!["data"] as? [[String:AnyObject]]
+                //获取最热评论
+                self.hotComments = WDLatestComments.LoadLatestComments(hotarray!)
+                //获取最新评论
+                self.latestComments = WDLatestComments.LoadLatestComments(dataarray!)
+                
+                self.tableView.reloadData()
+                self.header.endRefreshing()
+                
+                }) { (_, error) -> Void in
+                    print(error)
+            }
+            
+        })
+        header.automaticallyChangeAlpha = true
+        header.beginRefreshing()
+        
+        
+        
+    }
 
   
     func setupTableview()
@@ -75,8 +116,9 @@ class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegat
     
   private func setupNavigation()
   {
-     navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: "back")
-    navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
+
+    navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: "back")
+    
     
     navigationItem.title = "评论"
     let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
@@ -175,45 +217,7 @@ class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegat
         view.tintColor = bgcolor
     }
     
-      func setUpRefrshControl()
-      {
-        /**
-        上拉刷新
-        */
-        tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
-       
-            let path = "http://api.budejie.com/api/api_open.php"
-            var params = [String:AnyObject]()
-            params["a"] = "dataList";
-            params["c"] = "comment";
-            params["data_id"] = self.texttopic!.id
-            params["hot"] = "1"
-    
-            
-            self.params.setDictionary(params);
-            let manager = AFHTTPSessionManager()
-            manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-                let hotarray = JSON!["hot"] as? [[String:AnyObject]]
-                let dataarray = JSON!["data"] as? [[String:AnyObject]]
-                //获取最热评论
-                self.hotComments = WDLatestComments.LoadLatestComments(hotarray!)
-                //获取最新评论
-                self.latestComments = WDLatestComments.LoadLatestComments(dataarray!)
-     
-                self.tableView.reloadData()
-                self.header.endRefreshing()
-                
-                }) { (_, error) -> Void in
-                    print(error)
-            }
-            
-        })
-        header.automaticallyChangeAlpha = true
-        header.beginRefreshing()
-        
-
-    
-    }
+  
 
     
     

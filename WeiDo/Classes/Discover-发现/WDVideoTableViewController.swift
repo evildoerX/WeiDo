@@ -11,6 +11,7 @@ import AFNetworking
 import MJRefresh
 import MediaPlayer
 
+let requestPath = "http://api.budejie.com/api/api_open.php"
 let videoCellReuseIdentifier = "WDVideoCell"
 class WDVideoTableViewController: UITableViewController {
 
@@ -76,7 +77,7 @@ class WDVideoTableViewController: UITableViewController {
         */
         tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
             self.footer.endRefreshing()
-            let path = "http://api.budejie.com/api/api_open.php"
+            let path = requestPath
             let params = ["a": "list", "c": "data", "type" : "41"]
             let manager = AFHTTPSessionManager()
             manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
@@ -108,7 +109,7 @@ class WDVideoTableViewController: UITableViewController {
             self.header.endRefreshing()
             self.footer.beginRefreshing()
             let currentpage = self.page + 1
-            let path = "http://api.budejie.com/api/api_open.php"
+            let path = requestPath
             let params = ["a": "list", "c": "data", "type" : "41", "maxtime": self.maxtime, "page": currentpage]
             let manager = AFHTTPSessionManager()
             manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
@@ -137,7 +138,23 @@ class WDVideoTableViewController: UITableViewController {
     
     }
 
-    
+    /**
+     打开视频
+     
+     - parameter notify: 接受通知
+     */
+    func playVideo(notify: NSNotification)
+    {
+        
+        
+        guard let urls = notify.userInfo![WDVideoWillPlay] as? String  else
+        {
+            return
+        }
+        let url = NSURL(string: urls)
+        let play  = MPMoviePlayerViewController(contentURL: url)
+        presentViewController(play, animated: true, completion: nil)
+    }
     
     // MARK - tableview delegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -155,19 +172,7 @@ class WDVideoTableViewController: UITableViewController {
         return cell
     }
 
-    
-    func playVideo(notify: NSNotification)
-    {
-        
-        
-        guard let urls = notify.userInfo![WDVideoWillPlay] as? String  else
-        {
-            return
-        }
-        let url = NSURL(string: urls)
-        let play  = MPMoviePlayerViewController(contentURL: url)
-        presentViewController(play, animated: true, completion: nil)
-    }
+  
     
 }
 

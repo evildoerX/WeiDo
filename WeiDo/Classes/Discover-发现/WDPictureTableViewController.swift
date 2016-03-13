@@ -27,6 +27,9 @@ class WDPictureTableViewController: UITableViewController {
     var page = 1
     /**  请求下一页需要的参数  */
     var maxtime = ""
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -91,7 +94,7 @@ class WDPictureTableViewController: UITableViewController {
             self.header.endRefreshing()
             self.footer.beginRefreshing()
             let currentpage = self.page + 1
-            let path = "http://api.budejie.com/api/api_open.php"
+            let path = requestPath
             let params = ["a": "list", "c": "data", "type" : "10", "maxtime": self.maxtime, "page": currentpage]
             let manager = AFHTTPSessionManager()
             manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in

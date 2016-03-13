@@ -37,10 +37,11 @@ class WDTextTableViewController: UITableViewController {
       
         setUpRefrshControl()
         
+        /**
+        添加通知
+        */
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "commentClick:", name: WDCommentWillOpen, object: nil)
-        
    
-  
     }
     
     deinit{
@@ -71,7 +72,7 @@ class WDTextTableViewController: UITableViewController {
         */
       tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
       self.footer.endRefreshing()
-        let path = "http://api.budejie.com/api/api_open.php"
+        let path = requestPath
         let params = ["a": "list", "c": "data", "type" : "29"]
         let manager = AFHTTPSessionManager()
         manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
@@ -105,7 +106,7 @@ class WDTextTableViewController: UITableViewController {
             self.header.endRefreshing()
             self.footer.beginRefreshing()
             let currentpage = self.page + 1
-            let path = "http://api.budejie.com/api/api_open.php"
+            let path = requestPath
             let params = ["a": "list", "c": "data", "type" : "29", "maxtime": self.maxtime, "page": currentpage]
             let manager = AFHTTPSessionManager()
             manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
@@ -135,7 +136,11 @@ class WDTextTableViewController: UITableViewController {
         
     }
     
-    
+    /**
+     打开评论
+     
+     - parameter notify: 接受通知
+     */
     func commentClick(notify: NSNotification)
     {
         guard let idStr = notify.userInfo![WDCommentWillOpen] as? WDTopic else

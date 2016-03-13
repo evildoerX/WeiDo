@@ -45,7 +45,11 @@ class WMWordToipCell: UITableViewCell {
                 caiButton.setTitle(String(wordToip.cai), forState: UIControlState.Normal)
                 shareButton.setTitle(String(wordToip.repost), forState: UIControlState.Normal)
                 commentButton.setTitle(String(wordToip.comment), forState: UIControlState.Normal)
-             
+                /**
+                设置图为圆角
+                */
+                profileImageView.layer.masksToBounds = true
+                profileImageView.layer.cornerRadius = (profileImageView.frame.width / 2)
 
            
                  //添加手势

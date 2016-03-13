@@ -24,10 +24,10 @@ class WDFriendViewController: YZDisplayViewController {
   func setupTitle()
   {
     navigationItem.title = "好友管理"
-    let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
-    self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as! [String : AnyObject]
-    navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: "back")
-    navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
+//    let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
+//    self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
+    
+     navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: "back")
     isShowTitleGradient = true
     isShowUnderLine = true
     underLineColor = bgcolor

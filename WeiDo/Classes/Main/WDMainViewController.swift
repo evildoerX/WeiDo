@@ -120,8 +120,8 @@ class WDMainViewController: UITabBarController {
       
         // 2.给首页包装一个导航控制器
         let nav = UINavigationController()
-        //设置颜色
-       
+          //设置颜色
+        
         nav.addChildViewController(vc)
         
         // 3.将导航控制器添加到当前控制器上

@@ -16,7 +16,6 @@
 		B20315911C6B01190091A270 /* WDStatusTableViewBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20315901C6B01190091A270 /* WDStatusTableViewBottomView.swift */; };
 		B20315931C6B01280091A270 /* WDStatusTableViewTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20315921C6B01280091A270 /* WDStatusTableViewTopView.swift */; };
 		B20315951C6B014E0091A270 /* WDStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20315941C6B014E0091A270 /* WDStatusPictureView.swift */; };
-		B2068DA51C89A21D008AFFEC /* WDMyStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2068DA41C89A21D008AFFEC /* WDMyStatusController.swift */; };
 		B21151791C6D7D5100FD2DB0 /* UIBarButtionItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21151781C6D7D5100FD2DB0 /* UIBarButtionItem+Category.swift */; };
 		B211517C1C6DB81E00FD2DB0 /* PhotoSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211517B1C6DB81E00FD2DB0 /* PhotoSelectorViewController.swift */; };
 		B211517E1C6DD45400FD2DB0 /* UIImage+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211517D1C6DD45400FD2DB0 /* UIImage+Category.swift */; };
@@ -158,7 +157,6 @@
 		B20315901C6B01190091A270 /* WDStatusTableViewBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDStatusTableViewBottomView.swift; sourceTree = "<group>"; };
 		B20315921C6B01280091A270 /* WDStatusTableViewTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDStatusTableViewTopView.swift; sourceTree = "<group>"; };
 		B20315941C6B014E0091A270 /* WDStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDStatusPictureView.swift; sourceTree = "<group>"; };
-		B2068DA41C89A21D008AFFEC /* WDMyStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMyStatusController.swift; sourceTree = "<group>"; };
 		B21151781C6D7D5100FD2DB0 /* UIBarButtionItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtionItem+Category.swift"; sourceTree = "<group>"; };
 		B211517B1C6DB81E00FD2DB0 /* PhotoSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSelectorViewController.swift; sourceTree = "<group>"; };
 		B211517D1C6DD45400FD2DB0 /* UIImage+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Category.swift"; sourceTree = "<group>"; };
@@ -439,7 +437,6 @@
 		B24E9CA71C89212100A40408 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B2068DA41C89A21D008AFFEC /* WDMyStatusController.swift */,
 				B2F105841C93B749009F4140 /* WDMySettingViewController.swift */,
 				B25BD7761C94099300C8B100 /* WDMineDataViewController.swift */,
 				B25BD7771C94099300C8B100 /* WDMineDataViewController.xib */,
@@ -574,13 +571,6 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		B2792D081C910AFB004022D3 /* SlideView-侧边栏 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "SlideView-侧边栏";
-			sourceTree = "<group>";
-		};
 		B2821DCF1C92BE8500D9D060 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -653,7 +643,6 @@
 		B2A7488B1C61C59400FC3478 /* Home-首页 */ = {
 			isa = PBXGroup;
 			children = (
-				B2792D081C910AFB004022D3 /* SlideView-侧边栏 */,
 				B2AE8A411C8D9A9400A6AB14 /* Friend-好友管理 */,
 				B23222BA1C6C5A460081E912 /* PhotoBrowser-图片浏览器 */,
 				B23222B21C6C2A730081E912 /* RefreshControl-刷新控件 */,
@@ -1094,7 +1083,6 @@
 				B2A748AE1C6224E100FC3478 /* TitleButton.swift in Sources */,
 				B2AE8A451C8D9C2600A6AB14 /* WDMyFollowTableViewController.swift in Sources */,
 				B243476D1C62E528002426CE /* WDPopmenuanimation.swift in Sources */,
-				B2068DA51C89A21D008AFFEC /* WDMyStatusController.swift in Sources */,
 				B2FDE7191C701CE6000E50F0 /* FMDatabaseQueue.m in Sources */,
 				B2AE8A401C8D9A8D00A6AB14 /* WDFriendViewController.swift in Sources */,
 				B2A748B31C62418B00FC3478 /* WDPopmenuViewController.swift in Sources */,

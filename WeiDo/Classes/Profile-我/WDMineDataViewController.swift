@@ -80,7 +80,7 @@ class WDMineDataViewController: UIViewController {
     
     func setupTableview()
     {
-        tableview.registerNib(UINib(nibName: "WDMyStatusCell", bundle: nil), forCellReuseIdentifier: WDMyStatusCellReuseIdentifier)
+        tableview.registerNib(UINib(nibName: "WDMyStatusCell", bundle: nil), forCellReuseIdentifier: MyStatusCellReuseIdentifier)
         tableview.estimatedRowHeight = 300
         tableview.rowHeight = UITableViewAutomaticDimension
     }
@@ -91,9 +91,9 @@ class WDMineDataViewController: UIViewController {
     {
         navigationItem.title = "我的"
         let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
-        self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as! [String : AnyObject]
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: "back")
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
+        
+         navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: "back")
         
     }
     
@@ -188,7 +188,7 @@ extension WDMineDataViewController: UITableViewDelegate
     }
     
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(WDMyStatusCellReuseIdentifier, forIndexPath: indexPath) as! WDMyStatusCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(MyStatusCellReuseIdentifier, forIndexPath: indexPath) as! WDMyStatusCell
         let myStatuesCell = mineStatus[indexPath.row]
         cell.mineStatus = myStatuesCell
         return cell

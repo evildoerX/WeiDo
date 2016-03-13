@@ -23,6 +23,11 @@ class WDStatusTableViewTopView: UIView {
             {
                 let url = NSURL(string: iconURL)
                 iconView.sd_setImageWithURL(url)
+                /**
+                设置图为圆角
+                */
+                iconView.layer.masksToBounds = true
+                iconView.layer.cornerRadius = iconView.frame.width / 2
                 
             }
             // 设置认证图标

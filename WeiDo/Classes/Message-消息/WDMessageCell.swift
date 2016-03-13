@@ -38,6 +38,12 @@ class WDMessageCell: UITableViewCell {
             contentLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping  //自动折行
             
             image_view.sd_setImageWithURL(NSURL(string: (toMe?.profile_image_url)!))
+            
+            /**
+            *  设置图片为圆角
+            */
+            image_view.layer.masksToBounds = true
+            image_view.layer.cornerRadius = (image_view.frame.width / 2)
         
         }
     
@@ -61,6 +67,11 @@ class WDMessageCell: UITableViewCell {
      
        
             image_view.sd_setImageWithURL(NSURL(string: (Mention?.profile_image_url)!))
+            /**
+            *  设置图片为圆角
+            */
+            image_view.layer.masksToBounds = true
+            image_view.layer.cornerRadius = (image_view.frame.width / 2)
         }
     }
     
@@ -76,6 +87,11 @@ class WDMessageCell: UITableViewCell {
             
             contentLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping  //自动折行
             image_view.sd_setImageWithURL(NSURL(string: (ByMe?.profile_image_url)!))
+            /**
+            *  设置图片为圆角
+            */
+            image_view.layer.masksToBounds = true
+            image_view.layer.cornerRadius = (image_view.frame.width / 2)
      
         }
     

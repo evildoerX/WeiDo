@@ -31,8 +31,7 @@ class WDWebBrowserViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
      
         let wv = UIWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height - 88))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: "backToStatus")
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
+            navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: "back")
         wv.loadRequest(urlRequest!)
         view = wv
         wv.delegate = self
@@ -40,7 +39,7 @@ class WDWebBrowserViewController: UIViewController, UIWebViewDelegate {
     }
 
     
-    func backToStatus()
+    func back()
     {
        dismissViewControllerAnimated(true, completion: nil)
     }

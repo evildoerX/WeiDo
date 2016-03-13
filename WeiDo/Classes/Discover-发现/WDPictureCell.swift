@@ -71,6 +71,14 @@ class WDPictureCell: UITableViewCell {
                 text_Label.userInteractionEnabled = true
                 let tap = UITapGestureRecognizer(target: self, action: "commentClick")
                 text_Label.addGestureRecognizer(tap)
+                
+                /**
+                设置图为圆角
+                */
+                profileImageView.layer.masksToBounds = true
+                profileImageView.layer.cornerRadius = (profileImageView.frame.width / 2)
+                
+
 
             }
         }
