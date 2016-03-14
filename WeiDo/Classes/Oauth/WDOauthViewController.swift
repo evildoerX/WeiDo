@@ -122,6 +122,7 @@ extension WDOauthViewController: UIWebViewDelegate
                     account!.saveAccount()
                     // 去欢迎界面
                     NSNotificationCenter.defaultCenter().postNotificationName(WDSwitchRootViewControllerKey, object: false)
+                    
                     return
                 }
                 

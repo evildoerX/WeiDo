@@ -36,8 +36,7 @@ class WDHomeTableViewController: WDBaseTableViewController {
         }
         //初始化导航条
         setupNavigation()
-        
-    
+  
         addobserver()
      
         

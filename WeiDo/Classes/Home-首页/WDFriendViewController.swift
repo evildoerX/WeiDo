@@ -24,8 +24,7 @@ class WDFriendViewController: YZDisplayViewController {
   func setupTitle()
   {
     navigationItem.title = "好友管理"
-//    let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
-//    self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
+
     
      navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: "back")
     isShowTitleGradient = true

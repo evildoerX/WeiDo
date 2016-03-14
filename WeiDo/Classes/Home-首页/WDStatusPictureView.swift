@@ -66,8 +66,8 @@ class WDStatusPictureView: UICollectionView {
 
         }
         // 4.如果有4张配图, 计算田字格的大小
-        let width = 90
-        let margin = 10
+        let width = 100
+        let margin = 20
         pictureLayout.itemSize = CGSize(width: width, height: width)
         
         if count == 4
@@ -167,9 +167,7 @@ extension WDStatusPictureView: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-     //   print(status?.storedLargePicURLS![indexPath.item])
-       
-        
+
         let info = [WDStatusPictureViewIndexKey:indexPath, WDStatusPictureViewURLsKey:status!.storedLargePicURLS!]
         //发布一个通知
         NSNotificationCenter.defaultCenter().postNotificationName(WDStatusPictureViewSelected, object: self, userInfo: info)

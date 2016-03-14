@@ -123,7 +123,7 @@ class WDStatusTableViewCell: UITableViewCell {
         label.urlLinkTapHandler =  {
             (label, string, range)
             in
-            
+            /// 发送通知打开网页
             let str = string
             let info = [WDOpenBrowser:str]
             NSNotificationCenter.defaultCenter().postNotificationName(WDOpenBrowser, object: self, userInfo: info)

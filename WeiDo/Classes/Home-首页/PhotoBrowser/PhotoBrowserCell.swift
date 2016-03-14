@@ -80,7 +80,7 @@ class PhotoBrowserCell: UICollectionViewCell {
         let scale = image.size.height / image.size.width
         // 2.根据宽高比计算高度
         let width = UIScreen.mainScreen().bounds.width
-        let height =  width * scale
+        let height = width * scale
         
         return CGSize(width: width, height: height)
     }

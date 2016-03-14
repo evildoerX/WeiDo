@@ -23,7 +23,7 @@ class WDDiscoverTableViewController: YZDisplayViewController {
     {
      navigationItem.title = "广场"
         let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
-        self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as! [String : AnyObject]
+        self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
         
         
         
@@ -38,7 +38,7 @@ class WDDiscoverTableViewController: YZDisplayViewController {
         endB = 115 / 255.0
         
         // 是否显示遮盖
-        titleScrollViewColor = UIColor(white: 0.9, alpha: 0.7)
+        titleScrollViewColor = UIColor.whiteColor()
      
         coverColor = UIColor(white: 0.7, alpha: 0.4)
         coverCornerRadius = 13

@@ -59,12 +59,13 @@ class WDVideoCell: UITableViewCell {
             content.userInteractionEnabled = true
             let tap = UITapGestureRecognizer(target: self, action: "commentClick")
             content.addGestureRecognizer(tap)
+     
             
             /**
             设置图为圆角
             */
-            image_view.layer.masksToBounds = true
-            image_view.layer.cornerRadius = (image_view.frame.width / 2)
+            profile_image.layer.masksToBounds = true
+            profile_image.layer.cornerRadius = (profile_image.frame.width / 2)
         }
     
     }

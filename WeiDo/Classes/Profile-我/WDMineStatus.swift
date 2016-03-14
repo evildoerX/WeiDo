@@ -62,11 +62,9 @@ class WDMineStatus: NSObject {
         created_at = createdDate.descDate
         
         text = dictionary["text"] as! String
-        
-    
- 
-        
+   
     }
+    
     static func LoadMine(results: [[String : AnyObject]]) -> [WDMineStatus] {
         var mine = [WDMineStatus]()
         

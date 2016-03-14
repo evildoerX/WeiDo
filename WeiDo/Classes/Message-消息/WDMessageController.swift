@@ -68,7 +68,7 @@ class WDMessageController: YZDisplayViewController {
         endB = 115 / 255.0
         
         // 是否显示遮盖
-        titleScrollViewColor = UIColor(white: 0.9, alpha: 0.7)
+        titleScrollViewColor = UIColor.whiteColor()
       
         coverColor = UIColor(white: 0.7, alpha: 1.0)
         coverCornerRadius = 13

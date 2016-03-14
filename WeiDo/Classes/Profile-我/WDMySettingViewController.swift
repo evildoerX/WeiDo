@@ -11,13 +11,25 @@ import SVProgressHUD
 
 class WDMySettingViewController: UITableViewController {
 
+    
+    //判断用户是否登陆
+    var didlogin = userAccount.userlogin()
+    //保存未登录界面属性
+    var vistorView: WDVistorView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         setupTableView()
         setupNavigation()
       
     }
+    
+    
+   
+
     
     func setupTableView()
     {
@@ -32,6 +44,9 @@ class WDMySettingViewController: UITableViewController {
         self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
 
     }
+    
+    
+ 
 
     
     
@@ -63,9 +78,17 @@ class WDMySettingViewController: UITableViewController {
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         if indexPath.section == 0
         {
+            if !didlogin
+            {
+            cell.textLabel?.text = "未登录"
+            cell.imageView?.sd_setImageWithURL(NSURL(string: "greenAvatar_default"))
+                
+            }else{
+                
             cell.textLabel?.text = "Bubble-Luliangxiao"
             cell.imageView?.sd_setImageWithURL(NSURL(string: "http://tp3.sinaimg.cn/2715131950/180/5746498542/1"))
-           cell.imageView?.layer.cornerRadius = 45
+            }
+            cell.imageView?.layer.cornerRadius = 45
              cell.imageView?.clipsToBounds = true
             
             return cell

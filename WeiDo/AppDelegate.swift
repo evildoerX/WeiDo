@@ -68,10 +68,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        print(notify.object)
         if notify.object as! Bool
         {
-            window?.rootViewController = WDMainViewController()
+          //  window?.rootViewController = WDMainViewController()
+            window?.rootViewController = WDWelcomeViewController()
         }else
         {
-            window?.rootViewController = WDWelcomeViewController()
+           // window?.rootViewController = WDWelcomeViewController()
+            window?.rootViewController = WDMainViewController()
+
         }
     }
     
@@ -84,6 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         // 1.检测用户是否登录
         if userAccount.userlogin(){
+            
             return isNewupdate() ? WDNewfeatureViewController() : WDWelcomeViewController()
         }
         return WDMainViewController()

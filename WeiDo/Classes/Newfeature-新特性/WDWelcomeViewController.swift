@@ -16,11 +16,13 @@ class WDWelcomeViewController: UIViewController {
     /// 记录底部约束
     var bottomCons: NSLayoutConstraint?
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         setupUI()
-                    }
+        
+        }
     
     
     /**
