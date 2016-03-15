@@ -60,6 +60,7 @@
 		B25BD7781C94099300C8B100 /* WDMineDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25BD7761C94099300C8B100 /* WDMineDataViewController.swift */; };
 		B25BD7791C94099300C8B100 /* WDMineDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B25BD7771C94099300C8B100 /* WDMineDataViewController.xib */; };
 		B266E62E1C858D6900F7A92F /* WDCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B266E62D1C858D6900F7A92F /* WDCommentViewController.swift */; };
+		B268D1D11C97012400071081 /* WDCommentComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268D1D01C97012400071081 /* WDCommentComposeViewController.swift */; };
 		B273CB391C89A7F200F69F56 /* WDMyStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B273CB371C89A7F200F69F56 /* WDMyStatusCell.swift */; };
 		B273CB3A1C89A7F200F69F56 /* WDMyStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B273CB381C89A7F200F69F56 /* WDMyStatusCell.xib */; };
 		B275A8BC1C6B0E0300807CC0 /* WDForwardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B275A8BB1C6B0E0300807CC0 /* WDForwardTableViewCell.swift */; };
@@ -98,6 +99,8 @@
 		B2AE8A431C8D9BAD00A6AB14 /* WDMyFansTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AE8A421C8D9BAD00A6AB14 /* WDMyFansTableViewController.swift */; };
 		B2AE8A451C8D9C2600A6AB14 /* WDMyFollowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AE8A441C8D9C2600A6AB14 /* WDMyFollowTableViewController.swift */; };
 		B2AE8A4C1C8DAC9100A6AB14 /* WDLatestComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AE8A4B1C8DAC9100A6AB14 /* WDLatestComments.swift */; };
+		B2E408E71C97B5E20075340B /* WDPulblishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */; };
+		B2E408E81C97B5E20075340B /* WDPulblishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */; };
 		B2F105851C93B749009F4140 /* WDMySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F105841C93B749009F4140 /* WDMySettingViewController.swift */; };
 		B2FDE6E31C6EF5D2000E50F0 /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDE6DE1C6EF5D2000E50F0 /* EmoticonPackage.swift */; };
 		B2FDE6E41C6EF5D2000E50F0 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B2FDE6DF1C6EF5D2000E50F0 /* Emoticons.bundle */; };
@@ -212,6 +215,7 @@
 		B25BD7761C94099300C8B100 /* WDMineDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMineDataViewController.swift; sourceTree = "<group>"; };
 		B25BD7771C94099300C8B100 /* WDMineDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDMineDataViewController.xib; sourceTree = "<group>"; };
 		B266E62D1C858D6900F7A92F /* WDCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCommentViewController.swift; sourceTree = "<group>"; };
+		B268D1D01C97012400071081 /* WDCommentComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCommentComposeViewController.swift; sourceTree = "<group>"; };
 		B273CB371C89A7F200F69F56 /* WDMyStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMyStatusCell.swift; sourceTree = "<group>"; };
 		B273CB381C89A7F200F69F56 /* WDMyStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDMyStatusCell.xib; sourceTree = "<group>"; };
 		B275A8BB1C6B0E0300807CC0 /* WDForwardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDForwardTableViewCell.swift; sourceTree = "<group>"; };
@@ -249,6 +253,8 @@
 		B2AE8A421C8D9BAD00A6AB14 /* WDMyFansTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMyFansTableViewController.swift; sourceTree = "<group>"; };
 		B2AE8A441C8D9C2600A6AB14 /* WDMyFollowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMyFollowTableViewController.swift; sourceTree = "<group>"; };
 		B2AE8A4B1C8DAC9100A6AB14 /* WDLatestComments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDLatestComments.swift; sourceTree = "<group>"; };
+		B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDPulblishViewController.swift; sourceTree = "<group>"; };
+		B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDPulblishViewController.xib; sourceTree = "<group>"; };
 		B2F105841C93B749009F4140 /* WDMySettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMySettingViewController.swift; sourceTree = "<group>"; };
 		B2FDE6DE1C6EF5D2000E50F0 /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
 		B2FDE6DF1C6EF5D2000E50F0 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
@@ -420,6 +426,9 @@
 				B2FDE6DD1C6EF5D2000E50F0 /* EmoticonView-表情 */,
 				B211517A1C6DB76A00FD2DB0 /* PhotoSelector-图片选择器 */,
 				B23222C01C6CC2E60081E912 /* WDComposeViewController.swift */,
+				B268D1D01C97012400071081 /* WDCommentComposeViewController.swift */,
+				B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */,
+				B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */,
 			);
 			name = "Compose-发送界面";
 			path = "Compose-发布微博";
@@ -945,6 +954,7 @@
 				B23222B61C6C2AB40081E912 /* HomeRefreshView.xib in Resources */,
 				B25992711C8469F500402E99 /* WDPictureCell.xib in Resources */,
 				B243476F1C62EE9C002426CE /* QRCode.storyboard in Resources */,
+				B2E408E81C97B5E20075340B /* WDPulblishViewController.xib in Resources */,
 				B25AC5E41C8DCA0700225B61 /* WDCommentCell.xib in Resources */,
 				B21FD9051C61BC9C00C89571 /* Assets.xcassets in Resources */,
 				B2FDE6E41C6EF5D2000E50F0 /* Emoticons.bundle in Resources */,
@@ -1025,6 +1035,7 @@
 				B27FD4DF1C6A2F7000A9DDA1 /* NSDate+Category.swift in Sources */,
 				B25B881A1C830B030010B55D /* YZDisplayTitleLabel.m in Sources */,
 				B2FDE6E31C6EF5D2000E50F0 /* EmoticonPackage.swift in Sources */,
+				B268D1D11C97012400071081 /* WDCommentComposeViewController.swift in Sources */,
 				B2821DD41C92F33A00D9D060 /* WDTechnologyNewsViewController.swift in Sources */,
 				B20315931C6B01280091A270 /* WDStatusTableViewTopView.swift in Sources */,
 				B2FDE7041C6F07E3000E50F0 /* SQLiteManager.swift in Sources */,
@@ -1074,6 +1085,7 @@
 				B2FDE7161C701CE6000E50F0 /* FMDatabase.m in Sources */,
 				B2FDE71A1C701CE6000E50F0 /* FMResultSet.m in Sources */,
 				B200B61D1C8BC2A400674700 /* WDToMeTableViewController.swift in Sources */,
+				B2E408E71C97B5E20075340B /* WDPulblishViewController.swift in Sources */,
 				B21151791C6D7D5100FD2DB0 /* UIBarButtionItem+Category.swift in Sources */,
 				B266E62E1C858D6900F7A92F /* WDCommentViewController.swift in Sources */,
 				B2AE8A3E1C8D3C8400A6AB14 /* WDToMe.swift in Sources */,

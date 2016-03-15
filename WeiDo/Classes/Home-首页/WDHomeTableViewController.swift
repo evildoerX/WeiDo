@@ -11,6 +11,7 @@ import SDWebImage
 import AFNetworking
 
 let WDHomeReuseIdentifier = "WDHomeReuseIdentifier"
+let WDCommentComposeWillOpen = "WDCommentComposeWillOpen"
 class WDHomeTableViewController: WDBaseTableViewController {
 
     /// 保存微博数组
@@ -62,7 +63,7 @@ class WDHomeTableViewController: WDBaseTableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: WDPopmenuanimationWilldismiss, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPhotoBrowser:", name: WDStatusPictureViewSelected, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ToCompose", name: WDComposeViewWillAppear, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ToCompose", name: WDRetweetViewWillAppear, object: nil)
+      //  NSNotificationCenter.defaultCenter().addObserver(self, selector: "ToRetweet:", name: WDRetweetViewWillAppear, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "openBrowser:", name: WDOpenBrowser, object: nil)
         
         // 注册两个cell
@@ -71,6 +72,16 @@ class WDHomeTableViewController: WDBaseTableViewController {
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
+    
+    
+    /**
+     修改标题按钮的状态
+     */
+    func change(){
+//        // 修改标题按钮的状态
+//        let titleBtn = navigationItem.titleView as! TitleButton
+//        titleBtn.selected = !titleBtn.selected
+    }
     
     /**
      打开网页
@@ -91,6 +102,9 @@ class WDHomeTableViewController: WDBaseTableViewController {
       
         
     }
+    
+    
+    
     
     /**
      发送评论
@@ -218,14 +232,7 @@ class WDHomeTableViewController: WDBaseTableViewController {
     }
     
     
-    /**
-     修改标题按钮的状态
-     */
-    func change(){
-        // 修改标题按钮的状态
-        let titleBtn = navigationItem.titleView as! TitleButton
-        titleBtn.selected = !titleBtn.selected
-    }
+  
     
     
     /**
@@ -235,21 +242,23 @@ class WDHomeTableViewController: WDBaseTableViewController {
     {
         //设置主页左右nav的按钮
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("friendsRecommentIcon", target: self, action: "leftBtnClick")
+       navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("friendsRecommentIcon", target: self, action: "leftBtnClick")
+      
         navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_pop", target: self, action: "rightBtnClick")
-        //设置标题按钮
-        let titleBtn = TitleButton()
-        titleBtn.setTitle("首页", forState: UIControlState.Normal)
-        titleBtn.titleLabel?.font = UIFont.systemFontOfSize(17)
-        titleBtn.addTarget(self, action: "titleBtnClick:", forControlEvents: UIControlEvents.TouchUpInside)
-        navigationItem.titleView = titleBtn
-    }
-    /**
-     标题按钮监听
-     */
-    func titleBtnClick(btn: TitleButton)
-    {
         
+        navigationItem.title = "首页"
+        let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
+        self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
+        
+
+      
+    }
+
+    /**
+     左边按钮监听
+     */
+    func leftBtnClick()
+    {
         //加载下拉框
         let sb = UIStoryboard(name: "Popmenu", bundle: nil)
         let vc = sb.instantiateInitialViewController()
@@ -261,17 +270,7 @@ class WDHomeTableViewController: WDBaseTableViewController {
         vc?.modalPresentationStyle = UIModalPresentationStyle.Custom
         
         presentViewController(vc!, animated: true, completion: nil)
-        
-    }
-    /**
-     左边按钮监听
-     */
-    func leftBtnClick()
-    {
-        let vc = WDFriendViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        presentViewController(nav, animated: true, completion: nil)
-           }
+                  }
     /**
      右边按钮监听
      */
@@ -388,6 +387,28 @@ extension WDHomeTableViewController
         return rowHeight
     }
  
+    /**
+     发送转发/评论
+    
+     */
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let infoID = statuses![indexPath.row].id
+  
+//        let vc = WDCommentComposeViewController(id:infoID)
+//        let nav = UINavigationController(rootViewController: vc)
+//        presentViewController(nav, animated: true, completion: nil)
+        
+        
+//        let vc = WDPulblishViewController()
+//        presentViewController(vc, animated: true, completion: nil)
+        
+        /**
+        *  加载动画界面
+        */
+        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(WDPulblishViewController(id: infoID), animated: false, completion: nil)
+
+    }
 }
 
 

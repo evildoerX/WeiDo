@@ -12,7 +12,7 @@ private let reuseIdentifier = "reuseIdentifier"
 class WDNewfeatureViewController: UICollectionViewController {
     
     /// 页面个数
-    private let  pageCount = 4
+    private let  pageCount = 2
     /// 布局对象
     private var layout: UICollectionViewFlowLayout = NewfeatureLayout()
 
@@ -128,7 +128,7 @@ class NewfeatureCell: UICollectionViewCell
         
         // 2.布局子控件的位置
         iconView.xmg_Fill(contentView)
-        startButton.xmg_AlignInner(type: XMG_AlignType.BottomCenter, referView: contentView, size: nil, offset: CGPoint(x: 0, y: -160))
+        startButton.xmg_AlignInner(type: XMG_AlignType.BottomCenter, referView: contentView, size: nil, offset: CGPoint(x: 0, y: -100))
     }
     
     // MARK: - 懒加载

@@ -24,7 +24,7 @@ class WDMySettingViewController: UITableViewController {
 
         setupTableView()
         setupNavigation()
-      
+        self.tableView.reloadData()
     }
     
     
@@ -54,7 +54,7 @@ class WDMySettingViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 4
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,8 +66,13 @@ class WDMySettingViewController: UITableViewController {
         {
            return 3
         }
-        else         {
-          return 5
+        else  if section == 2
+        {
+          return 2
+        }
+        else
+        {
+          return 3
         }
 
     }
@@ -100,8 +105,14 @@ class WDMySettingViewController: UITableViewController {
             return cell
         }
         
+        else if indexPath.section == 2 {
+          let array = ["意见反馈","清除缓存"]
+            cell.textLabel?.text = array[indexPath.row]
+            return cell
+        }
         else{
-          let array = ["通用设置","分享WeiDo","意见反馈","给WeiDo评分","清除缓存"]
+        
+            let array = ["通用设置","分享WeiDo","给WeiDo评分"]
             cell.textLabel?.text = array[indexPath.row]
             return cell
         }
@@ -137,39 +148,60 @@ class WDMySettingViewController: UITableViewController {
             switch index
             {
             case 0:
-                print("000")
+                let vc = WDMineDataViewController()
+                let nav = UINavigationController(rootViewController: vc)
+                presentViewController(nav, animated: true, completion: nil)
             case 1:
-                print("111")
+              
+                SVProgressHUD.showInfoWithStatus("你还没有私密微博哦")
             case 2:
-                print("222")
+               
+                SVProgressHUD.showInfoWithStatus("你还没有收藏哦")
             default:
                 print("见鬼了")
             }
             
         }
-        else
+        else if indexPath.section == 2
         {
             let index = indexPath.row
             switch index
             {
             case 0:
-                
+                UIApplication.sharedApplication().openURL(NSURL(string :"sms://18205254911")!)
               print("000")
             case 1:
-                print("111")
-            case 2:
-                UIApplication.sharedApplication().openURL(NSURL(string :"sms://18205254911")!)
-            case 3:
-                print("333")
-            case 4:
                 StatusDAO.cleanCahcheStatuses()
                 SVProgressHUD.showSuccessWithStatus("清除成功！")
+  
             default:
                 print("见鬼了")
             }
         
+          
          
         }
+        
+        else
+        {
+            
+            let index = indexPath.row
+            switch index
+            {
+            case 0:
+                print("通用设置")
+            case 1:
+               print("分享")
+            case 2:
+                print("评分")
+            default:
+                print("见鬼了")
+            }
+            
+
+        
+        }
+        
     }
     
 }

@@ -13,11 +13,21 @@ let WDComposeViewWillAppear = "WDComposeViewWillAppear"
 let WDRetweetViewWillAppear = "WDRetweetViewWillAppear"
 class WDStatusTableViewBottomView: UIView {
 
+    var status:Status?
+        {
+        didSet{
+
+            
+        }
+    
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         // 初始化UI
         setupUI()
+        
     }
     
     
@@ -66,7 +76,7 @@ class WDStatusTableViewBottomView: UIView {
     
     func common()
     {
-      
+        
         NSNotificationCenter.defaultCenter().postNotificationName(WDComposeViewWillAppear, object: self)
         
         
@@ -74,6 +84,8 @@ class WDStatusTableViewBottomView: UIView {
     
     func retweet()
     {
+//        let info = [WDRetweetViewWillAppear:status!.id] 
+//        NSNotificationCenter.defaultCenter().postNotificationName(WDRetweetViewWillAppear, object: self, userInfo: info)
    NSNotificationCenter.defaultCenter().postNotificationName(WDRetweetViewWillAppear, object: self)
     }
     

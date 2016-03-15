@@ -114,7 +114,7 @@ class WDStatusTableViewCell: UITableViewCell {
     {
         let label = KILabel()
         label.textColor = UIColor.darkGrayColor()
-        label.font = UIFont.systemFontOfSize(21)
+        
      
         label.numberOfLines = 0
         label.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 20

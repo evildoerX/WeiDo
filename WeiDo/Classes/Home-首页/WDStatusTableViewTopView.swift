@@ -13,6 +13,7 @@ let bgcolor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
 
 class WDStatusTableViewTopView: UIView {
 
+    /// 设置数据
     var status: Status?
         {
         didSet{
@@ -23,11 +24,12 @@ class WDStatusTableViewTopView: UIView {
             {
                 let url = NSURL(string: iconURL)
                 iconView.sd_setImageWithURL(url)
+               
                 /**
                 设置图为圆角
                 */
                 iconView.layer.masksToBounds = true
-                iconView.layer.cornerRadius = iconView.frame.width / 2
+                iconView.layer.cornerRadius = 20
                 
             }
             // 设置认证图标
@@ -64,7 +66,7 @@ class WDStatusTableViewTopView: UIView {
         addSubview(sourceLabel)
         
         // 2.布局子控件
-        iconView.xmg_AlignInner(type: XMG_AlignType.TopLeft, referView: self, size: CGSize(width: 50, height: 50), offset: CGPoint(x: 10, y: 10))
+        iconView.xmg_AlignInner(type: XMG_AlignType.TopLeft, referView: self, size: CGSize(width: 40, height: 40), offset: CGPoint(x: 10, y: 10))
         verifiedView.xmg_AlignInner(type: XMG_AlignType.BottomRight, referView: iconView, size: CGSize(width: 14, height: 14), offset: CGPoint(x:5, y:5))
         nameLabel.xmg_AlignHorizontal(type: XMG_AlignType.TopRight, referView: iconView, size: nil, offset: CGPoint(x: 10, y: 0))
         vipView.xmg_AlignHorizontal(type: XMG_AlignType.TopRight, referView: nameLabel, size: CGSize(width: 14, height: 14), offset: CGPoint(x: 10, y: 0))

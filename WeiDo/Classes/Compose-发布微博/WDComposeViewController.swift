@@ -37,7 +37,7 @@ class WDComposeViewController: UIViewController {
         setupNavigation()
         setupInputView()
         setupPhotoView()
-         setupToolbar()
+        setupToolbar()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -52,20 +52,20 @@ class WDComposeViewController: UIViewController {
         // 主动隐藏键盘
         textView.resignFirstResponder()
     }
-
-
+    
+    
     /**
      只要键盘改变就会调用 改变工具条的位置
      */
     func keyboardChange(notify: NSNotification)
     {
-      
+        
         // 1.取出键盘最终的rect
         let value = notify.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
         let rect = value.CGRectValue()
         
         // 2.修改工具条的约束
-     
+        
         let height = UIScreen.mainScreen().bounds.height
         toolbarBottonCons?.constant = -(height - rect.origin.y)
         
@@ -82,8 +82,8 @@ class WDComposeViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
         
-     //   let anim = toolbar.layer.animationForKey("position")
-       
+        //   let anim = toolbar.layer.animationForKey("position")
+        
         
     }
     
@@ -92,7 +92,7 @@ class WDComposeViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-  
+    
     /**
      设置工具条
      */
@@ -103,32 +103,27 @@ class WDComposeViewController: UIViewController {
         
         // 2.添加按钮
         var items = [UIBarButtonItem]()
-        let itemSettings = [["imageName": "compose_toolbar_picture", "action": "selectPicture"],
-            
-            ["imageName": "compose_mentionbutton_background"],
-            
-            ["imageName": "compose_trendbutton_background"],
-            
-            ["imageName": "compose_emoticonbutton_background", "action": "inputEmoticon"],
-            
-            ["imageName": "compose_addbutton_background"]]
+        let itemSettings = [["imageName": "compose_toolbar_picture", "action": "selectPicture"],["imageName": "compose_emoticonbutton_background", "action": "inputEmoticon"]]
+        
+         
         for dict in itemSettings
         {
-           
+            
             
             let item = UIBarButtonItem(imageName: dict["imageName"]!, target: self, action: dict["action"])
             items.append(item)
             items.append(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil))
         }
+        
         items.removeLast()
         toolbar.items = items
         
         // 3布局toolbar
         let width = UIScreen.mainScreen().bounds.width
-        let cons = toolbar.xmg_AlignInner(type: XMG_AlignType.BottomLeft, referView: view, size: CGSize(width: width, height: 44))
+        let cons = toolbar.xmg_AlignInner(type: XMG_AlignType.BottomRight, referView: view, size: CGSize(width: width, height: 44))
         toolbarBottonCons = toolbar.xmg_Constraint(cons, attribute: NSLayoutAttribute.Bottom)
     }
-
+    
     
     /**
      选择相片
@@ -154,14 +149,14 @@ class WDComposeViewController: UIViewController {
         photoViewHeightCons = photoSelectorVC.view.xmg_Constraint(cons, attribute: NSLayoutAttribute.Height)
     }
     
-
+    
     /**
      切换到表情键盘
      */
     func inputEmoticon()
     {
         
-    
+        
         // 1.关闭键盘
         textView.resignFirstResponder()
         
@@ -171,7 +166,7 @@ class WDComposeViewController: UIViewController {
         // 3.重新唤出键盘
         textView.becomeFirstResponder()
     }
-
+    
     
     /**
      初始化输入框
@@ -188,20 +183,20 @@ class WDComposeViewController: UIViewController {
         textView.xmg_Fill(view)
         placeholderLabel.xmg_AlignInner(type: XMG_AlignType.TopLeft, referView: textView, size: nil, offset: CGPoint(x: 5, y: 8))
     }
-
+    
     
     /**
      初始化导航条
      */
-   private func setupNavigation()
-   {
-    navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: "back")
-    navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "发送", style: UIBarButtonItemStyle.Plain, target: self, action: "compose")
-    navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
-    navigationItem.rightBarButtonItem?.enabled = false
-    
-    
+    private func setupNavigation()
+    {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: "back")
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "发送", style: UIBarButtonItemStyle.Plain, target: self, action: "compose")
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
+        navigationItem.rightBarButtonItem?.enabled = false
+        
+        
     }
     
     
@@ -227,11 +222,11 @@ class WDComposeViewController: UIViewController {
                 // 3.提示用户发送失败
                 SVProgressHUD.showErrorWithStatus("发送失败", maskType: SVProgressHUDMaskType.Black)
         }
-       
         
-    
+        
+        
     }
-
+    
     // MARK: - 懒加载
     private lazy var textView: UITextView = {
         let tv = UITextView()
@@ -243,11 +238,11 @@ class WDComposeViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont.systemFontOfSize(13)
         label.textColor = UIColor.darkGrayColor()
-        label.text = "说出你的故事..."
+        label.text = "说出你的想法..."
         return label
     }()
     
-      private lazy var toolbar: UIToolbar = UIToolbar()
+    private lazy var toolbar: UIToolbar = UIToolbar()
 }
 
 extension WDComposeViewController: UITextViewDelegate

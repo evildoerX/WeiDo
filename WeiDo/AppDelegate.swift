@@ -14,7 +14,7 @@ let WDSwitchRootViewControllerKey = "WDSwitchRootViewControllerKey"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-//创建视图
+    //创建视图
     var window: UIWindow?
     
     
@@ -31,6 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        
+        
+        
         // 打开数据库
         SQLiteManager.shareManager().openDB("status.sqlite")
         // 注册一个通知
@@ -40,15 +44,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         UITabBar.appearance().tintColor = bgColor
+        UITabBar.appearance().barTintColor = UIColor.whiteColor()
         UINavigationBar.appearance().barTintColor = bgColor
-          UITabBar.appearance().barTintColor = UIColor.whiteColor()
-  
+        
         // 1.创建window
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
-        // 2.创建根控制器
-        window?.rootViewController = defaultContoller()
-      
+        
+
+        //若是第一次打开应用会进入引导页
+        
+        if (!(NSUserDefaults.standardUserDefaults().boolForKey("everLaunched")))
+        {
+         NSUserDefaults.standardUserDefaults().setBool(true, forKey:"everLaunched")
+            window?.rootViewController = WDNewfeatureViewController()
+        
+        }
+        
+        // 若不是进入主页面
+        else{
+            window?.rootViewController = defaultContoller()
+            
+        }
         
         window?.makeKeyAndVisible()
         
@@ -68,12 +85,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        print(notify.object)
         if notify.object as! Bool
         {
-          //  window?.rootViewController = WDMainViewController()
-            window?.rootViewController = WDWelcomeViewController()
+            window?.rootViewController = WDMainViewController()
+          
         }else
         {
-           // window?.rootViewController = WDWelcomeViewController()
-            window?.rootViewController = WDMainViewController()
+            window?.rootViewController = WDWelcomeViewController()
+            
 
         }
     }
@@ -85,6 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      */
     private func defaultContoller() ->UIViewController
     {
+     
         // 1.检测用户是否登录
         if userAccount.userlogin(){
             
@@ -92,14 +110,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return WDMainViewController()
     }
-    
+    /**
+     获取软件是否更新
+   
+     */
     private func isNewupdate() -> Bool{
         // 1.获取当前软件的版本号 --> info.plist
         let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
         
         // 2.获取以前的软件版本号 --> 从本地文件中读取(以前自己存储的)
         let sandboxVersion =  NSUserDefaults.standardUserDefaults().objectForKey("CFBundleShortVersionString") as? String ?? ""
-        print("current = \(currentVersion) sandbox = \(sandboxVersion)")
+       
         
         // 3.比较当前版本号和以前版本号
         

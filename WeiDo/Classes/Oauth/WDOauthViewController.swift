@@ -52,6 +52,7 @@ class WDOauthViewController: UIViewController {
     func webViewDidFinishLoad(webView: UIWebView) {
         SVProgressHUD.dismiss()
         
+        
     }
     
     private lazy var webView:UIWebView =
@@ -98,6 +99,7 @@ extension WDOauthViewController: UIWebViewDelegate
         return false
     }
     
+  
     
     
     /**
@@ -122,6 +124,8 @@ extension WDOauthViewController: UIWebViewDelegate
                     account!.saveAccount()
                     // 去欢迎界面
                     NSNotificationCenter.defaultCenter().postNotificationName(WDSwitchRootViewControllerKey, object: false)
+                //    让背景消失
+                    self.presentViewController(UIViewController(), animated: true, completion: nil)
                     
                     return
                 }
