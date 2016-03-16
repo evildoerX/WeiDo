@@ -20,31 +20,17 @@ class WDMySettingViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        navigationItem.title = "我的"
 
-        setupTableView()
-        setupNavigation()
+        tableView.tableFooterView = UIView()
+      
         self.tableView.reloadData()
     }
     
     
    
 
-    
-    func setupTableView()
-    {
-      tableView.tableFooterView = UIView()
-    }
-    func setupNavigation()
-    {
-      
-        
-        navigationItem.title = "我的"
-        let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
-        self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
-
-    }
-    
+   
     
  
 

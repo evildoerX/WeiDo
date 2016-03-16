@@ -11,6 +11,7 @@ import AFNetworking
 import MJRefresh
 
 let WDNewCellReuseIdentifier = "WDNewsCell"
+
 let WDSportNewsWillOpen = "WDSportNewsWillOpen"
 
 class WDSportNewTableViewController: UITableViewController {

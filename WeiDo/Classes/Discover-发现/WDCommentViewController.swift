@@ -56,9 +56,6 @@ class WDCommentViewController: UITableViewController {
         setUpRefrshControl()
      
    
-        
-      //  self.interactivePopGestureRecognizer.enabled = NO;
-       // navigationController?.interactivePopGestureRecognizer?.enabled = false
     }
     
    
@@ -223,9 +220,3 @@ class WDCommentViewController: UITableViewController {
     
 }
 
-extension WDCommentViewController: UIGestureRecognizerDelegate
-{
-   
-    
-      
-}

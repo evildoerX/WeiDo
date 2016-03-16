@@ -8,13 +8,7 @@
 
 import UIKit
 import SDWebImage
-/// 选中图片的通知名称
-let CellPictureViewSelected = "CellPictureViewSelected"
-/// 选中图片的索引对应的key名称
-let CellPictureViewIndexKey = "CellPictureViewIndexKey"
 
-/// 选中图片的路径对应的key的名称
-let CellPictureViewURLsKey = "CellPictureViewURLsKey"
 class WDPictureCell: UITableViewCell {
     
     

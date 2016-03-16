@@ -437,11 +437,10 @@
 		B23222BF1C6CC2C00081E912 /* Compose-发送界面 */ = {
 			isa = PBXGroup;
 			children = (
+				B2E409031C99B5740075340B /* Controller */,
 				B2E408E91C97D3720075340B /* View */,
 				B2FDE6DD1C6EF5D2000E50F0 /* EmoticonView-表情 */,
 				B211517A1C6DB76A00FD2DB0 /* PhotoSelector-图片选择器 */,
-				B23222C01C6CC2E60081E912 /* WDComposeViewController.swift */,
-				B268D1D01C97012400071081 /* WDCommentComposeViewController.swift */,
 			);
 			name = "Compose-发送界面";
 			path = "Compose-发布微博";
@@ -645,8 +644,7 @@
 				B2A7488A1C61C59400FC3478 /* Discover-广场 */,
 				B2A7488F1C61C59400FC3478 /* Mine-我 */,
 				B2A7488C1C61C59400FC3478 /* Main */,
-				B2A7488E1C61C59400FC3478 /* Other */,
-				B2A748901C61C59400FC3478 /* Tools */,
+				B2A7488E1C61C59400FC3478 /* Other-资源 */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -699,13 +697,15 @@
 			path = "Message-消息";
 			sourceTree = "<group>";
 		};
-		B2A7488E1C61C59400FC3478 /* Other */ = {
+		B2A7488E1C61C59400FC3478 /* Other-资源 */ = {
 			isa = PBXGroup;
 			children = (
+				B2A748901C61C59400FC3478 /* Tools */,
 				B2E408FE1C9990220075340B /* MP3 */,
 				B2E16D381C7AAD23009E6B33 /* Lib */,
 				B2FDE6E81C6F0596000E50F0 /* Swift-Bridge.h */,
 			);
+			name = "Other-资源";
 			path = Other;
 			sourceTree = "<group>";
 		};
@@ -735,7 +735,8 @@
 				B21151781C6D7D5100FD2DB0 /* UIBarButtionItem+Category.swift */,
 				B2FDE7031C6F07E3000E50F0 /* SQLiteManager.swift */,
 			);
-			path = Tools;
+			name = Tools;
+			path = ../Tools;
 			sourceTree = "<group>";
 		};
 		B2A7489D1C61D76800FC3478 /* Resource */ = {
@@ -841,6 +842,15 @@
 				B2E409001C9990220075340B /* rock_end.mp3 */,
 			);
 			path = MP3;
+			sourceTree = "<group>";
+		};
+		B2E409031C99B5740075340B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B23222C01C6CC2E60081E912 /* WDComposeViewController.swift */,
+				B268D1D01C97012400071081 /* WDCommentComposeViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		B2FDE6DD1C6EF5D2000E50F0 /* EmoticonView-表情 */ = {

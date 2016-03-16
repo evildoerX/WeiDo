@@ -26,16 +26,10 @@ class WDNewsCell: UITableViewCell {
     var sportnew:WDNews?
         {
         didSet{
-            
-            newsImageView.sd_setImageWithURL(NSURL(string: (sportnew?.picUrl)!))
-            titleLabel?.text = sportnew?.newsDescription
-            descriptionLabel.text = sportnew?.title
-            createtimeLabel.text = sportnew?.ctime
-           
+
+        setData(sportnew)
             //添加图片点击
-            newsImageView.userInteractionEnabled = true
-            let tap = UITapGestureRecognizer(target: self, action: "sportnewClick")
-           newsImageView.addGestureRecognizer(tap)
+        addTap("sportnewClick")
         }
     
     }
@@ -45,15 +39,10 @@ class WDNewsCell: UITableViewCell {
         {
         didSet{
             
-            newsImageView.sd_setImageWithURL(NSURL(string: (amusementnew?.picUrl)!))
-            titleLabel?.text = amusementnew?.newsDescription
-            descriptionLabel.text = amusementnew?.title
-            createtimeLabel.text = amusementnew?.ctime
+           setData(amusementnew)
             
             //添加图片点击
-            newsImageView.userInteractionEnabled = true
-            let tap = UITapGestureRecognizer(target: self, action: "amusementClick")
-            newsImageView.addGestureRecognizer(tap)
+           addTap("amusementClick")
         }
     }
     
@@ -61,15 +50,9 @@ class WDNewsCell: UITableViewCell {
         {
         didSet{
             
-            newsImageView.sd_setImageWithURL(NSURL(string: (technologynew?.picUrl)!))
-            titleLabel?.text = technologynew?.newsDescription
-            descriptionLabel.text = technologynew?.title
-            createtimeLabel.text = technologynew?.ctime
-            
+            setData(technologynew)
             //添加图片点击
-            newsImageView.userInteractionEnabled = true
-            let tap = UITapGestureRecognizer(target: self, action: "technologynewClick")
-            newsImageView.addGestureRecognizer(tap)
+            addTap("technologynewClick")
         }
     }
     
@@ -86,6 +69,26 @@ class WDNewsCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    /**
+     加载数据
+     */
+    func setData(new:WDNews?)
+    {
+        newsImageView.sd_setImageWithURL(NSURL(string: (new?.picUrl)!))
+        titleLabel?.text = new?.newsDescription
+        descriptionLabel.text = new?.title
+        createtimeLabel.text = new?.ctime
+    }
+    
+    /**
+     添加图片点击
+     */
+    func addTap(action: Selector)
+    {
+        newsImageView.userInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: action)
+        newsImageView.addGestureRecognizer(tap)
+    }
     
     
     func sportnewClick()
