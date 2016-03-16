@@ -31,8 +31,7 @@ class WDHomeTableViewController: WDBaseTableViewController {
         {
             vistorView?.setVistorImageView(true, imageName: "visitordiscover_feed_image_house", text: "快快登录开启你的微博之旅吧")
             navigationItem.title = "首页"
-            let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
-            self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
+    
             return
         }
         //初始化导航条
@@ -97,8 +96,9 @@ class WDHomeTableViewController: WDBaseTableViewController {
         let request = NSURLRequest(URL: url!)
         
         let vc = WDWebBrowserViewController(request:request)
-        let nav = UINavigationController(rootViewController: vc)
+       let nav = UINavigationController(rootViewController: vc)
         presentViewController(nav, animated: true, completion: nil)
+    
       
         
     }
@@ -247,8 +247,7 @@ class WDHomeTableViewController: WDBaseTableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_pop", target: self, action: "rightBtnClick")
         
         navigationItem.title = "首页"
-        let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
-        self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
+     
         
 
       
@@ -394,15 +393,6 @@ extension WDHomeTableViewController
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let infoID = statuses![indexPath.row].id
-  
-//        let vc = WDCommentComposeViewController(id:infoID)
-//        let nav = UINavigationController(rootViewController: vc)
-//        presentViewController(nav, animated: true, completion: nil)
-        
-        
-//        let vc = WDPulblishViewController()
-//        presentViewController(vc, animated: true, completion: nil)
-        
         /**
         *  加载动画界面
         */

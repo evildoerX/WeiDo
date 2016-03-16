@@ -22,11 +22,8 @@ class WDDiscoverTableViewController: YZDisplayViewController {
     func setupTitle()
     {
      navigationItem.title = "广场"
-        let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
-        self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
-        
-        
-        
+  
+      
         isShowUnderLine = true
         underLineColor = bgcolor
         isShowTitleGradient = true

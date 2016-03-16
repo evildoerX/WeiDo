@@ -99,7 +99,7 @@ class WDMySettingViewController: UITableViewController {
             return cell
         }else if indexPath.section == 1
         {
-            let array = ["公开微博","私密微博","我的收藏"]
+            let array = ["公开微博","附近的人","我的收藏"]
             
             cell.textLabel?.text = array[indexPath.row]
             return cell
@@ -138,9 +138,8 @@ class WDMySettingViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0
         {
-           let vc = WDMineDataViewController()
-            let nav = UINavigationController(rootViewController: vc)
-            presentViewController(nav, animated: true, completion: nil)
+
+            self.navigationController?.pushViewController(WDMineDataViewController(), animated: true)
         }
         else if indexPath.section == 1
         {
@@ -148,12 +147,10 @@ class WDMySettingViewController: UITableViewController {
             switch index
             {
             case 0:
-                let vc = WDMineDataViewController()
-                let nav = UINavigationController(rootViewController: vc)
-                presentViewController(nav, animated: true, completion: nil)
+            self.navigationController?.pushViewController(WDMineDataViewController(), animated: true)
             case 1:
               
-                SVProgressHUD.showInfoWithStatus("你还没有私密微博哦")
+                self.navigationController?.pushViewController(WDNearbyViewController(), animated: true)
             case 2:
                
                 SVProgressHUD.showInfoWithStatus("你还没有收藏哦")

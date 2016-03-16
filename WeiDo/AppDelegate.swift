@@ -38,14 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 打开数据库
         SQLiteManager.shareManager().openDB("status.sqlite")
         // 注册一个通知
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchRootViewController:", name: WDSwitchRootViewControllerKey, object: nil)
         
         // 设置导航条和工具条的外观
-        
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
-        UITabBar.appearance().tintColor = bgColor
-        UITabBar.appearance().barTintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().barTintColor = bgColor
+
+        setupUI()
         
         // 1.创建window
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -77,6 +75,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
+    
+    
+    func setupUI()
+    {
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        //背景颜色
+        UITabBar.appearance().tintColor = bgColor
+        //字体颜色
+        UITabBar.appearance().barTintColor = UIColor.whiteColor()
+        //背景颜色
+        UINavigationBar.appearance().barTintColor = bgColor
+        //返回键颜色
+        UINavigationBar.appearance().barStyle = UIBarStyle.Default
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        // 标题颜色
+        let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
+        UINavigationBar.appearance().titleTextAttributes = navigationTitleAttribute as? [String: AnyObject]
+        
+
+    }
+    
+    
     /**
      选择界面
      

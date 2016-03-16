@@ -9,6 +9,7 @@
 import UIKit
 import AFNetworking
 import MJRefresh
+import SVProgressHUD
 
 class WDMentionMeTableViewController: UITableViewController {
 
@@ -18,6 +19,12 @@ class WDMentionMeTableViewController: UITableViewController {
     var header:MJRefreshNormalHeader{
         return (self.tableView.tableHeaderView as? MJRefreshNormalHeader)!
     }
+    /**
+     评论id
+     */
+    var id: Int?
+    /**  当前正在请求的参数  */
+    var params = NSMutableDictionary()
 
 
     
@@ -27,8 +34,15 @@ class WDMentionMeTableViewController: UITableViewController {
         setupTableview()
         setUpRefrshControl()
   
+        /**
+        添加通知
+        */
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "cellClick:", name: WDMessageReplyWillOpen, object: nil)
     }
-    
+    deinit
+    {
+     NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     
     
     func setupTableview()
@@ -37,9 +51,6 @@ class WDMentionMeTableViewController: UITableViewController {
         tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         tableView.contentInset = UIEdgeInsetsMake(-55 , 0, 49, 0)
         tableView.registerNib(UINib(nibName: "WDMessageCell", bundle: nil), forCellReuseIdentifier: WDMessageCellReuseIdentifier)
-     
-//          tableView.estimatedRowHeight = 110
-//        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.rowHeight = 60 
         
         
@@ -88,12 +99,43 @@ class WDMentionMeTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(WDMessageCellReuseIdentifier, forIndexPath: indexPath) as! WDMessageCell
         let metionData = mention[indexPath.row]
-    
         cell.Mention = metionData
+        /// 给cell添加手势
+        cell.userInteractionEnabled = true
+      let tap = UITapGestureRecognizer(target: self, action: "cellClick")
+        cell.addGestureRecognizer(tap)
         return cell
     }
+    
+  
+    
 
-//    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        return UITableViewAutomaticDimension
-//    }
+
+}
+
+extension WDMentionMeTableViewController: UIActionSheetDelegate
+{
+ 
+    func cellClick(notify: NSNotification)
+    {
+        guard let id = notify.userInfo![WDMessageReplyWillOpen] as? Int  else
+        {
+            return
+        }
+        self.id = id
+
+        let sheet = UIActionSheet(title: "回复", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "回复")
+        sheet.showInView(self.view)
+    }
+    
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 1
+        {
+           let btnState = 3
+            // (commentid: Int,statusId: Int,  state:Int)
+            let vc = WDCommentComposeViewController(commentid:id!, state:btnState)
+            let nav = UINavigationController(rootViewController: vc)
+            presentViewController(nav, animated: true, completion: nil)
+        }
+    }
 }

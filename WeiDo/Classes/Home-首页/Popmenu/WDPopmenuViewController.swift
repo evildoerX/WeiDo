@@ -57,7 +57,9 @@ extension WDPopmenuViewController: UITableViewDataSource,UITableViewDelegate
             dismissViewControllerAnimated(true, completion: nil)
         case 1:
             let nav = UINavigationController(rootViewController: WDSportNewTableViewController())
+            
            presentViewController(nav, animated: true, completion: nil)
+
         case 2:
             let nav = UINavigationController(rootViewController: WDAmusementNewsViewController())
             presentViewController(nav, animated: true, completion: nil)

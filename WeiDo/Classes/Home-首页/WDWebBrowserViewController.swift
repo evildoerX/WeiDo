@@ -10,9 +10,10 @@ import UIKit
 import SVProgressHUD
 
 
-class WDWebBrowserViewController: UIViewController, UIWebViewDelegate {
+class WDWebBrowserViewController: UIViewController, UIWebViewDelegate  {
     
  
+    
     var urlRequest: NSURLRequest?
  
     init(request:NSURLRequest)
@@ -31,20 +32,33 @@ class WDWebBrowserViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
      
         let wv = UIWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height - 88))
+        
+       
             navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: "back")
+        
         wv.loadRequest(urlRequest!)
         view = wv
         wv.delegate = self
-        
+        wv.scalesPageToFit = true
+  
     }
-
+ 
+   
     
     func back()
     {
        dismissViewControllerAnimated(true, completion: nil)
     }
 
-    
+  
+    func webViewDidStartLoad(webView: UIWebView) {
+      SVProgressHUD.showInfoWithStatus("正在加载...")
    
+    }
+    func webViewDidFinishLoad(webView: UIWebView) {
+       SVProgressHUD.dismiss()
+        
+    }
+ 
   
 }

@@ -54,8 +54,14 @@ class WDCommentViewController: UITableViewController {
         setupNavigation()
         setupTableview()
         setUpRefrshControl()
-    
+     
+   
+        
+      //  self.interactivePopGestureRecognizer.enabled = NO;
+       // navigationController?.interactivePopGestureRecognizer?.enabled = false
     }
+    
+   
     
     /**
      获取数据
@@ -116,16 +122,11 @@ class WDCommentViewController: UITableViewController {
     
   private func setupNavigation()
   {
-
-    navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: "back")
-    
-    
+   
     navigationItem.title = "评论"
-    let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
-    self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
-    
-  
-    
+
+
+
     }
     
     func back()
@@ -217,9 +218,14 @@ class WDCommentViewController: UITableViewController {
         view.tintColor = bgcolor
     }
     
-  
 
     
     
+}
+
+extension WDCommentViewController: UIGestureRecognizerDelegate
+{
+   
     
+      
 }

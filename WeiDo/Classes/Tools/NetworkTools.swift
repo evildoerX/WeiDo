@@ -21,7 +21,7 @@ class NetworkTools: AFHTTPSessionManager {
         return t
     }()
     
-    /// 获取单粒的方法
+    /// 获取单例的方法
     class func shareNetworkTools() -> NetworkTools {
         return tools
     }

@@ -10,7 +10,7 @@ import UIKit
 import AFNetworking
 
 let MyStatusCellReuseIdentifier = "WDMyStatusCell"
-class WDMineDataViewController: UIViewController {
+class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
 
     /// 数据源
     var mineStatus = [WDMineStatus]()
@@ -58,6 +58,21 @@ class WDMineDataViewController: UIViewController {
             
         }
         setupNavigation()
+        sweptBack()
+        
+       
+
+    }
+    /**
+     滑动返回
+     */
+    func sweptBack()
+    {
+        let target = navigationController?.interactivePopGestureRecognizer?.delegate
+        let pan = UIPanGestureRecognizer(target: target, action: "handleNavigationTransition:")
+        pan.delegate = self
+        self.view.addGestureRecognizer(pan)
+        navigationController?.interactivePopGestureRecognizer?.enabled = false
 
     }
     
@@ -90,9 +105,6 @@ class WDMineDataViewController: UIViewController {
     func setupNavigation()
     {
         navigationItem.title = "我的"
-        let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
-        self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
-        
          navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: "back")
         
     }
@@ -161,6 +173,16 @@ class WDMineDataViewController: UIViewController {
         let nav = UINavigationController(rootViewController: oauthView)
         presentViewController(nav, animated: true, completion: nil)
         
+    }
+    /**
+     判断是否滑动返回
+     */
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if self.childViewControllers.count == 1
+        {
+            return false
+        }
+        return true
     }
     
     // MARK: - 懒加载

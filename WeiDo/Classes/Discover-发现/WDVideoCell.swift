@@ -74,12 +74,8 @@ class WDVideoCell: UITableViewCell {
     
     @IBAction func playClick(sender: AnyObject) {
         
-        let alert = UIAlertView()
-        alert.title = "确定要打开视频吗？非Wifi环境会消耗很多的流量哦"
-        alert.addButtonWithTitle("确定")
-        alert.addButtonWithTitle("取消")
-        alert.show()
-        let info = [WDVideoWillPlay:videoTopic!.videouri!] 
+        
+        let info = [WDVideoWillPlay:videoTopic!.videouri!]
       NSNotificationCenter.defaultCenter().postNotificationName(WDVideoWillPlay, object: self, userInfo: info)
        
         

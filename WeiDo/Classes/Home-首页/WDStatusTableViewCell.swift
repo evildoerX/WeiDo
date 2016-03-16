@@ -86,7 +86,7 @@ class WDStatusTableViewCell: UITableViewCell {
         
         contentLabel.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: topView, size: nil, offset: CGPoint(x: 10, y: 10))
         
-        footerView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: pictureView, size: CGSize(width: width, height: 36), offset: CGPoint(x: -10, y: 10))
+       footerView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: pictureView, size: CGSize(width: width, height: 22), offset: CGPoint(x: -10, y: 10))
         
     }
     

@@ -9,10 +9,15 @@
 import UIKit
 import SDWebImage
 
+let WDMessageCellSelected = "WDMessageCellSelected"
+let WDMessageReplyWillOpen = "WDMessageReplyWillOpen"
+
 class WDMessageCell: UITableViewCell {
     
     
 
+    @IBOutlet weak var content_view: UIView!
+  
     
     @IBOutlet weak var nameLabel: UILabel!
 
@@ -45,6 +50,12 @@ class WDMessageCell: UITableViewCell {
             image_view.layer.masksToBounds = true
             image_view.layer.cornerRadius = (image_view.frame.width / 2)
         
+            
+            /// 添加手势
+            content_view.userInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: "toMeClick")
+            content_view.addGestureRecognizer(tap)
+
         }
     
     }
@@ -59,6 +70,7 @@ class WDMessageCell: UITableViewCell {
             create_time.text = Mention?.created_at
             //显示表情
             contentLabel.attributedText = EmoticonPackage.emoticonString(Mention?.text ?? "")
+         
             contentLabel.numberOfLines = 0          //设置无限换行
             
             contentLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping  //自动折行
@@ -72,6 +84,13 @@ class WDMessageCell: UITableViewCell {
             */
             image_view.layer.masksToBounds = true
             image_view.layer.cornerRadius = (image_view.frame.width / 2)
+            
+            /// 添加手势
+            content_view.userInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: "mentionClick")
+            content_view.addGestureRecognizer(tap)
+
+            
         }
     }
     
@@ -92,9 +111,32 @@ class WDMessageCell: UITableViewCell {
             */
             image_view.layer.masksToBounds = true
             image_view.layer.cornerRadius = (image_view.frame.width / 2)
+            
+              /// 添加手势
+            content_view.userInteractionEnabled = true
+              let tap = UITapGestureRecognizer(target: self, action: "byMeClick")
+            content_view.addGestureRecognizer(tap)
      
         }
     
+    }
+    func byMeClick()
+    {
+        let info = [WDMessageCellSelected:ByMe!.id]
+        NSNotificationCenter.defaultCenter().postNotificationName(WDMessageCellSelected, object: self, userInfo: info)
+    
+    }
+    
+    func toMeClick()
+    {
+        let info = [WDMessageReplyWillOpen:toMe!.id]
+        NSNotificationCenter.defaultCenter().postNotificationName(WDMessageReplyWillOpen, object: self, userInfo: info)
+    }
+    
+    func mentionClick()
+    {
+        let info = [WDMessageReplyWillOpen:Mention!.id]
+        NSNotificationCenter.defaultCenter().postNotificationName(WDMessageReplyWillOpen, object: self, userInfo: info)
     }
     
     override func awakeFromNib() {

@@ -45,6 +45,8 @@ class Status: NSObject {
             }
         }
     }
+    
+
     /// 配图数组
     var pic_urls: [[String: AnyObject]]?
         {

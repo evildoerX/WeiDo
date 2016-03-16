@@ -238,7 +238,7 @@ class WDComposeViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont.systemFontOfSize(13)
         label.textColor = UIColor.darkGrayColor()
-        label.text = "说出你的想法..."
+        label.text = "有什么想要分享的..."
         return label
     }()
     

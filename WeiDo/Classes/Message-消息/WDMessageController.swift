@@ -27,7 +27,9 @@ class WDMessageController: YZDisplayViewController {
              setupAllControllers()
              setupTitle()
         }
-        setupNavigation()
+        navigationItem.title = "消息"
+        
+
  
     }
 
@@ -43,17 +45,7 @@ class WDMessageController: YZDisplayViewController {
     loginBtn.xmg_AlignVertical(type: XMG_AlignType.BottomCenter, referView: label2, size: CGSize(width: 92, height: 36), offset: CGPoint(x: 0, y: 20))
     }
     
-    private func setupNavigation()
-    {
-        
-        
-        navigationItem.title = "消息"
-        let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
-        self.navigationController?.navigationBar.titleTextAttributes = navigationTitleAttribute as? [String : AnyObject]
-        
-        
-    }
-    
+ 
     
     func setupTitle()
     {
@@ -94,7 +86,9 @@ class WDMessageController: YZDisplayViewController {
     }
     
     
-   
+    /**
+     点击登录
+     */
     func loginClick()
     {
        

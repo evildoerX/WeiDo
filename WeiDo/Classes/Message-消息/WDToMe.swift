@@ -11,6 +11,7 @@ import UIKit
 
 class WDToMe: NSObject {
     
+     var id: Int = 0
     
   var created_at: String
     
@@ -20,6 +21,7 @@ class WDToMe: NSObject {
     var profile_image_url: String
     
     init(dictionary: [String: AnyObject]) {
+        id = dictionary["id"] as! Int
 
         let created_atStr = dictionary["created_at"] as! String
         // 将字符串转换为时间
@@ -31,7 +33,7 @@ class WDToMe: NSObject {
         
         let user = dictionary["user"] as! NSDictionary
         screen_name = user.valueForKey("screen_name") as! String
-        profile_image_url = user.valueForKey("profile_image_url") as! String
+        profile_image_url = user.valueForKey("avatar_large") as! String
         
         
     }

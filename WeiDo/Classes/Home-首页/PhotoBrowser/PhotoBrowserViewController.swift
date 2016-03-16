@@ -87,8 +87,8 @@ class PhotoBrowserViewController: UIViewController {
         
         // 2.保存图片
         let image = cell.iconView.image
-        print(image)
-        UIImageWriteToSavedPhotosAlbum(cell.iconView.image!,self,"image:didFinishSavingWithError:contextInfo:",nil)
+        
+    UIImageWriteToSavedPhotosAlbum(image! ,self,"image:didFinishSavingWithError:contextInfo:",nil)
    
      
     }

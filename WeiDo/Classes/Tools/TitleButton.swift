@@ -14,8 +14,6 @@ class TitleButton: UIButton {
         super.init(frame: frame)
       
         setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-//        setImage(UIImage(named: "navigationbar_arrow_down"), forState: UIControlState.Normal)
-//        setImage(UIImage(named: "navigationbar_arrow_up"), forState: UIControlState.Selected)
         self.sizeToFit()
          
     }

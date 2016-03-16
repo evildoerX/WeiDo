@@ -68,7 +68,7 @@ class User: NSObject {
     }
     
     // 打印当前模型
-    var properties = ["id", "name", "profile_image_url", "verified", "verified_type"]
+    var properties = ["id", "name", "avatar_large", "verified", "verified_type"]
     override var description: String {
         let dict = dictionaryWithValuesForKeys(properties)
      

@@ -19,6 +19,12 @@ class WDToMeTableViewController: UITableViewController {
     var header:MJRefreshNormalHeader{
         return (self.tableView.tableHeaderView as? MJRefreshNormalHeader)!
     }
+    /**
+     评论id
+     */
+    var id: Int?
+    /**  当前正在请求的参数  */
+    var params = NSMutableDictionary()
  
 
     override func viewDidLoad() {
@@ -86,6 +92,11 @@ class WDToMeTableViewController: UITableViewController {
         
         let tomeData = toMeData[indexPath.row]
         cell.toMe = tomeData
+        /// 给cell添加手势
+        cell.userInteractionEnabled = true
+         let tap = UITapGestureRecognizer(target: self, action: "cellClick")
+        cell.addGestureRecognizer(tap)
+      
         return cell
     }
   
@@ -93,3 +104,21 @@ class WDToMeTableViewController: UITableViewController {
     
 
 }
+
+extension WDToMeTableViewController: UIActionSheetDelegate
+{
+    
+    func cellClick()
+    {
+      
+        let sheet = UIActionSheet(title: "回复", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "回复")
+        sheet.showInView(self.view)
+    }
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 1
+        {
+            print("回复")
+        }
+    }
+}
+

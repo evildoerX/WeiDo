@@ -95,12 +95,19 @@
 		B2AE8A3A1C8D3C7100A6AB14 /* WDMention.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AE8A391C8D3C7100A6AB14 /* WDMention.swift */; };
 		B2AE8A3C1C8D3C7B00A6AB14 /* WDByMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AE8A3B1C8D3C7B00A6AB14 /* WDByMe.swift */; };
 		B2AE8A3E1C8D3C8400A6AB14 /* WDToMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AE8A3D1C8D3C8400A6AB14 /* WDToMe.swift */; };
-		B2AE8A401C8D9A8D00A6AB14 /* WDFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AE8A3F1C8D9A8D00A6AB14 /* WDFriendViewController.swift */; };
-		B2AE8A431C8D9BAD00A6AB14 /* WDMyFansTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AE8A421C8D9BAD00A6AB14 /* WDMyFansTableViewController.swift */; };
-		B2AE8A451C8D9C2600A6AB14 /* WDMyFollowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AE8A441C8D9C2600A6AB14 /* WDMyFollowTableViewController.swift */; };
 		B2AE8A4C1C8DAC9100A6AB14 /* WDLatestComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AE8A4B1C8DAC9100A6AB14 /* WDLatestComments.swift */; };
 		B2E408E71C97B5E20075340B /* WDPulblishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */; };
 		B2E408E81C97B5E20075340B /* WDPulblishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */; };
+		B2E408EB1C98042F0075340B /* WDQRCodeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E408EA1C98042F0075340B /* WDQRCodeCardViewController.swift */; };
+		B2E408ED1C992F910075340B /* WDtestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E408EC1C992F910075340B /* WDtestViewController.swift */; };
+		B2E408F01C993D7C0075340B /* WDNearbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E408EE1C993D7C0075340B /* WDNearbyViewController.swift */; };
+		B2E408F11C993D7C0075340B /* WDNearbyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E408EF1C993D7C0075340B /* WDNearbyViewController.xib */; };
+		B2E408F31C9944310075340B /* WDLoadNearByTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E408F21C9944310075340B /* WDLoadNearByTableViewController.swift */; };
+		B2E408F71C9946B00075340B /* WDNearByCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E408F51C9946B00075340B /* WDNearByCell.swift */; };
+		B2E408F81C9946B00075340B /* WDNearByCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E408F61C9946B00075340B /* WDNearByCell.xib */; };
+		B2E408FA1C9948780075340B /* WDNearby.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E408F91C9948780075340B /* WDNearby.swift */; };
+		B2E409011C9990220075340B /* rock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B2E408FF1C9990220075340B /* rock.mp3 */; };
+		B2E409021C9990220075340B /* rock_end.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B2E409001C9990220075340B /* rock_end.mp3 */; };
 		B2F105851C93B749009F4140 /* WDMySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F105841C93B749009F4140 /* WDMySettingViewController.swift */; };
 		B2FDE6E31C6EF5D2000E50F0 /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDE6DE1C6EF5D2000E50F0 /* EmoticonPackage.swift */; };
 		B2FDE6E41C6EF5D2000E50F0 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B2FDE6DF1C6EF5D2000E50F0 /* Emoticons.bundle */; };
@@ -249,12 +256,19 @@
 		B2AE8A391C8D3C7100A6AB14 /* WDMention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMention.swift; sourceTree = "<group>"; };
 		B2AE8A3B1C8D3C7B00A6AB14 /* WDByMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDByMe.swift; sourceTree = "<group>"; };
 		B2AE8A3D1C8D3C8400A6AB14 /* WDToMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDToMe.swift; sourceTree = "<group>"; };
-		B2AE8A3F1C8D9A8D00A6AB14 /* WDFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDFriendViewController.swift; sourceTree = "<group>"; };
-		B2AE8A421C8D9BAD00A6AB14 /* WDMyFansTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMyFansTableViewController.swift; sourceTree = "<group>"; };
-		B2AE8A441C8D9C2600A6AB14 /* WDMyFollowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMyFollowTableViewController.swift; sourceTree = "<group>"; };
 		B2AE8A4B1C8DAC9100A6AB14 /* WDLatestComments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDLatestComments.swift; sourceTree = "<group>"; };
 		B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDPulblishViewController.swift; sourceTree = "<group>"; };
 		B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDPulblishViewController.xib; sourceTree = "<group>"; };
+		B2E408EA1C98042F0075340B /* WDQRCodeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDQRCodeCardViewController.swift; sourceTree = "<group>"; };
+		B2E408EC1C992F910075340B /* WDtestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDtestViewController.swift; sourceTree = "<group>"; };
+		B2E408EE1C993D7C0075340B /* WDNearbyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDNearbyViewController.swift; sourceTree = "<group>"; };
+		B2E408EF1C993D7C0075340B /* WDNearbyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDNearbyViewController.xib; sourceTree = "<group>"; };
+		B2E408F21C9944310075340B /* WDLoadNearByTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDLoadNearByTableViewController.swift; sourceTree = "<group>"; };
+		B2E408F51C9946B00075340B /* WDNearByCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDNearByCell.swift; sourceTree = "<group>"; };
+		B2E408F61C9946B00075340B /* WDNearByCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDNearByCell.xib; sourceTree = "<group>"; };
+		B2E408F91C9948780075340B /* WDNearby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDNearby.swift; sourceTree = "<group>"; };
+		B2E408FF1C9990220075340B /* rock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rock.mp3; sourceTree = "<group>"; };
+		B2E409001C9990220075340B /* rock_end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rock_end.mp3; sourceTree = "<group>"; };
 		B2F105841C93B749009F4140 /* WDMySettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMySettingViewController.swift; sourceTree = "<group>"; };
 		B2FDE6DE1C6EF5D2000E50F0 /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
 		B2FDE6DF1C6EF5D2000E50F0 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
@@ -423,12 +437,11 @@
 		B23222BF1C6CC2C00081E912 /* Compose-发送界面 */ = {
 			isa = PBXGroup;
 			children = (
+				B2E408E91C97D3720075340B /* View */,
 				B2FDE6DD1C6EF5D2000E50F0 /* EmoticonView-表情 */,
 				B211517A1C6DB76A00FD2DB0 /* PhotoSelector-图片选择器 */,
 				B23222C01C6CC2E60081E912 /* WDComposeViewController.swift */,
 				B268D1D01C97012400071081 /* WDCommentComposeViewController.swift */,
-				B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */,
-				B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */,
 			);
 			name = "Compose-发送界面";
 			path = "Compose-发布微博";
@@ -439,6 +452,7 @@
 			children = (
 				B243476E1C62EE9C002426CE /* QRCode.storyboard */,
 				B24347711C62EFEC002426CE /* WDQRCodeViewController.swift */,
+				B2E408EA1C98042F0075340B /* WDQRCodeCardViewController.swift */,
 			);
 			name = "QRCode-二维码";
 			sourceTree = "<group>";
@@ -652,14 +666,13 @@
 		B2A7488B1C61C59400FC3478 /* Home-首页 */ = {
 			isa = PBXGroup;
 			children = (
-				B2AE8A411C8D9A9400A6AB14 /* Friend-好友管理 */,
 				B23222BA1C6C5A460081E912 /* PhotoBrowser-图片浏览器 */,
 				B23222B21C6C2A730081E912 /* RefreshControl-刷新控件 */,
+				B24347701C62EEA2002426CE /* QRCode-二维码 */,
+				B2A748AF1C622F4700FC3478 /* Popmenu-翻转菜单 */,
 				B275A8BA1C6B0DC100807CC0 /* View */,
 				B275A8B91C6B0DB200807CC0 /* Controller */,
 				B275A8B81C6B0DA700807CC0 /* Model */,
-				B24347701C62EEA2002426CE /* QRCode-二维码 */,
-				B2A748AF1C622F4700FC3478 /* Popmenu-翻转菜单 */,
 			);
 			path = "Home-首页";
 			sourceTree = "<group>";
@@ -689,6 +702,7 @@
 		B2A7488E1C61C59400FC3478 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				B2E408FE1C9990220075340B /* MP3 */,
 				B2E16D381C7AAD23009E6B33 /* Lib */,
 				B2FDE6E81C6F0596000E50F0 /* Swift-Bridge.h */,
 			);
@@ -698,6 +712,7 @@
 		B2A7488F1C61C59400FC3478 /* Mine-我 */ = {
 			isa = PBXGroup;
 			children = (
+				B2E408F41C99463A0075340B /* Shake-摇一摇 */,
 				B24E9CA91C89212F00A40408 /* Model */,
 				B24E9CA81C89212A00A40408 /* View */,
 				B24E9CA71C89212100A40408 /* Controller */,
@@ -739,6 +754,7 @@
 				B2A748B21C62418B00FC3478 /* WDPopmenuViewController.swift */,
 				B2A748B41C6241C100FC3478 /* WDPopmenuPresentationController.swift */,
 				B243476C1C62E528002426CE /* WDPopmenuanimation.swift */,
+				B2E408EC1C992F910075340B /* WDtestViewController.swift */,
 			);
 			name = "Popmenu-翻转菜单";
 			path = Popmenu;
@@ -763,24 +779,6 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		B2AE8A411C8D9A9400A6AB14 /* Friend-好友管理 */ = {
-			isa = PBXGroup;
-			children = (
-				B2AE8A4A1C8D9EB500A6AB14 /* View */,
-				B2AE8A3F1C8D9A8D00A6AB14 /* WDFriendViewController.swift */,
-				B2AE8A421C8D9BAD00A6AB14 /* WDMyFansTableViewController.swift */,
-				B2AE8A441C8D9C2600A6AB14 /* WDMyFollowTableViewController.swift */,
-			);
-			name = "Friend-好友管理";
-			sourceTree = "<group>";
-		};
-		B2AE8A4A1C8D9EB500A6AB14 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
 		B2E16D381C7AAD23009E6B33 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -788,6 +786,61 @@
 				B2FDE7071C701CE6000E50F0 /* fmdb */,
 			);
 			name = Lib;
+			sourceTree = "<group>";
+		};
+		B2E408E91C97D3720075340B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */,
+				B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		B2E408F41C99463A0075340B /* Shake-摇一摇 */ = {
+			isa = PBXGroup;
+			children = (
+				B2E408FD1C9987F70075340B /* Controller */,
+				B2E408FC1C9987F10075340B /* View */,
+				B2E408FB1C9987EC0075340B /* Model */,
+			);
+			name = "Shake-摇一摇";
+			sourceTree = "<group>";
+		};
+		B2E408FB1C9987EC0075340B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2E408F91C9948780075340B /* WDNearby.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B2E408FC1C9987F10075340B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B2E408F51C9946B00075340B /* WDNearByCell.swift */,
+				B2E408F61C9946B00075340B /* WDNearByCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		B2E408FD1C9987F70075340B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B2E408EF1C993D7C0075340B /* WDNearbyViewController.xib */,
+				B2E408EE1C993D7C0075340B /* WDNearbyViewController.swift */,
+				B2E408F21C9944310075340B /* WDLoadNearByTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		B2E408FE1C9990220075340B /* MP3 */ = {
+			isa = PBXGroup;
+			children = (
+				B2E408FF1C9990220075340B /* rock.mp3 */,
+				B2E409001C9990220075340B /* rock_end.mp3 */,
+			);
+			path = MP3;
 			sourceTree = "<group>";
 		};
 		B2FDE6DD1C6EF5D2000E50F0 /* EmoticonView-表情 */ = {
@@ -950,12 +1003,16 @@
 				B2A748B11C622F7000FC3478 /* Popmenu.storyboard in Resources */,
 				B2AE8A381C8D327400A6AB14 /* WDMessageCell.xib in Resources */,
 				B2A7489F1C61D78400FC3478 /* MainVCSettings.json in Resources */,
+				B2E408F11C993D7C0075340B /* WDNearbyViewController.xib in Resources */,
 				B24E9CA41C88715100A40408 /* WDVideoCell.xib in Resources */,
 				B23222B61C6C2AB40081E912 /* HomeRefreshView.xib in Resources */,
 				B25992711C8469F500402E99 /* WDPictureCell.xib in Resources */,
 				B243476F1C62EE9C002426CE /* QRCode.storyboard in Resources */,
+				B2E409011C9990220075340B /* rock.mp3 in Resources */,
 				B2E408E81C97B5E20075340B /* WDPulblishViewController.xib in Resources */,
 				B25AC5E41C8DCA0700225B61 /* WDCommentCell.xib in Resources */,
+				B2E408F81C9946B00075340B /* WDNearByCell.xib in Resources */,
+				B2E409021C9990220075340B /* rock_end.mp3 in Resources */,
 				B21FD9051C61BC9C00C89571 /* Assets.xcassets in Resources */,
 				B2FDE6E41C6EF5D2000E50F0 /* Emoticons.bundle in Resources */,
 				B25B88301C8340310010B55D /* WMWordToipCell.xib in Resources */,
@@ -1031,6 +1088,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E408F31C9944310075340B /* WDLoadNearByTableViewController.swift in Sources */,
 				B25B882B1C8334140010B55D /* WDTopic.swift in Sources */,
 				B27FD4DF1C6A2F7000A9DDA1 /* NSDate+Category.swift in Sources */,
 				B25B881A1C830B030010B55D /* YZDisplayTitleLabel.m in Sources */,
@@ -1049,6 +1107,7 @@
 				B2A748941C61C61A00FC3478 /* WDHomeTableViewController.swift in Sources */,
 				B25992701C8469F500402E99 /* WDPictureCell.swift in Sources */,
 				B25B88251C830B520010B55D /* WDVideoTableViewController.swift in Sources */,
+				B2E408F01C993D7C0075340B /* WDNearbyViewController.swift in Sources */,
 				B2FDE6E51C6EF5D2000E50F0 /* EmoticonTextAttachment.swift in Sources */,
 				B2FDE7181C701CE6000E50F0 /* FMDatabasePool.m in Sources */,
 				B2A748B51C6241C100FC3478 /* WDPopmenuPresentationController.swift in Sources */,
@@ -1058,10 +1117,10 @@
 				B273CB391C89A7F200F69F56 /* WDMyStatusCell.swift in Sources */,
 				B23222C11C6CC2E60081E912 /* WDComposeViewController.swift in Sources */,
 				B25B881E1C830B3C0010B55D /* WDDiscoverTableViewController.swift in Sources */,
+				B2E408FA1C9948780075340B /* WDNearby.swift in Sources */,
 				B2A748AA1C621F5800FC3478 /* UIBarButtonItem+Category.swift in Sources */,
 				B29777391C6601DA00CB2521 /* WDNewfeatureViewController.swift in Sources */,
 				B25A47951C92B98900D36A9D /* WDSportNewTableViewController.swift in Sources */,
-				B2AE8A431C8D9BAD00A6AB14 /* WDMyFansTableViewController.swift in Sources */,
 				B200B6191C8BC28A00674700 /* WDMentionMeTableViewController.swift in Sources */,
 				B275A8BC1C6B0E0300807CC0 /* WDForwardTableViewCell.swift in Sources */,
 				B211517E1C6DD45400FD2DB0 /* UIImage+Category.swift in Sources */,
@@ -1089,14 +1148,14 @@
 				B21151791C6D7D5100FD2DB0 /* UIBarButtionItem+Category.swift in Sources */,
 				B266E62E1C858D6900F7A92F /* WDCommentViewController.swift in Sources */,
 				B2AE8A3E1C8D3C8400A6AB14 /* WDToMe.swift in Sources */,
+				B2E408F71C9946B00075340B /* WDNearByCell.swift in Sources */,
 				B2AE8A3A1C8D3C7100A6AB14 /* WDMention.swift in Sources */,
 				B2A7489C1C61D76200FC3478 /* WDNULLViewController.swift in Sources */,
 				B29777361C65A44200CB2521 /* String+Category.swift in Sources */,
+				B2E408ED1C992F910075340B /* WDtestViewController.swift in Sources */,
 				B2A748AE1C6224E100FC3478 /* TitleButton.swift in Sources */,
-				B2AE8A451C8D9C2600A6AB14 /* WDMyFollowTableViewController.swift in Sources */,
 				B243476D1C62E528002426CE /* WDPopmenuanimation.swift in Sources */,
 				B2FDE7191C701CE6000E50F0 /* FMDatabaseQueue.m in Sources */,
-				B2AE8A401C8D9A8D00A6AB14 /* WDFriendViewController.swift in Sources */,
 				B2A748B31C62418B00FC3478 /* WDPopmenuViewController.swift in Sources */,
 				B2FDE71B1C701CE6000E50F0 /* FMDatabaseAdditionsVariadic.swift in Sources */,
 				B25B88271C830B520010B55D /* WDPictureTableViewController.swift in Sources */,
@@ -1106,6 +1165,7 @@
 				B27FD4DD1C6A0D3D00A9DDA1 /* UIButton+Category.swift in Sources */,
 				B29777301C65894200CB2521 /* NetworkTools.swift in Sources */,
 				B25AC66B1C90118300225B61 /* WDWebBrowserViewController.swift in Sources */,
+				B2E408EB1C98042F0075340B /* WDQRCodeCardViewController.swift in Sources */,
 				B21B56871C671F20005C2011 /* WDWelcomeViewController.swift in Sources */,
 				B27FD4D71C698D4100A9DDA1 /* User.swift in Sources */,
 				B2AE8A4C1C8DAC9100A6AB14 /* WDLatestComments.swift in Sources */,

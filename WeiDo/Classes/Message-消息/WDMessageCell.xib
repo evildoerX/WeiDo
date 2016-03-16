@@ -65,6 +65,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentLabel" destination="vcG-nQ-cRo" id="uIW-K0-S7z"/>
+                <outlet property="content_view" destination="H2p-sc-9uM" id="6pX-om-WFA"/>
                 <outlet property="create_time" destination="uZD-5F-Q6w" id="tRm-5x-ChN"/>
                 <outlet property="image_view" destination="F7o-L4-5AT" id="EfS-sJ-mm7"/>
                 <outlet property="nameLabel" destination="Do5-oH-7cd" id="4eV-uW-PJy"/>
