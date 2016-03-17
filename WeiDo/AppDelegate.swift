@@ -93,8 +93,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
         UINavigationBar.appearance().titleTextAttributes = navigationTitleAttribute as? [String: AnyObject]
         
-
+ 
     }
+    
+    
     
     
     /**

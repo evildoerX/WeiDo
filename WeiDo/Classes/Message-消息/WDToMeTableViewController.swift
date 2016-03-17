@@ -10,19 +10,15 @@ import UIKit
 import AFNetworking
 import MJRefresh
 
-let WDMessageCellReuseIdentifier = "WDMessageCell"
+
 class WDToMeTableViewController: UITableViewController {
     
     /// 数据源
-    var toMeData = [WDToMe]()
+    var toMeData = [WDMention]()
     /// header
     var header:MJRefreshNormalHeader{
         return (self.tableView.tableHeaderView as? MJRefreshNormalHeader)!
     }
-    /**
-     评论id
-     */
-    var id: Int?
     /**  当前正在请求的参数  */
     var params = NSMutableDictionary()
  
@@ -60,8 +56,7 @@ class WDToMeTableViewController: UITableViewController {
             let manager = AFHTTPSessionManager()
             manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
                 let commentsArray = JSON!["comments"] as! [[String:AnyObject]]
-                self.toMeData = WDToMe.LoadToMe(commentsArray)
-   
+              self.toMeData = WDMention.LoadMention(commentsArray)
                 self.tableView.reloadData()
                 self.header.endRefreshing()
                 
@@ -91,12 +86,8 @@ class WDToMeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(WDMessageCellReuseIdentifier, forIndexPath: indexPath) as! WDMessageCell
         
         let tomeData = toMeData[indexPath.row]
-        cell.toMe = tomeData
-        /// 给cell添加手势
-        cell.userInteractionEnabled = true
-         let tap = UITapGestureRecognizer(target: self, action: "cellClick")
-        cell.addGestureRecognizer(tap)
-      
+   
+        cell.Mention = tomeData
         return cell
     }
   
@@ -105,20 +96,5 @@ class WDToMeTableViewController: UITableViewController {
 
 }
 
-extension WDToMeTableViewController: UIActionSheetDelegate
-{
-    
-    func cellClick()
-    {
-      
-        let sheet = UIActionSheet(title: "回复", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "回复")
-        sheet.showInView(self.view)
-    }
-    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        if buttonIndex == 1
-        {
-            print("回复")
-        }
-    }
-}
+
 

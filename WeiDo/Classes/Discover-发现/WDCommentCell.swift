@@ -19,6 +19,7 @@ class WDCommentCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     
     @IBOutlet weak var likeCountLabel: UILabel!
+    
     var comment:WDLatestComments?
         {
         didSet{

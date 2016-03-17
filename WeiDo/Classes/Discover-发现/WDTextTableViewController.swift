@@ -9,7 +9,7 @@
 import UIKit
 import AFNetworking
 import MJRefresh
-import SwiftyJSON
+
 
 
 let TextCellReuseIdentifier = "WMWordToipCell"

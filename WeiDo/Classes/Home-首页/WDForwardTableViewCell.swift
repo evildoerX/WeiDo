@@ -57,8 +57,7 @@ class WDForwardTableViewCell: WDStatusTableViewCell {
         label.font = UIFont.systemFontOfSize(20)
         label.numberOfLines = 0
         label.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 20
-        
-        // 监听URL
+               // 监听URL
         label.urlLinkTapHandler =  {
             (label, string, range)
             in

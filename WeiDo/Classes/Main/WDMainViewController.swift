@@ -15,7 +15,7 @@ class WDMainViewController: UITabBarController {
 
         // 添加子控制器
         addChildViewControllers()
-        
+      
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -93,6 +93,9 @@ class WDMainViewController: UITabBarController {
         
     }
     
+    
+   
+
     /**
      初始化子控制器
      

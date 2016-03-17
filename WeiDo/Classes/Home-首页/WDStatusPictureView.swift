@@ -60,9 +60,9 @@ class WDStatusPictureView: UICollectionView {
             let key = status?.storedPicURLS!.first?.absoluteString
             let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(key!)
             
-            pictureLayout.itemSize = image.size
+            pictureLayout.itemSize = CGSizeMake(90, 90)
             // 3.2返回缓存图片的尺寸
-            return image.size
+            return CGSizeMake(90, 90)
 
         }
         // 4.如果有4张配图, 计算田字格的大小

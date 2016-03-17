@@ -93,13 +93,10 @@
 		B2AE8A371C8D327400A6AB14 /* WDMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AE8A351C8D327400A6AB14 /* WDMessageCell.swift */; };
 		B2AE8A381C8D327400A6AB14 /* WDMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2AE8A361C8D327400A6AB14 /* WDMessageCell.xib */; };
 		B2AE8A3A1C8D3C7100A6AB14 /* WDMention.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AE8A391C8D3C7100A6AB14 /* WDMention.swift */; };
-		B2AE8A3C1C8D3C7B00A6AB14 /* WDByMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AE8A3B1C8D3C7B00A6AB14 /* WDByMe.swift */; };
-		B2AE8A3E1C8D3C8400A6AB14 /* WDToMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AE8A3D1C8D3C8400A6AB14 /* WDToMe.swift */; };
 		B2AE8A4C1C8DAC9100A6AB14 /* WDLatestComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AE8A4B1C8DAC9100A6AB14 /* WDLatestComments.swift */; };
 		B2E408E71C97B5E20075340B /* WDPulblishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */; };
 		B2E408E81C97B5E20075340B /* WDPulblishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */; };
 		B2E408EB1C98042F0075340B /* WDQRCodeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E408EA1C98042F0075340B /* WDQRCodeCardViewController.swift */; };
-		B2E408ED1C992F910075340B /* WDtestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E408EC1C992F910075340B /* WDtestViewController.swift */; };
 		B2E408F01C993D7C0075340B /* WDNearbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E408EE1C993D7C0075340B /* WDNearbyViewController.swift */; };
 		B2E408F11C993D7C0075340B /* WDNearbyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E408EF1C993D7C0075340B /* WDNearbyViewController.xib */; };
 		B2E408F31C9944310075340B /* WDLoadNearByTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E408F21C9944310075340B /* WDLoadNearByTableViewController.swift */; };
@@ -254,13 +251,10 @@
 		B2AE8A351C8D327400A6AB14 /* WDMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMessageCell.swift; sourceTree = "<group>"; };
 		B2AE8A361C8D327400A6AB14 /* WDMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDMessageCell.xib; sourceTree = "<group>"; };
 		B2AE8A391C8D3C7100A6AB14 /* WDMention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMention.swift; sourceTree = "<group>"; };
-		B2AE8A3B1C8D3C7B00A6AB14 /* WDByMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDByMe.swift; sourceTree = "<group>"; };
-		B2AE8A3D1C8D3C8400A6AB14 /* WDToMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDToMe.swift; sourceTree = "<group>"; };
 		B2AE8A4B1C8DAC9100A6AB14 /* WDLatestComments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDLatestComments.swift; sourceTree = "<group>"; };
 		B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDPulblishViewController.swift; sourceTree = "<group>"; };
 		B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDPulblishViewController.xib; sourceTree = "<group>"; };
 		B2E408EA1C98042F0075340B /* WDQRCodeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDQRCodeCardViewController.swift; sourceTree = "<group>"; };
-		B2E408EC1C992F910075340B /* WDtestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDtestViewController.swift; sourceTree = "<group>"; };
 		B2E408EE1C993D7C0075340B /* WDNearbyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDNearbyViewController.swift; sourceTree = "<group>"; };
 		B2E408EF1C993D7C0075340B /* WDNearbyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDNearbyViewController.xib; sourceTree = "<group>"; };
 		B2E408F21C9944310075340B /* WDLoadNearByTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDLoadNearByTableViewController.swift; sourceTree = "<group>"; };
@@ -755,7 +749,6 @@
 				B2A748B21C62418B00FC3478 /* WDPopmenuViewController.swift */,
 				B2A748B41C6241C100FC3478 /* WDPopmenuPresentationController.swift */,
 				B243476C1C62E528002426CE /* WDPopmenuanimation.swift */,
-				B2E408EC1C992F910075340B /* WDtestViewController.swift */,
 			);
 			name = "Popmenu-翻转菜单";
 			path = Popmenu;
@@ -765,8 +758,6 @@
 			isa = PBXGroup;
 			children = (
 				B2AE8A391C8D3C7100A6AB14 /* WDMention.swift */,
-				B2AE8A3B1C8D3C7B00A6AB14 /* WDByMe.swift */,
-				B2AE8A3D1C8D3C8400A6AB14 /* WDToMe.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1150,19 +1141,16 @@
 				B29777321C6597A200CB2521 /* userAccount.swift in Sources */,
 				B2FDE6E71C6EF5D2000E50F0 /* UITextView+Category.swift in Sources */,
 				B2821DD11C92EEA700D9D060 /* WDAmusementNewsViewController.swift in Sources */,
-				B2AE8A3C1C8D3C7B00A6AB14 /* WDByMe.swift in Sources */,
 				B2FDE7161C701CE6000E50F0 /* FMDatabase.m in Sources */,
 				B2FDE71A1C701CE6000E50F0 /* FMResultSet.m in Sources */,
 				B200B61D1C8BC2A400674700 /* WDToMeTableViewController.swift in Sources */,
 				B2E408E71C97B5E20075340B /* WDPulblishViewController.swift in Sources */,
 				B21151791C6D7D5100FD2DB0 /* UIBarButtionItem+Category.swift in Sources */,
 				B266E62E1C858D6900F7A92F /* WDCommentViewController.swift in Sources */,
-				B2AE8A3E1C8D3C8400A6AB14 /* WDToMe.swift in Sources */,
 				B2E408F71C9946B00075340B /* WDNearByCell.swift in Sources */,
 				B2AE8A3A1C8D3C7100A6AB14 /* WDMention.swift in Sources */,
 				B2A7489C1C61D76200FC3478 /* WDNULLViewController.swift in Sources */,
 				B29777361C65A44200CB2521 /* String+Category.swift in Sources */,
-				B2E408ED1C992F910075340B /* WDtestViewController.swift in Sources */,
 				B2A748AE1C6224E100FC3478 /* TitleButton.swift in Sources */,
 				B243476D1C62E528002426CE /* WDPopmenuanimation.swift in Sources */,
 				B2FDE7191C701CE6000E50F0 /* FMDatabaseQueue.m in Sources */,

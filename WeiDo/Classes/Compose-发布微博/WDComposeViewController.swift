@@ -103,7 +103,15 @@ class WDComposeViewController: UIViewController {
         
         // 2.添加按钮
         var items = [UIBarButtonItem]()
-        let itemSettings = [["imageName": "compose_toolbar_picture", "action": "selectPicture"],["imageName": "compose_emoticonbutton_background", "action": "inputEmoticon"]]
+        let itemSettings = [["imageName": "compose_toolbar_picture", "action": "selectPicture"],
+            
+            ["imageName": "compose_mentionbutton_background"],
+            
+            ["imageName": "compose_trendbutton_background"],
+            
+            ["imageName": "compose_emoticonbutton_background", "action": "inputEmoticon"],
+            
+            ["imageName": "compose_addbutton_background"]]
         
          
         for dict in itemSettings

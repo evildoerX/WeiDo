@@ -12,7 +12,7 @@ import AFNetworking
 
 let WDHomeReuseIdentifier = "WDHomeReuseIdentifier"
 let WDCommentComposeWillOpen = "WDCommentComposeWillOpen"
-class WDHomeTableViewController: WDBaseTableViewController {
+class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDelegate {
 
     /// 保存微博数组
     var statuses: [Status]?
@@ -47,9 +47,34 @@ class WDHomeTableViewController: WDBaseTableViewController {
         //加载微博数据
         loadData()
     
-     
+        self.tabBarController?.delegate = self
+ 
+       
     }
-    
+  
+    /**
+     设置双击tabbar回到顶部
+     
+
+     */
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+        
+        let vc = self.tabBarController?.selectedViewController
+        
+        if viewController.isEqual(vc) == true {
+            
+         UIView.animateWithDuration(0.25, animations: { () -> Void in
+        self.tableView.contentOffset = CGPointMake(0, -55)
+
+      })
+            return false
+        }
+        else{
+            
+            return true
+        }
+        
+    }
     
     
     /**
@@ -62,7 +87,6 @@ class WDHomeTableViewController: WDBaseTableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: WDPopmenuanimationWilldismiss, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPhotoBrowser:", name: WDStatusPictureViewSelected, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ToCompose", name: WDComposeViewWillAppear, object: nil)
-      //  NSNotificationCenter.defaultCenter().addObserver(self, selector: "ToRetweet:", name: WDRetweetViewWillAppear, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "openBrowser:", name: WDOpenBrowser, object: nil)
         
         // 注册两个cell
@@ -400,5 +424,6 @@ extension WDHomeTableViewController
 
     }
 }
+
 
 

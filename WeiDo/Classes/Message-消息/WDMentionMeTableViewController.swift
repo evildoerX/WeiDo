@@ -11,6 +11,7 @@ import AFNetworking
 import MJRefresh
 import SVProgressHUD
 
+let WDMessageCellReuseIdentifier = "WDMessageCell"
 class WDMentionMeTableViewController: UITableViewController {
 
     //数据源
@@ -19,10 +20,14 @@ class WDMentionMeTableViewController: UITableViewController {
     var header:MJRefreshNormalHeader{
         return (self.tableView.tableHeaderView as? MJRefreshNormalHeader)!
     }
+    var sheet: UIActionSheet?
     /**
      评论id
      */
     var id: Int?
+    /// 微博id
+    var statusid: Int?
+
     /**  当前正在请求的参数  */
     var params = NSMutableDictionary()
 
@@ -38,6 +43,7 @@ class WDMentionMeTableViewController: UITableViewController {
         添加通知
         */
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "cellClick:", name: WDMessageReplyWillOpen, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "cellidClick:", name: WDMessageStatusReplyWillOpen, object: nil)
     }
     deinit
     {
@@ -69,10 +75,11 @@ class WDMentionMeTableViewController: UITableViewController {
         let params = ["access_token": userAccount.loadAccount()!.access_token!]
         let manager = AFHTTPSessionManager()
         manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-         
-            let mentionArray = JSON!["comments"] as! [[String:AnyObject]]
-            self.mention = WDMention.LoadMention(mentionArray)
+   
             
+            let mentionArray = JSON!["comments"] as! [[String:AnyObject]]
+
+            self.mention = WDMention.LoadMention(mentionArray)
             self.tableView.reloadData()
             self.header.endRefreshing()
             
@@ -100,10 +107,6 @@ class WDMentionMeTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(WDMessageCellReuseIdentifier, forIndexPath: indexPath) as! WDMessageCell
         let metionData = mention[indexPath.row]
         cell.Mention = metionData
-        /// 给cell添加手势
-        cell.userInteractionEnabled = true
-      let tap = UITapGestureRecognizer(target: self, action: "cellClick")
-        cell.addGestureRecognizer(tap)
         return cell
     }
     
@@ -122,20 +125,68 @@ extension WDMentionMeTableViewController: UIActionSheetDelegate
         {
             return
         }
+     
         self.id = id
+       
 
-        let sheet = UIActionSheet(title: "回复", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "回复")
-        sheet.showInView(self.view)
+        self.sheet = UIActionSheet(title: "回复", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "删除", otherButtonTitles: "回复")
+        self.sheet?.showInView(self.view)
+    }
+    
+    
+    /**
+     传值用
+     */
+    func cellidClick(notify: NSNotification)
+    {  guard let statusId = notify.userInfo![WDMessageStatusReplyWillOpen] as? Int  else
+    {
+        return
+        
+        }
+        
+         self.statusid = statusId
+    
     }
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        
+        //实现删除
+        if buttonIndex == 0
+        {
+            print("删除")
+            let path = "https://api.weibo.com/2/comments/destroy.json"
+            var params = [String:AnyObject]()
+            params["access_token"] = userAccount.loadAccount()!.access_token!
+            params["cid"] = id!
+            self.params.setDictionary(params)
+            let manager = AFHTTPSessionManager()
+            manager.POST(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
+                SVProgressHUD.showSuccessWithStatus("删除成功!", maskType: SVProgressHUDMaskType.Black)
+                self.tableView.reloadData()
+                
+                }, failure: { (_, error) -> Void in
+                    print(error)
+                    SVProgressHUD.showErrorWithStatus("删除失败,只能删除自己的评论哦", maskType: SVProgressHUDMaskType.Black)
+            })
+            
+       
+        }
+
+        //实现返回
         if buttonIndex == 1
         {
-           let btnState = 3
-            // (commentid: Int,statusId: Int,  state:Int)
-            let vc = WDCommentComposeViewController(commentid:id!, state:btnState)
-            let nav = UINavigationController(rootViewController: vc)
-            presentViewController(nav, animated: true, completion: nil)
+         self.sheet?.dismissWithClickedButtonIndex(1, animated: true)
+
         }
+        //实现回复
+        if buttonIndex == 2
+        {
+          
+        let btnState = 3
+        let vc = WDCommentComposeViewController(commentid:id!, state:btnState, statusid:self.statusid!)
+        let nav = UINavigationController(rootViewController: vc)
+         presentViewController(nav, animated: true, completion: nil)
+        }
+      
     }
 }

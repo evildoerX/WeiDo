@@ -18,10 +18,15 @@ class WDMention: NSObject {
     var screen_name: String
     
     var profile_image_url: String
-    /// 微博id
-//    var statusID:Int = 0
+    // 原微博id
+    var statusId: Int = 0
+    // 原微博正文
+    var statusText: String?
+  
     
     init(dictionary: [String: AnyObject]) {
+        
+       
         
         id = dictionary["id"] as! Int
         
@@ -36,6 +41,12 @@ class WDMention: NSObject {
         let user = dictionary["user"] as! NSDictionary
         screen_name = user.valueForKey("screen_name") as! String
         profile_image_url = user.valueForKey("avatar_large") as! String
+        
+        
+        let status = dictionary["status"] as! NSDictionary
+        statusId = (status.valueForKey("id") as? Int)!
+        statusText = status.valueForKey("text") as? String
+
         
        
         

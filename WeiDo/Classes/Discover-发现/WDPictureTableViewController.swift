@@ -9,7 +9,7 @@
 import UIKit
 import AFNetworking
 import MJRefresh
-import SwiftyJSON
+
 
 let pictureCellReuseIdentifier = "WDPictureCell"
 class WDPictureTableViewController: UITableViewController {

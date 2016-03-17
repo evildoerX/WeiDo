@@ -11,6 +11,7 @@ import SDWebImage
 
 let WDMessageCellSelected = "WDMessageCellSelected"
 let WDMessageReplyWillOpen = "WDMessageReplyWillOpen"
+let WDMessageStatusReplyWillOpen = "WDMessageStatusReplyWillOpen"
 
 class WDMessageCell: UITableViewCell {
     
@@ -28,24 +29,7 @@ class WDMessageCell: UITableViewCell {
     
     @IBOutlet weak var image_view: UIImageView!
     
-    /// 我收到的
-    var toMe: WDToMe?{
-        didSet{
 
-            
-            nameLabel.text = toMe!.screen_name
-            create_time.text = toMe!.created_at
-           //同时显示表情
-            contentLabel.attributedText = EmoticonPackage.emoticonString(toMe!.text ?? "")
-            
-            image_view.sd_setImageWithURL(NSURL(string: (toMe?.profile_image_url)!))
-            
-            
-            setTap("toMeClick")
-
-        }
-    
-    }
     
     /// 提到我的
     var Mention: WDMention?
@@ -67,23 +51,7 @@ class WDMessageCell: UITableViewCell {
         }
     }
     
-    /// 我发出的
-    var ByMe: WDByMe?
-         {
-        didSet{
-            nameLabel.text = ByMe?.screen_name
-            create_time.text = ByMe?.created_at
-            //显示表情
-            contentLabel.attributedText = EmoticonPackage.emoticonString(ByMe?.text ?? "")
-     
-            image_view.sd_setImageWithURL(NSURL(string: (ByMe?.profile_image_url)!))
-          
-            setTap("byMeClick")
-     
-        }
-  
-        
-    }
+ 
     
     /**
      设置圆角和手势
@@ -111,23 +79,18 @@ class WDMessageCell: UITableViewCell {
     
     
     
-    func byMeClick()
-    {
-        let info = [WDMessageCellSelected:ByMe!.id]
-        NSNotificationCenter.defaultCenter().postNotificationName(WDMessageCellSelected, object: self, userInfo: info)
-    
-    }
-    
-    func toMeClick()
-    {
-        let info = [WDMessageReplyWillOpen:toMe!.id]
-        NSNotificationCenter.defaultCenter().postNotificationName(WDMessageReplyWillOpen, object: self, userInfo: info)
-    }
+ 
+
     
     func mentionClick()
     {
         let info = [WDMessageReplyWillOpen:Mention!.id]
         NSNotificationCenter.defaultCenter().postNotificationName(WDMessageReplyWillOpen, object: self, userInfo: info)
+        
+        
+        let statusinfo = [WDMessageStatusReplyWillOpen:Mention!.statusId]
+    NSNotificationCenter.defaultCenter().postNotificationName(WDMessageStatusReplyWillOpen, object: self, userInfo: statusinfo)
+        
     }
     
     override func awakeFromNib() {
