@@ -29,6 +29,7 @@ class WDMessageCell: UITableViewCell {
     
     @IBOutlet weak var image_view: UIImageView!
     
+    @IBOutlet weak var statusContentLabel: UILabel!
 
     
     /// 提到我的
@@ -43,10 +44,17 @@ class WDMessageCell: UITableViewCell {
             contentLabel.attributedText = EmoticonPackage.emoticonString(Mention?.text ?? "")
        
             image_view.sd_setImageWithURL(NSURL(string: (Mention?.profile_image_url)!))
-      
-            
-
-            setTap("mentionClick")
+                setTap("mentionClick")
+            if Mention?.statusText == nil
+            {
+              statusContentLabel.hidden = true
+            }
+            else{
+            statusContentLabel.attributedText = EmoticonPackage.emoticonString(Mention?.statusText ?? "")
+            statusContentLabel.numberOfLines = 0
+            statusContentLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
+            }
+        
             
         }
     }

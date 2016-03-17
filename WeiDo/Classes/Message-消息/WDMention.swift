@@ -11,12 +11,13 @@ import UIKit
 class WDMention: NSObject {
     /// 评论id
     var id: Int = 0
+    //创建时间
     var created_at: String
-    
+    //评论正文
     var text: String
-    
+    //评论我的名字
     var screen_name: String
-    
+    //评论我的头像
     var profile_image_url: String
     // 原微博id
     var statusId: Int = 0

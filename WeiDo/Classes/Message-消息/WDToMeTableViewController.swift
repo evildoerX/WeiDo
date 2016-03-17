@@ -36,7 +36,7 @@ class WDToMeTableViewController: UITableViewController {
         tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         tableView.contentInset = UIEdgeInsetsMake(-55 , 0, 49, 0)
     tableView.registerNib(UINib(nibName: "WDMessageCell", bundle: nil), forCellReuseIdentifier: WDMessageCellReuseIdentifier)
-        tableView.rowHeight = 60
+        tableView.rowHeight = 150
    
     
     }
