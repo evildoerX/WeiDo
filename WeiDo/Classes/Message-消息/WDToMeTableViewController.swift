@@ -9,6 +9,7 @@
 import UIKit
 import AFNetworking
 import MJRefresh
+import SVProgressHUD
 
 
 class WDToMeTableViewController: UITableViewController {
@@ -62,6 +63,7 @@ class WDToMeTableViewController: UITableViewController {
                 
                 }) { (_, error) -> Void in
                     print(error)
+                       SVProgressHUD.showErrorWithStatus("好像出错啦，重新登录试试", maskType: SVProgressHUDMaskType.Black)
             }
             
         })

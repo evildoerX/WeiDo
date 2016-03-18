@@ -82,7 +82,7 @@ class WDVideoTableViewController: UITableViewController {
             let manager = AFHTTPSessionManager()
             manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
                 let videoarray = JSON!["list"] as! [[String:AnyObject]]
-                print(JSON!["list"])
+               
                 let infoarray = JSON!["info"] as! [String:AnyObject]
                 //获取maxtime属性
                 self.maxtime = infoarray["maxtime"] as! String

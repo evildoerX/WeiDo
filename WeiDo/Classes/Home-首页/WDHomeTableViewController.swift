@@ -12,8 +12,13 @@ import AFNetworking
 
 let WDHomeReuseIdentifier = "WDHomeReuseIdentifier"
 let WDCommentComposeWillOpen = "WDCommentComposeWillOpen"
+
+
+
 class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDelegate {
 
+    //新微博提示数字
+    var newStatusCount:String?
     /// 保存微博数组
     var statuses: [Status]?
         {
@@ -47,9 +52,30 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         //加载微博数据
         loadData()
     
-        self.tabBarController?.delegate = self
+        loadNewsCount()
  
+        
        
+    }
+    
+  
+    /**
+     获取未读微博数
+     */
+    func loadNewsCount()
+    {
+     
+        AFHTTPSessionManager().GET("https://rm.api.weibo.com/2/remind/unread_count.json", parameters: ["access_token":userAccount.loadAccount()!.access_token!,"uid":userAccount.loadAccount()!.uid!], progress: nil, success: { (_, JSON) -> Void in
+          
+       self.newStatusCount = String(JSON!["status"])
+            if self.newStatusCount != "0"
+            {
+       self.tabBarItem.badgeValue = self.newStatusCount
+            }
+            }) { (_, error) -> Void in
+                print(error)
+        }
+
     }
   
     /**
@@ -93,6 +119,8 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         tableView.registerClass(WDNormalTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.NormalCell.rawValue)
         tableView.registerClass(WDForwardTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.ForwardCell.rawValue)
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        
+          self.tabBarController?.delegate = self
     }
     
     
@@ -101,9 +129,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
      修改标题按钮的状态
      */
     func change(){
-//        // 修改标题按钮的状态
-//        let titleBtn = navigationItem.titleView as! TitleButton
-//        titleBtn.selected = !titleBtn.selected
+
     }
     
     /**
@@ -117,12 +143,8 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         }
         print(urls)
         let url = NSURL(string: urls)
-        let request = NSURLRequest(URL: url!)
-        
-        let vc = WDWebBrowserViewController(request:request)
-       let nav = UINavigationController(rootViewController: vc)
-        presentViewController(nav, animated: true, completion: nil)
-    
+        let vc = RxWebViewController(url: url)
+        self.navigationController?.pushViewController(vc, animated: true)
       
         
     }
@@ -224,6 +246,10 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
                 
                 // 显示刷新提醒
                 self.showNewStatusCount(models?.count ?? 0)
+                //隐藏提醒
+            
+                self.tabBarItem.badgeValue = nil
+                
             }else if max_id > 0
             {
                 // 如果是上拉加载更多, 就将获取到的数据, 拼接在原有数据的后面
@@ -234,6 +260,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
                 self.statuses = models
             }
         }
+     
     }
 
     /**
@@ -251,13 +278,12 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
                     self.newStatusLabel.transform = CGAffineTransformIdentity
                     }, completion: { (_) -> Void in
                         self.newStatusLabel.hidden = true
+                    
                 })
         }
-    }
+           }
     
-    
-  
-    
+
     
     /**
      设置主页左右nav的按钮

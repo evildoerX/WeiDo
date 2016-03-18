@@ -11,7 +11,7 @@ import MJRefresh
 import AFNetworking
 
 let WDCommentCellReuseIdentifier = "WDCommentCell"
-class WDCommentViewController: UITableViewController {
+class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegate {
     
  
     /**  header  */
@@ -54,10 +54,15 @@ class WDCommentViewController: UITableViewController {
         setupNavigation()
         setupTableview()
         setUpRefrshControl()
-     
+        sweptBack()
    
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
+        self.tabBarController?.tabBar.hidden = false
+    }
+
    
     
     /**
@@ -121,7 +126,7 @@ class WDCommentViewController: UITableViewController {
   {
    
     navigationItem.title = "评论"
-
+    self.tabBarController?.tabBar.hidden = true
 
 
     }
@@ -131,7 +136,28 @@ class WDCommentViewController: UITableViewController {
      dismissViewControllerAnimated(true, completion: nil)
     }
    
-    
+    /**
+     滑动返回
+     */
+    func sweptBack()
+    {
+        let target = navigationController?.interactivePopGestureRecognizer?.delegate
+        let pan = UIPanGestureRecognizer(target: target, action: "handleNavigationTransition:")
+        pan.delegate = self
+        self.view.addGestureRecognizer(pan)
+        navigationController?.interactivePopGestureRecognizer?.enabled = false
+        
+    }
+    /**
+     判断是否滑动返回
+     */
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if self.childViewControllers.count == 1
+        {
+            return false
+        }
+        return true
+    }
 
     // MARK: - Table view data source
 

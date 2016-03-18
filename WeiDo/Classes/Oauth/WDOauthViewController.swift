@@ -114,6 +114,7 @@ extension WDOauthViewController: UIWebViewDelegate
         // 2.封装参数
         let params = ["client_id":app_key, "client_secret":app_secret, "grant_type":"authorization_code", "code":code, "redirect_uri":redirect_uri]
         // 3.发送POST请求
+        
         NetworkTools.shareNetworkTools().POST(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
             // 1.字典转模型
             let account = userAccount(dict: JSON as! [String : AnyObject])
@@ -126,6 +127,7 @@ extension WDOauthViewController: UIWebViewDelegate
                     NSNotificationCenter.defaultCenter().postNotificationName(WDSwitchRootViewControllerKey, object: false)
                 //    让背景消失
                     self.presentViewController(UIViewController(), animated: true, completion: nil)
+                    
                     
                     return
                 }

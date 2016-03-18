@@ -63,6 +63,11 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
        
 
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
+        self.tabBarController?.tabBar.hidden = false
+    }
     /**
      滑动返回
      */
@@ -106,6 +111,7 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
     {
         navigationItem.title = "我的"
          navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: "back")
+        self.tabBarController?.tabBar.hidden = true
         
     }
     
@@ -136,6 +142,8 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
             
             }) { (_, error) -> Void in
                 print(error)
+                
+                
         }
         
         
@@ -156,7 +164,9 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
             self.tableview.reloadData()
 
             }) { (_, error) -> Void in
-                print(error)
+ 
+            self.setupVistorView()
+            
         }
 
     }

@@ -94,12 +94,8 @@ class WDSportNewTableViewController: UITableViewController {
         }
         print(urls)
         let url = NSURL(string: urls)
-        let request = NSURLRequest(URL: url!)
-        
-        let vc = WDWebBrowserViewController(request:request)
-        let nav = UINavigationController(rootViewController: vc)
-        presentViewController(nav, animated: true, completion: nil)
-        
+        let vc = RxWebViewController(url: url)
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     

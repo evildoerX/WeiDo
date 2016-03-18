@@ -46,6 +46,7 @@ class StatusDAO: NSObject {
             
             NetworkTools.shareNetworkTools().GET(path, parameters: params, success: { (_, JSON) -> Void in
                 let array = JSON!["statuses"] as! [[String : AnyObject]]
+              
                 // 4.将从网络获取的数据缓存起来
                 cacheStatuses(array)
                 
@@ -57,6 +58,7 @@ class StatusDAO: NSObject {
                 
                 }) { (_, error) -> Void in
                     print(error)
+                    SVProgressHUD.showErrorWithStatus("好像出错啦，重新登录试试", maskType: SVProgressHUDMaskType.Black)
                     finished(nil, error: error)
                    
                     

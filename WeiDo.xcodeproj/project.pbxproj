@@ -35,6 +35,8 @@
 		B24E9CA31C88715100A40408 /* WDVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E9CA11C88715100A40408 /* WDVideoCell.swift */; };
 		B24E9CA41C88715100A40408 /* WDVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24E9CA21C88715100A40408 /* WDVideoCell.xib */; };
 		B24E9CAC1C89214F00A40408 /* WDMineStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24E9CAB1C89214F00A40408 /* WDMineStatus.swift */; };
+		B25043C51C9AA55800BA639B /* WDWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25043C31C9AA55800BA639B /* WDWeatherViewController.swift */; };
+		B25043C61C9AA55800BA639B /* WDWeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B25043C41C9AA55800BA639B /* WDWeatherViewController.xib */; };
 		B25992701C8469F500402E99 /* WDPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B259926E1C8469F500402E99 /* WDPictureCell.swift */; };
 		B25992711C8469F500402E99 /* WDPictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B259926F1C8469F500402E99 /* WDPictureCell.xib */; };
 		B25A47951C92B98900D36A9D /* WDSportNewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25A47941C92B98900D36A9D /* WDSportNewTableViewController.swift */; };
@@ -105,6 +107,13 @@
 		B2E408FA1C9948780075340B /* WDNearby.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E408F91C9948780075340B /* WDNearby.swift */; };
 		B2E409011C9990220075340B /* rock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B2E408FF1C9990220075340B /* rock.mp3 */; };
 		B2E409021C9990220075340B /* rock_end.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B2E409001C9990220075340B /* rock_end.mp3 */; };
+		B2E9A4AC1C9BABF0001B161D /* backItemImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2E9A4A11C9BABF0001B161D /* backItemImage@2x.png */; };
+		B2E9A4AD1C9BABF0001B161D /* backItemImage_hl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2E9A4A21C9BABF0001B161D /* backItemImage_hl@2x.png */; };
+		B2E9A4AE1C9BABF0001B161D /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9A4A51C9BABF0001B161D /* NJKWebViewProgress.m */; };
+		B2E9A4AF1C9BABF0001B161D /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9A4A71C9BABF0001B161D /* NJKWebViewProgressView.m */; };
+		B2E9A4B01C9BABF0001B161D /* RxWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9A4A91C9BABF0001B161D /* RxWebViewController.m */; };
+		B2E9A4B11C9BABF0001B161D /* RxWebViewNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9A4AB1C9BABF0001B161D /* RxWebViewNavigationViewController.m */; };
+		B2E9A4B51C9BFE54001B161D /* WDLocalNotificationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E9A4B41C9BFE54001B161D /* WDLocalNotificationUtils.swift */; };
 		B2F105851C93B749009F4140 /* WDMySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F105841C93B749009F4140 /* WDMySettingViewController.swift */; };
 		B2FDE6E31C6EF5D2000E50F0 /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDE6DE1C6EF5D2000E50F0 /* EmoticonPackage.swift */; };
 		B2FDE6E41C6EF5D2000E50F0 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B2FDE6DF1C6EF5D2000E50F0 /* Emoticons.bundle */; };
@@ -189,6 +198,8 @@
 		B24E9CA11C88715100A40408 /* WDVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDVideoCell.swift; sourceTree = "<group>"; };
 		B24E9CA21C88715100A40408 /* WDVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDVideoCell.xib; sourceTree = "<group>"; };
 		B24E9CAB1C89214F00A40408 /* WDMineStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMineStatus.swift; sourceTree = "<group>"; };
+		B25043C31C9AA55800BA639B /* WDWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDWeatherViewController.swift; sourceTree = "<group>"; };
+		B25043C41C9AA55800BA639B /* WDWeatherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDWeatherViewController.xib; sourceTree = "<group>"; };
 		B259926E1C8469F500402E99 /* WDPictureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDPictureCell.swift; sourceTree = "<group>"; };
 		B259926F1C8469F500402E99 /* WDPictureCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDPictureCell.xib; sourceTree = "<group>"; };
 		B25A47941C92B98900D36A9D /* WDSportNewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDSportNewTableViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +274,17 @@
 		B2E408F91C9948780075340B /* WDNearby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDNearby.swift; sourceTree = "<group>"; };
 		B2E408FF1C9990220075340B /* rock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rock.mp3; sourceTree = "<group>"; };
 		B2E409001C9990220075340B /* rock_end.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rock_end.mp3; sourceTree = "<group>"; };
+		B2E9A4A11C9BABF0001B161D /* backItemImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backItemImage@2x.png"; sourceTree = "<group>"; };
+		B2E9A4A21C9BABF0001B161D /* backItemImage_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backItemImage_hl@2x.png"; sourceTree = "<group>"; };
+		B2E9A4A41C9BABF0001B161D /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		B2E9A4A51C9BABF0001B161D /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
+		B2E9A4A61C9BABF0001B161D /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		B2E9A4A71C9BABF0001B161D /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		B2E9A4A81C9BABF0001B161D /* RxWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWebViewController.h; sourceTree = "<group>"; };
+		B2E9A4A91C9BABF0001B161D /* RxWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewController.m; sourceTree = "<group>"; };
+		B2E9A4AA1C9BABF0001B161D /* RxWebViewNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWebViewNavigationViewController.h; sourceTree = "<group>"; };
+		B2E9A4AB1C9BABF0001B161D /* RxWebViewNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewNavigationViewController.m; sourceTree = "<group>"; };
+		B2E9A4B41C9BFE54001B161D /* WDLocalNotificationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDLocalNotificationUtils.swift; sourceTree = "<group>"; };
 		B2F105841C93B749009F4140 /* WDMySettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMySettingViewController.swift; sourceTree = "<group>"; };
 		B2FDE6DE1C6EF5D2000E50F0 /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
 		B2FDE6DF1C6EF5D2000E50F0 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
@@ -477,6 +499,23 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		B25043C01C9AA48300BA639B /* WeiWeather-微天气 */ = {
+			isa = PBXGroup;
+			children = (
+				B25043CB1C9AA62F00BA639B /* Controller */,
+			);
+			name = "WeiWeather-微天气";
+			sourceTree = "<group>";
+		};
+		B25043CB1C9AA62F00BA639B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B25043C31C9AA55800BA639B /* WDWeatherViewController.swift */,
+				B25043C41C9AA55800BA639B /* WDWeatherViewController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		B259926A1C8462F800402E99 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -646,10 +685,10 @@
 		B2A7488A1C61C59400FC3478 /* Discover-广场 */ = {
 			isa = PBXGroup;
 			children = (
+				B25B881D1C830B3C0010B55D /* WDDiscoverTableViewController.swift */,
 				B259926A1C8462F800402E99 /* Controller */,
 				B25B882C1C8340210010B55D /* View */,
 				B25B88291C8333FA0010B55D /* Model */,
-				B25B881D1C830B3C0010B55D /* WDDiscoverTableViewController.swift */,
 			);
 			name = "Discover-广场";
 			path = "Discover-发现";
@@ -706,6 +745,7 @@
 		B2A7488F1C61C59400FC3478 /* Mine-我 */ = {
 			isa = PBXGroup;
 			children = (
+				B25043C01C9AA48300BA639B /* WeiWeather-微天气 */,
 				B2E408F41C99463A0075340B /* Shake-摇一摇 */,
 				B24E9CA91C89212F00A40408 /* Model */,
 				B24E9CA81C89212A00A40408 /* View */,
@@ -738,6 +778,7 @@
 			children = (
 				B2A7489E1C61D78400FC3478 /* MainVCSettings.json */,
 				B2A7489B1C61D76200FC3478 /* WDNULLViewController.swift */,
+				B2E9A4B41C9BFE54001B161D /* WDLocalNotificationUtils.swift */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -774,6 +815,7 @@
 		B2E16D381C7AAD23009E6B33 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				B2E9A4A01C9BABF0001B161D /* RxWebViewController */,
 				B25B880F1C830B030010B55D /* YZDisplayViewController */,
 				B2FDE7071C701CE6000E50F0 /* fmdb */,
 			);
@@ -783,8 +825,6 @@
 		B2E408E91C97D3720075340B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */,
-				B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -838,10 +878,37 @@
 		B2E409031C99B5740075340B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */,
+				B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */,
 				B23222C01C6CC2E60081E912 /* WDComposeViewController.swift */,
 				B268D1D01C97012400071081 /* WDCommentComposeViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		B2E9A4A01C9BABF0001B161D /* RxWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B2E9A4A11C9BABF0001B161D /* backItemImage@2x.png */,
+				B2E9A4A21C9BABF0001B161D /* backItemImage_hl@2x.png */,
+				B2E9A4A31C9BABF0001B161D /* NJKWebViewProgress */,
+				B2E9A4A81C9BABF0001B161D /* RxWebViewController.h */,
+				B2E9A4A91C9BABF0001B161D /* RxWebViewController.m */,
+				B2E9A4AA1C9BABF0001B161D /* RxWebViewNavigationViewController.h */,
+				B2E9A4AB1C9BABF0001B161D /* RxWebViewNavigationViewController.m */,
+			);
+			path = RxWebViewController;
+			sourceTree = "<group>";
+		};
+		B2E9A4A31C9BABF0001B161D /* NJKWebViewProgress */ = {
+			isa = PBXGroup;
+			children = (
+				B2E9A4A41C9BABF0001B161D /* NJKWebViewProgress.h */,
+				B2E9A4A51C9BABF0001B161D /* NJKWebViewProgress.m */,
+				B2E9A4A61C9BABF0001B161D /* NJKWebViewProgressView.h */,
+				B2E9A4A71C9BABF0001B161D /* NJKWebViewProgressView.m */,
+			);
+			path = NJKWebViewProgress;
 			sourceTree = "<group>";
 		};
 		B2FDE6DD1C6EF5D2000E50F0 /* EmoticonView-表情 */ = {
@@ -1000,11 +1067,14 @@
 			files = (
 				B273CB3A1C89A7F200F69F56 /* WDMyStatusCell.xib in Resources */,
 				B25BD7791C94099300C8B100 /* WDMineDataViewController.xib in Resources */,
+				B25043C61C9AA55800BA639B /* WDWeatherViewController.xib in Resources */,
 				B25A479A1C92B9C800D36A9D /* WDNewsCell.xib in Resources */,
+				B2E9A4AC1C9BABF0001B161D /* backItemImage@2x.png in Resources */,
 				B2A748B11C622F7000FC3478 /* Popmenu.storyboard in Resources */,
 				B2AE8A381C8D327400A6AB14 /* WDMessageCell.xib in Resources */,
 				B2A7489F1C61D78400FC3478 /* MainVCSettings.json in Resources */,
 				B2E408F11C993D7C0075340B /* WDNearbyViewController.xib in Resources */,
+				B2E9A4AD1C9BABF0001B161D /* backItemImage_hl@2x.png in Resources */,
 				B24E9CA41C88715100A40408 /* WDVideoCell.xib in Resources */,
 				B23222B61C6C2AB40081E912 /* HomeRefreshView.xib in Resources */,
 				B25992711C8469F500402E99 /* WDPictureCell.xib in Resources */,
@@ -1105,6 +1175,7 @@
 				B2FDE71C1C701CE6000E50F0 /* FMDatabaseVariadic.swift in Sources */,
 				B200B61B1C8BC29500674700 /* WDByMeTableViewController.swift in Sources */,
 				B2A748921C61C5C600FC3478 /* WDMainViewController.swift in Sources */,
+				B2E9A4B11C9BABF0001B161D /* RxWebViewNavigationViewController.m in Sources */,
 				B2A748941C61C61A00FC3478 /* WDHomeTableViewController.swift in Sources */,
 				B25992701C8469F500402E99 /* WDPictureCell.swift in Sources */,
 				B25B88251C830B520010B55D /* WDVideoTableViewController.swift in Sources */,
@@ -1123,11 +1194,13 @@
 				B29777391C6601DA00CB2521 /* WDNewfeatureViewController.swift in Sources */,
 				B25A47951C92B98900D36A9D /* WDSportNewTableViewController.swift in Sources */,
 				B200B6191C8BC28A00674700 /* WDMentionMeTableViewController.swift in Sources */,
+				B2E9A4AF1C9BABF0001B161D /* NJKWebViewProgressView.m in Sources */,
 				B275A8BC1C6B0E0300807CC0 /* WDForwardTableViewCell.swift in Sources */,
 				B211517E1C6DD45400FD2DB0 /* UIImage+Category.swift in Sources */,
 				B2FDE6E61C6EF5D2000E50F0 /* EmoticonViewController.swift in Sources */,
 				B24E9CAC1C89214F00A40408 /* WDMineStatus.swift in Sources */,
 				B20315951C6B014E0091A270 /* WDStatusPictureView.swift in Sources */,
+				B2E9A4AE1C9BABF0001B161D /* NJKWebViewProgress.m in Sources */,
 				B25B88191C830B030010B55D /* UIView+Frame.m in Sources */,
 				B25BD7781C94099300C8B100 /* WDMineDataViewController.swift in Sources */,
 				B2A748A71C61ECF800FC3478 /* UIView+AutoLayout.swift in Sources */,
@@ -1135,12 +1208,14 @@
 				B2FDE7171C701CE6000E50F0 /* FMDatabaseAdditions.m in Sources */,
 				B25B88281C830B520010B55D /* WDTextTableViewController.swift in Sources */,
 				B203158F1C6B00FB0091A270 /* WDStatusTableViewCell.swift in Sources */,
+				B2E9A4B51C9BFE54001B161D /* WDLocalNotificationUtils.swift in Sources */,
 				B25B881C1C830B030010B55D /* YZFlowLayout.m in Sources */,
 				B25B882F1C8340310010B55D /* WMWordToipCell.swift in Sources */,
 				B23222B41C6C2A9B0081E912 /* HomeRefreshControl.swift in Sources */,
 				B29777321C6597A200CB2521 /* userAccount.swift in Sources */,
 				B2FDE6E71C6EF5D2000E50F0 /* UITextView+Category.swift in Sources */,
 				B2821DD11C92EEA700D9D060 /* WDAmusementNewsViewController.swift in Sources */,
+				B25043C51C9AA55800BA639B /* WDWeatherViewController.swift in Sources */,
 				B2FDE7161C701CE6000E50F0 /* FMDatabase.m in Sources */,
 				B2FDE71A1C701CE6000E50F0 /* FMResultSet.m in Sources */,
 				B200B61D1C8BC2A400674700 /* WDToMeTableViewController.swift in Sources */,
@@ -1158,6 +1233,7 @@
 				B2FDE71B1C701CE6000E50F0 /* FMDatabaseAdditionsVariadic.swift in Sources */,
 				B25B88271C830B520010B55D /* WDPictureTableViewController.swift in Sources */,
 				B27FD4D51C682FE600A9DDA1 /* Status.swift in Sources */,
+				B2E9A4B01C9BABF0001B161D /* RxWebViewController.m in Sources */,
 				B27FD4DB1C6A0D1100A9DDA1 /* UILabel+Category.swift in Sources */,
 				B2FDE7061C6F20F5000E50F0 /* StatusDAO.swift in Sources */,
 				B27FD4DD1C6A0D3D00A9DDA1 /* UIButton+Category.swift in Sources */,

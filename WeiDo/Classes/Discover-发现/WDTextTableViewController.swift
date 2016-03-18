@@ -80,7 +80,7 @@ class WDTextTableViewController: UITableViewController {
             let infoarray = JSON!["info"] as! [String:AnyObject]
           
          
-
+            print(textarray)
             //获取maxtime属性
             self.maxtime = infoarray["maxtime"] as! String
             //字典转模型

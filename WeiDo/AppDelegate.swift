@@ -17,8 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //创建视图
     var window: UIWindow?
     
-    
-   
+
      let bgColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
     
     
@@ -37,6 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 打开数据库
         SQLiteManager.shareManager().openDB("status.sqlite")
+        //注册一个推送
+        
+        let uns = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(uns)
         // 注册一个通知
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchRootViewController:", name: WDSwitchRootViewControllerKey, object: nil)
@@ -76,6 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+
     
     func setupUI()
     {

@@ -29,7 +29,9 @@ class WDMessageController: YZDisplayViewController {
         }
         navigationItem.title = "消息"
         
-
+        
+        
+    
  
     }
 

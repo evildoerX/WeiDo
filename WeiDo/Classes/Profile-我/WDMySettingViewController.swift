@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import AFNetworking
 
 class WDMySettingViewController: UITableViewController {
 
@@ -19,6 +20,8 @@ class WDMySettingViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
         
         navigationItem.title = "我的"
 
@@ -85,7 +88,7 @@ class WDMySettingViewController: UITableViewController {
             return cell
         }else if indexPath.section == 1
         {
-            let array = ["公开微博","附近的人","我的收藏"]
+            let array = ["公开微博","附近的人","微天气"]
             
             cell.textLabel?.text = array[indexPath.row]
             return cell
@@ -98,7 +101,7 @@ class WDMySettingViewController: UITableViewController {
         }
         else{
         
-            let array = ["通用设置","分享WeiDo","给WeiDo评分"]
+            let array = ["通用设置","分享WeiDo","退出登录"]
             cell.textLabel?.text = array[indexPath.row]
             return cell
         }
@@ -135,11 +138,13 @@ class WDMySettingViewController: UITableViewController {
             case 0:
             self.navigationController?.pushViewController(WDMineDataViewController(), animated: true)
             case 1:
-              
+             
                 self.navigationController?.pushViewController(WDNearbyViewController(), animated: true)
+                
+                
             case 2:
                
-                SVProgressHUD.showInfoWithStatus("你还没有收藏哦")
+               self.navigationController?.pushViewController(WDWeatherViewController(), animated: true)
             default:
                 print("见鬼了")
             }
@@ -176,7 +181,8 @@ class WDMySettingViewController: UITableViewController {
             case 1:
                print("分享")
             case 2:
-                print("评分")
+                let sheet = UIActionSheet(title: "确定要退出登录吗？", delegate: self, cancelButtonTitle: "返回", destructiveButtonTitle: "确定")
+                sheet.showInView(self.view)
             default:
                 print("见鬼了")
             }
@@ -187,4 +193,36 @@ class WDMySettingViewController: UITableViewController {
         
     }
     
+}
+
+extension WDMySettingViewController: UIActionSheetDelegate
+{
+
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        //实现删除
+        if buttonIndex == 0
+        {
+            let path = "https://api.weibo.com/oauth2/revokeoauth2"
+            let params = ["access_token":userAccount.loadAccount()!.access_token!]
+            AFHTTPSessionManager().GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
+                
+                SVProgressHUD.showSuccessWithStatus("退出成功", maskType: SVProgressHUDMaskType.Black)
+                self.view.layoutIfNeeded()
+                
+                }, failure: { (_, error) -> Void in
+                    print(error)
+                    SVProgressHUD.showErrorWithStatus("退出失败", maskType: SVProgressHUDMaskType.Black)
+            })
+            
+        }
+        
+        //实现返回
+        if buttonIndex == 1
+        {
+       
+       
+        }
+     
+
+    }
 }
