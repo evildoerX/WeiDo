@@ -88,20 +88,20 @@ class WDMySettingViewController: UITableViewController {
             return cell
         }else if indexPath.section == 1
         {
-            let array = ["我的位置","附近的人","微天气"]
+            let array = ["我的位置","附近的人","附近照片"]
             
             cell.textLabel?.text = array[indexPath.row]
             return cell
         }
         
         else if indexPath.section == 2 {
-          let array = ["意见反馈","清除缓存"]
+          let array = ["微天气","清除缓存"]
             cell.textLabel?.text = array[indexPath.row]
             return cell
         }
         else{
         
-            let array = ["通用设置","分享WeiDo","退出登录"]
+            let array = ["意见反馈","分享WeiDo","退出登录"]
             cell.textLabel?.text = array[indexPath.row]
             return cell
         }
@@ -147,7 +147,8 @@ class WDMySettingViewController: UITableViewController {
                 
             case 2:
                
-               self.navigationController?.pushViewController(WDWeatherViewController(), animated: true)
+               //附近照片
+      self.navigationController?.pushViewController(WDTravelTableViewController(), animated: true)
             default:
                 print("见鬼了")
             }
@@ -159,8 +160,8 @@ class WDMySettingViewController: UITableViewController {
             switch index
             {
             case 0:
-                UIApplication.sharedApplication().openURL(NSURL(string :"sms://18205254911")!)
-              print("000")
+            //打开天气
+            self.navigationController?.pushViewController(WDWeatherViewController(), animated: true)
             case 1:
                 StatusDAO.cleanCahcheStatuses()
                 SVProgressHUD.showSuccessWithStatus("清除成功！")
@@ -180,9 +181,11 @@ class WDMySettingViewController: UITableViewController {
             switch index
             {
             case 0:
-                print("通用设置")
+                //发短信
+                UIApplication.sharedApplication().openURL(NSURL(string :"sms://18205254911")!)
             case 1:
                print("分享")
+     
             case 2:
                 let sheet = UIActionSheet(title: "确定要退出登录吗？", delegate: self, cancelButtonTitle: "返回", destructiveButtonTitle: "确定")
                 sheet.showInView(self.view)

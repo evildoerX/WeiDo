@@ -15,7 +15,7 @@ let requestPath = "http://api.budejie.com/api/api_open.php"
 let videoCellReuseIdentifier = "WDVideoCell"
 class WDVideoTableViewController: UITableViewController {
 
-    var videoUrl:WDTopic?
+   
     /// 数据源
     var video =  [WDTopic]()
     /// header
@@ -163,7 +163,6 @@ class WDVideoTableViewController: UITableViewController {
     
     // MARK - tableview delegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.video.count
     }
     

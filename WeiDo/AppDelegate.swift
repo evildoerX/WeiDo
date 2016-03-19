@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 注册一个通知
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchRootViewController:", name: WDSwitchRootViewControllerKey, object: nil)
-        
+       
         // 设置导航条和工具条的外观
 
         setupUI()

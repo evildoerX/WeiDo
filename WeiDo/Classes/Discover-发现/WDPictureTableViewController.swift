@@ -63,7 +63,7 @@ class WDPictureTableViewController: UITableViewController {
         */
         tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
             self.footer.endRefreshing()
-            let path = "http://api.budejie.com/api/api_open.php"
+            let path = requestPath
             let params = ["a": "list", "c": "data", "type" : "10"]
             let manager = AFHTTPSessionManager()
             manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in

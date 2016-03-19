@@ -20,6 +20,7 @@ class PhotoBrowserCell: UICollectionViewCell {
     
     
     weak var photoBrowserCellDelegate: PhotoBrowserCellDelegate?
+    
     var imageURL: NSURL?
         {
         didSet{
