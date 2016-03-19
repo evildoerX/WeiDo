@@ -54,7 +54,7 @@ class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegat
         setupNavigation()
         setupTableview()
         setUpRefrshControl()
-        sweptBack()
+       
    
     }
     
@@ -136,29 +136,7 @@ class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegat
      dismissViewControllerAnimated(true, completion: nil)
     }
    
-    /**
-     滑动返回
-     */
-    func sweptBack()
-    {
-        let target = navigationController?.interactivePopGestureRecognizer?.delegate
-        let pan = UIPanGestureRecognizer(target: target, action: "handleNavigationTransition:")
-        pan.delegate = self
-        self.view.addGestureRecognizer(pan)
-        navigationController?.interactivePopGestureRecognizer?.enabled = false
-        
-    }
-    /**
-     判断是否滑动返回
-     */
-    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if self.childViewControllers.count == 1
-        {
-            return false
-        }
-        return true
-    }
-
+  
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

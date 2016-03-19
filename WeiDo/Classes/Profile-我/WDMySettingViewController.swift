@@ -88,7 +88,7 @@ class WDMySettingViewController: UITableViewController {
             return cell
         }else if indexPath.section == 1
         {
-            let array = ["公开微博","附近的人","微天气"]
+            let array = ["我的位置","附近的人","微天气"]
             
             cell.textLabel?.text = array[indexPath.row]
             return cell

@@ -595,6 +595,13 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		B263C74E1C9D2FED00B7D601 /* Map-我的位置 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Map-我的位置";
+			sourceTree = "<group>";
+		};
 		B275A8B81C6B0DA700807CC0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -745,6 +752,7 @@
 		B2A7488F1C61C59400FC3478 /* Mine-我 */ = {
 			isa = PBXGroup;
 			children = (
+				B263C74E1C9D2FED00B7D601 /* Map-我的位置 */,
 				B25043C01C9AA48300BA639B /* WeiWeather-微天气 */,
 				B2E408F41C99463A0075340B /* Shake-摇一摇 */,
 				B24E9CA91C89212F00A40408 /* Model */,
