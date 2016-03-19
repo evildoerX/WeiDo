@@ -61,6 +61,20 @@
 		B25B88301C8340310010B55D /* WMWordToipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B25B882E1C8340310010B55D /* WMWordToipCell.xib */; };
 		B25BD7781C94099300C8B100 /* WDMineDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25BD7761C94099300C8B100 /* WDMineDataViewController.swift */; };
 		B25BD7791C94099300C8B100 /* WDMineDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B25BD7771C94099300C8B100 /* WDMineDataViewController.xib */; };
+		B263C7561C9D316800B7D601 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B263C7551C9D316800B7D601 /* UIKit.framework */; };
+		B263C7581C9D317B00B7D601 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B263C7571C9D317B00B7D601 /* Foundation.framework */; };
+		B263C75A1C9D318500B7D601 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B263C7591C9D318500B7D601 /* CoreGraphics.framework */; };
+		B263C75C1C9D318F00B7D601 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B263C75B1C9D318F00B7D601 /* QuartzCore.framework */; };
+		B263C75E1C9D319D00B7D601 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B263C75D1C9D319D00B7D601 /* OpenGLES.framework */; };
+		B263C7601C9D31A600B7D601 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B263C75F1C9D31A600B7D601 /* CoreLocation.framework */; };
+		B263C7621C9D31AE00B7D601 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B263C7611C9D31AE00B7D601 /* CoreTelephony.framework */; };
+		B263C7641C9D31B900B7D601 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B263C7631C9D31B900B7D601 /* SystemConfiguration.framework */; };
+		B263C7661C9D320100B7D601 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B263C7651C9D320100B7D601 /* Security.framework */; };
+		B263C76F1C9D34C000B7D601 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B263C76E1C9D34C000B7D601 /* AMap.bundle */; };
+		B263C7791C9D364E00B7D601 /* WDMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263C7781C9D364E00B7D601 /* WDMapViewController.swift */; };
+		B263C7801C9D3A9E00B7D601 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B263C7671C9D323C00B7D601 /* libstdc++.6.0.9.tbd */; };
+		B263C7821C9D3B6D00B7D601 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B263C7811C9D3B6D00B7D601 /* libc++.tbd */; };
+		B263C7831C9D3BA300B7D601 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B263C7691C9D324900B7D601 /* libz.tbd */; };
 		B266E62E1C858D6900F7A92F /* WDCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B266E62D1C858D6900F7A92F /* WDCommentViewController.swift */; };
 		B268D1D11C97012400071081 /* WDCommentComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268D1D01C97012400071081 /* WDCommentComposeViewController.swift */; };
 		B273CB391C89A7F200F69F56 /* WDMyStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B273CB371C89A7F200F69F56 /* WDMyStatusCell.swift */; };
@@ -229,6 +243,22 @@
 		B25B882E1C8340310010B55D /* WMWordToipCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WMWordToipCell.xib; sourceTree = "<group>"; };
 		B25BD7761C94099300C8B100 /* WDMineDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMineDataViewController.swift; sourceTree = "<group>"; };
 		B25BD7771C94099300C8B100 /* WDMineDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDMineDataViewController.xib; sourceTree = "<group>"; };
+		B263C7551C9D316800B7D601 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B263C7571C9D317B00B7D601 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B263C7591C9D318500B7D601 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B263C75B1C9D318F00B7D601 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B263C75D1C9D319D00B7D601 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		B263C75F1C9D31A600B7D601 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B263C7611C9D31AE00B7D601 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		B263C7631C9D31B900B7D601 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B263C7651C9D320100B7D601 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B263C7671C9D323C00B7D601 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		B263C7691C9D324900B7D601 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		B263C76E1C9D34C000B7D601 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
+		B263C7781C9D364E00B7D601 /* WDMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMapViewController.swift; sourceTree = "<group>"; };
+		B263C77A1C9D38E800B7D601 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "../../../../../usr/lib/libstdc++.6.0.9.dylib"; sourceTree = "<group>"; };
+		B263C77B1C9D38E800B7D601 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
+		B263C7811C9D3B6D00B7D601 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		B266E62D1C858D6900F7A92F /* WDCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCommentViewController.swift; sourceTree = "<group>"; };
 		B268D1D01C97012400071081 /* WDCommentComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCommentComposeViewController.swift; sourceTree = "<group>"; };
 		B273CB371C89A7F200F69F56 /* WDMyStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMyStatusCell.swift; sourceTree = "<group>"; };
@@ -316,6 +346,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B263C7831C9D3BA300B7D601 /* libz.tbd in Frameworks */,
+				B263C7821C9D3B6D00B7D601 /* libc++.tbd in Frameworks */,
+				B263C7801C9D3A9E00B7D601 /* libstdc++.6.0.9.tbd in Frameworks */,
+				B263C7661C9D320100B7D601 /* Security.framework in Frameworks */,
+				B263C7641C9D31B900B7D601 /* SystemConfiguration.framework in Frameworks */,
+				B263C7621C9D31AE00B7D601 /* CoreTelephony.framework in Frameworks */,
+				B263C7601C9D31A600B7D601 /* CoreLocation.framework in Frameworks */,
+				B263C75E1C9D319D00B7D601 /* OpenGLES.framework in Frameworks */,
+				B263C75C1C9D318F00B7D601 /* QuartzCore.framework in Frameworks */,
+				B263C75A1C9D318500B7D601 /* CoreGraphics.framework in Frameworks */,
+				B263C7581C9D317B00B7D601 /* Foundation.framework in Frameworks */,
+				B263C7561C9D316800B7D601 /* UIKit.framework in Frameworks */,
 				B25AC62E1C8FFEAA00225B61 /* MessageUI.framework in Frameworks */,
 				B25AC6261C8ECCA600225B61 /* MediaPlayer.framework in Frameworks */,
 				B2FDE6FD1C6F06BF000E50F0 /* libsqlite3.tbd in Frameworks */,
@@ -343,6 +385,20 @@
 		5E8D74EBDE1E203BFBA0826E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B263C7811C9D3B6D00B7D601 /* libc++.tbd */,
+				B263C77A1C9D38E800B7D601 /* libstdc++.6.0.9.dylib */,
+				B263C77B1C9D38E800B7D601 /* libz.1.dylib */,
+				B263C7691C9D324900B7D601 /* libz.tbd */,
+				B263C7671C9D323C00B7D601 /* libstdc++.6.0.9.tbd */,
+				B263C7651C9D320100B7D601 /* Security.framework */,
+				B263C7631C9D31B900B7D601 /* SystemConfiguration.framework */,
+				B263C7611C9D31AE00B7D601 /* CoreTelephony.framework */,
+				B263C75F1C9D31A600B7D601 /* CoreLocation.framework */,
+				B263C75D1C9D319D00B7D601 /* OpenGLES.framework */,
+				B263C75B1C9D318F00B7D601 /* QuartzCore.framework */,
+				B263C7591C9D318500B7D601 /* CoreGraphics.framework */,
+				B263C7571C9D317B00B7D601 /* Foundation.framework */,
+				B263C7551C9D316800B7D601 /* UIKit.framework */,
 				B25AC62D1C8FFEAA00225B61 /* MessageUI.framework */,
 				B25AC6251C8ECCA600225B61 /* MediaPlayer.framework */,
 				B2FDE6FC1C6F06BF000E50F0 /* libsqlite3.tbd */,
@@ -383,6 +439,7 @@
 		B21FD8F11C61BC9C00C89571 = {
 			isa = PBXGroup;
 			children = (
+				B263C76E1C9D34C000B7D601 /* AMap.bundle */,
 				B21FD8FC1C61BC9C00C89571 /* WeiDo */,
 				B21FD9111C61BC9C00C89571 /* WeiDoTests */,
 				B21FD91C1C61BC9C00C89571 /* WeiDoUITests */,
@@ -598,6 +655,7 @@
 		B263C74E1C9D2FED00B7D601 /* Map-我的位置 */ = {
 			isa = PBXGroup;
 			children = (
+				B263C7781C9D364E00B7D601 /* WDMapViewController.swift */,
 			);
 			name = "Map-我的位置";
 			sourceTree = "<group>";
@@ -1084,6 +1142,7 @@
 				B2E408F11C993D7C0075340B /* WDNearbyViewController.xib in Resources */,
 				B2E9A4AD1C9BABF0001B161D /* backItemImage_hl@2x.png in Resources */,
 				B24E9CA41C88715100A40408 /* WDVideoCell.xib in Resources */,
+				B263C76F1C9D34C000B7D601 /* AMap.bundle in Resources */,
 				B23222B61C6C2AB40081E912 /* HomeRefreshView.xib in Resources */,
 				B25992711C8469F500402E99 /* WDPictureCell.xib in Resources */,
 				B243476F1C62EE9C002426CE /* QRCode.storyboard in Resources */,
@@ -1212,6 +1271,7 @@
 				B25B88191C830B030010B55D /* UIView+Frame.m in Sources */,
 				B25BD7781C94099300C8B100 /* WDMineDataViewController.swift in Sources */,
 				B2A748A71C61ECF800FC3478 /* UIView+AutoLayout.swift in Sources */,
+				B263C7791C9D364E00B7D601 /* WDMapViewController.swift in Sources */,
 				B21FD8FE1C61BC9C00C89571 /* AppDelegate.swift in Sources */,
 				B2FDE7171C701CE6000E50F0 /* FMDatabaseAdditions.m in Sources */,
 				B25B88281C830B520010B55D /* WDTextTableViewController.swift in Sources */,
@@ -1383,6 +1443,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = WeiDo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1399,6 +1463,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = WeiDo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

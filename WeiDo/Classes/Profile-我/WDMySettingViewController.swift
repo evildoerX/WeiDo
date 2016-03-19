@@ -136,9 +136,12 @@ class WDMySettingViewController: UITableViewController {
             switch index
             {
             case 0:
-            self.navigationController?.pushViewController(WDMineDataViewController(), animated: true)
+                //打开地图
+            self.navigationController?.pushViewController(WDMapViewController(), animated: true)
+           
             case 1:
              
+                //附近的人
                 self.navigationController?.pushViewController(WDNearbyViewController(), animated: true)
                 
                 
