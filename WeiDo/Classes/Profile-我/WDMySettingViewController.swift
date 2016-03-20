@@ -10,6 +10,7 @@ import UIKit
 import SVProgressHUD
 import AFNetworking
 
+
 class WDMySettingViewController: UITableViewController {
 
     
@@ -88,7 +89,7 @@ class WDMySettingViewController: UITableViewController {
             return cell
         }else if indexPath.section == 1
         {
-            let array = ["我的位置","附近的人","附近照片"]
+            let array = ["我的位置","附近的人","微游记"]
             
             cell.textLabel?.text = array[indexPath.row]
             return cell

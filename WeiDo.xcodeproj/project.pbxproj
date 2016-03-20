@@ -47,7 +47,6 @@
 		B25AC5E41C8DCA0700225B61 /* WDCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B25AC5E21C8DCA0700225B61 /* WDCommentCell.xib */; };
 		B25AC6261C8ECCA600225B61 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25AC6251C8ECCA600225B61 /* MediaPlayer.framework */; };
 		B25AC62E1C8FFEAA00225B61 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25AC62D1C8FFEAA00225B61 /* MessageUI.framework */; };
-		B25AC66B1C90118300225B61 /* WDWebBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AC66A1C90118300225B61 /* WDWebBrowserViewController.swift */; };
 		B25B88191C830B030010B55D /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = B25B88111C830B030010B55D /* UIView+Frame.m */; };
 		B25B881A1C830B030010B55D /* YZDisplayTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B25B88131C830B030010B55D /* YZDisplayTitleLabel.m */; };
 		B25B881B1C830B030010B55D /* YZDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B25B88151C830B030010B55D /* YZDisplayViewController.m */; };
@@ -74,6 +73,9 @@
 		B263C7821C9D3B6D00B7D601 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B263C7811C9D3B6D00B7D601 /* libc++.tbd */; };
 		B263C7831C9D3BA300B7D601 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B263C7691C9D324900B7D601 /* libz.tbd */; };
 		B263C7981C9DA96300B7D601 /* WDTravelTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263C7971C9DA96300B7D601 /* WDTravelTableViewController.swift */; };
+		B263C7EE1C9E496E00B7D601 /* WDTravel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263C7ED1C9E496E00B7D601 /* WDTravel.swift */; };
+		B263C7F11C9E4D2900B7D601 /* WDTravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263C7EF1C9E4D2900B7D601 /* WDTravelCell.swift */; };
+		B263C7F21C9E4D2900B7D601 /* WDTravelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B263C7F01C9E4D2900B7D601 /* WDTravelCell.xib */; };
 		B266E62E1C858D6900F7A92F /* WDCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B266E62D1C858D6900F7A92F /* WDCommentViewController.swift */; };
 		B268D1D11C97012400071081 /* WDCommentComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B268D1D01C97012400071081 /* WDCommentComposeViewController.swift */; };
 		B273CB391C89A7F200F69F56 /* WDMyStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B273CB371C89A7F200F69F56 /* WDMyStatusCell.swift */; };
@@ -223,7 +225,6 @@
 		B25AC5E21C8DCA0700225B61 /* WDCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDCommentCell.xib; sourceTree = "<group>"; };
 		B25AC6251C8ECCA600225B61 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		B25AC62D1C8FFEAA00225B61 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		B25AC66A1C90118300225B61 /* WDWebBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDWebBrowserViewController.swift; sourceTree = "<group>"; };
 		B25B88101C830B030010B55D /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		B25B88111C830B030010B55D /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		B25B88121C830B030010B55D /* YZDisplayTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayTitleLabel.h; sourceTree = "<group>"; };
@@ -261,6 +262,9 @@
 		B263C7971C9DA96300B7D601 /* WDTravelTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDTravelTableViewController.swift; sourceTree = "<group>"; };
 		B263C7991C9DB00200B7D601 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		B263C79B1C9DB03D00B7D601 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		B263C7ED1C9E496E00B7D601 /* WDTravel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDTravel.swift; sourceTree = "<group>"; };
+		B263C7EF1C9E4D2900B7D601 /* WDTravelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDTravelCell.swift; sourceTree = "<group>"; };
+		B263C7F01C9E4D2900B7D601 /* WDTravelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDTravelCell.xib; sourceTree = "<group>"; };
 		B266E62D1C858D6900F7A92F /* WDCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCommentViewController.swift; sourceTree = "<group>"; };
 		B268D1D01C97012400071081 /* WDCommentComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCommentComposeViewController.swift; sourceTree = "<group>"; };
 		B273CB371C89A7F200F69F56 /* WDMyStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMyStatusCell.swift; sourceTree = "<group>"; };
@@ -608,7 +612,7 @@
 		B25AC6691C900C8500225B61 /* WebBrowser-网页浏览器 */ = {
 			isa = PBXGroup;
 			children = (
-				B25AC66A1C90118300225B61 /* WDWebBrowserViewController.swift */,
+				B2E9A4A01C9BABF0001B161D /* RxWebViewController */,
 			);
 			name = "WebBrowser-网页浏览器";
 			path = "Home-首页";
@@ -665,9 +669,28 @@
 		B263C7961C9DA93800B7D601 /* WeiTravel-微游记 */ = {
 			isa = PBXGroup;
 			children = (
+				B263C7F41C9EBB2F00B7D601 /* View */,
+				B263C7F31C9EBB2600B7D601 /* Model */,
 				B263C7971C9DA96300B7D601 /* WDTravelTableViewController.swift */,
 			);
 			name = "WeiTravel-微游记";
+			sourceTree = "<group>";
+		};
+		B263C7F31C9EBB2600B7D601 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B263C7ED1C9E496E00B7D601 /* WDTravel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B263C7F41C9EBB2F00B7D601 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B263C7EF1C9E4D2900B7D601 /* WDTravelCell.swift */,
+				B263C7F01C9E4D2900B7D601 /* WDTravelCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		B275A8B81C6B0DA700807CC0 /* Model */ = {
@@ -892,7 +915,6 @@
 		B2E16D381C7AAD23009E6B33 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				B2E9A4A01C9BABF0001B161D /* RxWebViewController */,
 				B25B880F1C830B030010B55D /* YZDisplayViewController */,
 				B2FDE7071C701CE6000E50F0 /* fmdb */,
 			);
@@ -974,7 +996,8 @@
 				B2E9A4AA1C9BABF0001B161D /* RxWebViewNavigationViewController.h */,
 				B2E9A4AB1C9BABF0001B161D /* RxWebViewNavigationViewController.m */,
 			);
-			path = RxWebViewController;
+			name = RxWebViewController;
+			path = ../Other/RxWebViewController;
 			sourceTree = "<group>";
 		};
 		B2E9A4A31C9BABF0001B161D /* NJKWebViewProgress */ = {
@@ -1161,6 +1184,7 @@
 				B2E409011C9990220075340B /* rock.mp3 in Resources */,
 				B2E408E81C97B5E20075340B /* WDPulblishViewController.xib in Resources */,
 				B25AC5E41C8DCA0700225B61 /* WDCommentCell.xib in Resources */,
+				B263C7F21C9E4D2900B7D601 /* WDTravelCell.xib in Resources */,
 				B2E408F81C9946B00075340B /* WDNearByCell.xib in Resources */,
 				B2E409021C9990220075340B /* rock_end.mp3 in Resources */,
 				B21FD9051C61BC9C00C89571 /* Assets.xcassets in Resources */,
@@ -1263,6 +1287,7 @@
 				B2FDE6E51C6EF5D2000E50F0 /* EmoticonTextAttachment.swift in Sources */,
 				B2FDE7181C701CE6000E50F0 /* FMDatabasePool.m in Sources */,
 				B2A748B51C6241C100FC3478 /* WDPopmenuPresentationController.swift in Sources */,
+				B263C7EE1C9E496E00B7D601 /* WDTravel.swift in Sources */,
 				B200B6151C8BBF3100674700 /* WDMessageController.swift in Sources */,
 				B211517C1C6DB81E00FD2DB0 /* PhotoSelectorViewController.swift in Sources */,
 				B25A47991C92B9C800D36A9D /* WDNewsCell.swift in Sources */,
@@ -1319,12 +1344,12 @@
 				B2FDE7061C6F20F5000E50F0 /* StatusDAO.swift in Sources */,
 				B27FD4DD1C6A0D3D00A9DDA1 /* UIButton+Category.swift in Sources */,
 				B29777301C65894200CB2521 /* NetworkTools.swift in Sources */,
-				B25AC66B1C90118300225B61 /* WDWebBrowserViewController.swift in Sources */,
 				B2E408EB1C98042F0075340B /* WDQRCodeCardViewController.swift in Sources */,
 				B21B56871C671F20005C2011 /* WDWelcomeViewController.swift in Sources */,
 				B27FD4D71C698D4100A9DDA1 /* User.swift in Sources */,
 				B2AE8A4C1C8DAC9100A6AB14 /* WDLatestComments.swift in Sources */,
 				B23222BC1C6C5A530081E912 /* PhotoBrowserViewController.swift in Sources */,
+				B263C7F11C9E4D2900B7D601 /* WDTravelCell.swift in Sources */,
 				B25AC5E31C8DCA0700225B61 /* WDCommentCell.swift in Sources */,
 				B25B881B1C830B030010B55D /* YZDisplayViewController.m in Sources */,
 				B2A748A11C61E3A300FC3478 /* WDBaseTableViewController.swift in Sources */,

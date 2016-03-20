@@ -116,9 +116,6 @@ class WMWordToipCell: UITableViewCell {
     
     
     
-    
-    class func topicCell() -> WMWordToipCell{
-        return NSBundle.mainBundle().loadNibNamed("WMWordToipCell", owner: nil, options: nil)[0] as! WMWordToipCell
-    }
+
     
 }

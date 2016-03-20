@@ -140,7 +140,6 @@ class WDVideoTableViewController: UITableViewController {
 
     /**
      打开视频
-     
      - parameter notify: 接受通知
      */
     func playVideo(notify: NSNotification)

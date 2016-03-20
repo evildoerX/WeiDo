@@ -164,7 +164,7 @@ class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegat
         if indexPath.section == 0 {
          
             let cell = tableView.dequeueReusableCellWithIdentifier(TextCellReuseIdentifier, forIndexPath: indexPath) as! WMWordToipCell
-         //   let cell = WMWordToipCell.topicCell()
+    
       
             cell.wordTopic = texttopic
      
