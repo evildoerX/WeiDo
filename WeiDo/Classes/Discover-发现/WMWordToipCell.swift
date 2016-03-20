@@ -59,23 +59,7 @@ class WMWordToipCell: UITableViewCell {
             }
         }
     }
-    override func awakeFromNib() {
-        
-        super.awakeFromNib()
-        
-  backgroundColor = UIColor(white: 0.9, alpha: 0.5)
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        
-    }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-    }
-    
+ 
     
     
     func commentClick()
@@ -88,32 +72,7 @@ class WMWordToipCell: UITableViewCell {
     }
     
     
-    // MARK 点击方法
-    //点赞
-    @IBAction func likeClick(button: UIButton) {
-        print("点击按钮")
-     
-        
-        
-    }
-    //踩
-    @IBAction func unlikeClick(button: UIButton) {
-         print("点击按钮")
-     
-    }
-    //转发
-    @IBAction func repostClick(sender: AnyObject) {
-         print("点击按钮")
-    }
-    //评论
-    @IBAction func commentClick(sender: AnyObject) {
-         print("点击按钮")
-    }
-    
-    
-    @IBAction func shareClick(sender: UIButton) {
-    }
-    
+ 
     
     
 

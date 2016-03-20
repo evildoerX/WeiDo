@@ -517,7 +517,6 @@
 			isa = PBXGroup;
 			children = (
 				B2E409031C99B5740075340B /* Controller */,
-				B2E408E91C97D3720075340B /* View */,
 				B2FDE6DD1C6EF5D2000E50F0 /* EmoticonView-表情 */,
 				B211517A1C6DB76A00FD2DB0 /* PhotoSelector-图片选择器 */,
 			);
@@ -919,13 +918,6 @@
 				B2FDE7071C701CE6000E50F0 /* fmdb */,
 			);
 			name = Lib;
-			sourceTree = "<group>";
-		};
-		B2E408E91C97D3720075340B /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		B2E408F41C99463A0075340B /* Shake-摇一摇 */ = {

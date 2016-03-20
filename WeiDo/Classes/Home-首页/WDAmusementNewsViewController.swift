@@ -77,9 +77,8 @@ class WDAmusementNewsViewController: UITableViewController {
         */
         tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
             let path = "http://api.huceo.com/huabian/"
-            let params = ["key":"28874a32bce9a4b984c57c3538e68809","num":20]
             let manager = AFHTTPSessionManager()
-            manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
+            manager.GET(path, parameters: newsParams, progress: nil, success: { (_, JSON) -> Void in
                 
                 let sportarray = JSON!["newslist"] as! [[String:AnyObject]]
                 self.amusementNew =  WDNews.LoadNews(sportarray)

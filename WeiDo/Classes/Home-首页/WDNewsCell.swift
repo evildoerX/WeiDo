@@ -104,8 +104,6 @@ class WDNewsCell: UITableViewCell {
         let str = amusementnew?.url
         let info = [WDAmusementNewsWillOpen:str!]
         NSNotificationCenter.defaultCenter().postNotificationName(WDAmusementNewsWillOpen, object: self, userInfo: info)
-
-    
     }
     
     func technologynewClick()
@@ -113,13 +111,6 @@ class WDNewsCell: UITableViewCell {
         let str = technologynew?.url
         let info = [WDTechnologyNewsWillOpen:str!]
         NSNotificationCenter.defaultCenter().postNotificationName(WDTechnologyNewsWillOpen, object: self, userInfo: info)
-        
-
-    
-    }
-    
-    class func newsCell() -> WDNewsCell{
-        return NSBundle.mainBundle().loadNibNamed("WDNewsCell", owner: nil, options: nil)[0] as! WDNewsCell
     }
     
     

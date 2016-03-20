@@ -130,7 +130,6 @@ extension WDMentionMeTableViewController: UIActionSheetDelegate
         }
      
         self.id = id
-       
 
         self.sheet = UIActionSheet(title: "回复", delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: "删除", otherButtonTitles: "回复")
         self.sheet?.showInView(self.view)

@@ -91,25 +91,8 @@ class WDVideoCell: UITableViewCell {
     }
     
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-       
-         backgroundColor = UIColor(white: 0.9, alpha: 0.5)
-        
-        
-    }
+   
 
 
-    class func videoCell() -> WDVideoCell{
-        return NSBundle.mainBundle().loadNibNamed("WDVideoCell", owner: nil, options: nil)[0] as! WDVideoCell
-    }
-
-    
-    
-    
-    
-    
-    
     
 }

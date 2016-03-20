@@ -90,25 +90,6 @@ class WDPictureCell: UITableViewCell {
         
     }
     
-    
-    
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        backgroundColor = UIColor(white: 0.9, alpha: 0.5)
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    
-    class func pictureCell() -> WDPictureCell{
-        return NSBundle.mainBundle().loadNibNamed("WDPictureCell", owner: nil, options: nil)[0] as! WDPictureCell
-    }
-    
+ 
     
 }

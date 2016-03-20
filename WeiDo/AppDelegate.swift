@@ -45,9 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        
-        
-        
+
         // 打开数据库
         SQLiteManager.shareManager().openDB("status.sqlite")
         //注册一个推送

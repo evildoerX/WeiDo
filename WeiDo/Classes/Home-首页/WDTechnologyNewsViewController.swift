@@ -48,7 +48,6 @@ class WDTechnologyNewsViewController: UITableViewController {
         {
             return
         }
-        print(urls)
         let url = NSURL(string: urls)
         let vc = RxWebViewController(url: url)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -79,9 +78,8 @@ class WDTechnologyNewsViewController: UITableViewController {
         */
         tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
             let path = "http://api.huceo.com/keji/"
-            let params = ["key":"28874a32bce9a4b984c57c3538e68809","num":20]
             let manager = AFHTTPSessionManager()
-            manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
+            manager.GET(path, parameters: newsParams, progress: nil, success: { (_, JSON) -> Void in
                 
                 let sportarray = JSON!["newslist"] as! [[String:AnyObject]]
                 self.technologyNew =  WDNews.LoadNews(sportarray)
@@ -111,7 +109,6 @@ class WDTechnologyNewsViewController: UITableViewController {
 
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.technologyNew.count
     }
 

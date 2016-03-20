@@ -49,9 +49,6 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" image="mainCellShareClick"/>
-                                <connections>
-                                    <action selector="repostClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gu3-Gc-SRZ"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BY0-nt-RFQ" userLabel="评论">
                                 <rect key="frame" x="263.5" y="0.0" width="86.5" height="36"/>
@@ -60,9 +57,6 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted" image="mainCellCommentClick"/>
-                                <connections>
-                                    <action selector="commentClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qI8-78-54V"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1N-gd-8Mv" userLabel="踩">
                                 <rect key="frame" x="88" y="0.0" width="86.5" height="36"/>
@@ -72,9 +66,6 @@
                                 </state>
                                 <state key="selected" image="timeline_icon_like2"/>
                                 <state key="highlighted" image="mainCellCaiClick"/>
-                                <connections>
-                                    <action selector="unlikeClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9Of-h0-SS2"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spC-J7-ZJa" userLabel="赞">
                                 <rect key="frame" x="0.0" y="0.0" width="87" height="36"/>
@@ -84,9 +75,6 @@
                                 </state>
                                 <state key="selected" image="timeline_icon_like2"/>
                                 <state key="highlighted" image="mainCellDingClick"/>
-                                <connections>
-                                    <action selector="likeClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ouc-Es-0p1"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12549019607843137" green="0.55686274509803924" blue="0.45098039215686275" alpha="0.063186233108108114" colorSpace="deviceRGB"/>
@@ -126,9 +114,6 @@
                             <constraint firstAttribute="width" constant="20" id="w8w-XC-oY8"/>
                         </constraints>
                         <state key="normal" backgroundImage="mainCellShare"/>
-                        <connections>
-                            <action selector="shareClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="v7b-8e-Obg"/>
-                        </connections>
                     </button>
                 </subviews>
                 <constraints>
