@@ -46,7 +46,7 @@ class WDStatusTableViewCell: UITableViewCell {
      
             // 设置顶部视图
             topView.status = status
-            
+            footerView.status = status
             // 设置正文 同时可以显示表情
             contentLabel.attributedText = EmoticonPackage.emoticonString(status?.text ?? "")
             
@@ -86,7 +86,7 @@ class WDStatusTableViewCell: UITableViewCell {
         
         contentLabel.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: topView, size: nil, offset: CGPoint(x: 10, y: 10))
         
-       footerView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: pictureView, size: CGSize(width: width, height: 25), offset: CGPoint(x: -10, y: 10))
+       footerView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: pictureView, size: CGSize(width: width, height: 32), offset: CGPoint(x: -10, y: 10))
 
         footerView.userInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: "cellClick")

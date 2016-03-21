@@ -107,10 +107,10 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
     func addobserver()
     {
        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: WDPopmenuanimationWillShow, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: WDPopmenuanimationWilldismiss, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: nil, name: WDPopmenuanimationWillShow, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: nil, name: WDPopmenuanimationWilldismiss, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPhotoBrowser:", name: WDStatusPictureViewSelected, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ToCompose", name: WDComposeViewWillAppear, object: nil)
+  
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "openBrowser:", name: WDOpenBrowser, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "openStatusComment:", name: WDPublishWillOpen, object: nil)
         // 注册两个cell
@@ -123,12 +123,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
     
     
     
-    /**
-     修改标题按钮的状态
-     */
-    func change(){
-
-    }
+   
     
     /**
      打开网页
@@ -146,11 +141,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
       
         
     }
-    
-    
-    
 
-    
     /**
      打开publish界面
      */
@@ -319,6 +310,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         let vc = sb.instantiateInitialViewController()
         presentViewController(vc!, animated: true, completion: nil)
     }
+    
     /**
      返回
      */

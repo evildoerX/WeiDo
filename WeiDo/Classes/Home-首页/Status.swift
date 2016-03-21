@@ -94,6 +94,10 @@ class Status: NSObject {
             return retweeted_status != nil ? retweeted_status?.storedLargePicURLS : storedLargePicURLS
     }
     
+    
+    var reposts_count:Int = 0
+    var comments_count:Int = 0
+    var attitudes_count:Int = 0
     /// 加载微博数据
     class func loadStatuses(since_id: Int, max_id: Int, finished: (models:[Status]?, error:NSError?)->()){
      
@@ -177,6 +181,7 @@ class Status: NSObject {
     {
         super.init()
         setValuesForKeysWithDictionary(dict)
+
     }
     
     // setValuesForKeysWithDictionary内部会调用以下方法
@@ -206,7 +211,7 @@ class Status: NSObject {
     }
     
     // 打印当前模型
-    var properties = ["created_at", "id", "text", "source", "pic_urls"]
+    var properties = ["created_at", "id", "text", "source", "pic_urls","reposts_count","comments_count","attitudes_count"]
     override var description: String {
         let dict = dictionaryWithValuesForKeys(properties)
         return "\(dict)"

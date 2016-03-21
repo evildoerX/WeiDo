@@ -14,7 +14,10 @@ class WDOauthViewController: UIViewController {
     let app_key = "1946144281"
     let app_secret = "5393ef69436ad62725d4a3e198319706"
     let redirect_uri = "http://sns.whalecloud.com/sina2/callback"
-
+//
+//    let app_key = "481049710"
+//    let app_secret = "eb64070922c1966e18f694f89ec2c288"
+//    let redirect_uri = "http://www.baidu.com"
     override func viewDidLoad() {
         super.viewDidLoad()
         //初始化导航条

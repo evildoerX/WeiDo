@@ -697,6 +697,7 @@
 		B275A8B81C6B0DA700807CC0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B2F3E1EF1C9FB78D004FFC36 /* StatusComment.swift */,
 				B27FD4D41C682FE600A9DDA1 /* Status.swift */,
 				B27FD4D61C698D4100A9DDA1 /* User.swift */,
 				B2FDE7051C6F20F5000E50F0 /* StatusDAO.swift */,
@@ -1010,7 +1011,6 @@
 			isa = PBXGroup;
 			children = (
 				B2F3E1EC1C9F9917004FFC36 /* WDStatusCommentTableViewController.swift */,
-				B2F3E1EF1C9FB78D004FFC36 /* StatusComment.swift */,
 			);
 			name = "StatusComment-评论";
 			sourceTree = "<group>";
