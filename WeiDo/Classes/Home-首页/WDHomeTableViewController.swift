@@ -12,7 +12,7 @@ import AFNetworking
 
 let WDHomeReuseIdentifier = "WDHomeReuseIdentifier"
 let WDCommentComposeWillOpen = "WDCommentComposeWillOpen"
-
+let WDPublishWillOpen = "WDPublishWillOpen"
 class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDelegate {
 
     //新微博提示数字
@@ -112,7 +112,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPhotoBrowser:", name: WDStatusPictureViewSelected, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ToCompose", name: WDComposeViewWillAppear, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "openBrowser:", name: WDOpenBrowser, object: nil)
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openStatusComment:", name: WDPublishWillOpen, object: nil)
         // 注册两个cell
         tableView.registerClass(WDNormalTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.NormalCell.rawValue)
         tableView.registerClass(WDForwardTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.ForwardCell.rawValue)
@@ -149,23 +149,20 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
     
     
     
+
     
     /**
-     发送评论
-
+     打开publish界面
      */
-    func ToCompose()
+    func openStatusComment(notify:NSNotification)
     {
-     
-     let nav = UINavigationController()
-    let vc = WDComposeViewController()
-        nav.addChildViewController(vc)
-        presentViewController(nav, animated: true, completion: nil)
-      
-    
+      guard let id = notify.userInfo![WDPublishWillOpen] as? Int else
+      {
+        return
+        }
+    UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(WDPulblishViewController(id: id), animated: false, completion: nil)
+        
     }
-    
- 
     
     /**
      显示图片浏览器
@@ -428,19 +425,7 @@ extension WDHomeTableViewController
         return rowHeight
     }
  
-    /**
-     发送转发/评论
-    
-     */
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let infoID = statuses![indexPath.row].id
-        /**
-        *  加载动画界面
-        */
-        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(WDPulblishViewController(id: infoID), animated: false, completion: nil)
 
-    }
 }
 
 

@@ -25,7 +25,6 @@
         <!--Code View Controller-->
         <scene sceneID="dJS-qZ-c9a">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6IX-Pf-4Pe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="srH-gW-gBP" customClass="WDQRCodeViewController" customModule="WeiDo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EIK-fx-kzJ"/>
@@ -108,6 +107,7 @@
                         <outlet property="scanlineImageView" destination="OGM-Nt-Muc" id="qUb-oO-I0u"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6IX-Pf-4Pe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="129"/>
         </scene>

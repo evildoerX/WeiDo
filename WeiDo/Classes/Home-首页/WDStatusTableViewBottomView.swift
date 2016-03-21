@@ -27,65 +27,33 @@ class WDStatusTableViewBottomView: UIView {
     private func setupUI()
     {
      
-        backgroundColor = bgcolor
+        backgroundColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 0.06)
+
         
-      
-        // 1.添加子控件
         addSubview(retweetBtn)
-        addSubview(unlikeBtn)
-        addSubview(commonBtn)
+
+   retweetBtn.xmg_AlignHorizontal(type: XMG_AlignType.CenterRight, referView: self, size: CGSize(width: 40, height: 20), offset: CGPoint(x: -57, y: 0))
         
-        // 2.布局子控件
-        xmg_HorizontalTile([retweetBtn, unlikeBtn, commonBtn], insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
     }
     
     // MARK: - 懒加载
-    // 转发
+    // 顶部按钮
     private lazy var retweetBtn: UIButton =
     {
-  //  let btn =  UIButton.createButton("timeline_icon_retweet", title: "分享")
-        let btn = UIButton.createButton("", title: "")
-        btn.backgroundColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 0.06)
-        btn.addTarget(self, action: "retweet", forControlEvents: UIControlEvents.TouchUpInside)
+        let btn = UIButton()
+        btn.setTitle("more", forState: UIControlState.Normal)
+        btn.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)
+        btn.titleLabel?.font = UIFont.systemFontOfSize(11)
         return btn
     }()
     
-    // 赞
-    private lazy var unlikeBtn: UIButton =  {
-        let btn = UIButton.createButton("", title: "")
-     //  let btn = UIButton.createButton("timeline_icon_unlike", title: "喜欢")
-       btn.backgroundColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 0.06)
-         return btn
-    }()
-    // 评论
-    private lazy var commonBtn: UIButton = {
-        let btn = UIButton.createButton("", title: "")
-    //    let btn = UIButton.createButton("timeline_icon_comment", title: "")
-         btn.backgroundColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 0.06)
-           btn.addTarget(self, action: "common", forControlEvents: UIControlEvents.TouchUpInside)
-        return btn
-    }()
+
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    func common()
-    {
-
-        
-        
-    }
-    
-    func retweet()
-    {
-
-    }
-    
   
-    
-    
-  
+ 
     
 }

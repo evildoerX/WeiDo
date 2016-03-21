@@ -130,6 +130,8 @@
 		B2E9A4B11C9BABF0001B161D /* RxWebViewNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9A4AB1C9BABF0001B161D /* RxWebViewNavigationViewController.m */; };
 		B2E9A4B51C9BFE54001B161D /* WDLocalNotificationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E9A4B41C9BFE54001B161D /* WDLocalNotificationUtils.swift */; };
 		B2F105851C93B749009F4140 /* WDMySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F105841C93B749009F4140 /* WDMySettingViewController.swift */; };
+		B2F3E1ED1C9F9917004FFC36 /* WDStatusCommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F3E1EC1C9F9917004FFC36 /* WDStatusCommentTableViewController.swift */; };
+		B2F3E1F01C9FB78E004FFC36 /* StatusComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F3E1EF1C9FB78D004FFC36 /* StatusComment.swift */; };
 		B2FDE6E31C6EF5D2000E50F0 /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDE6DE1C6EF5D2000E50F0 /* EmoticonPackage.swift */; };
 		B2FDE6E41C6EF5D2000E50F0 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B2FDE6DF1C6EF5D2000E50F0 /* Emoticons.bundle */; };
 		B2FDE6E51C6EF5D2000E50F0 /* EmoticonTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDE6E01C6EF5D2000E50F0 /* EmoticonTextAttachment.swift */; };
@@ -221,8 +223,8 @@
 		B25A47971C92B9C800D36A9D /* WDNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDNewsCell.swift; sourceTree = "<group>"; };
 		B25A47981C92B9C800D36A9D /* WDNewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDNewsCell.xib; sourceTree = "<group>"; };
 		B25A479C1C92BD3200D36A9D /* WDNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDNews.swift; sourceTree = "<group>"; };
-		B25AC5E11C8DCA0700225B61 /* WDCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCommentCell.swift; sourceTree = "<group>"; };
-		B25AC5E21C8DCA0700225B61 /* WDCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDCommentCell.xib; sourceTree = "<group>"; };
+		B25AC5E11C8DCA0700225B61 /* WDCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WDCommentCell.swift; path = "Classes/Discover-发现/WDCommentCell.swift"; sourceTree = "<group>"; };
+		B25AC5E21C8DCA0700225B61 /* WDCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WDCommentCell.xib; path = "Classes/Discover-发现/WDCommentCell.xib"; sourceTree = "<group>"; };
 		B25AC6251C8ECCA600225B61 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		B25AC62D1C8FFEAA00225B61 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		B25B88101C830B030010B55D /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
@@ -299,8 +301,8 @@
 		B2AE8A361C8D327400A6AB14 /* WDMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDMessageCell.xib; sourceTree = "<group>"; };
 		B2AE8A391C8D3C7100A6AB14 /* WDMention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMention.swift; sourceTree = "<group>"; };
 		B2AE8A4B1C8DAC9100A6AB14 /* WDLatestComments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDLatestComments.swift; sourceTree = "<group>"; };
-		B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDPulblishViewController.swift; sourceTree = "<group>"; };
-		B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDPulblishViewController.xib; sourceTree = "<group>"; };
+		B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WDPulblishViewController.swift; path = "Compose-发布微博/WDPulblishViewController.swift"; sourceTree = "<group>"; };
+		B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WDPulblishViewController.xib; path = "Compose-发布微博/WDPulblishViewController.xib"; sourceTree = "<group>"; };
 		B2E408EA1C98042F0075340B /* WDQRCodeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDQRCodeCardViewController.swift; sourceTree = "<group>"; };
 		B2E408EE1C993D7C0075340B /* WDNearbyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDNearbyViewController.swift; sourceTree = "<group>"; };
 		B2E408EF1C993D7C0075340B /* WDNearbyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDNearbyViewController.xib; sourceTree = "<group>"; };
@@ -322,6 +324,8 @@
 		B2E9A4AB1C9BABF0001B161D /* RxWebViewNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewNavigationViewController.m; sourceTree = "<group>"; };
 		B2E9A4B41C9BFE54001B161D /* WDLocalNotificationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDLocalNotificationUtils.swift; sourceTree = "<group>"; };
 		B2F105841C93B749009F4140 /* WDMySettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMySettingViewController.swift; sourceTree = "<group>"; };
+		B2F3E1EC1C9F9917004FFC36 /* WDStatusCommentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDStatusCommentTableViewController.swift; sourceTree = "<group>"; };
+		B2F3E1EF1C9FB78D004FFC36 /* StatusComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusComment.swift; sourceTree = "<group>"; };
 		B2FDE6DE1C6EF5D2000E50F0 /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
 		B2FDE6DF1C6EF5D2000E50F0 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
 		B2FDE6E01C6EF5D2000E50F0 /* EmoticonTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonTextAttachment.swift; sourceTree = "<group>"; };
@@ -651,8 +655,6 @@
 				B259926F1C8469F500402E99 /* WDPictureCell.xib */,
 				B24E9CA11C88715100A40408 /* WDVideoCell.swift */,
 				B24E9CA21C88715100A40408 /* WDVideoCell.xib */,
-				B25AC5E11C8DCA0700225B61 /* WDCommentCell.swift */,
-				B25AC5E21C8DCA0700225B61 /* WDCommentCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -764,6 +766,8 @@
 		B2A748891C61C59400FC3478 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B2F3E1F21C9FC19A004FFC36 /* Pulish-弹出菜单 */,
+				B2F3E1F11C9FBF8E004FFC36 /* CommentCell-评论 */,
 				B2A7488D1C61C59400FC3478 /* Message-消息 */,
 				B23222BF1C6CC2C00081E912 /* Compose-发送界面 */,
 				B29777371C66018800CB2521 /* Newfeature-新特性 */,
@@ -794,6 +798,7 @@
 		B2A7488B1C61C59400FC3478 /* Home-首页 */ = {
 			isa = PBXGroup;
 			children = (
+				B2F3E1EE1C9FB75A004FFC36 /* StatusComment-评论 */,
 				B23222BA1C6C5A460081E912 /* PhotoBrowser-图片浏览器 */,
 				B23222B21C6C2A730081E912 /* RefreshControl-刷新控件 */,
 				B24347701C62EEA2002426CE /* QRCode-二维码 */,
@@ -969,8 +974,6 @@
 		B2E409031C99B5740075340B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */,
-				B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */,
 				B23222C01C6CC2E60081E912 /* WDComposeViewController.swift */,
 				B268D1D01C97012400071081 /* WDCommentComposeViewController.swift */,
 			);
@@ -1001,6 +1004,34 @@
 				B2E9A4A71C9BABF0001B161D /* NJKWebViewProgressView.m */,
 			);
 			path = NJKWebViewProgress;
+			sourceTree = "<group>";
+		};
+		B2F3E1EE1C9FB75A004FFC36 /* StatusComment-评论 */ = {
+			isa = PBXGroup;
+			children = (
+				B2F3E1EC1C9F9917004FFC36 /* WDStatusCommentTableViewController.swift */,
+				B2F3E1EF1C9FB78D004FFC36 /* StatusComment.swift */,
+			);
+			name = "StatusComment-评论";
+			sourceTree = "<group>";
+		};
+		B2F3E1F11C9FBF8E004FFC36 /* CommentCell-评论 */ = {
+			isa = PBXGroup;
+			children = (
+				B25AC5E11C8DCA0700225B61 /* WDCommentCell.swift */,
+				B25AC5E21C8DCA0700225B61 /* WDCommentCell.xib */,
+			);
+			name = "CommentCell-评论";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B2F3E1F21C9FC19A004FFC36 /* Pulish-弹出菜单 */ = {
+			isa = PBXGroup;
+			children = (
+				B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */,
+				B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */,
+			);
+			name = "Pulish-弹出菜单";
 			sourceTree = "<group>";
 		};
 		B2FDE6DD1C6EF5D2000E50F0 /* EmoticonView-表情 */ = {
@@ -1330,6 +1361,7 @@
 				B2A748B31C62418B00FC3478 /* WDPopmenuViewController.swift in Sources */,
 				B2FDE71B1C701CE6000E50F0 /* FMDatabaseAdditionsVariadic.swift in Sources */,
 				B25B88271C830B520010B55D /* WDPictureTableViewController.swift in Sources */,
+				B2F3E1ED1C9F9917004FFC36 /* WDStatusCommentTableViewController.swift in Sources */,
 				B27FD4D51C682FE600A9DDA1 /* Status.swift in Sources */,
 				B2E9A4B01C9BABF0001B161D /* RxWebViewController.m in Sources */,
 				B27FD4DB1C6A0D1100A9DDA1 /* UILabel+Category.swift in Sources */,
@@ -1351,6 +1383,7 @@
 				B297772E1C64C3E100CB2521 /* WDOauthViewController.swift in Sources */,
 				B20315911C6B01190091A270 /* WDStatusTableViewBottomView.swift in Sources */,
 				B25A479D1C92BD3200D36A9D /* WDNews.swift in Sources */,
+				B2F3E1F01C9FB78E004FFC36 /* StatusComment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

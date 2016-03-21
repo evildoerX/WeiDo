@@ -86,10 +86,19 @@ class WDStatusTableViewCell: UITableViewCell {
         
         contentLabel.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: topView, size: nil, offset: CGPoint(x: 10, y: 10))
         
-       footerView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: pictureView, size: CGSize(width: width, height: 22), offset: CGPoint(x: -10, y: 10))
-        
+       footerView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: pictureView, size: CGSize(width: width, height: 25), offset: CGPoint(x: -10, y: 10))
+
+        footerView.userInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: "cellClick")
+        footerView.addGestureRecognizer(tap)
     }
     
+    func cellClick()
+    {
+        let info = [WDPublishWillOpen:status!.id]
+        NSNotificationCenter.defaultCenter().postNotificationName(WDPublishWillOpen, object: self, userInfo: info)
+    
+    }
     /**
      用于获取行号
      */
