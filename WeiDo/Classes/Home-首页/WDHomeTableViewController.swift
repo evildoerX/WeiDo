@@ -13,8 +13,6 @@ import AFNetworking
 let WDHomeReuseIdentifier = "WDHomeReuseIdentifier"
 let WDCommentComposeWillOpen = "WDCommentComposeWillOpen"
 
-
-
 class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDelegate {
 
     //新微博提示数字
@@ -54,11 +52,13 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
     
         loadNewsCount()
  
-        
+       
        
     }
     
   
+   
+    
     /**
      获取未读微博数
      */
@@ -80,8 +80,6 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
   
     /**
      设置双击tabbar回到顶部
-     
-
      */
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         
@@ -214,9 +212,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         3.max_id: 会返回小于等于max_id的微博
         
         每条微博都有一个微博ID, 而且微博ID越后面发送的微博, 它的微博ID越大
-        递增
 
-        
         */
         // 1.默认当做下拉处理
         var since_id = statuses?.first?.id ?? 0
@@ -297,10 +293,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_pop", target: self, action: "rightBtnClick")
         
         navigationItem.title = "首页"
-     
-        
 
-      
     }
 
     /**
@@ -345,8 +338,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         
         let pa  = WDPopmenuanimation()
         pa.presentFrame = CGRect(x: 100, y: 56, width: 200, height: 350)
-        return pa
-        
+        return pa 
     }()
     
     

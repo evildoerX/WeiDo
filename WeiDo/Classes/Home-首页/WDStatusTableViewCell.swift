@@ -43,7 +43,7 @@ class WDStatusTableViewCell: UITableViewCell {
     var status: Status?
         {
         didSet{
-            
+     
             // 设置顶部视图
             topView.status = status
             

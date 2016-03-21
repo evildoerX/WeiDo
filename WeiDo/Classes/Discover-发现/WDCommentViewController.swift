@@ -83,7 +83,7 @@ class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegat
             params["hot"] = "1"
             
             
-            self.params.setDictionary(params);
+            self.params.setDictionary(params)
             let manager = AFHTTPSessionManager()
             manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
                 let hotarray = JSON!["hot"] as? [[String:AnyObject]]

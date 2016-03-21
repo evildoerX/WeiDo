@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SVProgressHUD
 
 class WDQRCodeViewController: UIViewController, UITabBarDelegate {
 
@@ -22,6 +23,9 @@ class WDQRCodeViewController: UIViewController, UITabBarDelegate {
     
     @IBOutlet weak var resultLabel: UILabel!
     
+    
+    //获取的url
+    var QRCodeUrl: NSURL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +45,9 @@ class WDQRCodeViewController: UIViewController, UITabBarDelegate {
     
     @IBAction func myCardClick(sender: AnyObject) {
         let vc = WDQRCodeCardViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: false)
     }
+  
     
     
     
@@ -93,12 +98,11 @@ class WDQRCodeViewController: UIViewController, UITabBarDelegate {
     // 4.设置输出能够解析的数据类型
     // 注意: 设置能够解析的数据类型, 一定要在输出对象添加到会员之后设置, 否则会报错
     output.metadataObjectTypes =  output.availableMetadataObjectTypes
-    print(output.availableMetadataObjectTypes)
     // 5.设置输出对象的代理, 只要解析成功就会通知代理
     output.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
     // 如果想实现只扫描一张图片, 那么系统自带的二维码扫描是不支持的
     // 只能设置让二维码只有出现在某一块区域才去扫描
-    //        output.rectOfInterest = CGRectMake(0.0, 0.0, 1, 1)
+    // output.rectOfInterest = CGRectMake(0.0, 0.0, 1, 1)
     
     // 添加预览图层
     view.layer.insertSublayer(previewLayer, atIndex: 0)
@@ -183,9 +187,23 @@ extension WDQRCodeViewController:AVCaptureMetadataOutputObjectsDelegate
         
         // 1.获取扫描到的数据
         // 注意: 要使用stringValue
-        resultLabel.text = metadataObjects.last?.stringValue
+        let data = metadataObjects.last!.stringValue!
+        resultLabel.text = data
         resultLabel.sizeToFit()
+   
+        self.QRCodeUrl = NSURL(string: data)
+        if self.QRCodeUrl != nil
+        {
+            
+            SVProgressHUD.showSuccessWithStatus("正在加载二维码...", maskType: SVProgressHUDMaskType.Black)
+          session.stopRunning()
+           let vc = RxWebViewController(url: self.QRCodeUrl)
+            self.navigationController?.pushViewController(vc, animated: true)
+             SVProgressHUD.dismiss()
         
+        }
+    
+
         // 2.获取扫描到的二维码的位置
         // 2.1转换坐标
         for object in metadataObjects
@@ -199,7 +217,9 @@ extension WDQRCodeViewController:AVCaptureMetadataOutputObjectsDelegate
                 drawCorners(codeObject)
             }
         }
-    }
+        
+        
+            }
     
     /**
      绘制图形

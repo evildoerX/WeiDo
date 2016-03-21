@@ -38,7 +38,7 @@ extension WDPopmenuViewController: UITableViewDataSource,UITableViewDelegate
         cell.textLabel?.text = array[indexPath.row]
         cell.textLabel?.textAlignment = NSTextAlignment.Center
         cell.textLabel?.textColor = UIColor.blackColor()
-        cell.contentView.backgroundColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 0.2)
+        cell.contentView.backgroundColor = UIColor.whiteColor()
         
         return cell
         
