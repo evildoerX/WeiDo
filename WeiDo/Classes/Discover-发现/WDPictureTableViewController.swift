@@ -27,6 +27,7 @@ class WDPictureTableViewController: UITableViewController {
     var page = 1
     /**  请求下一页需要的参数  */
     var maxtime = ""
+ 
     
     
     
@@ -135,13 +136,11 @@ class WDPictureTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(pictureCellReuseIdentifier, forIndexPath: indexPath) as! WDPictureCell
         let PictureTopic = pictures[indexPath.row]
         cell.pictureTopic = PictureTopic
-
         return cell
     }
     
     
-    
- 
+  
     
 
 
