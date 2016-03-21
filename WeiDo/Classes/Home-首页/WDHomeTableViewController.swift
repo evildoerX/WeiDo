@@ -15,6 +15,8 @@ let WDCommentComposeWillOpen = "WDCommentComposeWillOpen"
 let WDPublishWillOpen = "WDPublishWillOpen"
 class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDelegate {
 
+
+    var statusId:Int = 0
     //新微博提示数字
     var newStatusCount:String?
     /// 保存微博数组
@@ -151,10 +153,14 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
       {
         return
         }
-    UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(WDPulblishViewController(id: id), animated: false, completion: nil)
         
+        statusId = id
+    UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(WDPulblishViewController(id: id), animated: false, completion: nil)
+       
+     
+ //
     }
-    
+
     /**
      显示图片浏览器
      */
@@ -417,6 +423,8 @@ extension WDHomeTableViewController
         return rowHeight
     }
  
+  
+
 
 }
 

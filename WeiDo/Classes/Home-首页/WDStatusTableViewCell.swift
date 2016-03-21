@@ -31,6 +31,8 @@ enum StatusTableViewCellIdentifier: String
     }
 }
 
+
+
 class WDStatusTableViewCell: UITableViewCell {
     
     /// 保存配图的宽度约束
@@ -60,6 +62,8 @@ class WDStatusTableViewCell: UITableViewCell {
             pictureWidthCons?.constant = size.width
             pictureHeightCons?.constant = size.height
             pictureTopCons?.constant = size.height == 0 ? 0 : 10
+            
+            
         }
     }
     
