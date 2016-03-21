@@ -140,7 +140,7 @@ class WDStatusTableViewCell: UITableViewCell {
             let str = string
             let info = [WDOpenBrowser:str]
             NSNotificationCenter.defaultCenter().postNotificationName(WDOpenBrowser, object: self, userInfo: info)
-        }
+        }   
         
         return label
     }()
