@@ -42,7 +42,10 @@ class WDMessageCell: UITableViewCell {
             create_time.text = Mention?.created_at
             //显示表情
             contentLabel.attributedText = EmoticonPackage.emoticonString(Mention?.text ?? "")
+          
        
+
+            
             image_view.sd_setImageWithURL(NSURL(string: (Mention?.profile_image_url)!))
                 setTap("mentionClick")
             if Mention?.statusText == nil

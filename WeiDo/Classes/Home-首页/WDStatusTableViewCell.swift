@@ -83,7 +83,8 @@ class WDStatusTableViewCell: UITableViewCell {
         contentView.addSubview(contentLabel)
         contentView.addSubview(pictureView)
         contentView.addSubview(footerView)
-         
+        
+        
         let width = UIScreen.mainScreen().bounds.width
         // 2.布局子控件
         topView.xmg_AlignInner(type: XMG_AlignType.TopLeft, referView: contentView, size: CGSize(width: width, height: 60))
@@ -127,8 +128,6 @@ class WDStatusTableViewCell: UITableViewCell {
     {
         let label = KILabel()
         label.textColor = UIColor.darkGrayColor()
-        
-     
         label.numberOfLines = 0
         label.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 20
         
@@ -140,7 +139,7 @@ class WDStatusTableViewCell: UITableViewCell {
             let str = string
             let info = [WDOpenBrowser:str]
             NSNotificationCenter.defaultCenter().postNotificationName(WDOpenBrowser, object: self, userInfo: info)
-        }   
+        }
         
         return label
     }()
