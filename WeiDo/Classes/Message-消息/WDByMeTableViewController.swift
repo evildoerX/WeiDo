@@ -31,7 +31,7 @@ class WDByMeTableViewController: UITableViewController{
         /**
         添加通知
         */
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "cellClick:", name: WDMessageCellSelected, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("cellClick:"), name: WDMessageCellSelected, object: nil)
        
     }
     deinit{

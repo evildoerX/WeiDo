@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().registerUserNotificationSettings(uns)
         // 注册一个通知
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchRootViewController:", name: WDSwitchRootViewControllerKey, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.switchRootViewController(_:)), name: WDSwitchRootViewControllerKey, object: nil)
        
         // 设置导航条和工具条的外观
 
@@ -234,7 +234,7 @@ extension AppDelegate: CLLocationManagerDelegate
                 let array = placemark! as NSArray
                 let mark = array.firstObject as! CLPlacemark
                 //城市
-                var city: String = (mark.addressDictionary! as NSDictionary).valueForKey("City") as! String
+                let city: String = (mark.addressDictionary! as NSDictionary).valueForKey("City") as! String
                 //国家
                 let country: NSString = (mark.addressDictionary! as NSDictionary).valueForKey("Country") as! NSString
                 //国家编码

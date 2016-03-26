@@ -28,7 +28,7 @@ class WDComposeViewController: UIViewController {
         view.backgroundColor = UIColor.whiteColor()
         
         // 注册通知监听键盘弹出和消失
-        NSNotificationCenter.defaultCenter().addObserver(self , selector: "keyboardChange:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self , selector: #selector(WDComposeViewController.keyboardChange(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
         
         // 将键盘控制器添加为当前控制器的子控制器
         addChildViewController(emoticonVC)
@@ -198,9 +198,9 @@ class WDComposeViewController: UIViewController {
      */
     private func setupNavigation()
     {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: "back")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WDComposeViewController.back))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "发送", style: UIBarButtonItemStyle.Plain, target: self, action: "compose")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "发送", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WDComposeViewController.compose))
         navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
         navigationItem.rightBarButtonItem?.enabled = false
         

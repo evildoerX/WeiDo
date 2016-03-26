@@ -47,7 +47,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         
         // 添加下拉刷新控件
         refreshControl = HomeRefreshControl()
-        refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.addTarget(self, action: #selector(WDHomeTableViewController.loadData), forControlEvents: UIControlEvents.ValueChanged)
         
         //加载微博数据
         loadData()
@@ -111,10 +111,10 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: nil, name: WDPopmenuanimationWillShow, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: nil, name: WDPopmenuanimationWilldismiss, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPhotoBrowser:", name: WDStatusPictureViewSelected, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDHomeTableViewController.showPhotoBrowser(_:)), name: WDStatusPictureViewSelected, object: nil)
   
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openBrowser:", name: WDOpenBrowser, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openStatusComment:", name: WDPublishWillOpen, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDHomeTableViewController.openBrowser(_:)), name: WDOpenBrowser, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDHomeTableViewController.openStatusComment(_:)), name: WDPublishWillOpen, object: nil)
         // 注册两个cell
         tableView.registerClass(WDNormalTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.NormalCell.rawValue)
         tableView.registerClass(WDForwardTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.ForwardCell.rawValue)
@@ -282,9 +282,9 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
     {
         //设置主页左右nav的按钮
         
-       navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("friendsRecommentIcon", target: self, action: "leftBtnClick")
+       navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("friendsRecommentIcon", target: self, action: #selector(WDHomeTableViewController.leftBtnClick))
       
-        navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_pop", target: self, action: "rightBtnClick")
+        navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_pop", target: self, action: #selector(WDHomeTableViewController.rightBtnClick))
         
         navigationItem.title = "首页"
 

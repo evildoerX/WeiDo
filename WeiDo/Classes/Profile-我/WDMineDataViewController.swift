@@ -74,6 +74,7 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
     func sweptBack()
     {
         let target = navigationController?.interactivePopGestureRecognizer?.delegate
+
         let pan = UIPanGestureRecognizer(target: target, action: "handleNavigationTransition:")
         pan.delegate = self
         self.view.addGestureRecognizer(pan)
@@ -110,7 +111,7 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
     func setupNavigation()
     {
         navigationItem.title = "我的"
-         navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: "back")
+         navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: #selector(WDMineDataViewController.back))
         self.tabBarController?.tabBar.hidden = true
         
     }
@@ -201,7 +202,7 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
     {
         let btn = UIButton()
         btn.setBackgroundImage(UIImage(named: "登录按钮背景"), forState: UIControlState.Normal)
-        btn.addTarget(self, action: "loginClick", forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(self, action: #selector(WDMineDataViewController.loginClick), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
 

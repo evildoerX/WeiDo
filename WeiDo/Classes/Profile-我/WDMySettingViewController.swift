@@ -49,22 +49,22 @@ class WDMySettingViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
   
-        if section == 0{
+        
+        if section == 0
+        {
         return 1
         }
         else if section == 1
         {
-           return 3
-        }
-        else  if section == 2
-        {
-          return 2
-        }
-        else
-        {
-          return 3
+        return 3
+          
         }
 
+        else{
+        
+            return section == 2 ? 2 : 3
+          
+        }
     }
 
     
@@ -110,18 +110,14 @@ class WDMySettingViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        
+        return section == 0 ? 0 : 30
+      
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section == 0
-        {
-            return 88
-        }
-        else
-        {
-          return 44
-        }
+      
+        return indexPath.section == 0 ? 88 : 44
     }
    
 
@@ -200,11 +196,16 @@ class WDMySettingViewController: UITableViewController {
         
     }
     
+    
+    
 }
 
 extension WDMySettingViewController: UIActionSheetDelegate
 {
 
+    
+
+    
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         //实现删除
         if buttonIndex == 0
@@ -223,13 +224,6 @@ extension WDMySettingViewController: UIActionSheetDelegate
             
         }
         
-        //实现返回
-        if buttonIndex == 1
-        {
-       
-       
-        }
-     
 
     }
 }

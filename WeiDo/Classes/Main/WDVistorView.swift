@@ -65,7 +65,7 @@ class WDVistorView: UIView {
      */
     func loginBtnClick()
     {
-      print(__FUNCTION__)
+     
     delegate?.loginBtnWillClick()
     }
     /**
@@ -73,7 +73,7 @@ class WDVistorView: UIView {
      */
     func registerBtnClick()
     {
-        print(__FUNCTION__)
+       
         delegate?.registerBtnWillClick()
     }
     
@@ -155,7 +155,7 @@ class WDVistorView: UIView {
     {
         let loginBtn = UIButton()
         loginBtn.setBackgroundImage(UIImage(named: "登录按钮背景"), forState: UIControlState.Normal)
-        loginBtn.addTarget(self, action: "loginBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
+        loginBtn.addTarget(self, action: #selector(WDVistorView.loginBtnClick), forControlEvents: UIControlEvents.TouchUpInside)
         
         return loginBtn
     }()

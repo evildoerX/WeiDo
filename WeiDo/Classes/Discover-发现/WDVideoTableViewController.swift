@@ -52,7 +52,7 @@ class WDVideoTableViewController: UITableViewController {
         
         tableView.registerNib(UINib(nibName: "WDVideoCell", bundle: nil), forCellReuseIdentifier: videoCellReuseIdentifier)
         //接受通知
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "playVideo:", name: WDVideoWillPlay, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDVideoTableViewController.playVideo(_:)), name: WDVideoWillPlay, object: nil)
         tableView.rowHeight = 500
         
     }

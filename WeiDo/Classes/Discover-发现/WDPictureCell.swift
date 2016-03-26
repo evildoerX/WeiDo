@@ -63,7 +63,7 @@ class WDPictureCell: UITableViewCell {
                 
                 //添加手势
                 text_Label.userInteractionEnabled = true
-                let tap = UITapGestureRecognizer(target: self, action: "commentClick")
+                let tap = UITapGestureRecognizer(target: self, action: #selector(WDPictureCell.commentClick))
                 text_Label.addGestureRecognizer(tap)
                 
                 /**

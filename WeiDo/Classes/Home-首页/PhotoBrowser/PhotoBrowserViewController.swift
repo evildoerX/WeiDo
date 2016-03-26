@@ -58,7 +58,7 @@ class PhotoBrowserViewController: UIViewController {
         
         //设置手势
         collectionView.userInteractionEnabled = true
-        let tap = UISwipeGestureRecognizer(target: self, action: "cellClick")
+        let tap = UISwipeGestureRecognizer(target: self, action: #selector(PhotoBrowserViewController.cellClick))
         tap.direction = UISwipeGestureRecognizerDirection.Down
         collectionView.addGestureRecognizer(tap)
     }
@@ -88,9 +88,10 @@ class PhotoBrowserViewController: UIViewController {
         // 2.保存图片
         let image = cell.iconView.image
         
-    UIImageWriteToSavedPhotosAlbum(image! ,self,"image:didFinishSavingWithError:contextInfo:",nil)
+    UIImageWriteToSavedPhotosAlbum(image! ,self,#selector(PhotoBrowserViewController.image(_:didFinishSavingWithError:contextInfo:)),nil)
    
-     
+      
+        
     }
     
     
@@ -115,7 +116,7 @@ class PhotoBrowserViewController: UIViewController {
         btn.setTitle("关闭", forState: UIControlState.Normal)
         btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         btn.backgroundColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
-        btn.addTarget(self, action: "close", forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(self, action: #selector(PhotoBrowserViewController.close), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
     
@@ -125,7 +126,7 @@ class PhotoBrowserViewController: UIViewController {
         btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         btn.backgroundColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
         
-        btn.addTarget(self, action: "save", forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(self, action: #selector(PhotoBrowserViewController.save), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
     

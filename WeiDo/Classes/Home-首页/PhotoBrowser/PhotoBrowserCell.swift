@@ -108,7 +108,7 @@ class PhotoBrowserCell: UICollectionViewCell {
         scrollview.minimumZoomScale = 0.5
         
         //监听图片的点击
-        let tap = UITapGestureRecognizer(target: self, action: "close")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(PhotoBrowserCell.close))
         iconView.addGestureRecognizer(tap)
         iconView.userInteractionEnabled = true
         

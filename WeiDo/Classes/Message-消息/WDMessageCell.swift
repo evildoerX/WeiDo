@@ -47,7 +47,7 @@ class WDMessageCell: UITableViewCell {
 
             
             image_view.sd_setImageWithURL(NSURL(string: (Mention?.profile_image_url)!))
-                setTap("mentionClick")
+                setTap(#selector(WDMessageCell.mentionClick))
             if Mention?.statusText == nil
             {
               statusContentLabel.hidden = true

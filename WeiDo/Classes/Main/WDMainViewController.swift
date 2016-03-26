@@ -145,7 +145,7 @@ class WDMainViewController: UITabBarController {
         btn.setBackgroundImage(UIImage(named:"composeBackgd"), forState: UIControlState.Normal)
 
         // 4.添加监听
-        btn.addTarget(self, action: "composeBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(self, action: #selector(WDMainViewController.composeBtnClick), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
 }
