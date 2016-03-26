@@ -31,7 +31,7 @@ class WDTechnologyNewsViewController: UITableViewController {
         
         //添加通知
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openBrowser:", name: WDTechnologyNewsWillOpen, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDTechnologyNewsViewController.openBrowser(_:)), name: WDTechnologyNewsWillOpen, object: nil)
 
     }
     deinit{
@@ -59,7 +59,7 @@ class WDTechnologyNewsViewController: UITableViewController {
     func setupNavigation()
     {
         navigationItem.title = "科技新闻"
-        navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: "back")
+        navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: #selector(WDTechnologyNewsViewController.back))
         
     }
     

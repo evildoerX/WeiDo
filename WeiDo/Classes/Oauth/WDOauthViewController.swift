@@ -22,7 +22,7 @@ class WDOauthViewController: UIViewController {
         super.viewDidLoad()
         //初始化导航条
         navigationItem.title = "WeiDo"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: "backClick")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WDOauthViewController.backClick))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
         
         

@@ -125,7 +125,7 @@ class WDMessageController: YZDisplayViewController {
     {
        let btn = UIButton()
         btn.setBackgroundImage(UIImage(named: "登录按钮背景"), forState: UIControlState.Normal)
-        btn.addTarget(self, action: "loginClick", forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(self, action: #selector(WDMessageController.loginClick), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
 }

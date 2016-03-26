@@ -181,14 +181,14 @@ class PhotoSelectorCell: UICollectionViewCell {
         let btn = UIButton()
         btn.hidden = true
         btn.setBackgroundImage(UIImage(named: "compose_photo_close"), forState: UIControlState.Normal)
-        btn.addTarget(self, action: "removeBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(self, action: #selector(PhotoSelectorCell.removeBtnClick), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
     private lazy  var addButton: UIButton = {
         let btn = UIButton()
         btn.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
         btn.setBackgroundImage(UIImage(named: "compose_pic_add"), forState: UIControlState.Normal)
-        btn.addTarget(self, action: "addBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
+        btn.addTarget(self, action: #selector(PhotoSelectorCell.addBtnClick), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
     
