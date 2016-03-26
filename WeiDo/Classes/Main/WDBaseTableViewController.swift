@@ -26,7 +26,7 @@ class WDBaseTableViewController: UITableViewController ,WDVistorViewDelegate{
 
     override func loadView() {
         
-       
+       print("loadview")
         
     }
     
