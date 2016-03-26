@@ -42,8 +42,8 @@ class WDMentionMeTableViewController: UITableViewController {
         /**
         添加通知
         */
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "cellClick:", name: WDMessageReplyWillOpen, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "cellidClick:", name: WDMessageStatusReplyWillOpen, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDMentionMeTableViewController.cellClick(_:)), name: WDMessageReplyWillOpen, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDMentionMeTableViewController.cellidClick(_:)), name: WDMessageStatusReplyWillOpen, object: nil)
     }
     deinit
     {

@@ -18,7 +18,7 @@ class WDForwardTableViewCell: WDStatusTableViewCell {
         didSet{
             let name = status?.retweeted_status?.user?.name ?? ""
             let text = status?.retweeted_status?.text ?? ""
-          //  forwardLabel.text = "@" + name + ": " + text
+        
             forwardLabel.attributedText = EmoticonPackage.emoticonString("@" + name + ": " + text)
         }
     }
@@ -27,7 +27,7 @@ class WDForwardTableViewCell: WDStatusTableViewCell {
         super.setupUI()
     
         // 1.添加子控件
-        //        contentView.addSubview(forwardButton)
+ 
         contentView.insertSubview(forwardButton, belowSubview: pictureView)
         contentView.insertSubview(forwardLabel, aboveSubview: forwardButton)
         

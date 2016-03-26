@@ -234,7 +234,7 @@ extension AppDelegate: CLLocationManagerDelegate
                 let array = placemark! as NSArray
                 let mark = array.firstObject as! CLPlacemark
                 //城市
-                var city: String = (mark.addressDictionary! as NSDictionary).valueForKey("City") as! String
+                let city: String = (mark.addressDictionary! as NSDictionary).valueForKey("City") as! String
                 //国家
                 let country: NSString = (mark.addressDictionary! as NSDictionary).valueForKey("Country") as! NSString
                 //国家编码

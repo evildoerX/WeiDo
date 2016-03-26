@@ -56,10 +56,8 @@ class WDStatusPictureView: UICollectionView {
         // 3.如果只有一张配图, 返回图片的实际大小
         if count == 1
         {
-            // 3.1取出缓存的图片
-            let key = status?.storedPicURLS!.first?.absoluteString
-            let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(key!)
-            
+
+    
             pictureLayout.itemSize = CGSizeMake(90, 90)
             // 3.2返回缓存图片的尺寸
             return CGSizeMake(90, 90)

@@ -56,7 +56,6 @@ class WDCommentCell: UITableViewCell {
   
         contentLabel.numberOfLines = 0          //设置无限换行
         contentLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping  //自动折行
-        
         /**
         设置图为圆角
         */

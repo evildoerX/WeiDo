@@ -200,11 +200,16 @@ class WDMySettingViewController: UITableViewController {
         
     }
     
+    
+    
 }
 
 extension WDMySettingViewController: UIActionSheetDelegate
 {
 
+    
+
+    
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         //实现删除
         if buttonIndex == 0

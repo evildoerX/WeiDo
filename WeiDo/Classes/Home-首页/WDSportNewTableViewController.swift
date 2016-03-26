@@ -32,7 +32,7 @@ class WDSportNewTableViewController: UITableViewController {
        
         //添加通知
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openBrowser:", name: WDSportNewsWillOpen, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDSportNewTableViewController.openBrowser(_:)), name: WDSportNewsWillOpen, object: nil)
     }
     
     deinit{
@@ -42,7 +42,7 @@ class WDSportNewTableViewController: UITableViewController {
     func setupNavigation()
     {
         navigationItem.title = "体育新闻"
-        navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: "back")
+        navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: #selector(WDSportNewTableViewController.back))
     
     }
     

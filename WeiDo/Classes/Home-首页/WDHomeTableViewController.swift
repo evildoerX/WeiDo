@@ -47,7 +47,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         
         // 添加下拉刷新控件
         refreshControl = HomeRefreshControl()
-        refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.addTarget(self, action: #selector(WDHomeTableViewController.loadData), forControlEvents: UIControlEvents.ValueChanged)
         
         //加载微博数据
         loadData()
@@ -67,9 +67,11 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
     func loadNewsCount()
     {
      
-        AFHTTPSessionManager().GET("https://rm.api.weibo.com/2/remind/unread_count.json", parameters: ["access_token":userAccount.loadAccount()!.access_token!,"uid":userAccount.loadAccount()!.uid!], progress: nil, success: { (_, JSON) -> Void in
+        let path  = "https://rm.api.weibo.com/2/remind/unread_count.json"
+        let params = ["access_token":userAccount.loadAccount()!.access_token!,"uid":userAccount.loadAccount()!.uid!]
+        AFHTTPSessionManager().GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
           
-       self.newStatusCount = String(JSON!["status"])
+            self.newStatusCount = String(JSON!["status"])
             if self.newStatusCount != "0"
             {
        self.tabBarItem.badgeValue = self.newStatusCount
@@ -90,7 +92,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         if viewController.isEqual(vc) == true {
             
          UIView.animateWithDuration(0.25, animations: { () -> Void in
-        self.tableView.contentOffset = CGPointMake(0, -55)
+        self.tableView.contentOffset = CGPointMake(0, -60)
 
       })
             return false
@@ -109,12 +111,11 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
     func addobserver()
     {
        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: nil, name: WDPopmenuanimationWillShow, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: nil, name: WDPopmenuanimationWilldismiss, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPhotoBrowser:", name: WDStatusPictureViewSelected, object: nil)
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDHomeTableViewController.showPhotoBrowser(_:)), name: WDStatusPictureViewSelected, object: nil)
   
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openBrowser:", name: WDOpenBrowser, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openStatusComment:", name: WDPublishWillOpen, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDHomeTableViewController.openBrowser(_:)), name: WDOpenBrowser, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDHomeTableViewController.openStatusComment(_:)), name: WDPublishWillOpen, object: nil)
         // 注册两个cell
         tableView.registerClass(WDNormalTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.NormalCell.rawValue)
         tableView.registerClass(WDForwardTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.ForwardCell.rawValue)
@@ -136,7 +137,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         {
             return
         }
-        print(urls)
+        
         let url = NSURL(string: urls)
         let vc = RxWebViewController(url: url)
         self.navigationController?.pushViewController(vc, animated: true)
@@ -282,9 +283,9 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
     {
         //设置主页左右nav的按钮
         
-       navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("friendsRecommentIcon", target: self, action: "leftBtnClick")
+       navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("friendsRecommentIcon", target: self, action: #selector(WDHomeTableViewController.leftBtnClick))
       
-        navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_pop", target: self, action: "rightBtnClick")
+        navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_pop", target: self, action: #selector(WDHomeTableViewController.rightBtnClick))
         
         navigationItem.title = "首页"
 

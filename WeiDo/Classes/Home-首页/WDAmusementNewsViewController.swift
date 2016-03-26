@@ -30,7 +30,7 @@ class WDAmusementNewsViewController: UITableViewController {
         
         //添加通知
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openBrowser:", name: WDAmusementNewsWillOpen, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDAmusementNewsViewController.openBrowser(_:)), name: WDAmusementNewsWillOpen, object: nil)
     }
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self)
@@ -58,7 +58,7 @@ class WDAmusementNewsViewController: UITableViewController {
     func setupNavigation()
     {
         navigationItem.title = "娱乐新闻"
-        navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: "back")
+        navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: #selector(WDAmusementNewsViewController.back))
         
     }
 

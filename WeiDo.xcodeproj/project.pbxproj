@@ -204,6 +204,7 @@
 		B21FD9191C61BC9C00C89571 /* WeiDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FD91D1C61BC9C00C89571 /* WeiDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiDoUITests.swift; sourceTree = "<group>"; };
 		B21FD91F1C61BC9C00C89571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B22CC49D1CA22C8B00BBDB14 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = ../Tools/fmdb/Reveal.framework; sourceTree = "<group>"; };
 		B23222B31C6C2A9B0081E912 /* HomeRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRefreshControl.swift; sourceTree = "<group>"; };
 		B23222B51C6C2AB40081E912 /* HomeRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeRefreshView.xib; sourceTree = "<group>"; };
 		B23222BB1C6C5A530081E912 /* PhotoBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserViewController.swift; sourceTree = "<group>"; };
@@ -767,7 +768,7 @@
 		B2A748891C61C59400FC3478 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B2F3E1F21C9FC19A004FFC36 /* Pulish-弹出菜单 */,
+				B2F3E1F21C9FC19A004FFC36 /* Publish-弹出菜单 */,
 				B2F3E1F11C9FBF8E004FFC36 /* CommentCell-评论 */,
 				B2A7488D1C61C59400FC3478 /* Message-消息 */,
 				B23222BF1C6CC2C00081E912 /* Compose-发送界面 */,
@@ -920,6 +921,7 @@
 		B2E16D381C7AAD23009E6B33 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				B22CC49D1CA22C8B00BBDB14 /* Reveal.framework */,
 				B25B880F1C830B030010B55D /* YZDisplayViewController */,
 				B2FDE7071C701CE6000E50F0 /* fmdb */,
 			);
@@ -1025,13 +1027,13 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		B2F3E1F21C9FC19A004FFC36 /* Pulish-弹出菜单 */ = {
+		B2F3E1F21C9FC19A004FFC36 /* Publish-弹出菜单 */ = {
 			isa = PBXGroup;
 			children = (
 				B2E408E51C97B5E20075340B /* WDPulblishViewController.swift */,
 				B2E408E61C97B5E20075340B /* WDPulblishViewController.xib */,
 			);
-			name = "Pulish-弹出菜单";
+			name = "Publish-弹出菜单";
 			sourceTree = "<group>";
 		};
 		B2FDE6DD1C6EF5D2000E50F0 /* EmoticonView-表情 */ = {
@@ -1510,6 +1512,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/WeiDo/Classes/Tools/fmdb",
 				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = WeiDo/Info.plist;
@@ -1519,6 +1522,40 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/WeiDo/Classes/Other/UMSocial_Sdk_5.0.1",
 					"$(PROJECT_DIR)/UMSocial_Sdk_5.0.1",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"stdc++.6.0.9\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AMapSearchKit\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"KILabel\"",
+					"-framework",
+					"\"MAMapKit\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-ObjC",
+					"-framework",
+					Reveal,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = llx.WeiDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1536,6 +1573,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/WeiDo/Classes/Tools/fmdb",
 				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = WeiDo/Info.plist;
@@ -1545,6 +1583,40 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/WeiDo/Classes/Other/UMSocial_Sdk_5.0.1",
 					"$(PROJECT_DIR)/UMSocial_Sdk_5.0.1",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"stdc++.6.0.9\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"AMapSearchKit\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"KILabel\"",
+					"-framework",
+					"\"MAMapKit\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-ObjC",
+					"-framework",
+					Reveal,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = llx.WeiDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
