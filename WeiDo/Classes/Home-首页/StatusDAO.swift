@@ -20,6 +20,7 @@ class StatusDAO: NSObject {
             // 2.如果本地有, 直接返回
             if !array.isEmpty
             {
+                SVProgressHUD.showInfoWithStatus("正在加载数据哦...")
                 print("从数据库中获取")
                 finished(array, error: nil)
                 return
