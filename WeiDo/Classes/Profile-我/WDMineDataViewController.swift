@@ -58,7 +58,7 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
             
         }
         setupNavigation()
-  //      sweptBack()
+  
         
        
 
@@ -68,19 +68,7 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewWillDisappear(true)
         self.tabBarController?.tabBar.hidden = false
     }
-    /**
-     滑动返回
-     */
-    func sweptBack()
-    {
-        let target = navigationController?.interactivePopGestureRecognizer?.delegate
-
-        let pan = UIPanGestureRecognizer(target: target, action: "handleNavigationTransition:")
-        pan.delegate = self
-        self.view.addGestureRecognizer(pan)
-        navigationController?.interactivePopGestureRecognizer?.enabled = false
-
-    }
+  
     
     /**
      未登录界面
@@ -111,8 +99,7 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
     func setupNavigation()
     {
         navigationItem.title = "我的"
-    //     navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: #selector(WDMineDataViewController.back))
-  //      self.tabBarController?.tabBar.hidden = true
+ 
         
     }
     
@@ -173,11 +160,7 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     
-    func back()
-    {
-    dismissViewControllerAnimated(true, completion: nil)
-    }
-    
+   
     func loginClick()
     {
         let oauthView = WDOauthViewController()
@@ -185,16 +168,7 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
         presentViewController(nav, animated: true, completion: nil)
         
     }
-    /**
-     判断是否滑动返回
-     */
-    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if self.childViewControllers.count == 1
-        {
-            return false
-        }
-        return true
-    }
+
     
     // MARK: - 懒加载
     

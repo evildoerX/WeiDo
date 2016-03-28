@@ -149,8 +149,9 @@ class WDTextTableViewController: UITableViewController {
         }
       
         let vc = WDCommentViewController(textTopic: idStr)
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
-        self.hidesBottomBarWhenPushed = false
+     
         
     }
 

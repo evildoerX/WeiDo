@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import AFNetworking
+import SVProgressHUD
 
 let WDHomeReuseIdentifier = "WDHomeReuseIdentifier"
 let WDCommentComposeWillOpen = "WDCommentComposeWillOpen"
@@ -201,7 +202,8 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
      */
     @objc private func loadData()
     {
-        /*
+        SVProgressHUD.showInfoWithStatus("正在加载数据哦...")
+             /*
         1.默认最新返回20条数据
         2.since_id : 会返回比since_id大的微博
         3.max_id: 会返回小于等于max_id的微博

@@ -262,14 +262,14 @@ extension AppDelegate: CLLocationManagerDelegate
                 //再转换为不带声调的拼音
                 CFStringTransform(citynamestr, nil, kCFStringTransformStripDiacritics, false)
                 
-              
+               
               //去掉中间的空格
               cityname =  String(citynamestr).stringByReplacingOccurrencesOfString(" ", withString: "")
                 
                 //保存起来
                 currAddress = FormattedAddressLines as String
                 currLocationName = Name as String
-
+ 
                 print(currAddress!)
                 print(currLocationName!)
             }

@@ -135,7 +135,13 @@ class WDMySettingViewController: UITableViewController {
             {
             case 0:
                 //打开地图
-            self.navigationController?.pushViewController(WDMapViewController(), animated: true)
+//                override func viewWillDisappear(animated: Bool) {
+//                    super.viewWillDisappear(true)
+//                    self.tabBarController?.tabBar.hidden = false
+//                }
+                let vc = WDMapViewController()
+                vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
            
             case 1:
              
@@ -143,13 +149,15 @@ class WDMySettingViewController: UITableViewController {
                 
                 let vc = WDNearbyViewController()
                 vc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(WDNearbyViewController(), animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
                 
                 
             case 2:
                
-               //附近照片
-      self.navigationController?.pushViewController(WDTravelTableViewController(), animated: true)
+               //游记
+              let vc = WDTravelTableViewController()
+                   vc.hidesBottomBarWhenPushed = true
+      self.navigationController?.pushViewController(vc, animated: true)
             default:
                 print("见鬼了")
             }
@@ -162,7 +170,9 @@ class WDMySettingViewController: UITableViewController {
             {
             case 0:
             //打开天气
-            self.navigationController?.pushViewController(WDWeatherViewController(), animated: true)
+                let vc = WDWeatherViewController()
+                vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
             case 1:
                 StatusDAO.cleanCahcheStatuses()
                 SVProgressHUD.showSuccessWithStatus("清除成功！")
