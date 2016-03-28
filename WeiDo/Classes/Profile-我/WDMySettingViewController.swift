@@ -124,8 +124,9 @@ class WDMySettingViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0
         {
-
-            self.navigationController?.pushViewController(WDMineDataViewController(), animated: true)
+            let vc = WDMineDataViewController()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         else if indexPath.section == 1
         {
@@ -139,7 +140,10 @@ class WDMySettingViewController: UITableViewController {
             case 1:
              
                 //附近的人
-                self.navigationController?.pushViewController(WDNearbyViewController(), animated: true)
+                
+                let vc = WDNearbyViewController()
+                vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(WDNearbyViewController(), animated: true)
                 
                 
             case 2:

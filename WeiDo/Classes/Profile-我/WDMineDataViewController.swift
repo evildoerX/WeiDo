@@ -58,7 +58,7 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
             
         }
         setupNavigation()
-        sweptBack()
+  //      sweptBack()
         
        
 
@@ -111,8 +111,8 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
     func setupNavigation()
     {
         navigationItem.title = "我的"
-         navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: #selector(WDMineDataViewController.back))
-        self.tabBarController?.tabBar.hidden = true
+    //     navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: #selector(WDMineDataViewController.back))
+  //      self.tabBarController?.tabBar.hidden = true
         
     }
     

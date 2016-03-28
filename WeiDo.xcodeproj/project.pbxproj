@@ -128,7 +128,6 @@
 		B2E9A4AF1C9BABF0001B161D /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9A4A71C9BABF0001B161D /* NJKWebViewProgressView.m */; };
 		B2E9A4B01C9BABF0001B161D /* RxWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9A4A91C9BABF0001B161D /* RxWebViewController.m */; };
 		B2E9A4B11C9BABF0001B161D /* RxWebViewNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E9A4AB1C9BABF0001B161D /* RxWebViewNavigationViewController.m */; };
-		B2E9A4B51C9BFE54001B161D /* WDLocalNotificationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E9A4B41C9BFE54001B161D /* WDLocalNotificationUtils.swift */; };
 		B2F105851C93B749009F4140 /* WDMySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F105841C93B749009F4140 /* WDMySettingViewController.swift */; };
 		B2F3E1ED1C9F9917004FFC36 /* WDStatusCommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F3E1EC1C9F9917004FFC36 /* WDStatusCommentTableViewController.swift */; };
 		B2F3E1F01C9FB78E004FFC36 /* StatusComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F3E1EF1C9FB78D004FFC36 /* StatusComment.swift */; };
@@ -323,7 +322,6 @@
 		B2E9A4A91C9BABF0001B161D /* RxWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewController.m; sourceTree = "<group>"; };
 		B2E9A4AA1C9BABF0001B161D /* RxWebViewNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxWebViewNavigationViewController.h; sourceTree = "<group>"; };
 		B2E9A4AB1C9BABF0001B161D /* RxWebViewNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RxWebViewNavigationViewController.m; sourceTree = "<group>"; };
-		B2E9A4B41C9BFE54001B161D /* WDLocalNotificationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDLocalNotificationUtils.swift; sourceTree = "<group>"; };
 		B2F105841C93B749009F4140 /* WDMySettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMySettingViewController.swift; sourceTree = "<group>"; };
 		B2F3E1EC1C9F9917004FFC36 /* WDStatusCommentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDStatusCommentTableViewController.swift; sourceTree = "<group>"; };
 		B2F3E1EF1C9FB78D004FFC36 /* StatusComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusComment.swift; sourceTree = "<group>"; };
@@ -884,7 +882,6 @@
 			children = (
 				B2A7489E1C61D78400FC3478 /* MainVCSettings.json */,
 				B2A7489B1C61D76200FC3478 /* WDNULLViewController.swift */,
-				B2E9A4B41C9BFE54001B161D /* WDLocalNotificationUtils.swift */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -1339,7 +1336,6 @@
 				B2FDE7171C701CE6000E50F0 /* FMDatabaseAdditions.m in Sources */,
 				B25B88281C830B520010B55D /* WDTextTableViewController.swift in Sources */,
 				B203158F1C6B00FB0091A270 /* WDStatusTableViewCell.swift in Sources */,
-				B2E9A4B51C9BFE54001B161D /* WDLocalNotificationUtils.swift in Sources */,
 				B25B881C1C830B030010B55D /* YZFlowLayout.m in Sources */,
 				B25B882F1C8340310010B55D /* WMWordToipCell.swift in Sources */,
 				B23222B41C6C2A9B0081E912 /* HomeRefreshControl.swift in Sources */,

@@ -42,7 +42,8 @@ class WDSportNewTableViewController: UITableViewController {
     func setupNavigation()
     {
         navigationItem.title = "体育新闻"
-        navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: #selector(WDSportNewTableViewController.back))
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WDSportNewTableViewController.back))
     
     }
     

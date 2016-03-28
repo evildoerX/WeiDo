@@ -59,7 +59,7 @@ class WDTechnologyNewsViewController: UITableViewController {
     func setupNavigation()
     {
         navigationItem.title = "科技新闻"
-        navigationItem.leftBarButtonItem = UIBarButtonItem.createBackBarButtonItem(self, action: #selector(WDTechnologyNewsViewController.back))
+         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: "back")
         
     }
     
