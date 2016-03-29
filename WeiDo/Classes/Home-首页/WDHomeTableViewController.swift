@@ -16,7 +16,7 @@ let WDCommentComposeWillOpen = "WDCommentComposeWillOpen"
 let WDPublishWillOpen = "WDPublishWillOpen"
 class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDelegate {
 
-
+   
     var statusId:Int = 0
     //新微博提示数字
     var newStatusCount:String?
@@ -40,27 +40,30 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
     
             return
         }
+        
+        
+        
         //初始化导航条
         setupNavigation()
   
         addobserver()
      
         
+        loadNewsCount()
+        
         // 添加下拉刷新控件
         refreshControl = HomeRefreshControl()
         refreshControl?.addTarget(self, action: #selector(WDHomeTableViewController.loadData), forControlEvents: UIControlEvents.ValueChanged)
-        
-        //加载微博数据
-        loadData()
+     
     
-        loadNewsCount()
- 
-       
+        //加载数据
+       loadData()
+        
+        
        
     }
-    
   
-   
+    
     
     /**
      获取未读微博数
@@ -381,8 +384,11 @@ extension WDHomeTableViewController
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        let status = statuses![indexPath.row]
   
+        
         // 1.获取cell
         let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status), forIndexPath: indexPath) as! WDStatusTableViewCell
+       
+   
         // 2.设置数据
         cell.status = status
         
@@ -442,11 +448,15 @@ extension WDHomeTableViewController
         
     }
     
-  
     
+       
+
+    }
+  
 
 
-}
+
+
 
 
 

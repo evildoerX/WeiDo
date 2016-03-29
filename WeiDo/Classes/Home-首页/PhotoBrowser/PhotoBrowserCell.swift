@@ -163,7 +163,5 @@ extension PhotoBrowserCell: UIScrollViewDelegate
         offsety = offsety < 0 ? 0 : offsety
         scrollview.contentInset = UIEdgeInsetsMake(offsety, offsetx, offsety, offsetx)
     }
-    
-    
-  
+
 }
