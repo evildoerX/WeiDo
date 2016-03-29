@@ -141,6 +141,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         
         let url = NSURL(string: urls)
         let vc = RxWebViewController(url: url)
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
       
         
@@ -379,13 +380,14 @@ extension WDHomeTableViewController
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        let status = statuses![indexPath.row]
-    
+    print(indexPath.row)
         // 1.获取cell
         let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status), forIndexPath: indexPath) as! WDStatusTableViewCell
         // 2.设置数据
         cell.status = status
         
-        
+
+      
         // 4.判断是否滚动到了最后一个cell
         let count = statuses?.count ?? 0
         if indexPath.row == (count - 1)
@@ -395,9 +397,10 @@ extension WDHomeTableViewController
             loadData()
         }
 
-        
+  
         // 3.返回cell
-        return cell    }
+        return cell
+    }
     
     
     // 返回行高
@@ -427,6 +430,20 @@ extension WDHomeTableViewController
     }
  
   
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+       //取出id数据
+ 
+        
+        let id = statuses![indexPath.row].id
+        let vc = WDStatusCommentTableViewController(id: id)
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.tableView.reloadData()
+        
+    }
+    
+  
+    
 
 
 }

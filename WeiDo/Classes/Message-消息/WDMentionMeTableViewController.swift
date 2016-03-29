@@ -171,6 +171,8 @@ extension WDMentionMeTableViewController: UIActionSheetDelegate
                     SVProgressHUD.showErrorWithStatus("删除失败,只能删除自己的评论哦", maskType: SVProgressHUDMaskType.Black)
             })
             
+            self.tableView.reloadData()
+
        
         }
 

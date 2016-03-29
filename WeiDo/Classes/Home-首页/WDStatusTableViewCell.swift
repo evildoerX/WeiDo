@@ -92,10 +92,10 @@ class WDStatusTableViewCell: UITableViewCell {
         contentLabel.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: topView, size: nil, offset: CGPoint(x: 10, y: 10))
         
        footerView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: pictureView, size: CGSize(width: width, height: 32), offset: CGPoint(x: -10, y: 10))
-
-        contentLabel.userInteractionEnabled = true
+//
+       footerView.userInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(WDStatusTableViewCell.cellClick))
-        contentLabel.addGestureRecognizer(tap)
+       footerView.addGestureRecognizer(tap)
     }
     
     func cellClick()

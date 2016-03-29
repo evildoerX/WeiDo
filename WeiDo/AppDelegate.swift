@@ -236,9 +236,9 @@ extension AppDelegate: CLLocationManagerDelegate
                 //城市
                 let city: String = (mark.addressDictionary! as NSDictionary).valueForKey("City") as! String
                 //国家
-                let country: NSString = (mark.addressDictionary! as NSDictionary).valueForKey("Country") as! NSString
+        //        let country: NSString = (mark.addressDictionary! as NSDictionary).valueForKey("Country") as! NSString
                 //国家编码
-                let CountryCode: NSString = (mark.addressDictionary! as NSDictionary).valueForKey("CountryCode") as! NSString
+             //   let CountryCode: NSString = (mark.addressDictionary! as NSDictionary).valueForKey("CountryCode") as! NSString
                 //街道位置
                 let FormattedAddressLines: NSString = (mark.addressDictionary! as NSDictionary).valueForKey("FormattedAddressLines")?.firstObject as! NSString
                 //具体位置
@@ -246,7 +246,7 @@ extension AppDelegate: CLLocationManagerDelegate
                 //省
                 var State: String = (mark.addressDictionary! as NSDictionary).valueForKey("State") as! String
                 //区
-                let SubLocality: NSString = (mark.addressDictionary! as NSDictionary).valueForKey("SubLocality") as! NSString
+              //  let SubLocality: NSString = (mark.addressDictionary! as NSDictionary).valueForKey("SubLocality") as! NSString
                 
            
                 //去掉“市”和“省”字眼

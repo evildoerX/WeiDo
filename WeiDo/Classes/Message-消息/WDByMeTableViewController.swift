@@ -27,6 +27,7 @@ class WDByMeTableViewController: UITableViewController{
         super.viewDidLoad()
         setupTableview()
         setUpRefrshControl()
+        
  
         /**
         添加通知
