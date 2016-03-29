@@ -9,13 +9,15 @@
 import UIKit
 import AFNetworking
 import MJRefresh
-import MediaPlayer
+import AVKit
+import AVFoundation
 
 let requestPath = "http://api.budejie.com/api/api_open.php"
 let videoCellReuseIdentifier = "WDVideoCell"
 class WDVideoTableViewController: UITableViewController {
 
-   
+    var playViewController = AVPlayerViewController()
+    var playerView = AVPlayer()
     /// 数据源
     var video =  [WDTopic]()
     /// header
@@ -151,14 +153,16 @@ class WDVideoTableViewController: UITableViewController {
             return
         }
         let url = NSURL(string: urls)
-        let play  = MPMoviePlayerViewController(contentURL: url)
-        presentViewController(play, animated: true, completion: nil)
+
+        playerView = AVPlayer(URL: url!)
+        
+        playViewController.player = playerView
+        
+        self.presentViewController(playViewController, animated: true) {
+            self.playViewController.player?.play()
+        }
     }
-    
-    
-    
-    
-    
+ 
     
     // MARK - tableview delegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
