@@ -9,7 +9,6 @@
 import UIKit
 import SDWebImage
 
-
 protocol PhotoBrowserCellDelegate:NSObjectProtocol
 {
     func PhotoBrowserCellDidSelected(cell: PhotoBrowserCell)
@@ -29,10 +28,12 @@ class PhotoBrowserCell: UICollectionViewCell {
              
              self.setImagePosition()
             }
+            
+            bgImageview.sd_setImageWithURL(imageURL, placeholderImage: UIImage(named: "userGuide1"))
+           
         }
     }
-    
-    
+ 
     /**
      重置图片的属性
      */
@@ -95,8 +96,17 @@ class PhotoBrowserCell: UICollectionViewCell {
     
     private func setupUI()
     {
+        // 背景毛玻璃效果
+        let blureffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let visualView = UIVisualEffectView(effect: blureffect)
+        visualView.frame = UIScreen.mainScreen().bounds
+        visualView.alpha = 1
+    
+        bgImageview.frame = UIScreen.mainScreen().bounds
         // 1.添加子控件
     
+        contentView.addSubview(bgImageview)
+        contentView.addSubview(visualView)
         scrollview.addSubview(iconView)
         contentView.addSubview(scrollview)    
         // 2.布局子控件
@@ -126,9 +136,13 @@ class PhotoBrowserCell: UICollectionViewCell {
     private lazy var scrollview: UIScrollView = UIScrollView()
      lazy var iconView: UIImageView = UIImageView()
     
+    private lazy var bgImageview: UIImageView = UIImageView()
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
 }
 
 

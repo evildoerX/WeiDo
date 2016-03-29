@@ -115,7 +115,7 @@ class PhotoBrowserViewController: UIViewController {
         let btn = UIButton()
         btn.setTitle("关闭", forState: UIControlState.Normal)
         btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        btn.backgroundColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
+        btn.backgroundColor = UIColor.clearColor()
         btn.addTarget(self, action: #selector(PhotoBrowserViewController.close), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
@@ -124,7 +124,7 @@ class PhotoBrowserViewController: UIViewController {
         let btn = UIButton()
         btn.setTitle("保存", forState: UIControlState.Normal)
         btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        btn.backgroundColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
+        btn.backgroundColor = UIColor.clearColor()
         
         btn.addTarget(self, action: #selector(PhotoBrowserViewController.save), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
@@ -152,10 +152,12 @@ extension PhotoBrowserViewController :UICollectionViewDataSource, PhotoBrowserCe
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(photoBrowserCellReuseIdentifier, forIndexPath: indexPath) as! PhotoBrowserCell
-        
-        cell.backgroundColor = UIColor.clearColor()
+  
         cell.imageURL = pictureURLs![currentIndex!]
         cell.photoBrowserCellDelegate = self
+       
+     
+       
         return cell
     }
     
@@ -186,7 +188,8 @@ class PhotoBrowserLayout : UICollectionViewFlowLayout {
         collectionView?.pagingEnabled = true
         collectionView?.scrollEnabled = false
         collectionView?.bounces =  false
-        collectionView?.backgroundColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 0.9)
+
+  
     }
 }
 

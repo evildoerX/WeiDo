@@ -66,6 +66,10 @@ class WDPictureCell: UITableViewCell {
                 let tap = UITapGestureRecognizer(target: self, action: #selector(WDPictureCell.commentClick))
                 text_Label.addGestureRecognizer(tap)
                 
+                Image_view.userInteractionEnabled = true
+                let imageTap = UITapGestureRecognizer(target: self, action: #selector(WDPictureCell.imageClick))
+                Image_view.addGestureRecognizer(imageTap)
+                
                 /**
                 设置图为圆角
                 */
@@ -88,6 +92,13 @@ class WDPictureCell: UITableViewCell {
         let info = [WDCommentWillOpen:pictureTopic!]
         NSNotificationCenter.defaultCenter().postNotificationName(WDCommentWillOpen, object: self, userInfo: info)
         
+    }
+    
+    func imageClick()
+    {
+    
+        let info = [WDPictureWillOpen:pictureTopic!.cdn_img!]
+        NSNotificationCenter.defaultCenter().postNotificationName(WDPictureWillOpen, object: self, userInfo: info)
     }
     
  

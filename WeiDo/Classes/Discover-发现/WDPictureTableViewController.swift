@@ -10,7 +10,7 @@ import UIKit
 import AFNetworking
 import MJRefresh
 
-
+let WDPictureWillOpen = "WDPictureWillOpen"
 let pictureCellReuseIdentifier = "WDPictureCell"
 class WDPictureTableViewController: UITableViewController {
     /// 数据源
@@ -37,7 +37,39 @@ class WDPictureTableViewController: UITableViewController {
         
         setupTableView()
         setUpRefrshControl()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDPictureTableViewController.openPothoBrowser(_:)), name: WDPictureWillOpen, object: nil)
     }
+    
+    deinit
+    {
+     NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    /**
+     打开图片浏览器
+     */
+    func openPothoBrowser(notify: NSNotification)
+    {
+        
+        
+        guard let urlstr = notify.userInfo![WDPictureWillOpen] as? String  else
+        {
+            return
+        }
+        
+        
+        let urls = [NSURL(string: urlstr)!]
+        
+        
+        //创建控制器
+        let vc = PhotoBrowserViewController(index: 0, urls: urls)
+        // 显示控制器
+        presentViewController(vc, animated: true, completion: nil)
+        
+    }
+
+    
     /**
      设置tableview属性
      */
