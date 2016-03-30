@@ -14,6 +14,7 @@ import SVProgressHUD
 let WDHomeReuseIdentifier = "WDHomeReuseIdentifier"
 let WDCommentComposeWillOpen = "WDCommentComposeWillOpen"
 let WDPublishWillOpen = "WDPublishWillOpen"
+let bgcolor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
 class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDelegate {
 
    
@@ -280,13 +281,19 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         }
            }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
 
+    
     
     /**
      设置主页左右nav的按钮
      */
     private func setupNavigation()
     {
+  
+ 
         //设置主页左右nav的按钮
         
        navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("friendsRecommentIcon", target: self, action: #selector(WDHomeTableViewController.leftBtnClick))
@@ -361,10 +368,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         label.hidden = true
         return label
     }()
-    
-  
 
-    
     /// 微博行高的缓存, 利用字典作为容器. key就是微博的id, 值就是对应微博的行高
     var rowCache: [Int: CGFloat] = [Int: CGFloat]()
     
@@ -387,19 +391,16 @@ extension WDHomeTableViewController
         
         // 1.获取cell
         let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status), forIndexPath: indexPath) as! WDStatusTableViewCell
-       
-   
+ 
         // 2.设置数据
         cell.status = status
-        
-
-      
-        // 4.判断是否滚动到了最后一个cell
+ 
+        // 3.判断是否滚动到了最后一个cell
         let count = statuses?.count ?? 0
         if indexPath.row == (count - 1)
         {
             pullupRefreshFlag = true
-            //            print("上拉加载更多")
+          
             loadData()
         }
 
@@ -447,9 +448,7 @@ extension WDHomeTableViewController
         self.tableView.reloadData()
         
     }
-    
-    
-       
+
 
     }
   

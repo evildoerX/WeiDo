@@ -23,6 +23,8 @@ var currAddress: String?
 //保存获取到的本地位置
 var currLocation : CLLocation!
 
+//全局颜色
+let bgColor = UIColor(red: 77/255, green: 194/255, blue: 167/255, alpha: 1.0)
 let WDSwitchRootViewControllerKey = "WDSwitchRootViewControllerKey"
 
 @UIApplicationMain
@@ -32,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
 
-     let bgColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
     
     
     
@@ -98,14 +99,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupUI()
     {
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+       UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         //背景颜色
-        UITabBar.appearance().tintColor = bgColor
-        //字体颜色
+       UITabBar.appearance().tintColor = bgColor
+ 
+             //字体颜色
         UITabBar.appearance().barTintColor = UIColor.whiteColor()
+       
         //背景颜色
         UINavigationBar.appearance().barTintColor = bgColor
-        //返回键颜色
+           //返回键颜色
         UINavigationBar.appearance().barStyle = UIBarStyle.Default
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         // 标题颜色

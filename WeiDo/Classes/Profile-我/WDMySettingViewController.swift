@@ -22,8 +22,7 @@ class WDMySettingViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
+
         navigationItem.title = "我的"
 
         tableView.tableFooterView = UIView()

@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-let bgcolor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
+
 
 class WDStatusTableViewTopView: UIView {
 

@@ -183,6 +183,7 @@ class WDComposeViewController: UIViewController {
     {
         // 1.添加子控件
         view.addSubview(textView)
+       
         textView.addSubview(placeholderLabel)
         textView.alwaysBounceVertical = true
         textView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.OnDrag
@@ -190,6 +191,7 @@ class WDComposeViewController: UIViewController {
         // 2.布局子控件
         textView.xmg_Fill(view)
         placeholderLabel.xmg_AlignInner(type: XMG_AlignType.TopLeft, referView: textView, size: nil, offset: CGPoint(x: 5, y: 8))
+      
     }
     
     
@@ -198,13 +200,13 @@ class WDComposeViewController: UIViewController {
      */
     private func setupNavigation()
     {
+     navigationController?.navigationBar.setBackgroundImage(UIImage(named: "login_register_background"), forBarMetrics: UIBarMetrics.Default)
+        navigationItem.titleView = iconImageView
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WDComposeViewController.back))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "发送", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WDComposeViewController.compose))
         navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
         navigationItem.rightBarButtonItem?.enabled = false
-        
-        
     }
     
     
@@ -249,6 +251,19 @@ class WDComposeViewController: UIViewController {
         label.text = "有什么想要分享的..."
         return label
     }()
+    
+    private lazy var iconImageView: UIImageView =
+        {
+         let imageurl = userAccount.loadAccount()!.avatar_large!
+    
+         let image = UIImageView(frame: CGRectMake(0, 0, 90, 90))
+            image.clipsToBounds = true
+            image.layer.cornerRadius = image.frame.height / 2
+            
+            image.sd_setImageWithURL(NSURL(string: imageurl))
+            return image
+    }()
+
     
     private lazy var toolbar: UIToolbar = UIToolbar()
 }

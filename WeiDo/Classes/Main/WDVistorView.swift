@@ -144,7 +144,7 @@ class WDVistorView: UIView {
         let textLabel = UILabel()
         
     textLabel.numberOfLines = 0
-        textLabel.textColor = bgcolor
+        textLabel.textColor = bgColor
         textLabel.text = "快快登录开启你的微博之旅吧"
      
         return textLabel

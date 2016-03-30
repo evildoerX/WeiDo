@@ -143,7 +143,7 @@ class WDMainViewController: UITabBarController {
         btn.setImage(UIImage(named:"tabbar_compose_icon_add_highlighted"), forState: UIControlState.Highlighted)
         // 3.设置背景图片
         btn.setBackgroundImage(UIImage(named:"composeBackgd"), forState: UIControlState.Normal)
-
+       
         // 4.添加监听
         btn.addTarget(self, action: #selector(WDMainViewController.composeBtnClick), forControlEvents: UIControlEvents.TouchUpInside)
         return btn

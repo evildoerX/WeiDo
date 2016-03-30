@@ -21,6 +21,7 @@ class WDDiscoverTableViewController: YZDisplayViewController {
      */
     func setupTitle()
     {
+
      navigationItem.title = "广场"
   
       
