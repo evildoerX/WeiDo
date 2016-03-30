@@ -5,9 +5,9 @@
     "imageName": "tabbar_home"
  },
  {
-     "vcName": "WDMessageController",
-     "title": "消息",
-     "imageName": "tabbar_message"
+     "vcName": "WDDiscoverTableViewController",
+     "title": "广场",
+     "imageName": "tabbar_discover"
  },
  {
  "vcName": "WDNULLViewController",
@@ -15,9 +15,9 @@
  "imageName": ""
  },
  {
-     "vcName": "WDDiscoverTableViewController",
-     "title": "广场",
-     "imageName": "tabbar_discover"
+     "vcName": "WDMessageController",
+     "title": "消息",
+     "imageName": "tabbar_message"
  },
  {
      "vcName": "WDMySettingViewController",
@@ -25,3 +25,4 @@
      "imageName": "tabbar_profile"
  }
  ]
+

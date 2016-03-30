@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -91,17 +91,12 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pse-sc-Hpc">
                         <rect key="frame" x="0.0" y="66" width="350" height="190"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="common-gif" translatesAutoresizingMaskIntoConstraints="NO" id="xUn-zc-JVi">
-                        <rect key="frame" x="0.0" y="66" width="31" height="31"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="31" id="5T0-w9-eeH"/>
-                            <constraint firstAttribute="height" constant="31" id="iQ3-FE-CAF"/>
-                        </constraints>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common-gif" translatesAutoresizingMaskIntoConstraints="NO" id="xUn-zc-JVi">
+                        <rect key="frame" x="10" y="73" width="31" height="31"/>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="MaX-Tc-ww5" secondAttribute="trailing" constant="10" id="5sb-cE-AeS"/>
-                    <constraint firstItem="xUn-zc-JVi" firstAttribute="top" secondItem="Pse-sc-Hpc" secondAttribute="top" id="AEs-hn-gwr"/>
                     <constraint firstItem="tVq-yn-RQt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="CaY-k6-JjK"/>
                     <constraint firstAttribute="trailing" secondItem="T00-Am-gmV" secondAttribute="trailing" constant="20" id="Ct9-aV-c3o"/>
                     <constraint firstAttribute="trailing" secondItem="rbA-WY-hCk" secondAttribute="trailing" id="DTO-ya-arg"/>
@@ -109,8 +104,8 @@
                     <constraint firstItem="Pse-sc-Hpc" firstAttribute="top" secondItem="MaX-Tc-ww5" secondAttribute="bottom" constant="2" id="H27-Ba-x2i"/>
                     <constraint firstItem="Pse-sc-Hpc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="NRO-l6-Gge"/>
                     <constraint firstItem="T00-Am-gmV" firstAttribute="leading" secondItem="tVq-yn-RQt" secondAttribute="trailing" constant="15" id="OId-c4-Urf"/>
+                    <constraint firstItem="xUn-zc-JVi" firstAttribute="top" secondItem="MaX-Tc-ww5" secondAttribute="bottom" constant="2" id="TEf-tn-KSH"/>
                     <constraint firstItem="tVq-yn-RQt" firstAttribute="top" secondItem="XyE-MO-Jnk" secondAttribute="top" id="UdY-cw-Woe"/>
-                    <constraint firstItem="xUn-zc-JVi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="WMF-2d-Hm2"/>
                     <constraint firstItem="rbA-WY-hCk" firstAttribute="top" secondItem="Pse-sc-Hpc" secondAttribute="bottom" constant="2" id="Zds-vO-BzF"/>
                     <constraint firstAttribute="trailing" secondItem="Pse-sc-Hpc" secondAttribute="trailing" constant="10" id="a1p-Zg-xik"/>
                     <constraint firstItem="XyE-MO-Jnk" firstAttribute="leading" secondItem="tVq-yn-RQt" secondAttribute="trailing" constant="15" id="ddw-gP-EGa"/>
@@ -119,6 +114,7 @@
                     <constraint firstItem="MaX-Tc-ww5" firstAttribute="top" secondItem="T00-Am-gmV" secondAttribute="bottom" constant="10" id="jhc-eZ-Hx4"/>
                     <constraint firstItem="T00-Am-gmV" firstAttribute="leading" secondItem="tVq-yn-RQt" secondAttribute="trailing" constant="15" id="o7T-oZ-8ay"/>
                     <constraint firstItem="rbA-WY-hCk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="rvn-eo-VHp"/>
+                    <constraint firstItem="xUn-zc-JVi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="xTm-eM-ep5"/>
                     <constraint firstItem="tVq-yn-RQt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="yNF-sx-3Au"/>
                     <constraint firstAttribute="bottom" secondItem="rbA-WY-hCk" secondAttribute="bottom" id="zDu-U3-T7l"/>
                 </constraints>

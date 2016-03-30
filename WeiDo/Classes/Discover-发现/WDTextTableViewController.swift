@@ -135,27 +135,7 @@ class WDTextTableViewController: UITableViewController {
        
         
     }
-    
-    /**
-     打开评论
-     
-     - parameter notify: 接受通知
-     */
-    func commentClick(notify: NSNotification)
-    {
-        guard let idStr = notify.userInfo![WDCommentWillOpen] as? WDTopic else
-        {
-            return
-        }
-      
-        let vc = WDCommentViewController(textTopic: idStr)
-        vc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(vc, animated: true)
-     
-        
-    }
-
-    
+  
 
        // MARK - tableview delegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -176,6 +156,14 @@ class WDTextTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let topic = topics[indexPath.row]
+        let vc = WDCommentViewController(textTopic: topic)
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.tableView.reloadData()
+    }
+    
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension

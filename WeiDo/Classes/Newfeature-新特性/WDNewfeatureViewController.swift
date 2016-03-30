@@ -69,6 +69,7 @@ class WDNewfeatureViewController: UICollectionViewController {
         {
             // 2.拿到当前索引对应的cell
             let cell = collectionView.cellForItemAtIndexPath(path) as! NewfeatureCell
+       
             // 3.让cell执行按钮动画
             cell.startBtnAnimation()
         }
@@ -119,6 +120,7 @@ class NewfeatureCell: UICollectionViewCell
     func customBtnClick()
     {
       NSNotificationCenter.defaultCenter().postNotificationName(WDSwitchRootViewControllerKey, object: true)
+        
     }
     
     private func setupUI(){
@@ -128,7 +130,7 @@ class NewfeatureCell: UICollectionViewCell
         
         // 2.布局子控件的位置
         iconView.xmg_Fill(contentView)
-        startButton.xmg_AlignInner(type: XMG_AlignType.BottomCenter, referView: contentView, size: nil, offset: CGPoint(x: 0, y: -100))
+        startButton.xmg_AlignInner(type: XMG_AlignType.BottomCenter, referView: contentView, size: CGSizeMake(350, 80), offset: CGPoint(x: 0, y: -98))
     }
     
     // MARK: - 懒加载

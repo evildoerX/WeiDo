@@ -52,29 +52,11 @@ class WMWordToipCell: UITableViewCell {
                 profileImageView.layer.cornerRadius = (profileImageView.frame.width / 2)
 
            
-                 //添加手势
-                text_Label.userInteractionEnabled = true
-                let tap = UITapGestureRecognizer(target: self, action: "commentClick")
-                text_Label.addGestureRecognizer(tap)
+
             }
         }
     }
  
-    
-    
-    func commentClick()
-    
-    {
-     
-        let info = [WDCommentWillOpen:wordTopic!]
-        NSNotificationCenter.defaultCenter().postNotificationName(WDCommentWillOpen, object: self, userInfo: info)
-    
-    }
-    
-    
- 
-    
-    
-
+  
     
 }

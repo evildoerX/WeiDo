@@ -55,11 +55,7 @@ class WDVideoCell: UITableViewCell {
             repostBtn.setTitle(String(videoTopic!.repost), forState: UIControlState.Normal)
             commentBtn.setTitle(String(videoTopic!.comment), forState: UIControlState.Normal)
         
-            //添加手势
-            content.userInteractionEnabled = true
-            let tap = UITapGestureRecognizer(target: self, action: "commentClick")
-            content.addGestureRecognizer(tap)
-     
+       
             
             /**
             设置图为圆角
@@ -81,14 +77,7 @@ class WDVideoCell: UITableViewCell {
         
     }
     
-    func commentClick()
-        
-    {
-       
-        let info = [WDCommentWillOpen:videoTopic!]
-        NSNotificationCenter.defaultCenter().postNotificationName(WDCommentWillOpen, object: self, userInfo: info)
-        
-    }
+
     
     
    

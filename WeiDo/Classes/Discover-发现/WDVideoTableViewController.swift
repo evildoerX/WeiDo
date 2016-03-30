@@ -180,6 +180,14 @@ class WDVideoTableViewController: UITableViewController {
     }
 
   
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let topic = video[indexPath.row]
+        let vc = WDCommentViewController(textTopic: topic)
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.tableView.reloadData()
+        
+    }
     
 }
 

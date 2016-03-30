@@ -62,10 +62,6 @@ class WDPictureCell: UITableViewCell {
                
                 
                 //添加手势
-                text_Label.userInteractionEnabled = true
-                let tap = UITapGestureRecognizer(target: self, action: #selector(WDPictureCell.commentClick))
-                text_Label.addGestureRecognizer(tap)
-                
                 Image_view.userInteractionEnabled = true
                 let imageTap = UITapGestureRecognizer(target: self, action: #selector(WDPictureCell.imageClick))
                 Image_view.addGestureRecognizer(imageTap)
@@ -85,15 +81,7 @@ class WDPictureCell: UITableViewCell {
     
   
     
-    func commentClick()
-        
-    {
-        
-        let info = [WDCommentWillOpen:pictureTopic!]
-        NSNotificationCenter.defaultCenter().postNotificationName(WDCommentWillOpen, object: self, userInfo: info)
-        
-    }
-    
+ 
     func imageClick()
     {
     

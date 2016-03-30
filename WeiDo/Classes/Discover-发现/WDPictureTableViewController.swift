@@ -158,7 +158,6 @@ class WDPictureTableViewController: UITableViewController {
 
     // MARK  -tableview delegate
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.pictures.count
     }
     
@@ -171,10 +170,14 @@ class WDPictureTableViewController: UITableViewController {
         return cell
     }
     
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let topic = pictures[indexPath.row]
+        let vc = WDCommentViewController(textTopic: topic)
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.tableView.reloadData()
+   
+    }
   
-    
-
-
-    
 }
