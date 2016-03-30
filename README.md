@@ -2,6 +2,8 @@
 社交
 ##使用框架
 MJRefresh、AFNetworking、SDWebImage、SVProgressHUD、AMap2DMap
+##使用
+你可以使用自己认证为开发者的新浪账号，或使用我的测试账号：llxtestuser@sohu.com  llxtestuser
 ##主要实现
   业务逻辑已完善、登录注销新特性   
   新浪OAUTH授权、微博功能实现:刷微博、评论、转发、回复、收藏、@我的评论、对我的回复、我发出的    
