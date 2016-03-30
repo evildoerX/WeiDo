@@ -3,8 +3,8 @@
 ##使用框架
 MJRefresh、AFNetworking、SDWebImage、SVProgressHUD、AMap2DMap
 ##使用
-你需要install CocoaPods 来导入所有的框架到你本地
-你必须登录一个新浪微博账号才可以使用主页和消息功能，你可以使用自己认证为开发者的新浪账号（需要在程序里修改app key and secret），或使用我的测试账号：llxtestuser@sohu.com  密码llxtestuser
+你需要install CocoaPods 来导入所有的框架到你本地  
+你必须登录一个新浪微博账号才可以使用主页和消息功能，你可以使用自己认证为开发者的新浪账号（需要在程序里修改app key and secret），    或使用我的测试账号：llxtestuser@sohu.com  密码llxtestuser  
 ##主要实现
   登录注销新特性   
   新浪OAUTH授权、微博功能实现:刷微博、评论、转发、回复、收藏、@我的评论、对我的回复、我发出的    
