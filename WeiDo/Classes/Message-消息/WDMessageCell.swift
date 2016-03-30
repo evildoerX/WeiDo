@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import KILabel
 
 let WDMessageCellSelected = "WDMessageCellSelected"
 let WDMessageReplyWillOpen = "WDMessageReplyWillOpen"
@@ -29,9 +30,9 @@ class WDMessageCell: UITableViewCell {
     
     @IBOutlet weak var image_view: UIImageView!
     
-    @IBOutlet weak var statusContentLabel: UILabel!
 
-    
+
+    @IBOutlet weak var statusContentLabel: KILabel!
     /// 提到我的
     var Mention: WDMention?
         {
@@ -42,10 +43,6 @@ class WDMessageCell: UITableViewCell {
             create_time.text = Mention?.created_at
             //显示表情
             contentLabel.attributedText = EmoticonPackage.emoticonString(Mention?.text ?? "")
-          
-       
-
-            
             image_view.sd_setImageWithURL(NSURL(string: (Mention?.profile_image_url)!))
                 setTap(#selector(WDMessageCell.mentionClick))
             
@@ -58,7 +55,12 @@ class WDMessageCell: UITableViewCell {
             statusContentLabel.attributedText = EmoticonPackage.emoticonString(Mention?.statusText ?? "")
             statusContentLabel.numberOfLines = 0
             statusContentLabel.lineBreakMode = NSLineBreakMode.ByCharWrapping
+                
+ 
             }
+            
+            
+            
         
             
         }

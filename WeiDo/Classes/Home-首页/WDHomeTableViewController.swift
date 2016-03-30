@@ -280,12 +280,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
                 })
         }
            }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
 
-    
     
     /**
      设置主页左右nav的按钮
@@ -358,7 +353,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         let height: CGFloat = 44
         label.frame =  CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: height)
         
-        label.backgroundColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
+        label.backgroundColor = bgColor
         label.textColor = UIColor.whiteColor()
         label.textAlignment = NSTextAlignment.Center
         

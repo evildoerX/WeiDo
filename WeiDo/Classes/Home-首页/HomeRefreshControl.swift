@@ -20,7 +20,7 @@ class HomeRefreshControl: UIRefreshControl {
     {
         // 1.添加子控件
         addSubview(refreshView)
-        
+      
         // 2.布局子控件
         refreshView.xmg_AlignInner(type: XMG_AlignType.Center, referView: self, size: CGSize(width: 170, height: 60))
         addObserver(self, forKeyPath: "frame", options: NSKeyValueObservingOptions.New, context: nil)
