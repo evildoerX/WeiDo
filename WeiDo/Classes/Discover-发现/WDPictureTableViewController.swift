@@ -39,11 +39,31 @@ class WDPictureTableViewController: UITableViewController {
         setUpRefrshControl()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDPictureTableViewController.openPothoBrowser(_:)), name: WDPictureWillOpen, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDPictureTableViewController.openShare(_:)), name: WDPictureShare, object: nil)
     }
     
     deinit
     {
      NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    
+    func openShare(notify: NSNotification)
+    {
+        guard let url = notify.userInfo![WDPictureShare] as? String  else
+        {
+            return
+        }
+        guard let text = notify.userInfo![WDPictureTextShare] as? String  else
+        {
+            return
+        }
+
+   
+        let vc = WDShareViewController(type: 2, text: text, url: url)
+       UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(vc, animated: false, completion: nil)
+    
     }
     
     /**
@@ -62,7 +82,7 @@ class WDPictureTableViewController: UITableViewController {
         let urls = [NSURL(string: urlstr)!]
         
         
-        //创建控制器
+        //创建控制器 永远只有一张图
         let vc = PhotoBrowserViewController(index: 0, urls: urls)
         // 显示控制器
         presentViewController(vc, animated: true, completion: nil)

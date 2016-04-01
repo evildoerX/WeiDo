@@ -28,31 +28,10 @@ class WDAmusementNewsViewController: UITableViewController {
         setupTableView()
         loadNews()
         
-        //添加通知
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDAmusementNewsViewController.openBrowser(_:)), name: WDAmusementNewsWillOpen, object: nil)
+  
     }
-    deinit{
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-        
-    }
-    
-    /**
-     打开网页
-     */
-    func openBrowser(notify: NSNotification)
-    {
-        guard let urls = notify.userInfo![WDAmusementNewsWillOpen] as? String else
-        {
-            return
-        }
-        print(urls)
-        let url = NSURL(string: urls)
-        let vc = RxWebViewController(url: url)
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-        
-    }
+ 
+ 
 
     
     func setupNavigation()
@@ -65,7 +44,8 @@ class WDAmusementNewsViewController: UITableViewController {
     func setupTableView()
     {
         tableView.contentInset = UIEdgeInsetsMake(-55 , 0, 49, 0)
-        tableView.rowHeight = 200
+        tableView.rowHeight = 150
+        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.registerNib(UINib(nibName: "WDNewsCell", bundle: nil), forCellReuseIdentifier: WDNewCellReuseIdentifier)
         
     }
@@ -122,6 +102,20 @@ class WDAmusementNewsViewController: UITableViewController {
       
     }
     
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let urlStr = amusementNew[indexPath.row].url
+        let url = NSURL(string: urlStr!)
+        let vc = RxWebViewController(url: url)
+        self.navigationController?.pushViewController(vc, animated: true)
+        tableView.reloadData()
+    }
+    
+
 
   
 }

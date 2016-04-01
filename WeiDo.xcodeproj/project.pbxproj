@@ -82,6 +82,8 @@
 		B273CB3A1C89A7F200F69F56 /* WDMyStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B273CB381C89A7F200F69F56 /* WDMyStatusCell.xib */; };
 		B275A8BC1C6B0E0300807CC0 /* WDForwardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B275A8BB1C6B0E0300807CC0 /* WDForwardTableViewCell.swift */; };
 		B275A8BE1C6B6BE800807CC0 /* WDNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B275A8BD1C6B6BE800807CC0 /* WDNormalTableViewCell.swift */; };
+		B275E0DF1CAE0994006BB7E8 /* WDShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B275E0DD1CAE0994006BB7E8 /* WDShareViewController.swift */; };
+		B275E0E01CAE0994006BB7E8 /* WDShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B275E0DE1CAE0994006BB7E8 /* WDShareViewController.xib */; };
 		B27FD4D51C682FE600A9DDA1 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27FD4D41C682FE600A9DDA1 /* Status.swift */; };
 		B27FD4D71C698D4100A9DDA1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27FD4D61C698D4100A9DDA1 /* User.swift */; };
 		B27FD4DB1C6A0D1100A9DDA1 /* UILabel+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27FD4DA1C6A0D1100A9DDA1 /* UILabel+Category.swift */; };
@@ -273,6 +275,8 @@
 		B273CB381C89A7F200F69F56 /* WDMyStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDMyStatusCell.xib; sourceTree = "<group>"; };
 		B275A8BB1C6B0E0300807CC0 /* WDForwardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDForwardTableViewCell.swift; sourceTree = "<group>"; };
 		B275A8BD1C6B6BE800807CC0 /* WDNormalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDNormalTableViewCell.swift; sourceTree = "<group>"; };
+		B275E0DD1CAE0994006BB7E8 /* WDShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDShareViewController.swift; sourceTree = "<group>"; };
+		B275E0DE1CAE0994006BB7E8 /* WDShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WDShareViewController.xib; sourceTree = "<group>"; };
 		B27FD4D41C682FE600A9DDA1 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		B27FD4D61C698D4100A9DDA1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B27FD4DA1C6A0D1100A9DDA1 /* UILabel+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Category.swift"; sourceTree = "<group>"; };
@@ -584,9 +588,9 @@
 		B259926A1C8462F800402E99 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B25B88201C830B520010B55D /* WDVideoTableViewController.swift */,
-				B25B88221C830B520010B55D /* WDPictureTableViewController.swift */,
 				B25B88231C830B520010B55D /* WDTextTableViewController.swift */,
+				B25B88221C830B520010B55D /* WDPictureTableViewController.swift */,
+				B25B88201C830B520010B55D /* WDVideoTableViewController.swift */,
 				B266E62D1C858D6900F7A92F /* WDCommentViewController.swift */,
 			);
 			name = Controller;
@@ -725,6 +729,15 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		B275E0DC1CAE0946006BB7E8 /* Share-分享菜单 */ = {
+			isa = PBXGroup;
+			children = (
+				B275E0DD1CAE0994006BB7E8 /* WDShareViewController.swift */,
+				B275E0DE1CAE0994006BB7E8 /* WDShareViewController.xib */,
+			);
+			name = "Share-分享菜单";
+			sourceTree = "<group>";
+		};
 		B2821DCF1C92BE8500D9D060 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -766,17 +779,18 @@
 		B2A748891C61C59400FC3478 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B2F3E1F21C9FC19A004FFC36 /* Publish-弹出菜单 */,
-				B2F3E1F11C9FBF8E004FFC36 /* CommentCell-评论 */,
-				B2A7488D1C61C59400FC3478 /* Message-消息 */,
-				B23222BF1C6CC2C00081E912 /* Compose-发送界面 */,
-				B29777371C66018800CB2521 /* Newfeature-新特性 */,
-				B297772C1C64C38B00CB2521 /* Oauth-认证 */,
-				B25A47961C92B99200D36A9D /* News-新闻 */,
-				B25AC6691C900C8500225B61 /* WebBrowser-网页浏览器 */,
 				B2A7488B1C61C59400FC3478 /* Home-首页 */,
 				B2A7488A1C61C59400FC3478 /* Discover-广场 */,
+				B2A7488D1C61C59400FC3478 /* Message-消息 */,
 				B2A7488F1C61C59400FC3478 /* Mine-我 */,
+				B25A47961C92B99200D36A9D /* News-新闻 */,
+				B23222BF1C6CC2C00081E912 /* Compose-发送界面 */,
+				B25AC6691C900C8500225B61 /* WebBrowser-网页浏览器 */,
+				B29777371C66018800CB2521 /* Newfeature-新特性 */,
+				B275E0DC1CAE0946006BB7E8 /* Share-分享菜单 */,
+				B2F3E1F21C9FC19A004FFC36 /* Publish-弹出菜单 */,
+				B297772C1C64C38B00CB2521 /* Oauth-认证 */,
+				B2F3E1F11C9FBF8E004FFC36 /* CommentCell-评论 */,
 				B2A7488C1C61C59400FC3478 /* Main */,
 				B2A7488E1C61C59400FC3478 /* Other-资源 */,
 			);
@@ -1193,6 +1207,7 @@
 				B25043C61C9AA55800BA639B /* WDWeatherViewController.xib in Resources */,
 				B25A479A1C92B9C800D36A9D /* WDNewsCell.xib in Resources */,
 				B2E9A4AC1C9BABF0001B161D /* backItemImage@2x.png in Resources */,
+				B275E0E01CAE0994006BB7E8 /* WDShareViewController.xib in Resources */,
 				B2A748B11C622F7000FC3478 /* Popmenu.storyboard in Resources */,
 				B2AE8A381C8D327400A6AB14 /* WDMessageCell.xib in Resources */,
 				B2A7489F1C61D78400FC3478 /* MainVCSettings.json in Resources */,
@@ -1320,6 +1335,7 @@
 				B2A748AA1C621F5800FC3478 /* UIBarButtonItem+Category.swift in Sources */,
 				B29777391C6601DA00CB2521 /* WDNewfeatureViewController.swift in Sources */,
 				B25A47951C92B98900D36A9D /* WDSportNewTableViewController.swift in Sources */,
+				B275E0DF1CAE0994006BB7E8 /* WDShareViewController.swift in Sources */,
 				B200B6191C8BC28A00674700 /* WDMentionMeTableViewController.swift in Sources */,
 				B2E9A4AF1C9BABF0001B161D /* NJKWebViewProgressView.m in Sources */,
 				B275A8BC1C6B0E0300807CC0 /* WDForwardTableViewCell.swift in Sources */,

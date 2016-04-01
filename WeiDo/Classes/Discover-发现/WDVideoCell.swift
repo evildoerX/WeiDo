@@ -9,6 +9,8 @@
 import UIKit
 
 let WDVideoWillPlay = "WDVideoWillPlay"
+let WDVideoShare = "WDVideoShare"
+let WDVideotextShare = "WDVideotextShare"
 class WDVideoCell: UITableViewCell {
     
     @IBOutlet weak var profile_image: UIImageView!
@@ -78,6 +80,11 @@ class WDVideoCell: UITableViewCell {
     }
     
 
+    @IBAction func shareClick(sender: AnyObject) {
+        
+        let info = [WDVideoShare:videoTopic!.videouri!,WDVideotextShare:videoTopic!.text]
+        NSNotificationCenter.defaultCenter().postNotificationName(WDVideoShare, object: self, userInfo: info)
+    }
     
     
    

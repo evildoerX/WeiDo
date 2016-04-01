@@ -30,14 +30,9 @@ class WDSportNewTableViewController: UITableViewController {
         setupTableView()
         loadNews()
        
-        //添加通知
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDSportNewTableViewController.openBrowser(_:)), name: WDSportNewsWillOpen, object: nil)
+
     }
-    
-    deinit{
-     NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
+
 
     func setupNavigation()
     {
@@ -50,7 +45,8 @@ class WDSportNewTableViewController: UITableViewController {
     func setupTableView()
     {
         tableView.contentInset = UIEdgeInsetsMake(-55 , 0, 49, 0)
-        tableView.rowHeight = 200
+        tableView.rowHeight = 150
+        tableView.rowHeight = UITableViewAutomaticDimension
       tableView.registerNib(UINib(nibName: "WDNewsCell", bundle: nil), forCellReuseIdentifier: WDNewCellReuseIdentifier)
     
     }
@@ -83,21 +79,7 @@ class WDSportNewTableViewController: UITableViewController {
         
      
     }
-    /**
-     打开网页
-     */
-    func openBrowser(notify: NSNotification)
-    {
-        guard let urls = notify.userInfo![WDSportNewsWillOpen] as? String else
-        {
-            return
-        }
-        print(urls)
-        let url = NSURL(string: urls)
-        let vc = RxWebViewController(url: url)
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-    }
+
     
     
     func back()
@@ -122,7 +104,16 @@ class WDSportNewTableViewController: UITableViewController {
        
     }
 
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
    
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let urlStr = sportNew[indexPath.row].url
+        let url = NSURL(string: urlStr!)
+        let vc = RxWebViewController(url: url)
+        self.navigationController?.pushViewController(vc, animated: true)
+        tableView.reloadData()
+    }
 
 }

@@ -8,8 +8,10 @@
 
 import UIKit
 import SDWebImage
+import OpenShare
 
 let WDCommentWillOpen = "WDCommentWillOpen"
+let WDWordShare = "WDWordShare"
 class WMWordToipCell: UITableViewCell {
 
       /** 头像 */
@@ -57,6 +59,14 @@ class WMWordToipCell: UITableViewCell {
         }
     }
  
+    @IBAction func shareClick(sender: AnyObject) {
+        
+        let info = [WDWordShare:wordTopic!.text]
+        NSNotificationCenter.defaultCenter().postNotificationName(WDWordShare, object: self, userInfo: info)
+
+      
+        
+    }
   
     
 }

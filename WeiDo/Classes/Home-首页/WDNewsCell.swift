@@ -28,8 +28,7 @@ class WDNewsCell: UITableViewCell {
         didSet{
 
         setData(sportnew)
-            //添加图片点击
-        addTap("sportnewClick")
+  
         }
     
     }
@@ -41,8 +40,7 @@ class WDNewsCell: UITableViewCell {
             
            setData(amusementnew)
             
-            //添加图片点击
-           addTap("amusementClick")
+    
         }
     }
     
@@ -51,8 +49,7 @@ class WDNewsCell: UITableViewCell {
         didSet{
             
             setData(technologynew)
-            //添加图片点击
-            addTap("technologynewClick")
+
         }
     }
     
@@ -80,38 +77,9 @@ class WDNewsCell: UITableViewCell {
         createtimeLabel.text = new?.ctime
     }
     
-    /**
-     添加图片点击
-     */
-    func addTap(action: Selector)
-    {
-        newsImageView.userInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: action)
-        newsImageView.addGestureRecognizer(tap)
-    }
+
     
     
-    func sportnewClick()
-    {
-        let str = sportnew?.url
-        let info = [WDSportNewsWillOpen:str!]
-        NSNotificationCenter.defaultCenter().postNotificationName(WDSportNewsWillOpen, object: self, userInfo: info)
-    }
-    
-    
-    func amusementClick()
-    {
-        let str = amusementnew?.url
-        let info = [WDAmusementNewsWillOpen:str!]
-        NSNotificationCenter.defaultCenter().postNotificationName(WDAmusementNewsWillOpen, object: self, userInfo: info)
-    }
-    
-    func technologynewClick()
-    {
-        let str = technologynew?.url
-        let info = [WDTechnologyNewsWillOpen:str!]
-        NSNotificationCenter.defaultCenter().postNotificationName(WDTechnologyNewsWillOpen, object: self, userInfo: info)
-    }
-    
+       
     
 }

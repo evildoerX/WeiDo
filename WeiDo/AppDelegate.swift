@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreLocation
+import SVProgressHUD
+import OpenShare
 
 
 //经度
@@ -61,6 +63,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         setupUI()
         
+        //设置分享
+        setupShare()
+        
         //开启定位
         loadLocation()
         
@@ -103,7 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //背景颜色
        UITabBar.appearance().tintColor = bgColor
  
-             //字体颜色
+       //字体颜色
         UITabBar.appearance().barTintColor = UIColor.whiteColor()
        
         //背景颜色
@@ -119,7 +124,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
+    func setupShare()
+    {
+
+        OpenShare.connectQQWithAppId("1103194207")
+        OpenShare.connectWeiboWithAppKey("1946144281")
+        OpenShare.connectWeixinWithAppId("wxd930ea5d5a258f4f")
+     
     
+    }
+    
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        
+        if OpenShare.handleOpenURL(url)
+        {
+                      return true
+            
+        }
+        return false
+    }
     
     /**
      选择界面
@@ -177,6 +201,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return false
     }
+    
+    
+    
+  
     
 }
 

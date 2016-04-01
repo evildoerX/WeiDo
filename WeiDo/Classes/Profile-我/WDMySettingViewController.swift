@@ -133,11 +133,7 @@ class WDMySettingViewController: UITableViewController {
             switch index
             {
             case 0:
-                //打开地图
-//                override func viewWillDisappear(animated: Bool) {
-//                    super.viewWillDisappear(true)
-//                    self.tabBarController?.tabBar.hidden = false
-//                }
+
                 let vc = WDMapViewController()
                 vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
@@ -194,7 +190,11 @@ class WDMySettingViewController: UITableViewController {
                 //发短信
                 UIApplication.sharedApplication().openURL(NSURL(string :"sms://18205254911")!)
             case 1:
-               print("分享")
+               
+            let title = "快来跟我一起用WeiDo寻找快乐吧！WeiDo客户端 https://github.com/w11p3333/WeiDo"
+            
+            let vc = WDShareViewController(type: 0, text: title, url: nil)
+            UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(vc, animated: true, completion: nil)
      
             case 2:
                 let sheet = UIActionSheet(title: "确定要退出登录吗？", delegate: self, cancelButtonTitle: "返回", destructiveButtonTitle: "确定")

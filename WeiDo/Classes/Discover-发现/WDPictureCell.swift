@@ -9,6 +9,8 @@
 import UIKit
 import SDWebImage
 
+let WDPictureShare = "WDPictureShare"
+let WDPictureTextShare = "WDPictureTextShare"
 class WDPictureCell: UITableViewCell {
     
     
@@ -80,6 +82,14 @@ class WDPictureCell: UITableViewCell {
 
     
   
+    @IBAction func shareClick(sender: AnyObject) {
+        
+        let info = [WDPictureShare:pictureTopic!.cdn_img!,WDPictureTextShare:pictureTopic!.text]
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(WDPictureShare, object: self, userInfo: info)
+
+        
+    }
     
  
     func imageClick()

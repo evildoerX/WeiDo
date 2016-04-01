@@ -55,6 +55,7 @@ class WDVideoTableViewController: UITableViewController {
         tableView.registerNib(UINib(nibName: "WDVideoCell", bundle: nil), forCellReuseIdentifier: videoCellReuseIdentifier)
         //接受通知
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDVideoTableViewController.playVideo(_:)), name: WDVideoWillPlay, object: nil)
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDVideoTableViewController.shareVideo(_:)), name: WDVideoShare, object: nil)
         tableView.rowHeight = 500
         
     }
@@ -66,6 +67,25 @@ class WDVideoTableViewController: UITableViewController {
       NSNotificationCenter.defaultCenter().removeObserver(self)
     
     }
+    
+    
+    func shareVideo(notify: NSNotification)
+    {
+        
+        guard let url = notify.userInfo![WDVideoShare] as? String  else
+        {
+            return
+        }
+        guard let text = notify.userInfo![WDVideotextShare] as? String  else
+        {
+            return
+        }
+       
+        let vc = WDShareViewController(type: 3, text: text, url: url)
+        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(vc, animated: false, completion: nil)
+    
+    }
+    
 
     /**
      设置上下拉刷新

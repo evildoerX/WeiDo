@@ -14,6 +14,7 @@ import MJRefresh
 
 let TextCellReuseIdentifier = "WMWordToipCell"
 class WDTextTableViewController: UITableViewController {
+    
     //数据源
     var topics =  [WDTopic]()
     /// header
@@ -29,6 +30,7 @@ class WDTextTableViewController: UITableViewController {
     /**  请求下一页需要的参数  */
     var maxtime = ""
 
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +42,7 @@ class WDTextTableViewController: UITableViewController {
         /**
         添加通知
         */
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "commentClick:", name: WDCommentWillOpen, object: nil)
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: "wordShare:", name: WDWordShare, object: nil)
    
     }
     
@@ -61,6 +63,18 @@ class WDTextTableViewController: UITableViewController {
     tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    //打开分享
+    func wordShare(notify:NSNotification)
+    {
+        
+        guard let message = notify.userInfo![WDWordShare] as? String  else
+        {
+            return
+        }
+        //1是文本
+        let vc = WDShareViewController(type: 1, text: message, url: nil)
+        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(vc, animated: false, completion: nil)
+    }
     
     /**
      设置上下拉刷新
@@ -171,3 +185,5 @@ class WDTextTableViewController: UITableViewController {
 
     
 }
+
+
