@@ -14,7 +14,7 @@ MJRefresh、AFNetworking、SDWebImage、SVProgressHUD、AMap2DMap、openShare
   糗事百科、百思不得姐接口、图片、视频播放、评论  
   实时新闻、仿微信的WebView  
   二维码扫描、解析、生成  
-  Textkit富文本捕捉特殊url、@的实现 
-  实现社交分享,能分享内容到QQ/QQ好友/微信好友/朋友圈
+  Textkit富文本捕捉特殊url、@的实现   
+  实现社交分享,能分享内容到QQ/QQ好友/微信好友/朋友圈  
 ####非商业使用，不上线，如果有任何问题和bug欢迎联系我
 
