@@ -10,8 +10,6 @@ import UIKit
 import AFNetworking
 import MJRefresh
 
-
-
 let TextCellReuseIdentifier = "WMWordToipCell"
 class WDTextTableViewController: UITableViewController {
     
@@ -42,7 +40,7 @@ class WDTextTableViewController: UITableViewController {
         /**
         添加通知
         */
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: "wordShare:", name: WDWordShare, object: nil)
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDTextTableViewController.wordShare(_:)), name: WDWordShare, object: nil)
    
     }
     
@@ -92,9 +90,7 @@ class WDTextTableViewController: UITableViewController {
         manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
             let textarray = JSON!["list"] as! [[String:AnyObject]]
             let infoarray = JSON!["info"] as! [String:AnyObject]
-          
-         
-        
+
             //获取maxtime属性
             self.maxtime = infoarray["maxtime"] as! String
             //字典转模型
@@ -180,9 +176,22 @@ class WDTextTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+
+        let wordTopic = topics[indexPath.row]
+        if let height = rowCache[wordTopic.id]
+        {
+         return height
+        }
+        
+        let height = UITableViewAutomaticDimension
+        rowCache[wordTopic.id] = height
+        return height
+
     }
 
+    
+    /// 行高的缓存, 利用字典作为容器. key就是的id, 值就是对应的行高
+    var rowCache: [Int: CGFloat] = [Int: CGFloat]()
     
 }
 

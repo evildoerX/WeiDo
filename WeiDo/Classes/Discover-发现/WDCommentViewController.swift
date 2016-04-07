@@ -55,7 +55,8 @@ class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegat
         setupTableview()
         setUpRefrshControl()
        
-   
+      
+        
     }
     
     override func viewWillDisappear(animated: Bool) {

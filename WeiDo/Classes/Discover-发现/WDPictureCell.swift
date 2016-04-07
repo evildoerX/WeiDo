@@ -11,9 +11,12 @@ import SDWebImage
 
 let WDPictureShare = "WDPictureShare"
 let WDPictureTextShare = "WDPictureTextShare"
+
+
+
 class WDPictureCell: UITableViewCell {
     
-    
+  
     //头像
     @IBOutlet weak var profileImageView: UIImageView!
     //昵称
@@ -97,6 +100,8 @@ class WDPictureCell: UITableViewCell {
     
         let info = [WDPictureWillOpen:pictureTopic!.cdn_img!]
         NSNotificationCenter.defaultCenter().postNotificationName(WDPictureWillOpen, object: self, userInfo: info)
+        
+      
     }
     
  

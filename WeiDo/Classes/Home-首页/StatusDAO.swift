@@ -44,12 +44,17 @@ class StatusDAO: NSObject {
                 params["max_id"] = "\(max_id - 1)"
             }
             
+            //显示走流量
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
             
             NetworkTools.shareNetworkTools().GET(path, parameters: params, success: { (_, JSON) -> Void in
                 let array = JSON!["statuses"] as! [[String : AnyObject]]
               
                 // 4.将从网络获取的数据缓存起来
                 cacheStatuses(array)
+                
+                //隐藏走流量
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 
                 // 5.返回获取到的数据
                 finished(array, error: nil)

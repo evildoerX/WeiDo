@@ -16,6 +16,8 @@ let requestPath = "http://api.budejie.com/api/api_open.php"
 let videoCellReuseIdentifier = "WDVideoCell"
 class WDVideoTableViewController: UITableViewController {
 
+    
+    
     var playViewController = AVPlayerViewController()
     var playerView = AVPlayer()
     /// 数据源
@@ -57,7 +59,6 @@ class WDVideoTableViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDVideoTableViewController.playVideo(_:)), name: WDVideoWillPlay, object: nil)
          NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDVideoTableViewController.shareVideo(_:)), name: WDVideoShare, object: nil)
         tableView.rowHeight = 500
-        
     }
     /**
      移除通知
@@ -201,6 +202,8 @@ class WDVideoTableViewController: UITableViewController {
 
   
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+       
+        
         let topic = video[indexPath.row]
         let vc = WDCommentViewController(textTopic: topic)
         vc.hidesBottomBarWhenPushed = true
@@ -209,7 +212,11 @@ class WDVideoTableViewController: UITableViewController {
         
     }
     
+ 
 }
+
+
+
 
 
 

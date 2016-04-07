@@ -40,7 +40,7 @@ class WDPictureTableViewController: UITableViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDPictureTableViewController.openPothoBrowser(_:)), name: WDPictureWillOpen, object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDPictureTableViewController.openShare(_:)), name: WDPictureShare, object: nil)
+      NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDPictureTableViewController.openShare(_:)), name: WDPictureShare, object: nil)
     }
     
     deinit
@@ -101,8 +101,6 @@ class WDPictureTableViewController: UITableViewController {
         
         tableView.registerNib(UINib(nibName: "WDPictureCell", bundle: nil), forCellReuseIdentifier: pictureCellReuseIdentifier)
         tableView.rowHeight = 500
-    
-       
     }
   
     /**
@@ -187,6 +185,7 @@ class WDPictureTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(pictureCellReuseIdentifier, forIndexPath: indexPath) as! WDPictureCell
         let PictureTopic = pictures[indexPath.row]
         cell.pictureTopic = PictureTopic
+       
         return cell
     }
     
@@ -199,5 +198,9 @@ class WDPictureTableViewController: UITableViewController {
         self.tableView.reloadData()
    
     }
-  
+    
+
 }
+
+
+

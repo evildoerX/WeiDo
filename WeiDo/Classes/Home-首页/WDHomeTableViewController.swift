@@ -438,6 +438,7 @@ extension WDHomeTableViewController
         
         let id = statuses![indexPath.row].id
         let vc = WDStatusCommentTableViewController(id: id)
+      
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         self.tableView.reloadData()
