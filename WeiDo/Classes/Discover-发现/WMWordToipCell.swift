@@ -50,9 +50,7 @@ class WMWordToipCell: UITableViewCell {
                 /**
                 设置图为圆角
                 */
-                profileImageView.layer.masksToBounds = true
-                profileImageView.layer.cornerRadius = (profileImageView.frame.width / 2)
-
+                profileImageView.kay_addCorner(radius: profileImageView.frame.width / 2)
            
 
             }

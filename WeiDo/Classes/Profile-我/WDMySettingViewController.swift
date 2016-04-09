@@ -77,14 +77,16 @@ class WDMySettingViewController: UITableViewController {
             cell.textLabel?.text = "未登录"
             cell.imageView?.sd_setImageWithURL(NSURL(string: "greenAvatar_default"))
                 
+                
             }else{
                 
             cell.textLabel?.text = "Bubble-Luliangxiao"
             cell.imageView?.sd_setImageWithURL(NSURL(string: "http://tp3.sinaimg.cn/2715131950/180/5746498542/1"))
+                
             }
-            cell.imageView?.layer.cornerRadius = 45
-             cell.imageView?.clipsToBounds = true
             
+            cell.imageView?.clipsToBounds = true
+            cell.imageView?.layer.cornerRadius = 40
             return cell
         }else if indexPath.section == 1
         {

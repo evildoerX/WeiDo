@@ -97,6 +97,7 @@
 		B29777321C6597A200CB2521 /* userAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29777311C6597A200CB2521 /* userAccount.swift */; };
 		B29777361C65A44200CB2521 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29777351C65A44200CB2521 /* String+Category.swift */; };
 		B29777391C6601DA00CB2521 /* WDNewfeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29777381C6601DA00CB2521 /* WDNewfeatureViewController.swift */; };
+		B2A533C11CB8FEF90034400E /* UIImageView+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A533C01CB8FEF90034400E /* UIImageView+Category.swift */; };
 		B2A748921C61C5C600FC3478 /* WDMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A748911C61C5C600FC3478 /* WDMainViewController.swift */; };
 		B2A748941C61C61A00FC3478 /* WDHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A748931C61C61A00FC3478 /* WDHomeTableViewController.swift */; };
 		B2A7489C1C61D76200FC3478 /* WDNULLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A7489B1C61D76200FC3478 /* WDNULLViewController.swift */; };
@@ -193,7 +194,7 @@
 		B20315941C6B014E0091A270 /* WDStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDStatusPictureView.swift; sourceTree = "<group>"; };
 		B21151781C6D7D5100FD2DB0 /* UIBarButtionItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtionItem+Category.swift"; sourceTree = "<group>"; };
 		B211517B1C6DB81E00FD2DB0 /* PhotoSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSelectorViewController.swift; sourceTree = "<group>"; };
-		B211517D1C6DD45400FD2DB0 /* UIImage+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Category.swift"; sourceTree = "<group>"; };
+		B211517D1C6DD45400FD2DB0 /* UIImage+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Category.swift"; path = "../Compose-发布微博/PhotoSelector/UIImage+Category.swift"; sourceTree = "<group>"; };
 		B21B56861C671F20005C2011 /* WDWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDWelcomeViewController.swift; sourceTree = "<group>"; };
 		B21FD8FA1C61BC9C00C89571 /* WeiDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeiDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FD8FD1C61BC9C00C89571 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -289,6 +290,7 @@
 		B29777311C6597A200CB2521 /* userAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userAccount.swift; sourceTree = "<group>"; };
 		B29777351C65A44200CB2521 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
 		B29777381C6601DA00CB2521 /* WDNewfeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDNewfeatureViewController.swift; sourceTree = "<group>"; };
+		B2A533C01CB8FEF90034400E /* UIImageView+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Category.swift"; sourceTree = "<group>"; };
 		B2A748911C61C5C600FC3478 /* WDMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDMainViewController.swift; sourceTree = "<group>"; };
 		B2A748931C61C61A00FC3478 /* WDHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDHomeTableViewController.swift; sourceTree = "<group>"; };
 		B2A7489B1C61D76200FC3478 /* WDNULLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDNULLViewController.swift; sourceTree = "<group>"; };
@@ -443,7 +445,6 @@
 			isa = PBXGroup;
 			children = (
 				B211517B1C6DB81E00FD2DB0 /* PhotoSelectorViewController.swift */,
-				B211517D1C6DD45400FD2DB0 /* UIImage+Category.swift */,
 			);
 			name = "PhotoSelector-图片选择器";
 			path = PhotoSelector;
@@ -886,6 +887,8 @@
 				B27FD4DE1C6A2F7000A9DDA1 /* NSDate+Category.swift */,
 				B21151781C6D7D5100FD2DB0 /* UIBarButtionItem+Category.swift */,
 				B2FDE7031C6F07E3000E50F0 /* SQLiteManager.swift */,
+				B2A533C01CB8FEF90034400E /* UIImageView+Category.swift */,
+				B211517D1C6DD45400FD2DB0 /* UIImage+Category.swift */,
 			);
 			name = Tools;
 			path = ../Tools;
@@ -1373,6 +1376,7 @@
 				B243476D1C62E528002426CE /* WDPopmenuanimation.swift in Sources */,
 				B2FDE7191C701CE6000E50F0 /* FMDatabaseQueue.m in Sources */,
 				B2A748B31C62418B00FC3478 /* WDPopmenuViewController.swift in Sources */,
+				B2A533C11CB8FEF90034400E /* UIImageView+Category.swift in Sources */,
 				B2FDE71B1C701CE6000E50F0 /* FMDatabaseAdditionsVariadic.swift in Sources */,
 				B25B88271C830B520010B55D /* WDPictureTableViewController.swift in Sources */,
 				B2F3E1ED1C9F9917004FFC36 /* WDStatusCommentTableViewController.swift in Sources */,

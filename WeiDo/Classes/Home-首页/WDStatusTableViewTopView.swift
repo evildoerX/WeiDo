@@ -28,9 +28,7 @@ class WDStatusTableViewTopView: UIView {
                 /**
                 设置图为圆角
                 */
-                iconView.layer.masksToBounds = true
-                iconView.layer.cornerRadius = 20
-                
+                iconView.kay_addCorner(radius: 20)
             }
             // 设置认证图标
             verifiedView.image = status?.user?.verifiedImage

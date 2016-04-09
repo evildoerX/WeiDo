@@ -76,9 +76,7 @@ class WDMessageCell: UITableViewCell {
     /**
     *  设置图片为圆角
     */
-    image_view.layer.masksToBounds = true
-    image_view.layer.cornerRadius = (image_view.frame.width / 2)
-    
+    image_view.kay_addCorner(radius: image_view.frame.width / 2)
     /// 添加手势
     content_view.userInteractionEnabled = true
     let tap = UITapGestureRecognizer(target: self, action: action)

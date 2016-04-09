@@ -62,8 +62,7 @@ class WDVideoCell: UITableViewCell {
             /**
             设置图为圆角
             */
-            profile_image.layer.masksToBounds = true
-            profile_image.layer.cornerRadius = (profile_image.frame.width / 2)
+            profile_image.kay_addCorner(radius: profile_image.frame.width / 2)
         }
     
     }

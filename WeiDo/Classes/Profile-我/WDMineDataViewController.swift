@@ -120,13 +120,12 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
             self.nameLabel.text = String(JSON!["screen_name"])
             self.despcritionLabel.text = String(JSON!["description"])
             self.image_view.sd_setImageWithURL(NSURL(string: String(JSON!["avatar_large"])))
-            print(JSON!["avatar_large"])
+            
             /**
             *  设置图片为圆角
             */
-            self.image_view.layer.masksToBounds = true
-            self.image_view.layer.cornerRadius = (self.image_view.frame.width / 2)
-            
+            self.image_view.kay_addCorner(radius: self.image_view.frame.width / 2)
+ 
             
             }) { (_, error) -> Void in
                 print(error)
