@@ -31,19 +31,17 @@ class WDAmusementNewsViewController: UITableViewController {
   
     }
  
- 
-
-    
     func setupNavigation()
     {
         navigationItem.title = "娱乐新闻"
-         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: "back")
+         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WDAmusementNewsViewController.back))
         
     }
 
     func setupTableView()
     {
         tableView.contentInset = UIEdgeInsetsMake(-55 , 0, 49, 0)
+         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         tableView.rowHeight = 150
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.registerNib(UINib(nibName: "WDNewsCell", bundle: nil), forCellReuseIdentifier: WDNewCellReuseIdentifier)

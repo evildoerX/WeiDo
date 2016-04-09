@@ -13,8 +13,6 @@ class PhotoSelectorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-   
         setupUI()
     }
     
@@ -194,13 +192,13 @@ class PhotoSelectorCell: UICollectionViewCell {
     
     func addBtnClick()
     {
-        //
+
         PhotoCellDelegate?.photoDidAddSelector!(self)
     }
     
     func removeBtnClick()
     {
-        //        print(__FUNCTION__)
+   
         PhotoCellDelegate?.photoDidRemoveSelector!(self)
     }
     

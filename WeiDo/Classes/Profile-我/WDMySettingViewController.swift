@@ -133,7 +133,6 @@ class WDMySettingViewController: UITableViewController {
             switch index
             {
             case 0:
-
                 let vc = WDMapViewController()
                 vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)

@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import SVProgressHUD
 import OpenShare
+import RealmSwift
 
 
 //经度
@@ -28,6 +29,8 @@ var currLocation : CLLocation!
 //全局颜色
 let bgColor = UIColor(red: 77/255, green: 194/255, blue: 167/255, alpha: 1.0)
 let WDSwitchRootViewControllerKey = "WDSwitchRootViewControllerKey"
+
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -68,6 +71,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //开启定位
         loadLocation()
+        
+     
+        
+        
+   
+        
         
         // 1.创建window
         window = UIWindow(frame: UIScreen.mainScreen().bounds)

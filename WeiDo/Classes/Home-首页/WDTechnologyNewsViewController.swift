@@ -46,6 +46,7 @@ class WDTechnologyNewsViewController: UITableViewController {
     func setupTableView()
     {
         tableView.contentInset = UIEdgeInsetsMake(-55 , 0, 49, 0)
+         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         tableView.rowHeight = 150
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.registerNib(UINib(nibName: "WDNewsCell", bundle: nil), forCellReuseIdentifier: WDNewCellReuseIdentifier)
