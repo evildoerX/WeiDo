@@ -10,7 +10,7 @@ import UIKit
 import AFNetworking
 
 let MyStatusCellReuseIdentifier = "WDMyStatusCell"
-class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
+class WDMineDataViewController: UIViewController {
 
     /// 数据源
     var mineStatus = [WDMineStatus]()
@@ -19,6 +19,7 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
     //保存未登录界面属性
     var vistorView: WDVistorView?
 
+    var dataSource:WDDataSource?
     
     @IBOutlet weak var image_view: UIImageView!
     
@@ -52,12 +53,14 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
         else
             
         {
-            setupTableview()
+            
             loadMineData()
             loadMyStatus()
             
+          
+            
         }
-        setupNavigation()
+         navigationItem.title = "我的"
   
         
        
@@ -66,7 +69,7 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(true)
-        self.tabBarController?.tabBar.hidden = false
+   
     }
   
     
@@ -75,9 +78,7 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
      */
     func setupVistorView()
     {
-        
-        
-        
+   
         let imageView = UIImageView(image: UIImage(named: "HomePage_DefaultBackground"))
         view.addSubview(imageView)
         view.addSubview(loginBtn)
@@ -89,26 +90,31 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func setupTableview()
     {
-        tableview.registerNib(UINib(nibName: "WDMyStatusCell", bundle: nil), forCellReuseIdentifier: MyStatusCellReuseIdentifier)
+        
+        let cellConfig: tableViewCellConfigure =  { (cell:AnyObject, item:AnyObject) in
+            
+            let _cell = cell as! WDMyStatusCell
+            let _item = item as! WDMineStatus
+            _cell.mineStatus = _item
+        }
+        
+        self.dataSource = WDDataSource(items: mineStatus, cellIdentifier: MyStatusCellReuseIdentifier, cellConfigure: cellConfig)
+        
+        tableview.dataSource = self.dataSource
         tableview.estimatedRowHeight = 300
         tableview.rowHeight = UITableViewAutomaticDimension
-    }
-    /**
-     设置导航条
-     */
-    func setupNavigation()
-    {
-        navigationItem.title = "我的"
- 
+        tableview.registerNib(UINib(nibName: "WDMyStatusCell", bundle: nil), forCellReuseIdentifier: MyStatusCellReuseIdentifier)
+
         
     }
-    
+  
     /**
      加载个人信息
      */
     func loadMineData()
     {
         let path = "https://api.weibo.com/2/users/domain_show.json"
+        //个人信息通过个人域名修改 若换号需要修改信息
         let params = ["access_token": userAccount.loadAccount()!.access_token!, "domain": "w535921901"]
         let manager = AFHTTPSessionManager()
         manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
@@ -141,21 +147,22 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
      */
     func loadMyStatus()
     {
-        let path = "https://api.weibo.com/2/statuses/user_timeline.json"
+
         let params = ["access_token": userAccount.loadAccount()!.access_token!]
-        let manager = AFHTTPSessionManager()
-        manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-            let myStatusarray = JSON!["statuses"] as! [[String:AnyObject]]
-            
-            self.mineStatus = WDMineStatus.LoadMine(myStatusarray)
+        WDMineStatus.loadMineData(params) { (models, error) in
+            if error != nil
+            {
+             self.setupVistorView()
+            }
+            else
+            {
+            self.mineStatus = models!
+            self.setupTableview()
             self.tableview.reloadData()
-
-            }) { (_, error) -> Void in
- 
-            self.setupVistorView()
-            
+            }
         }
-
+        
+        
     }
     
     
@@ -185,36 +192,3 @@ class WDMineDataViewController: UIViewController, UIGestureRecognizerDelegate {
 
 }
 
-extension WDMineDataViewController: UITableViewDelegate
-{
-  
-     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return mineStatus.count
-    }
-    
-     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(MyStatusCellReuseIdentifier, forIndexPath: indexPath) as! WDMyStatusCell
-        let myStatuesCell = mineStatus[indexPath.row]
-        cell.mineStatus = myStatuesCell
-        return cell
-    }
-    
-     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    
-    
-     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-       return "我的微博"
-    }
-    
-     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return  30
-    }
-    
-     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = UIColor.whiteColor()
-    }
-    
-}

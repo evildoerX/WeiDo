@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import AFNetworking
 import MJRefresh
 import SVProgressHUD
 
 let WDMessageCellReuseIdentifier = "WDMessageCell"
 class WDMentionMeTableViewController: UITableViewController {
+
 
     //数据源
     var mention = [WDMention]()
@@ -36,9 +36,9 @@ class WDMentionMeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTableview()
         setUpRefrshControl()
-  
+        setupTableview()
+        
         /**
         添加通知
         */
@@ -58,6 +58,9 @@ class WDMentionMeTableViewController: UITableViewController {
         tableView.contentInset = UIEdgeInsetsMake(-55 , 0, 49, 0)
         tableView.registerNib(UINib(nibName: "WDMessageCell", bundle: nil), forCellReuseIdentifier: WDMessageCellReuseIdentifier)
         tableView.rowHeight = 150
+     
+        
+   
         
         
     }
@@ -70,23 +73,22 @@ class WDMentionMeTableViewController: UITableViewController {
     上拉刷新
     */
     tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
-//      self.footer.endRefreshing()
-        let path = "https://api.weibo.com/2/comments/mentions.json"
-        let params = ["access_token": userAccount.loadAccount()!.access_token!]
-        let manager = AFHTTPSessionManager()
-        manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-   
-            
-            let mentionArray = JSON!["comments"] as! [[String:AnyObject]]
 
-            self.mention = WDMention.LoadMention(mentionArray)
+
+        WDMention.loadMessageData("mentions", finished: { (models, error) in
+            if error != nil
+            {
+            print(error)
+            SVProgressHUD.showErrorWithStatus("好像出错啦,重新登录试试", maskType: .Black)
+            }
+            else
+            {
+            self.mention = models!
             self.tableView.reloadData()
             self.header.endRefreshing()
-            
-            }) { (_, error) -> Void in
-                print(error)
-                   SVProgressHUD.showErrorWithStatus("好像出错啦，重新登录试试", maskType: SVProgressHUDMaskType.Black)
-        }
+            }
+        })
+        
         
     })
     header.automaticallyChangeAlpha = true
@@ -105,6 +107,8 @@ class WDMentionMeTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return mention.count
     }
+    
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(WDMessageCellReuseIdentifier, forIndexPath: indexPath) as! WDMessageCell
@@ -155,25 +159,18 @@ extension WDMentionMeTableViewController: UIActionSheetDelegate
         //实现删除
         if buttonIndex == 0
         {
-            print("删除")
-            let path = "https://api.weibo.com/2/comments/destroy.json"
-            var params = [String:AnyObject]()
-            params["access_token"] = userAccount.loadAccount()!.access_token!
-            params["cid"] = id!
-            self.params.setDictionary(params)
-            let manager = AFHTTPSessionManager()
-            manager.POST(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-                SVProgressHUD.showSuccessWithStatus("删除成功!", maskType: SVProgressHUDMaskType.Black)
-                self.tableView.reloadData()
-                
-                }, failure: { (_, error) -> Void in
-                    print(error)
-                    SVProgressHUD.showErrorWithStatus("删除失败,只能删除自己的评论哦", maskType: SVProgressHUDMaskType.Black)
+            WDMention.cancelData(id!, finished: { (error) in
+                if error != nil
+                {
+                print(error)
+                    SVProgressHUD.showErrorWithStatus("删除失败,只能删除自己的评论哦", maskType: .Black)
+                }
+                else
+                {
+                 SVProgressHUD.showSuccessWithStatus("删除成功!", maskType: SVProgressHUDMaskType.Black)
+                }
             })
-            
             self.tableView.reloadData()
-
-       
         }
 
         //实现返回

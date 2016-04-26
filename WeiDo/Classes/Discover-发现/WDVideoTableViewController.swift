@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import AFNetworking
+import SVProgressHUD
 import MJRefresh
 import AVKit
 import AVFoundation
 
-let requestPath = "http://api.budejie.com/api/api_open.php"
+
 let videoCellReuseIdentifier = "WDVideoCell"
 class WDVideoTableViewController: UITableViewController {
 
@@ -100,26 +100,20 @@ class WDVideoTableViewController: UITableViewController {
         */
         tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
             self.footer.endRefreshing()
-            let path = requestPath
-            let params = ["a": "list", "c": "data", "type" : "41"]
-            let manager = AFHTTPSessionManager()
-            manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-                let videoarray = JSON!["list"] as! [[String:AnyObject]]
-               
-                let infoarray = JSON!["info"] as! [String:AnyObject]
-                //获取maxtime属性
-                self.maxtime = infoarray["maxtime"] as! String
-                //字典转模型
-                self.video = WDTopic.LoadTopic(videoarray)
-                //设置页码
+            WDTopic.loadTopicData("41",maxtime: "",page: 0 , finished: { (models, maxtime, error) in
+                if error != nil
+                {
+                    print(error)
+                    SVProgressHUD.showErrorWithStatus("刷新失败")
+                }
+                self.maxtime = maxtime!
+                self.video = models!
                 self.page = 0
-                
                 self.tableView.reloadData()
                 self.header.endRefreshing()
-                
-                }) { (_, error) -> Void in
-                    print(error)
-            }
+            })
+
+            
             
         })
         header.automaticallyChangeAlpha = true
@@ -132,27 +126,21 @@ class WDVideoTableViewController: UITableViewController {
             self.header.endRefreshing()
             self.footer.beginRefreshing()
             let currentpage = self.page + 1
-            let path = requestPath
-            let params = ["a": "list", "c": "data", "type" : "41", "maxtime": self.maxtime, "page": currentpage]
-            let manager = AFHTTPSessionManager()
-            manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-                let videoarray = JSON!["list"] as! [[String:AnyObject]]
-                let infoarray = JSON!["info"] as! [String:AnyObject]
-                //获取maxtime属性
-                self.maxtime = infoarray["maxtime"] as! String
-                //字典转模型
-                self.video += WDTopic.LoadTopic(videoarray)
-                //设置页码
-                self.page = currentpage
-                
-                self.tableView.reloadData()
-                self.footer.endRefreshing()
-                
-                
-                }, failure: { (_, error) -> Void in
+            WDTopic.loadTopicData("41", maxtime: self.maxtime, page: currentpage, finished: { (models, maxtime, error) in
+                if error != nil
+                {
                     print(error)
+                    SVProgressHUD.showErrorWithStatus("刷新失败")
+                }
+                else
+                {
+                    self.maxtime = maxtime!
+                    self.video += models!
+                    self.page = currentpage
+                    self.tableView.reloadData()
+                    self.footer.endRefreshing()
+                }
             })
-            
         })
         
         

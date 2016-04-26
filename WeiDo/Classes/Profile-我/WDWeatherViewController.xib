@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WDWeatherViewController" customModule="WeiDo" customModuleProvider="target">
+            <connections>
+                <outlet property="WDLabel" destination="Whk-KQ-t4c" id="INZ-3q-EYf"/>
+                <outlet property="WSLabel" destination="4BT-ya-3ML" id="20m-bz-riT"/>
+                <outlet property="cityLabel" destination="uh0-8K-gcz" id="Niq-yw-QQA"/>
+                <outlet property="h_tmpLabel" destination="dKP-Gr-3Ey" id="3AB-RS-siS"/>
+                <outlet property="image_View" destination="UpL-SV-I1p" id="quz-oq-EQ0"/>
+                <outlet property="l_tmpLabel" destination="jVF-Uh-wwd" id="owu-Gg-Fos"/>
+                <outlet property="tempLabel" destination="dGi-Ce-Y41" id="Odx-R6-olC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weatherLabel" destination="2sb-4R-YOZ" id="oN5-ai-Gw7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="weatherBg" translatesAutoresizingMaskIntoConstraints="NO" id="WGT-wa-Of9">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="风力" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BT-ya-3ML" userLabel="风力">
+                    <rect key="frame" x="62" y="561" width="251" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="70M-hM-KYp"/>
+                        <constraint firstAttribute="height" constant="21" id="FZa-ux-yLE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="70M-hM-KYp"/>
+                        </mask>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="平均温度" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGi-Ce-Y41" userLabel="平均温度">
+                    <rect key="frame" x="68" y="343" width="239" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="QYf-Y7-GY6"/>
+                        <constraint firstAttribute="height" constant="21" id="a72-I3-9tY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="QYf-Y7-GY6"/>
+                        </mask>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="最高温度" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKP-Gr-3Ey" userLabel="最高温度">
+                    <rect key="frame" x="74" y="382" width="226" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Osp-Tf-n00"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="d3Q-li-yfA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="d3Q-li-yfA"/>
+                        </mask>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="风向" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whk-KQ-t4c" userLabel="风向">
+                    <rect key="frame" x="70" y="512" width="234" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="PP7-PS-9N4"/>
+                        <constraint firstAttribute="height" constant="21" id="xO2-D0-UvA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="PP7-PS-9N4"/>
+                        </mask>
+                    </variation>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UpL-SV-I1p">
+                    <rect key="frame" x="107" y="91" width="160" height="160"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="Kdj-iF-ZrB"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="SZ8-07-nu6"/>
+                        <constraint firstAttribute="width" constant="120" id="Slx-Co-Sn9"/>
+                        <constraint firstAttribute="height" constant="120" id="eOR-Sc-UOi"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Slx-Co-Sn9"/>
+                            <exclude reference="eOR-Sc-UOi"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="最低温度" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVF-Uh-wwd" userLabel="最低温度">
+                    <rect key="frame" x="68" y="424" width="239" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="85D-8o-0MB"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="qEm-vu-ku0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="qEm-vu-ku0"/>
+                        </mask>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="天气情况" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sb-4R-YOZ" userLabel="天气情况">
+                    <rect key="frame" x="65" y="468" width="244" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Ama-oY-a9O"/>
+                        <constraint firstAttribute="height" constant="21" id="M7Y-1I-jrr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Ama-oY-a9O"/>
+                        </mask>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="城市" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uh0-8K-gcz" userLabel="城市">
+                    <rect key="frame" x="74" y="285" width="226" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="7Yv-dI-Dc0"/>
+                        <constraint firstAttribute="height" constant="21" id="e6x-GR-sNt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="e6x-GR-sNt"/>
+                        </mask>
+                    </variation>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="UpL-SV-I1p" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="110" id="2kc-zg-hl7"/>
+                <constraint firstItem="Whk-KQ-t4c" firstAttribute="top" secondItem="2sb-4R-YOZ" secondAttribute="bottom" constant="20" id="3fJ-T6-82m"/>
+                <constraint firstItem="uh0-8K-gcz" firstAttribute="top" secondItem="UpL-SV-I1p" secondAttribute="bottom" constant="30" id="7xy-tb-355"/>
+                <constraint firstItem="jVF-Uh-wwd" firstAttribute="top" secondItem="dKP-Gr-3Ey" secondAttribute="bottom" constant="21" id="DAF-RZ-7cQ"/>
+                <constraint firstItem="Whk-KQ-t4c" firstAttribute="top" secondItem="2sb-4R-YOZ" secondAttribute="bottom" constant="23" id="KJj-d0-5Vr"/>
+                <constraint firstItem="dKP-Gr-3Ey" firstAttribute="top" secondItem="dGi-Ce-Y41" secondAttribute="bottom" constant="20" id="Kso-on-Zhd"/>
+                <constraint firstItem="UpL-SV-I1p" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="95" id="MPN-ys-RvL"/>
+                <constraint firstItem="jVF-Uh-wwd" firstAttribute="top" secondItem="dKP-Gr-3Ey" secondAttribute="bottom" constant="20" id="NVk-j1-KkC"/>
+                <constraint firstItem="2sb-4R-YOZ" firstAttribute="top" secondItem="jVF-Uh-wwd" secondAttribute="bottom" constant="20" id="Skv-EI-V90"/>
+                <constraint firstItem="4BT-ya-3ML" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="T8P-HH-amH"/>
+                <constraint firstItem="2sb-4R-YOZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WKz-Ie-JG4"/>
+                <constraint firstItem="uh0-8K-gcz" firstAttribute="top" secondItem="UpL-SV-I1p" secondAttribute="bottom" constant="30" id="WtM-7F-qM7"/>
+                <constraint firstItem="UpL-SV-I1p" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZFe-pd-0tW"/>
+                <constraint firstItem="2sb-4R-YOZ" firstAttribute="top" secondItem="jVF-Uh-wwd" secondAttribute="bottom" constant="23" id="cT0-m8-N8e"/>
+                <constraint firstItem="dGi-Ce-Y41" firstAttribute="top" secondItem="uh0-8K-gcz" secondAttribute="bottom" constant="20" id="eJQ-EF-grs"/>
+                <constraint firstItem="jVF-Uh-wwd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="h80-GZ-4iF"/>
+                <constraint firstItem="uh0-8K-gcz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hfu-Mz-oqE"/>
+                <constraint firstItem="4BT-ya-3ML" firstAttribute="top" secondItem="Whk-KQ-t4c" secondAttribute="bottom" constant="20" id="igT-LJ-4wg"/>
+                <constraint firstItem="dKP-Gr-3Ey" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ily-MM-neZ"/>
+                <constraint firstItem="dKP-Gr-3Ey" firstAttribute="top" secondItem="dGi-Ce-Y41" secondAttribute="bottom" constant="18" id="nio-rX-jUk"/>
+                <constraint firstItem="UpL-SV-I1p" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="p8N-ei-NCT"/>
+                <constraint firstItem="dGi-Ce-Y41" firstAttribute="top" secondItem="uh0-8K-gcz" secondAttribute="bottom" constant="53" id="qtX-Eh-8v1"/>
+                <constraint firstItem="dGi-Ce-Y41" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qtl-Qt-78G"/>
+                <constraint firstItem="Whk-KQ-t4c" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xhU-e2-Lms"/>
+                <constraint firstItem="4BT-ya-3ML" firstAttribute="top" secondItem="Whk-KQ-t4c" secondAttribute="bottom" constant="28" id="zgq-gc-KgI"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="2kc-zg-hl7"/>
+                    <exclude reference="ZFe-pd-0tW"/>
+                    <exclude reference="WtM-7F-qM7"/>
+                    <exclude reference="qtX-Eh-8v1"/>
+                    <exclude reference="nio-rX-jUk"/>
+                    <exclude reference="DAF-RZ-7cQ"/>
+                    <exclude reference="cT0-m8-N8e"/>
+                    <exclude reference="KJj-d0-5Vr"/>
+                    <exclude reference="zgq-gc-KgI"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="weatherBg" width="580" height="870"/>
+    </resources>
+</document>

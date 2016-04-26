@@ -29,7 +29,7 @@ class WDMainViewController: UITabBarController {
      */
     func composeBtnClick(){
       let composeVc = WDComposeViewController()
-        let nav = UINavigationController(rootViewController: composeVc)
+        let nav = WDNavigationController(rootViewController: composeVc)
         presentViewController(nav, animated: true, completion: nil)
     }
     
@@ -122,7 +122,7 @@ class WDMainViewController: UITabBarController {
         
       
         // 2.给首页包装一个导航控制器
-        let nav = UINavigationController()
+        let nav = WDNavigationController()
           //设置颜色
         
         nav.addChildViewController(vc)

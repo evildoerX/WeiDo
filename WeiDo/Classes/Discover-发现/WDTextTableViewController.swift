@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AFNetworking
+import SVProgressHUD
 import MJRefresh
 
 let TextCellReuseIdentifier = "WMWordToipCell"
@@ -40,7 +40,7 @@ class WDTextTableViewController: UITableViewController {
         /**
         添加通知
         */
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDTextTableViewController.wordShare(_:)), name: WDWordShare, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDTextTableViewController.wordShare(_:)), name: WDWordShare, object: nil)
    
     }
     
@@ -84,27 +84,19 @@ class WDTextTableViewController: UITableViewController {
         */
       tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
       self.footer.endRefreshing()
-        let path = requestPath
-        let params = ["a": "list", "c": "data", "type" : "29"]
-        let manager = AFHTTPSessionManager()
-        manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-            let textarray = JSON!["list"] as! [[String:AnyObject]]
-            let infoarray = JSON!["info"] as! [String:AnyObject]
-
-            //获取maxtime属性
-            self.maxtime = infoarray["maxtime"] as! String
-            //字典转模型
-            self.topics = WDTopic.LoadTopic(textarray)
-            //设置页码
+        WDTopic.loadTopicData("29",maxtime: "",page: 0 , finished: { (models, maxtime, error) in
+            if error != nil
+            {
+            print(error)
+            SVProgressHUD.showErrorWithStatus("刷新失败")
+            }
+            self.maxtime = maxtime!
+            self.topics = models!
             self.page = 0
-          
             self.tableView.reloadData()
             self.header.endRefreshing()
-            
-            }) { (_, error) -> Void in
-                print(error)
-        }
-
+        })
+        
       })
         header.automaticallyChangeAlpha = true
        header.beginRefreshing()
@@ -116,31 +108,24 @@ class WDTextTableViewController: UITableViewController {
             self.header.endRefreshing()
             self.footer.beginRefreshing()
             let currentpage = self.page + 1
-            let path = requestPath
-            let params = ["a": "list", "c": "data", "type" : "29", "maxtime": self.maxtime, "page": currentpage]
-            let manager = AFHTTPSessionManager()
-            manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-                let textarray = JSON!["list"] as! [[String:AnyObject]]
-                let infoarray = JSON!["info"] as! [String:AnyObject]
-              
-                //获取maxtime属性
-                self.maxtime = infoarray["maxtime"] as! String
-               
-                
-                //字典转模型
-                self.topics += WDTopic.LoadTopic(textarray)
-                
-                //设置页码
+            WDTopic.loadTopicData("29", maxtime: self.maxtime, page: currentpage, finished: { (models, maxtime, error) in
+                if error != nil
+                {
+                    print(error)
+                    SVProgressHUD.showErrorWithStatus("刷新失败")
+                }
+                else
+                {
+                self.maxtime = maxtime!
+                self.topics += models!
                 self.page = currentpage
-                
                 self.tableView.reloadData()
                 self.footer.endRefreshing()
-                
-                
-                }, failure: { (_, error) -> Void in
-                    print(error)
+                }
             })
-     
+            
+            
+            
         })
        
         

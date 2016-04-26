@@ -8,8 +8,8 @@
 //
 
 import UIKit
-import AFNetworking
 import MJRefresh
+import SVProgressHUD
 
 let WDAmusementNewsWillOpen = "WDAmusementNewsWillOpen"
 class WDAmusementNewsViewController: UITableViewController {
@@ -54,19 +54,19 @@ class WDAmusementNewsViewController: UITableViewController {
         上拉刷新
         */
         tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
-            let path = "http://api.huceo.com/huabian/"
-            let manager = AFHTTPSessionManager()
-            manager.GET(path, parameters: newsParams, progress: nil, success: { (_, JSON) -> Void in
-                
-                let sportarray = JSON!["newslist"] as! [[String:AnyObject]]
-                self.amusementNew =  WDNews.LoadNews(sportarray)
-                
-                self.tableView.reloadData()
-                self.header.endRefreshing()
-                
-                }) { (_, error) -> Void in
+            WDNews.loadNewsData("huabian", finished: { (models, error) in
+                if error != nil
+                {
                     print(error)
-            }
+                     SVProgressHUD.showErrorWithStatus("刷新失败", maskType: .Black)
+                }
+                else
+                {
+                    self.amusementNew = models!
+                    self.tableView.reloadData()
+                    self.header.endRefreshing()
+                }
+            })
             
         })
         header.automaticallyChangeAlpha = true

@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import AFNetworking
+import SVProgressHUD
 import MJRefresh
 
 let WDNewCellReuseIdentifier = "WDNewsCell"
 let WDSportNewsWillOpen = "WDSportNewsWillOpen"
-let newsParams = ["key":"28874a32bce9a4b984c57c3538e68809","num":20]
+
 
 class WDSportNewTableViewController: UITableViewController {
 
@@ -62,20 +62,22 @@ class WDSportNewTableViewController: UITableViewController {
         上拉刷新
         */
         tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
-            let path = "http://api.huceo.com/tiyu/"
-            let manager = AFHTTPSessionManager()
-            manager.GET(path, parameters: newsParams, progress: nil, success: { (_, JSON) -> Void in
-              
-                let sportarray = JSON!["newslist"] as! [[String:AnyObject]]
-               self.sportNew =  WDNews.LoadNews(sportarray)
-                
-                 self.tableView.reloadData()
+
+            WDNews.loadNewsData("tiyu", finished: { (models, error) in
+                if error != nil
+                {
+                print(error)
+             SVProgressHUD.showErrorWithStatus("刷新失败", maskType: .Black)
+                }
+                else
+                {
+                self.sportNew = models!
+                self.tableView.reloadData()
                 self.header.endRefreshing()
-                
-                }) { (_, error) -> Void in
-                    print(error)
-            }
+                }
+            })
             
+        
         })
         header.automaticallyChangeAlpha = true
         header.beginRefreshing()

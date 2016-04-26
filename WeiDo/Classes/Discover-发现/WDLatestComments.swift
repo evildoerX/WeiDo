@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class WDLatestComments: NSObject {
 
@@ -46,6 +47,26 @@ class WDLatestComments: NSObject {
         }
         
         return LatestComments
+    }
+    
+    class func loadTopicData(id:Int,finished: (hotModel:[WDLatestComments]?,latestModel:[WDLatestComments]?,error:NSError?) -> ())
+    {
+
+        var params = [String:AnyObject]()
+        params["a"] = "dataList";
+        params["c"] = "comment";
+        params["data_id"] = id
+        params["hot"] = "1"
+        AFHTTPSessionManager().GET(requestPath, parameters: params, success: { (_, JSON) in
+            let hotModel = LoadLatestComments(JSON!["hot"] as! [[String:AnyObject]])
+            let latestModel = LoadLatestComments(JSON!["data"] as! [[String:AnyObject]])
+            
+            finished(hotModel: hotModel, latestModel: latestModel, error: nil)
+            
+            }) { (_, error) in
+            finished(hotModel: nil, latestModel: nil, error: error)
+        }
+
     }
 
     

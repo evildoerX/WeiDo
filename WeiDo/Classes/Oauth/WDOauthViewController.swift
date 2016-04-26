@@ -14,7 +14,7 @@ class WDOauthViewController: UIViewController {
 //        let app_key = "1946144281"
 //        let app_secret = "5393ef69436ad62725d4a3e198319706"
 //        let redirect_uri = "http://sns.whalecloud.com/sina2/callback"
-    
+//
     let app_key = "1649214170"
     let app_secret = "e1a8c149d140eda21ccec829de19521b"
       let redirect_uri = "http://sns.whalecloud.com/sina2/callback"
@@ -24,9 +24,6 @@ class WDOauthViewController: UIViewController {
         navigationItem.title = "WeiDo"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WDOauthViewController.backClick))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
-        
-        
-        
         //获取未授权的requested token
         let urlStr = "https://api.weibo.com/oauth2/authorize?client_id=\(app_key)&redirect_uri=\(redirect_uri)"
         let url = NSURL(string: urlStr)

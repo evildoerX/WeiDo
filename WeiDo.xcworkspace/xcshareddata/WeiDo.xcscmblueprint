@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2C2E1F8007B10449ECEBD88E596E164EB3E7B216",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2C2E1F8007B10449ECEBD88E596E164EB3E7B216" : 0,
+    "CD17E30A199E9BCBB24EF07FE2018912A9B7D354" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F317AE65-A6BC-4730-A540-0DBD3A9D5E49",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2C2E1F8007B10449ECEBD88E596E164EB3E7B216" : "WeiDo\/",
+    "CD17E30A199E9BCBB24EF07FE2018912A9B7D354" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WeiDo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WeiDo.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:w11p3333\/WeiDo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2C2E1F8007B10449ECEBD88E596E164EB3E7B216"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/w11p3333\/Pomodoro.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CD17E30A199E9BCBB24EF07FE2018912A9B7D354"
+    }
+  ]
+}

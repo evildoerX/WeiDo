@@ -50,7 +50,7 @@ class WDBaseTableViewController: UITableViewController ,WDVistorViewDelegate{
         
     //弹出登陆界面
         let oauthView = WDOauthViewController()
-        let nav = UINavigationController(rootViewController: oauthView)
+        let nav = WDNavigationController(rootViewController: oauthView)
         presentViewController(nav, animated: true, completion: nil)
        
     }

@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import SVProgressHUD
 import OpenShare
-import RealmSwift
+
 
 
 //经度
@@ -72,11 +72,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //开启定位
         loadLocation()
         
-     
-        
-        
-   
-        
         
         // 1.创建window
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -119,16 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
        //字体颜色
         UITabBar.appearance().barTintColor = UIColor.whiteColor()
-       
-        //背景颜色
-        UINavigationBar.appearance().barTintColor = bgColor
-           //返回键颜色
-        UINavigationBar.appearance().barStyle = UIBarStyle.Default
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        // 标题颜色
-        let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
-        UINavigationBar.appearance().titleTextAttributes = navigationTitleAttribute as? [String: AnyObject]
-        
+              
  
     }
     
@@ -139,8 +125,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         OpenShare.connectQQWithAppId("1103194207")
         OpenShare.connectWeiboWithAppKey("1946144281")
         OpenShare.connectWeixinWithAppId("wxd930ea5d5a258f4f")
-     
-    
+ 
     }
     
     

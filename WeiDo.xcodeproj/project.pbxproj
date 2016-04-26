@@ -24,6 +24,8 @@
 		B21FD9051C61BC9C00C89571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B21FD9041C61BC9C00C89571 /* Assets.xcassets */; };
 		B21FD9131C61BC9C00C89571 /* WeiDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21FD9121C61BC9C00C89571 /* WeiDoTests.swift */; };
 		B21FD91E1C61BC9C00C89571 /* WeiDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21FD91D1C61BC9C00C89571 /* WeiDoUITests.swift */; };
+		B22367CA1CCF3CEE0061C966 /* WDNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22367C91CCF3CEE0061C966 /* WDNavigationController.swift */; };
+		B22367CC1CCF479A0061C966 /* WDDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22367CB1CCF479A0061C966 /* WDDataSource.swift */; };
 		B23222B41C6C2A9B0081E912 /* HomeRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23222B31C6C2A9B0081E912 /* HomeRefreshControl.swift */; };
 		B23222B61C6C2AB40081E912 /* HomeRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23222B51C6C2AB40081E912 /* HomeRefreshView.xib */; };
 		B23222BC1C6C5A530081E912 /* PhotoBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23222BB1C6C5A530081E912 /* PhotoBrowserViewController.swift */; };
@@ -206,6 +208,8 @@
 		B21FD9191C61BC9C00C89571 /* WeiDoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeiDoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FD91D1C61BC9C00C89571 /* WeiDoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeiDoUITests.swift; sourceTree = "<group>"; };
 		B21FD91F1C61BC9C00C89571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B22367C91CCF3CEE0061C966 /* WDNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WDNavigationController.swift; path = ../Tools/WDNavigationController.swift; sourceTree = "<group>"; };
+		B22367CB1CCF479A0061C966 /* WDDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDDataSource.swift; sourceTree = "<group>"; };
 		B22CC49D1CA22C8B00BBDB14 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = ../Tools/fmdb/Reveal.framework; sourceTree = "<group>"; };
 		B23222B31C6C2A9B0081E912 /* HomeRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRefreshControl.swift; sourceTree = "<group>"; };
 		B23222B51C6C2AB40081E912 /* HomeRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeRefreshView.xib; sourceTree = "<group>"; };
@@ -829,6 +833,7 @@
 			isa = PBXGroup;
 			children = (
 				B2A7489D1C61D76800FC3478 /* Resource */,
+				B22367C91CCF3CEE0061C966 /* WDNavigationController.swift */,
 				B2A748911C61C5C600FC3478 /* WDMainViewController.swift */,
 				B2A748A01C61E3A300FC3478 /* WDBaseTableViewController.swift */,
 				B2A748A41C61E77200FC3478 /* WDVistorView.swift */,
@@ -877,10 +882,10 @@
 		B2A748901C61C59400FC3478 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				B297772F1C65894200CB2521 /* NetworkTools.swift */,
 				B2A748A91C621F5800FC3478 /* UIBarButtonItem+Category.swift */,
 				B2A748A61C61ECF800FC3478 /* UIView+AutoLayout.swift */,
 				B2A748AD1C6224E100FC3478 /* TitleButton.swift */,
-				B297772F1C65894200CB2521 /* NetworkTools.swift */,
 				B29777351C65A44200CB2521 /* String+Category.swift */,
 				B27FD4DA1C6A0D1100A9DDA1 /* UILabel+Category.swift */,
 				B27FD4DC1C6A0D3D00A9DDA1 /* UIButton+Category.swift */,
@@ -889,6 +894,7 @@
 				B2FDE7031C6F07E3000E50F0 /* SQLiteManager.swift */,
 				B2A533C01CB8FEF90034400E /* UIImageView+Category.swift */,
 				B211517D1C6DD45400FD2DB0 /* UIImage+Category.swift */,
+				B22367CB1CCF479A0061C966 /* WDDataSource.swift */,
 			);
 			name = Tools;
 			path = ../Tools;
@@ -1369,6 +1375,7 @@
 				B21151791C6D7D5100FD2DB0 /* UIBarButtionItem+Category.swift in Sources */,
 				B266E62E1C858D6900F7A92F /* WDCommentViewController.swift in Sources */,
 				B2E408F71C9946B00075340B /* WDNearByCell.swift in Sources */,
+				B22367CC1CCF479A0061C966 /* WDDataSource.swift in Sources */,
 				B2AE8A3A1C8D3C7100A6AB14 /* WDMention.swift in Sources */,
 				B2A7489C1C61D76200FC3478 /* WDNULLViewController.swift in Sources */,
 				B29777361C65A44200CB2521 /* String+Category.swift in Sources */,
@@ -1401,6 +1408,7 @@
 				B297772E1C64C3E100CB2521 /* WDOauthViewController.swift in Sources */,
 				B20315911C6B01190091A270 /* WDStatusTableViewBottomView.swift in Sources */,
 				B25A479D1C92BD3200D36A9D /* WDNews.swift in Sources */,
+				B22367CA1CCF3CEE0061C966 /* WDNavigationController.swift in Sources */,
 				B2F3E1F01C9FB78E004FFC36 /* StatusComment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1573,7 +1581,7 @@
 					"-framework",
 					Reveal,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = llx.WeiDo;
+				PRODUCT_BUNDLE_IDENTIFIER = kay.WeiDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WeiDo/Classes/Other/Swift-Bridge.h";
 			};
@@ -1634,7 +1642,7 @@
 					"-framework",
 					Reveal,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = llx.WeiDo;
+				PRODUCT_BUNDLE_IDENTIFIER = kay.WeiDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WeiDo/Classes/Other/Swift-Bridge.h";
 			};

@@ -115,7 +115,6 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
      */
     func addobserver()
     {
-       
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDHomeTableViewController.showPhotoBrowser(_:)), name: WDStatusPictureViewSelected, object: nil)
   

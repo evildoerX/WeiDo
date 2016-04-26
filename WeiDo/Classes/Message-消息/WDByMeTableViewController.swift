@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AFNetworking
 import MJRefresh
 import SVProgressHUD
 
@@ -59,25 +58,21 @@ class WDByMeTableViewController: UITableViewController{
         上拉刷新
         */
         tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
-            
-            let path = "https://api.weibo.com/2/comments/by_me.json"
-            let params = ["access_token": userAccount.loadAccount()!.access_token!]
-            let manager = AFHTTPSessionManager()
-            manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-                
-                let byMeArray = JSON!["comments"] as! [[String:AnyObject]]
-              
-               // self.byMe = WDByMe.LoadByMe(byMeArray)
-                self.byMe = WDMention.LoadMention(byMeArray)
-                self.tableView.reloadData()
-                self.header.endRefreshing()
-
-             
-                }) { (_, error) -> Void in
+  
+            WDMention.loadMessageData("by_me", finished: { (models, error) in
+                if error != nil
+                {
                     print(error)
-                       SVProgressHUD.showErrorWithStatus("好像出错啦，重新登录试试", maskType: SVProgressHUDMaskType.Black)
-            }
-            
+                    SVProgressHUD.showErrorWithStatus("好像出错啦,重新登录试试", maskType: .Black)
+                }
+                else
+                {
+                    self.byMe = models!
+                    self.tableView.reloadData()
+                    self.header.endRefreshing()
+                }
+            })
+    
         })
         header.automaticallyChangeAlpha = true
         header.beginRefreshing()

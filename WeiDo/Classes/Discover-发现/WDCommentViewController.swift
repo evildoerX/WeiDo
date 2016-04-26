@@ -8,7 +8,7 @@
 
 import UIKit
 import MJRefresh
-import AFNetworking
+import SVProgressHUD
 
 let WDCommentCellReuseIdentifier = "WDCommentCell"
 class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegate {
@@ -75,31 +75,23 @@ class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegat
         上拉刷新
         */
         tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
-            
-            let path = requestPath
-            var params = [String:AnyObject]()
-            params["a"] = "dataList";
-            params["c"] = "comment";
-            params["data_id"] = self.texttopic!.id
-            params["hot"] = "1"
-            
-            
-            self.params.setDictionary(params)
-            let manager = AFHTTPSessionManager()
-            manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-                let hotarray = JSON!["hot"] as? [[String:AnyObject]]
-                let dataarray = JSON!["data"] as? [[String:AnyObject]]
-                //获取最热评论
-                self.hotComments = WDLatestComments.LoadLatestComments(hotarray!)
-                //获取最新评论
-                self.latestComments = WDLatestComments.LoadLatestComments(dataarray!)
-                
-                self.tableView.reloadData()
-                self.header.endRefreshing()
-                
-                }) { (_, error) -> Void in
-                    print(error)
+        WDLatestComments.loadTopicData(self.texttopic!.id, finished: { (hotModel, latestModel, error) in
+            if error != nil
+            {
+                print(error)
+                SVProgressHUD.showErrorWithStatus("刷新失败")
             }
+            else
+            {
+            //获取热评
+            self.hotComments = hotModel!
+            //获取最新评论
+            self.latestComments = latestModel!
+            self.tableView.reloadData()
+            self.header.endRefreshing()
+            }
+        })
+            
             
         })
         header.automaticallyChangeAlpha = true

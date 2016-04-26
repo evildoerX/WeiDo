@@ -131,7 +131,7 @@ class StatusDAO: NSObject {
             
             // 2.2遍历取出查询到的数据
             // 返回字典数组的原因:通过网络获取返回的也是字典数组,
-            // 让本地和网络返回的数据类型保持一致, 以便于我们后期处理
+            // 让本地和网络返回的数据类型保持一致, 以便于后期处理
             var statuses = [[String: AnyObject]]()
             while res.next()
             {

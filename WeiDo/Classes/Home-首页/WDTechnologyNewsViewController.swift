@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import AFNetworking
 import MJRefresh
+import SVProgressHUD
 
 let WDTechnologyNewsWillOpen = "WDTechnologyNewsWillOpen"
 
@@ -59,19 +59,19 @@ class WDTechnologyNewsViewController: UITableViewController {
         上拉刷新
         */
         tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
-            let path = "http://api.huceo.com/keji/"
-            let manager = AFHTTPSessionManager()
-            manager.GET(path, parameters: newsParams, progress: nil, success: { (_, JSON) -> Void in
-                
-                let sportarray = JSON!["newslist"] as! [[String:AnyObject]]
-                self.technologyNew =  WDNews.LoadNews(sportarray)
-                
-                self.tableView.reloadData()
-                self.header.endRefreshing()
-                
-                }) { (_, error) -> Void in
+            WDNews.loadNewsData("keji", finished: { (models, error) in
+                if error != nil
+                {
                     print(error)
-            }
+                     SVProgressHUD.showErrorWithStatus("刷新失败", maskType: .Black)
+                }
+                else
+                {
+                    self.technologyNew = models!
+                    self.tableView.reloadData()
+                    self.header.endRefreshing()
+                }
+            })
             
         })
         header.automaticallyChangeAlpha = true

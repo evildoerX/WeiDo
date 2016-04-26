@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class WDNews: NSObject {
 
@@ -35,6 +36,23 @@ class WDNews: NSObject {
         }
         
         return news
+    }
+    
+ 
+    class func loadNewsData(path:String,finished:(models:[WDNews]?,error:NSError?) -> ())
+    {
+        let path = "http://api.huceo.com/" + path + "/"
+        let manager = AFHTTPSessionManager()
+        let newsParams = ["key":"28874a32bce9a4b984c57c3538e68809","num":20]
+        manager.GET(path, parameters: newsParams, progress: nil, success: { (_, JSON) -> Void in
+            
+            let model = LoadNews(JSON!["newslist"] as! [[String:AnyObject]])
+            finished(models: model, error: nil)
+            
+        }) { (_, error) -> Void in
+            finished(models: nil, error: error)
+        }
+    
     }
     
 }

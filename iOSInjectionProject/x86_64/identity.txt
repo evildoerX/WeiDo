@@ -1,0 +1,2 @@
+/Users/luliangxiao/Library/Developer/Xcode/DerivedData/WeiDo-fzpeglqulkmykrddyclvgxwlywfg/Build/Products/Debug-iphonesimulator/WeiDo.app
+

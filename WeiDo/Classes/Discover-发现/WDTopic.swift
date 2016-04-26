@@ -7,7 +7,11 @@
 //
 
 import UIKit
+import AFNetworking
 
+
+
+let requestPath = "http://api.budejie.com/api/api_open.php"
 class WDTopic: NSObject {
     
     /// id
@@ -89,6 +93,27 @@ init(dictionary: [String: AnyObject]) {
         }
         
         return topic
+    }
+    
+    
+    class func loadTopicData(type:String,maxtime:String,page:Int,finished: (models:[WDTopic]?,maxtime:String?,error:NSError?) -> ())
+    {
+
+        let params = ["a": "list", "c": "data", "type" : type, "maxtime":maxtime, "page": page]
+        
+        AFHTTPSessionManager().GET(requestPath, parameters: params, success: { (_, JSON) in
+            let model = LoadTopic(JSON!["list"] as! [[String:AnyObject]])
+            let infoarray = JSON!["info"] as! [String:AnyObject]
+            let maxtime = infoarray["maxtime"] as! String
+            finished(models: model, maxtime: maxtime, error: nil)
+            
+            }) { (_, error) in
+                finished(models: nil, maxtime: nil, error: error)
+        }
+        
+
+
+    
     }
     
 }
