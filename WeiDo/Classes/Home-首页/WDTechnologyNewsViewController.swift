@@ -112,6 +112,7 @@ class WDTechnologyNewsViewController: UITableViewController {
         let urlStr = technologyNew[indexPath.row].url
         let url = NSURL(string: urlStr!)
         let vc = RxWebViewController(url: url)
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         tableView.reloadData()
     }

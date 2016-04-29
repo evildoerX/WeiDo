@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AFNetworking
 import SVProgressHUD
 
 class WDPulblishViewController: UIViewController {
@@ -106,15 +105,13 @@ class WDPulblishViewController: UIViewController {
         //收藏
         let path = "https://api.weibo.com/2/favorites/create.json"
         let params = ["access_token":userAccount.loadAccount()!.access_token!,"id":passbyID!]
-        AFHTTPSessionManager().POST(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-            SVProgressHUD.showSuccessWithStatus("收藏成功!", maskType: SVProgressHUDMaskType.Black)
-            }) { (_, error) -> Void in
+        NetworkTools.shareNetworkTools().POST(path, parameters: params, success: { (_, JSON) in
+             SVProgressHUD.showSuccessWithStatus("收藏成功!", maskType: SVProgressHUDMaskType.Black)
+            }) { (_, error) in
                 print(error)
                 SVProgressHUD.showErrorWithStatus("收藏失败", maskType: SVProgressHUDMaskType.Black)
 
         }
-        
-
        
         
       

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AFNetworking
+
 class WDNearby: NSObject {
     
  /// 头像
@@ -64,19 +64,19 @@ class WDNearby: NSObject {
         params["range"] = "3000"
         params["count"] = "30"
         params["sort"] = "1"
-    //    self.params.setDictionary(params)
+    
         
           let path = "https://api.weibo.com/2/place/nearby/users.json"
         
-        AFHTTPSessionManager().GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-            
-            let model = LoadNearby(JSON!["users"] as! [[String:AnyObject]])
-          
-            finished(models: model, error: nil)
-        }) { (_, error) -> Void in
-            finished(models: nil, error: error)
-        }
     
+        NetworkTools.shareNetworkTools().GET(path, parameters: params, success: { (_, JSON) in
+            let model = LoadNearby(JSON!["users"] as! [[String:AnyObject]])
+            
+            finished(models: model, error: nil)
+            }) { (_, error) in
+                finished(models: nil, error: error)
+        }
+        
     }
 
 }

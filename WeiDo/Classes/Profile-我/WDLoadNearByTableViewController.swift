@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import AFNetworking
 import MJRefresh
+import SVProgressHUD
 
 let NearBycellReuseIdentifier = "WDNearByCell"
 class WDLoadNearByTableViewController: UITableViewController {
@@ -65,6 +65,7 @@ class WDLoadNearByTableViewController: UITableViewController {
                 if error != nil
                 {
                 print(error)
+                    SVProgressHUD.showErrorWithStatus("网络似乎有点问题")
                 }
                 else
                 {

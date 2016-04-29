@@ -117,6 +117,7 @@ class WDSportNewTableViewController: UITableViewController {
         let urlStr = sportNew[indexPath.row].url
         let url = NSURL(string: urlStr!)
         let vc = RxWebViewController(url: url)
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         tableView.reloadData()
     }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AFNetworking
+
 
 
 
@@ -101,19 +101,15 @@ init(dictionary: [String: AnyObject]) {
 
         let params = ["a": "list", "c": "data", "type" : type, "maxtime":maxtime, "page": page]
         
-        AFHTTPSessionManager().GET(requestPath, parameters: params, success: { (_, JSON) in
+        NetworkTools.shareNetworkTools().GET(requestPath, parameters: params, success: { (_, JSON) in
             let model = LoadTopic(JSON!["list"] as! [[String:AnyObject]])
             let infoarray = JSON!["info"] as! [String:AnyObject]
             let maxtime = infoarray["maxtime"] as! String
             finished(models: model, maxtime: maxtime, error: nil)
-            
             }) { (_, error) in
-                finished(models: nil, maxtime: nil, error: error)
+                  finished(models: nil, maxtime: nil, error: error)
         }
-        
-
-
-    
+     
     }
     
 }

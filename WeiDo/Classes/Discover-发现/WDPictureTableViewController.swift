@@ -10,9 +10,7 @@ import UIKit
 import SVProgressHUD
 import MJRefresh
 
-let WDPictureWillOpen = "WDPictureWillOpen"
-let pictureCellReuseIdentifier = "WDPictureCell"
-class WDPictureTableViewController: UITableViewController {
+class WDPictureTableViewController: WDBaseViewController {
     /// 数据源
     var pictures =  [WDTopic]()
     /// header
@@ -95,9 +93,6 @@ class WDPictureTableViewController: UITableViewController {
      */
     func setupTableView()
     {
-        tableView.scrollIndicatorInsets = self.tableView.contentInset
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
-        tableView.contentInset = UIEdgeInsetsMake(-55 , 0, 49, 0)
         
         tableView.registerNib(UINib(nibName: "WDPictureCell", bundle: nil), forCellReuseIdentifier: pictureCellReuseIdentifier)
         tableView.rowHeight = 500
@@ -120,13 +115,17 @@ class WDPictureTableViewController: UITableViewController {
                 if error != nil
                 {
                     print(error)
-                    SVProgressHUD.showErrorWithStatus("刷新失败")
+                    SVProgressHUD.showErrorWithStatus("网络似乎有点问题")
+                    return
                 }
+                else
+                {
                 self.maxtime = maxtime!
                 self.pictures = models!
                 self.page = 0
                 self.tableView.reloadData()
                 self.header.endRefreshing()
+                }
             })
 
             

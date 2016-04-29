@@ -50,11 +50,11 @@ class WDPictureCell: UITableViewCell {
                 text_Label.numberOfLines = 0
                 
                 nameLabel.text = pictureToip.name
-                nameLabel.textColor = bgcolor
+                nameLabel.textColor = DFColor
                 profileImageView.sd_setImageWithURL(NSURL(string: pictureToip.profile_image))
                 Image_view.sd_setImageWithURL(NSURL(string: pictureToip.cdn_img!))
                 createTimeLabel.text = pictureToip.create_time
-                createTimeLabel.textColor = bgcolor
+            
                 
                 
                 dingButton.setTitle(String(pictureToip.ding), forState: UIControlState.Normal)

@@ -109,6 +109,7 @@ class WDAmusementNewsViewController: UITableViewController {
         let urlStr = amusementNew[indexPath.row].url
         let url = NSURL(string: urlStr!)
         let vc = RxWebViewController(url: url)
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         tableView.reloadData()
     }

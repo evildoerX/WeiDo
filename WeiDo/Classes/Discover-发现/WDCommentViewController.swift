@@ -10,8 +10,8 @@ import UIKit
 import MJRefresh
 import SVProgressHUD
 
-let WDCommentCellReuseIdentifier = "WDCommentCell"
-class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegate {
+
+class WDCommentViewController: WDBaseViewController {
     
  
     /**  header  */
@@ -79,7 +79,7 @@ class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegat
             if error != nil
             {
                 print(error)
-                SVProgressHUD.showErrorWithStatus("刷新失败")
+                 SVProgressHUD.showErrorWithStatus("网络似乎有点问题")
             }
             else
             {
@@ -108,7 +108,6 @@ class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegat
          tableView.registerNib(UINib(nibName: "WMWordToipCell", bundle: nil), forCellReuseIdentifier: TextCellReuseIdentifier)
         tableView.estimatedRowHeight = 120
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.contentInset = UIEdgeInsetsMake(-55 , 0, 49, 0)
         tableView.tableFooterView = UIView()
    
     
@@ -157,8 +156,7 @@ class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegat
         if indexPath.section == 0 {
          
             let cell = tableView.dequeueReusableCellWithIdentifier(TextCellReuseIdentifier, forIndexPath: indexPath) as! WMWordToipCell
-    
-      
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
             cell.wordTopic = texttopic
      
             return cell
@@ -209,7 +207,7 @@ class WDCommentViewController: UITableViewController, UIGestureRecognizerDelegat
      设置header样式
      */
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = bgcolor
+        view.tintColor = DFColor
     }
     
 

@@ -36,6 +36,7 @@
 - 重构应用，将所有网络处理加入到model中
 - 替换自定义Navigation
 - Lighter Controller
+- 优化UI
 
 #### v1.2(Apr 15, 2016)
 - 优化tableview cell高度

@@ -80,7 +80,7 @@ class WDMainViewController: UITabBarController {
                 print(error)
                 
                 // 从本地创建控制器
-                addChildViewController("WDHomeTableViewController", title: "首页", imageName: "tabbar_home")
+                addChildViewController("WDHomeViewController", title: "首页", imageName: "tabbar_home")
                 addChildViewController("WDMessageController", title: "消息", imageName: "tabbar_message")
                 
                 // 再添加一个占位控制器
@@ -142,8 +142,7 @@ class WDMainViewController: UITabBarController {
        
         btn.setImage(UIImage(named:"tabbar_compose_icon_add_highlighted"), forState: UIControlState.Highlighted)
         // 3.设置背景图片
-        btn.setBackgroundImage(UIImage(named:"composeBackgd"), forState: UIControlState.Normal)
-       
+       btn.backgroundColor = bgColor
         // 4.添加监听
         btn.addTarget(self, action: #selector(WDMainViewController.composeBtnClick), forControlEvents: UIControlEvents.TouchUpInside)
         return btn

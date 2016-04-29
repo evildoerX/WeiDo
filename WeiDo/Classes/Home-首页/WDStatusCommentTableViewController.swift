@@ -98,12 +98,16 @@ class WDStatusCommentTableViewController: UITableViewController, UIGestureRecogn
             if error != nil
             {
             print(error)
-            SVProgressHUD.showErrorWithStatus("刷新失败")
+            SVProgressHUD.showErrorWithStatus("网络似乎有点问题")
+                return
             }
+            
+           else {
             self.statusComment = models!
             self.tableView.reloadData()
             self.header.endRefreshing()
             self.page = 1
+            }
         })
         
         })
@@ -153,6 +157,7 @@ class WDStatusCommentTableViewController: UITableViewController, UIGestureRecogn
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
   
         let cell = tableView.dequeueReusableCellWithIdentifier(WDCommentCellReuseIdentifier, forIndexPath: indexPath) as! WDCommentCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         let data = self.statusComment[indexPath.row]
         cell.statusComment = data
         return cell

@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import AFNetworking
 import MJRefresh
+import SVProgressHUD
 
 
 let TravelCellReuseIdentifier = "WDTravelCell"
 let TravelBrowserWillOpen = "TravelBrowserWillOpen"
-class WDTravelTableViewController: UITableViewController {
+class WDTravelTableViewController: WDBaseViewController {
 
     //数据源
     var travel = [WDTravel]()
@@ -44,10 +44,10 @@ class WDTravelTableViewController: UITableViewController {
     
     func setupTableview()
     {
-        tableView.contentInset = UIEdgeInsetsMake(-55 , 0, -100, 0)
+
         title = "微游记"
        tableView.registerNib(UINib(nibName: "WDTravelCell", bundle: nil), forCellReuseIdentifier: TravelCellReuseIdentifier)
-        tableView.rowHeight = 300
+        tableView.rowHeight = 200
         
     }
 
@@ -65,6 +65,8 @@ class WDTravelTableViewController: UITableViewController {
                 if error != nil
                 {
                     print(error)
+                    SVProgressHUD.showErrorWithStatus("网络似乎有点问题")
+                    return
                 }
                 else
                 {
@@ -135,6 +137,7 @@ class WDTravelTableViewController: UITableViewController {
         
         let url = travel[indexPath.row].bookUrl
         let vc = RxWebViewController(url: url)
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
         tableView.reloadData()
         

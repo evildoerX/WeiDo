@@ -14,16 +14,26 @@ class WDNavigationController: UINavigationController, UIGestureRecognizerDelegat
         super.viewDidLoad()
 
         
+        self.navigationBar.alpha = 0.5
+     
+        
         //背景颜色
-        UINavigationBar.appearance().barTintColor = bgColor
+       UINavigationBar.appearance().barTintColor = bgColor
+        
+ 
         //返回键颜色
         UINavigationBar.appearance().barStyle = UIBarStyle.Default
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+  
         // 标题颜色
         let navigationTitleAttribute : NSDictionary = NSDictionary(object: UIColor.whiteColor(),forKey: NSForegroundColorAttributeName)
+        
         UINavigationBar.appearance().titleTextAttributes = navigationTitleAttribute as? [String: AnyObject]
         
         setGesture()
+        
+        
+        
         
         
         // Do any additional setup after loading the view.
@@ -48,10 +58,11 @@ class WDNavigationController: UINavigationController, UIGestureRecognizerDelegat
         if self.childViewControllers.count > 0
         {
             
-            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigationButtonReturn"), style: .Plain, target: self, action: #selector(WDNavigationController.back))
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "backItemImage"), style: .Plain, target: self, action: #selector(WDNavigationController.back))
             
         }
         super.pushViewController(viewController, animated: true)
+
         
     }
     

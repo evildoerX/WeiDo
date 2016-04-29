@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 import AFNetworking
 
 
@@ -49,24 +50,28 @@ class WDWeatherViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.hidden = true
+       
         title = "微天气"
        
        loadWeather()
        
      
-     
-        
+        switch self.weather!
+        {
+        case "晴" :
+            self.image_View.image = UIImage(named: "00")
+        case "多云" :
+            self.image_View.image = UIImage(named: "01")
+        case "阴" :
+            self.image_View.image = UIImage(named: "02")
+        case "雨" :
+            self.image_View.image = UIImage(named: "09")
+        default :
+            self.image_View.image = UIImage(named: "00")
+        }
+ 
           }
   
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(true)
-        self.tabBarController?.tabBar.hidden = false
-    }
-    
-   
-  
-    
     func  loadWeather()
     {
          let path = "http://apis.baidu.com/apistore/weatherservice/weather"
@@ -79,10 +84,12 @@ class WDWeatherViewController: UIViewController, UIGestureRecognizerDelegate {
      let params = ["citypinyin":String(cityname!)]
      let manager =  AFHTTPSessionManager()
         manager.requestSerializer.setValue(weatherApikey, forHTTPHeaderField: "apikey")
-        manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-          
-            let dataArray = JSON!["retData"] as! NSDictionary
         
+        manager.GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
+          if JSON!["retData"]  != nil
+             {
+        
+            let dataArray = JSON!["retData"] as! NSDictionary
              self.city = dataArray.valueForKey("city") as? String
              self.temp = dataArray.valueForKey("temp") as? String
              self.h_tmp = dataArray.valueForKey("h_tmp") as? String
@@ -98,24 +105,17 @@ class WDWeatherViewController: UIViewController, UIGestureRecognizerDelegate {
              self.weatherLabel.text = self.weather!
              self.WDLabel.text = self.WD!
              self.WSLabel.text = self.WS!
-            
-            switch self.weather!
-            {
-            case "晴" :
-                self.image_View.image = UIImage(named: "00")
-            case "多云" :
-                self.image_View.image = UIImage(named: "01")
-            case "阴" :
-                self.image_View.image = UIImage(named: "02")
-            case "雨" :
-                self.image_View.image = UIImage(named: "09")
-            default :
-                self.image_View.image = UIImage(named: "00")
+           
             }
-   
+            else
+             {
+                SVProgressHUD.showErrorWithStatus("网络似乎有点问题")
+
+            }
             
             }) { (_, error) -> Void in
                 print(error)
+                SVProgressHUD.showErrorWithStatus("网络似乎有点问题")
         }
     }
 

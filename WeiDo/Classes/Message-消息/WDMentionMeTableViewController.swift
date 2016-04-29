@@ -10,8 +10,7 @@ import UIKit
 import MJRefresh
 import SVProgressHUD
 
-let WDMessageCellReuseIdentifier = "WDMessageCell"
-class WDMentionMeTableViewController: UITableViewController {
+class WDMentionMeTableViewController: WDBaseViewController {
 
 
     //数据源
@@ -53,9 +52,7 @@ class WDMentionMeTableViewController: UITableViewController {
     
     func setupTableview()
     {
-        tableView.scrollIndicatorInsets = self.tableView.contentInset
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
-        tableView.contentInset = UIEdgeInsetsMake(-55 , 0, 49, 0)
+
         tableView.registerNib(UINib(nibName: "WDMessageCell", bundle: nil), forCellReuseIdentifier: WDMessageCellReuseIdentifier)
         tableView.rowHeight = 150
      

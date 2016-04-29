@@ -13,8 +13,8 @@ import AVKit
 import AVFoundation
 
 
-let videoCellReuseIdentifier = "WDVideoCell"
-class WDVideoTableViewController: UITableViewController {
+
+class WDVideoTableViewController: WDBaseViewController {
 
     
     
@@ -50,10 +50,7 @@ class WDVideoTableViewController: UITableViewController {
      */
     func setupTableView()
     {
-        tableView.scrollIndicatorInsets = self.tableView.contentInset
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
-        tableView.contentInset = UIEdgeInsetsMake(-55 , 0, 49, 0)
-        
+   
         tableView.registerNib(UINib(nibName: "WDVideoCell", bundle: nil), forCellReuseIdentifier: videoCellReuseIdentifier)
         //接受通知
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WDVideoTableViewController.playVideo(_:)), name: WDVideoWillPlay, object: nil)
@@ -104,13 +101,18 @@ class WDVideoTableViewController: UITableViewController {
                 if error != nil
                 {
                     print(error)
-                    SVProgressHUD.showErrorWithStatus("刷新失败")
+                      SVProgressHUD.showErrorWithStatus("网络似乎有点问题")
+                    return
+                    
                 }
+                else
+                {
                 self.maxtime = maxtime!
                 self.video = models!
                 self.page = 0
                 self.tableView.reloadData()
                 self.header.endRefreshing()
+                }
             })
 
             

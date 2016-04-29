@@ -55,7 +55,7 @@ class WDWelcomeViewController: UIViewController {
         func setupUI()
         {
             // 1.添加子控件
-            let bgColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
+        
             view.backgroundColor = bgColor
             view.addSubview(iconView)
             view.addSubview(messageLabel)
@@ -91,6 +91,7 @@ class WDWelcomeViewController: UIViewController {
     
     private lazy var messageLabel: UILabel = {
         let label = UILabel()
+        label.textColor = UIColor.whiteColor()
         label.text = "Welcome Back"
         label.sizeToFit()
         label.alpha = 0.0

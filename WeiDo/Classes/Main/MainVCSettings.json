@@ -1,6 +1,6 @@
 [
  {
-    "vcName": "WDHomeTableViewController",
+    "vcName": "WDHomeViewController",
     "title": "首页",
     "imageName": "tabbar_home"
  },

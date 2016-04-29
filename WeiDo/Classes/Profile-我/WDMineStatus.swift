@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AFNetworking
+
 
 class WDMineStatus: NSObject {
  
@@ -81,15 +81,12 @@ class WDMineStatus: NSObject {
     {
         
      let path = "https://api.weibo.com/2/statuses/user_timeline.json"
-      let manager = AFHTTPSessionManager()
-      manager.GET(path, parameters: params, success: { (_, JSON) in
-     let model = LoadMine(JSON!["statuses"] as! [[String:AnyObject]])
+    NetworkTools.shareNetworkTools().GET(path, parameters: params, success: { (_, JSON) in
+        let model = LoadMine(JSON!["statuses"] as! [[String:AnyObject]])
         
         finished(models: model,error:nil)
-        
         }) { (_, error) in
-            
-            finished(models:nil,error: error)
+             finished(models:nil,error: error)
         }
     
     }

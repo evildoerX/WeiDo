@@ -28,6 +28,7 @@ var currLocation : CLLocation!
 
 //全局颜色
 let bgColor = UIColor(red: 77/255, green: 194/255, blue: 167/255, alpha: 1.0)
+let DFColor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
 let WDSwitchRootViewControllerKey = "WDSwitchRootViewControllerKey"
 
 
@@ -114,9 +115,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
        //字体颜色
         UITabBar.appearance().barTintColor = UIColor.whiteColor()
-              
- 
-    }
+        UITabBar.appearance().alpha = 0.8
+          }
     
     
     func setupShare()

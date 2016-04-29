@@ -38,10 +38,10 @@ class WMWordToipCell: UITableViewCell {
                text_Label.numberOfLines = 0
             
                 nameLabel.text = wordToip.name
-                nameLabel.textColor = bgcolor
+                nameLabel.textColor = DFColor
                 profileImageView.sd_setImageWithURL(NSURL(string: wordToip.profile_image))
                 createTimeLabel.text = wordToip.create_time
-                createTimeLabel.textColor = bgcolor
+               
            
                 dingButton.setTitle(String(wordToip.ding), forState: UIControlState.Normal)
                 caiButton.setTitle(String(wordToip.cai), forState: UIControlState.Normal)

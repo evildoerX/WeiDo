@@ -98,6 +98,11 @@ class Status: NSObject {
     var reposts_count:Int = 0
     var comments_count:Int = 0
     var attitudes_count:Int = 0
+    
+    
+    
+  
+    
     /// 加载微博数据
     class func loadStatuses(since_id: Int, max_id: Int, finished: (models:[Status]?, error:NSError?)->()){
      
@@ -113,12 +118,15 @@ class Status: NSObject {
             {
                 finished(models: nil, error: error)
             }
-            
+            else
+            {
             // 2.遍历数组, 将字典转换为模型
             let models = dict2Model(array!)
             
             // 3.缓存微博配图
             cacheStatusImages(models, finished: finished)
+                
+            }
         }
 
         

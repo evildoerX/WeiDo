@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AFNetworking
+
 
 class WDLatestComments: NSObject {
 
@@ -57,17 +57,16 @@ class WDLatestComments: NSObject {
         params["c"] = "comment";
         params["data_id"] = id
         params["hot"] = "1"
-        AFHTTPSessionManager().GET(requestPath, parameters: params, success: { (_, JSON) in
+        
+        NetworkTools.shareNetworkTools().GET(requestPath, parameters: params, success: { (_, JSON) in
             let hotModel = LoadLatestComments(JSON!["hot"] as! [[String:AnyObject]])
             let latestModel = LoadLatestComments(JSON!["data"] as! [[String:AnyObject]])
             
             finished(hotModel: hotModel, latestModel: latestModel, error: nil)
-            
             }) { (_, error) in
-            finished(hotModel: nil, latestModel: nil, error: error)
+                finished(hotModel: nil, latestModel: nil, error: error)
         }
-
+        
     }
-
     
 }

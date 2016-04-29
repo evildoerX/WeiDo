@@ -12,7 +12,7 @@ extension UIButton
 {
     class func createButton(imageName: String, title: String) -> UIButton{
         let btn = UIButton()
-        btn.backgroundColor = bgcolor
+        btn.backgroundColor = DFColor
         btn.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
         btn.setTitle(title, forState: UIControlState.Normal)
         btn.titleLabel?.font = UIFont.systemFontOfSize(10)

@@ -12,6 +12,27 @@ import SVProgressHUD
 class StatusDAO: NSObject {
    
     
+    
+    
+    
+    class func loadStatusCount(finished:(count:String?,error:NSError?) -> ())
+    {
+        let path = "https://rm.api.weibo.com/2/remind/unread_count.json"
+        let params = ["access_token":userAccount.loadAccount()!.access_token!,"uid":userAccount.loadAccount()!.uid!]
+        NetworkTools.shareNetworkTools().GET(path, parameters: params, success: { (_, JSON) in
+            let count = JSON!["status"] as! Int
+            if count != 0
+            {
+             finished(count: String(count), error: nil)
+            }
+            
+            }) { (_, error) in
+                finished(count: nil, error: error)
+        }
+        
+        
+    }
+    
     class func loadStatus(since_id: Int, max_id: Int, finished: ([[String: AnyObject]]?, error: NSError?)->()) {
         
         // 1.从本地数据库中获取

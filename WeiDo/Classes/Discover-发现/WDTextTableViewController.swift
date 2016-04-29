@@ -10,8 +10,8 @@ import UIKit
 import SVProgressHUD
 import MJRefresh
 
-let TextCellReuseIdentifier = "WMWordToipCell"
-class WDTextTableViewController: UITableViewController {
+
+class WDTextTableViewController: WDBaseViewController {
     
     //数据源
     var topics =  [WDTopic]()
@@ -51,9 +51,8 @@ class WDTextTableViewController: UITableViewController {
     
    func setupTableView(){
     
-    tableView.scrollIndicatorInsets = self.tableView.contentInset
-    tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
-    tableView.contentInset = UIEdgeInsetsMake(-55 , 0, 49, 0)
+    
+
     
     tableView.registerNib(UINib(nibName: "WMWordToipCell", bundle: nil), forCellReuseIdentifier: TextCellReuseIdentifier)
     tableView.rowHeight = 200
@@ -88,13 +87,17 @@ class WDTextTableViewController: UITableViewController {
             if error != nil
             {
             print(error)
-            SVProgressHUD.showErrorWithStatus("刷新失败")
+            SVProgressHUD.showErrorWithStatus("网络似乎有点问题")
+            return
             }
+            else
+            {
             self.maxtime = maxtime!
             self.topics = models!
             self.page = 0
             self.tableView.reloadData()
             self.header.endRefreshing()
+            }
         })
         
       })

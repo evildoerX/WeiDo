@@ -8,7 +8,7 @@
 
 import UIKit
 import SVProgressHUD
-import AFNetworking
+
 
 class WDCommentComposeViewController: UIViewController {
 
@@ -161,9 +161,6 @@ class WDCommentComposeViewController: UIViewController {
         navigationItem.titleView = iconImageView
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(WDCommentComposeViewController.back))
         navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
-        
-        
-        
         /**
         *  判断是转发还是评论
         */
@@ -231,19 +228,17 @@ class WDCommentComposeViewController: UIViewController {
         }
         
         self.params.setDictionary(params)
-        let manager = AFHTTPSessionManager()
-
-        manager.POST(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-            
+        NetworkTools.shareNetworkTools().POST(path, parameters: params, success: { (_, JSON) in
             SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)
+            
             self.back()
             
-            
-        }) { (_, error) -> Void in
-            print(error)
-            SVProgressHUD.showErrorWithStatus("发送失败", maskType: SVProgressHUDMaskType.Black)
-        }
 
+            }) { (_, error) in
+                print(error)
+                SVProgressHUD.showErrorWithStatus("发送失败", maskType: SVProgressHUDMaskType.Black)
+        }
+        
     
     }
 

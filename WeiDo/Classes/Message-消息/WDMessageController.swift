@@ -8,6 +8,13 @@
 
 import UIKit
 
+
+
+let WDMessageCellReuseIdentifier = "WDMessageCell"
+let WDMessageCellSelected = "WDMessageCellSelected"
+let WDMessageReplyWillOpen = "WDMessageReplyWillOpen"
+let WDMessageStatusReplyWillOpen = "WDMessageStatusReplyWillOpen"
+
 class WDMessageController: YZDisplayViewController {
 
     
@@ -52,20 +59,18 @@ class WDMessageController: YZDisplayViewController {
     func setupTitle()
     {
         isShowUnderLine = true
-        underLineColor = bgcolor
+        underLineColor = bgColor
            isShowTitleGradient = true
         isShowTitleCover = false
  
         titleHeight = 38
-        endR = 32 / 255.0
-        endG = 142 / 255.0
-        endB = 115 / 255.0
+        endR = 77 / 255.0
+        endG = 194 / 255.0
+        endB = 167 / 255.0
         
         // 是否显示遮盖
-        titleScrollViewColor = UIColor.whiteColor()
-      
-        coverColor = UIColor(white: 0.7, alpha: 1.0)
-        coverCornerRadius = 13
+        titleScrollViewColor = UIColor.clearColor()
+   
         norColor = UIColor.blackColor()
         selColor = UIColor.whiteColor()
     }
@@ -106,7 +111,7 @@ class WDMessageController: YZDisplayViewController {
     {
         let label1 = UILabel()
         label1.text = "刷微博,发现乐趣"
-        label1.textColor = bgcolor
+        label1.textColor = DFColor
       label1.textAlignment = NSTextAlignment.Center
         return label1
     }()
@@ -115,7 +120,7 @@ class WDMessageController: YZDisplayViewController {
     {
        let label2 = UILabel()
         label2.text = "总有好友常伴左右"
-        label2.textColor = bgcolor
+        label2.textColor = DFColor
         label2.textAlignment = NSTextAlignment.Center
         
         return label2

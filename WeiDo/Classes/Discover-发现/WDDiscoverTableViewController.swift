@@ -8,6 +8,15 @@
 
 import UIKit
 
+
+let TextCellReuseIdentifier = "WMWordToipCell"
+let pictureCellReuseIdentifier = "WDPictureCell"
+let videoCellReuseIdentifier = "WDVideoCell"
+let WDCommentCellReuseIdentifier = "WDCommentCell"
+
+
+
+
 class WDDiscoverTableViewController: YZDisplayViewController {
 
     override func viewDidLoad() {
@@ -26,20 +35,18 @@ class WDDiscoverTableViewController: YZDisplayViewController {
   
       
         isShowUnderLine = true
-        underLineColor = bgcolor
+        underLineColor = bgColor
         isShowTitleGradient = true
         isShowTitleCover = false
         
         titleHeight = 38
-        endR = 32 / 255.0
-        endG = 142 / 255.0
-        endB = 115 / 255.0
+        endR = 77 / 255.0
+        endG = 194 / 255.0
+        endB = 167 / 255.0
         
         // 是否显示遮盖
         titleScrollViewColor = UIColor.whiteColor()
-     
-        coverColor = UIColor(white: 0.7, alpha: 0.4)
-        coverCornerRadius = 13
+  
         norColor = UIColor.blackColor()
         selColor = UIColor.whiteColor()
     }

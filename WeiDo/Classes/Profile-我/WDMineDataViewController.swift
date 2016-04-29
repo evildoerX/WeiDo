@@ -8,6 +8,7 @@
 
 import UIKit
 import AFNetworking
+import SVProgressHUD
 
 let MyStatusCellReuseIdentifier = "WDMyStatusCell"
 class WDMineDataViewController: UIViewController {
@@ -135,7 +136,7 @@ class WDMineDataViewController: UIViewController {
             
             }) { (_, error) -> Void in
                 print(error)
-                
+                SVProgressHUD.showErrorWithStatus("网络似乎有点问题")
                 
         }
         
@@ -153,6 +154,7 @@ class WDMineDataViewController: UIViewController {
             if error != nil
             {
              self.setupVistorView()
+            
             }
             else
             {

@@ -26,18 +26,11 @@ class WDMySettingViewController: UITableViewController {
         navigationItem.title = "我的"
 
         tableView.tableFooterView = UIView()
-      
+       tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.tableView.reloadData()
+        self.tableView.contentInset = UIEdgeInsetsMake(20 , 0, 0, 0)
     }
-    
-    
    
-
-   
-    
- 
-
-    
     
     // MARK: - Table view data source
 
@@ -55,7 +48,7 @@ class WDMySettingViewController: UITableViewController {
         }
         else if section == 1
         {
-        return 3
+        return 2
           
         }
 
@@ -90,7 +83,7 @@ class WDMySettingViewController: UITableViewController {
             return cell
         }else if indexPath.section == 1
         {
-            let array = ["我的位置","附近的人","微游记"]
+            let array = ["我的位置","附近的人"]
             
             cell.textLabel?.text = array[indexPath.row]
             return cell
@@ -147,13 +140,6 @@ class WDMySettingViewController: UITableViewController {
                 vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
                 
-                
-            case 2:
-               
-               //游记
-              let vc = WDTravelTableViewController()
-                   vc.hidesBottomBarWhenPushed = true
-      self.navigationController?.pushViewController(vc, animated: true)
             default:
                 print("见鬼了")
             }

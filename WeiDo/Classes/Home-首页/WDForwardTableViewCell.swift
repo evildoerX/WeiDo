@@ -9,7 +9,6 @@
 import UIKit
 import KILabel
 
-let WDOpenBrowser = "WDOpenBrowser"
 class WDForwardTableViewCell: WDStatusTableViewCell {
     
   

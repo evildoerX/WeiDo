@@ -85,6 +85,10 @@ class WDStatusTableViewCell: UITableViewCell {
         contentView.addSubview(footerView)
         
         
+        
+        
+      //  addShadow(contentView)
+        
         let width = UIScreen.mainScreen().bounds.width
         // 2.布局子控件
         topView.xmg_AlignInner(type: XMG_AlignType.TopLeft, referView: contentView, size: CGSize(width: width, height: 60))
@@ -104,6 +108,17 @@ class WDStatusTableViewCell: UITableViewCell {
         NSNotificationCenter.defaultCenter().postNotificationName(WDPublishWillOpen, object: self, userInfo: info)
     
     }
+    
+    func addShadow(view:UIView)
+    {
+        view.layer.shadowColor = UIColor.blackColor().CGColor
+        view.layer.shadowOffset = CGSizeMake(1, 1)
+        view.layer.shadowOpacity = 0.8
+        view.layer.shadowRadius = 1
+        view.clipsToBounds = false
+    }
+
+    
     /**
      用于获取行号
      */

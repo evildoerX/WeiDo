@@ -222,6 +222,7 @@ class WDComposeViewController: UIViewController {
     {
         let text = textView.emoticonAttributedText()
         let image = photoSelectorVC.pictureImages.first
+        
         NetworkTools.shareNetworkTools().compose(text , image: image, successCallback: { (status) -> () in
             // 1.提示用户发送成功
             SVProgressHUD.showSuccessWithStatus("发送成功", maskType: SVProgressHUDMaskType.Black)

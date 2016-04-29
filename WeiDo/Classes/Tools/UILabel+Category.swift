@@ -13,7 +13,7 @@ extension UILabel
     class func createLabel(color:UIColor, fontsize:CGFloat)  ->UILabel{
         
         let label = UILabel()
-        label.textColor = bgcolor
+        label.textColor = DFColor
         label.font = UIFont.systemFontOfSize(fontsize)
         return label
     }

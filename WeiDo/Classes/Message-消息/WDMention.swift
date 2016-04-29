@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AFNetworking
+
 
 class WDMention: NSObject {
     /// 评论id
@@ -71,13 +71,14 @@ class WDMention: NSObject {
             let requestpath = "https://api.weibo.com/2/comments/" + path + ".json"
          let params = ["access_token": userAccount.loadAccount()!.access_token!]
         
-            AFHTTPSessionManager().GET(requestpath, parameters: params, success: { (_, JSON) in
-                let model = LoadMention(JSON!["comments"] as! [[String:AnyObject]])
-                finished(models: model, error: nil)
-                }) { (_, error) in
+            
+        NetworkTools.shareNetworkTools().GET(requestpath, parameters: params, success: { (_, JSON) in
+            let model = LoadMention(JSON!["comments"] as! [[String:AnyObject]])
+            finished(models: model, error: nil)
+            }) { (_, error) in
                     finished(models: nil, error: error)
-        }
-    
+            }
+            
     }
     
     class func cancelData(id:Int,finished:(error:NSError?) -> ())
@@ -86,12 +87,11 @@ class WDMention: NSObject {
         var params = [String:AnyObject]()
         params["access_token"] = userAccount.loadAccount()!.access_token!
         params["cid"] = id
-        AFHTTPSessionManager().POST(path, parameters: params, success: { (_, JSON) in
-            finished(error: nil)
+        NetworkTools.shareNetworkTools().POST(path, parameters: params, success: { (_, JSON) in
+             finished(error: nil)
             }) { (_, error) in
-                finished(error: error)
+                     finished(error: error)
         }
-        
         
     
     }

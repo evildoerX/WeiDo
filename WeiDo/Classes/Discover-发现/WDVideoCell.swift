@@ -41,9 +41,9 @@ class WDVideoCell: UITableViewCell {
         didSet{
             profile_image.sd_setImageWithURL(NSURL(string: (videoTopic?.profile_image)!))
             name.text = videoTopic?.name
-            name.textColor = bgcolor
+           
             create_time.text = videoTopic?.create_time
-            create_time.textColor = bgcolor
+            name.textColor = DFColor
             content.text = videoTopic?.text
             image_view.sd_setImageWithURL(NSURL(string: (videoTopic?.cdn_img)!))
           

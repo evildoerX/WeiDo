@@ -11,16 +11,12 @@ import SDWebImage
 import AFNetworking
 import SVProgressHUD
 
-let WDHomeReuseIdentifier = "WDHomeReuseIdentifier"
-let WDCommentComposeWillOpen = "WDCommentComposeWillOpen"
-let WDPublishWillOpen = "WDPublishWillOpen"
-let bgcolor = UIColor(red: 32/255, green: 142/255, blue: 115/255, alpha: 1.0)
+
+
 class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDelegate {
 
    
     var statusId:Int = 0
-    //新微博提示数字
-    var newStatusCount:String?
     /// 保存微博数组
     var statuses: [Status]?
         {
@@ -45,13 +41,15 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         
         
         //初始化导航条
-        setupNavigation()
-  
-        addobserver()
      
+        addobserver()
         
-        loadNewsCount()
         
+        StatusDAO.loadStatusCount { (count, error) in
+            self.tabBarItem.badgeValue = count
+        }
+        
+      
         // 添加下拉刷新控件
         refreshControl = HomeRefreshControl()
         refreshControl?.addTarget(self, action: #selector(WDHomeTableViewController.loadData), forControlEvents: UIControlEvents.ValueChanged)
@@ -66,26 +64,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
   
     
     
-    /**
-     获取未读微博数
-     */
-    func loadNewsCount()
-    {
-     
-        let path  = "https://rm.api.weibo.com/2/remind/unread_count.json"
-        let params = ["access_token":userAccount.loadAccount()!.access_token!,"uid":userAccount.loadAccount()!.uid!]
-        AFHTTPSessionManager().GET(path, parameters: params, progress: nil, success: { (_, JSON) -> Void in
-          
-            self.newStatusCount = String(JSON!["status"])
-            if self.newStatusCount != "0"
-            {
-       self.tabBarItem.badgeValue = self.newStatusCount
-            }
-            }) { (_, error) -> Void in
-                print(error)
-        }
-
-    }
+  
   
     /**
      设置双击tabbar回到顶部
@@ -97,7 +76,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         if viewController.isEqual(vc) == true {
             
          UIView.animateWithDuration(0.25, animations: { () -> Void in
-        self.tableView.contentOffset = CGPointMake(0, -60)
+        self.tableView.contentOffset = CGPointMake(0, -10)
 
       })
             return false
@@ -127,10 +106,6 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         
           self.tabBarController?.delegate = self
     }
-    
-    
-    
-   
     
     /**
      打开网页
@@ -206,15 +181,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
      */
     @objc private func loadData()
     {
-       
-             /*
-        1.默认最新返回20条数据
-        2.since_id : 会返回比since_id大的微博
-        3.max_id: 会返回小于等于max_id的微博
-        
-        每条微博都有一个微博ID, 而且微博ID越后面发送的微博, 它的微博ID越大
 
-        */
         // 1.默认当做下拉处理
         var since_id = statuses?.first?.id ?? 0
         
@@ -233,6 +200,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
             
             if error != nil
             {
+                SVProgressHUD.showErrorWithStatus("网络似乎有点问题")
                 return
             }
             // 下拉刷新
@@ -280,51 +248,7 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
         }
            }
 
-    
-    /**
-     设置主页左右nav的按钮
-     */
-    private func setupNavigation()
-    {
-  
- 
-        //设置主页左右nav的按钮
-        
-       navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("friendsRecommentIcon", target: self, action: #selector(WDHomeTableViewController.leftBtnClick))
-      
-        navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_pop", target: self, action: #selector(WDHomeTableViewController.rightBtnClick))
-        
-        navigationItem.title = "首页"
-
-    }
-
-    /**
-     左边按钮监听
-     */
-    func leftBtnClick()
-    {
-        //加载下拉框
-        let sb = UIStoryboard(name: "Popmenu", bundle: nil)
-        let vc = sb.instantiateInitialViewController()
-        
-        //设置动画
-        
-        vc?.transitioningDelegate = popmenuanimation
-        
-        vc?.modalPresentationStyle = UIModalPresentationStyle.Custom
-        
-        presentViewController(vc!, animated: true, completion: nil)
-                  }
-    /**
-     右边按钮监听
-     */
-    func rightBtnClick()
-    {
-        let sb = UIStoryboard(name: "QRCode", bundle: nil)
-        let vc = sb.instantiateInitialViewController()
-        presentViewController(vc!, animated: true, completion: nil)
-    }
-    
+     
     /**
      返回
      */
@@ -335,15 +259,6 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
     }
     
  
-    
-    // MARK - 懒加载动画
-    private lazy var popmenuanimation:WDPopmenuanimation =  {
-        
-        let pa  = WDPopmenuanimation()
-        pa.presentFrame = CGRect(x: 100, y: 56, width: 200, height: 350)
-        return pa 
-    }()
-    
     
     /// 刷新提醒控件
     private lazy var newStatusLabel: UILabel =
@@ -385,7 +300,6 @@ extension WDHomeTableViewController
         
         // 1.获取cell
         let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status), forIndexPath: indexPath) as! WDStatusTableViewCell
- 
         // 2.设置数据
         cell.status = status
  
@@ -402,6 +316,8 @@ extension WDHomeTableViewController
         // 3.返回cell
         return cell
     }
+    
+  
     
     
     // 返回行高
