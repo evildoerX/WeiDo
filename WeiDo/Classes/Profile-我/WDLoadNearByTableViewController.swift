@@ -9,6 +9,7 @@
 import UIKit
 import MJRefresh
 import SVProgressHUD
+import AFNetworking
 
 let NearBycellReuseIdentifier = "WDNearByCell"
 class WDLoadNearByTableViewController: UITableViewController {
@@ -59,23 +60,30 @@ class WDLoadNearByTableViewController: UITableViewController {
         上拉刷新
         */
         tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
-
+     
+            var params = [String:AnyObject]()
+            params["access_token"] = userAccount.loadAccount()!.access_token!
+            params["lat"] = lat!
+            params["long"] = long!
+            params["range"] = "3000"
+            params["count"] = "30"
+            params["sort"] = "1"
             
-            WDNearby.loadNearByData({ (models, error) in
-                if error != nil
-                {
-                print(error)
-                    SVProgressHUD.showErrorWithStatus("网络似乎有点问题")
-                }
-                else
-                {
-                self.nearby = models!
+            
+            let path = "https://api.weibo.com/2/place/nearby/users.json"
+            
+            
+            AFHTTPSessionManager().GET(path, parameters: params, success: { (_, JSON) in
+                
+                
+                self.nearby = WDNearby.LoadNearby(JSON!["users"] as! [[String:AnyObject]])
                 self.tableView.reloadData()
                 self.header.endRefreshing()
-                }
+                }, failure: { (_, error) in
+                    print(error)
+                    SVProgressHUD.showErrorWithStatus("网络好像有点问题")
             })
-            
-            
+        
         })
     
         header.automaticallyChangeAlpha = true

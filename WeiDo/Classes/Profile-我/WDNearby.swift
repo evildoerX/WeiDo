@@ -57,26 +57,7 @@ class WDNearby: NSObject {
     
     class func loadNearByData(finished:(models:[WDNearby]?,error:NSError?) -> ())
     {
-        var params = [String:AnyObject]()
-        params["access_token"] = userAccount.loadAccount()!.access_token!
-        params["lat"] = lat!
-        params["long"] = long!
-        params["range"] = "3000"
-        params["count"] = "30"
-        params["sort"] = "1"
     
-        
-          let path = "https://api.weibo.com/2/place/nearby/users.json"
-        
-    
-        NetworkTools.shareNetworkTools().GET(path, parameters: params, success: { (_, JSON) in
-            let model = LoadNearby(JSON!["users"] as! [[String:AnyObject]])
-            
-            finished(models: model, error: nil)
-            }) { (_, error) in
-                finished(models: nil, error: error)
-        }
-        
     }
 
 }

@@ -47,8 +47,6 @@ class StatusDAO: NSObject {
                 return
             }
             
-            
-            
             // 3.从网络获取
             let path = "2/statuses/home_timeline.json"
             var params = ["access_token": userAccount.loadAccount()!.access_token!]
@@ -70,7 +68,7 @@ class StatusDAO: NSObject {
             
             NetworkTools.shareNetworkTools().GET(path, parameters: params, success: { (_, JSON) -> Void in
                 let array = JSON!["statuses"] as! [[String : AnyObject]]
-              
+          
                 // 4.将从网络获取的数据缓存起来
                 cacheStatuses(array)
                 
