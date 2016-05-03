@@ -21,8 +21,13 @@ class WDHomeViewController: YZDisplayViewController {
         setupAllControllers()
         setupTitle()
 
+        
+        
         // Do any additional setup after loading the view.
     }
+    
+   
+    
     /**
      设置标题样式
      */

@@ -12,8 +12,7 @@ import SVProgressHUD
 class StatusDAO: NSObject {
    
     
-    
-    
+   
     
     class func loadStatusCount(finished:(count:String?,error:NSError?) -> ())
     {
@@ -33,15 +32,22 @@ class StatusDAO: NSObject {
         
     }
     
+    
+    
+  
+    
     class func loadStatus(since_id: Int, max_id: Int, finished: ([[String: AnyObject]]?, error: NSError?)->()) {
+        
+       // SVProgressHUD.showInfoWithStatus("正在加载数据")
+      SVProgressHUD.showImage(UIImage(named: "hud"), status: "正在加载数据")
         
         // 1.从本地数据库中获取
         loadCacheStatuses(since_id, max_id: max_id) { (array) -> () in
             
+            
             // 2.如果本地有, 直接返回
             if !array.isEmpty
             {
-                SVProgressHUD.showInfoWithStatus("正在加载数据哦...")
                 print("从数据库中获取")
                 finished(array, error: nil)
                 return
@@ -77,9 +83,6 @@ class StatusDAO: NSObject {
                 
                 // 5.返回获取到的数据
                 finished(array, error: nil)
-                
-                StatusDAO.cacheStatuses(JSON!["statuses"] as! [[String: AnyObject]])
-                
                 
                 }) { (_, error) -> Void in
                     print(error)

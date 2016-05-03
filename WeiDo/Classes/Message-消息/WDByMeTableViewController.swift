@@ -24,9 +24,9 @@ class WDByMeTableViewController: WDBaseViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableview()
+        loadMessage(false)
         setUpRefrshControl()
-        
+        setupTableview()
  
         /**
         添加通知
@@ -47,37 +47,51 @@ class WDByMeTableViewController: WDBaseViewController{
 
     
     }
+    
+    func loadMessage(isNew:Bool)
+    {
+        
+        WDMention.loadMessageData(isNew,path: "by_me") { (models, error) in
+            if error != nil
+            {
+                print(error)
+                SVProgressHUD.showErrorWithStatus("好像出错啦,重新登录试试", maskType: .Black)
+            }
+            else
+            {
+                
+                self.byMe = models!
+                
+                self.tableView.reloadData()
+                
+            }
+            
+            
+            
+            
+        }
+        
+        
+    }
     /**
      上拉刷新
      */
     func setUpRefrshControl()
     {
         /**
-        上拉刷新
-        */
+         上拉刷新
+         */
         tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
-  
-            WDMention.loadMessageData("by_me", finished: { (models, error) in
-                if error != nil
-                {
-                    print(error)
-                    SVProgressHUD.showErrorWithStatus("好像出错啦,重新登录试试", maskType: .Black)
-                }
-                else
-                {
-                    self.byMe = models!
-                    self.tableView.reloadData()
-                    self.header.endRefreshing()
-                }
-            })
-    
+            
+            self.loadMessage(true)
+            self.header.endRefreshing()
+            
         })
         header.automaticallyChangeAlpha = true
-        header.beginRefreshing()
+        
         
         
     }
-
   
 
     // MARK: - Table view data source

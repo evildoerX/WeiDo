@@ -57,13 +57,10 @@ class WDHomeTableViewController: WDBaseTableViewController, UITabBarControllerDe
     
         //加载数据
        loadData()
-        
-        
-       
+  
     }
   
-    
-    
+   
   
   
     /**
@@ -360,12 +357,12 @@ extension WDHomeTableViewController
         
     }
 
+    
+    
 
+  
     }
   
-
-
-
 
 
 

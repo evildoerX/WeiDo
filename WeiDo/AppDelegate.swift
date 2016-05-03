@@ -52,14 +52,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-
+        
+        let urlCache = NSURLCache(memoryCapacity: 4 * 1024 , diskCapacity: 20 * 1024 * 1024, diskPath: nil)
+        
+        NSURLCache.setSharedURLCache(urlCache)
         // 打开数据库
         SQLiteManager.shareManager().openDB("status.sqlite")
-        //注册一个推送
-        
-        let uns = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(uns)
-        // 注册一个通知
+        SQLiteManager.shareManager().openMessageDB("message.sqlite")
+              // 注册一个通知
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.switchRootViewController(_:)), name: WDSwitchRootViewControllerKey, object: nil)
        

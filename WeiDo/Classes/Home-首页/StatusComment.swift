@@ -66,6 +66,7 @@ class StatusComment: NSObject {
         NetworkTools.shareNetworkTools().GET(path, parameters: params, success: { (_, JSON) in
             let model = LoadStatusComment(JSON!["comments"] as! [[String:AnyObject]])
             finished(models: model, error: nil)
+            
             }) { (_, error) in
                 finished(models: nil, error: error)
         }

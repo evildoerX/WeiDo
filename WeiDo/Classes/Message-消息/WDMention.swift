@@ -66,20 +66,137 @@ class WDMention: NSObject {
     
     
     
-    class func loadMessageData(path:String, finished:(models:[WDMention]?,error:NSError?) ->())
-        {
-            let requestpath = "https://api.weibo.com/2/comments/" + path + ".json"
-         let params = ["access_token": userAccount.loadAccount()!.access_token!]
+    class func loadCacheMessage(type:String,finished:(array:[[String:AnyObject]])->())
+    {
+
         
+        let sql = "SELECT * FROM T_message \n" + "WHERE type= '\(type)' \n" + "ORDER BY messageId DESC \n"
+    
+    SQLiteManager.shareManager().messageDbqueue?.inDatabase({ (db) in
+        
+        let res = db.executeQuery(sql, withArgumentsInArray: nil)
+  
+        var message = [[String:AnyObject]]()
+    
+        while res.next()
+        {
+            let dictStr = res.stringForColumn("messageText") as String
+            let data = dictStr.dataUsingEncoding(NSUTF8StringEncoding)!
+            let dict = try! NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as! [String:AnyObject]
+            message.append(dict)
+        
+        
+        }
+        
+        finished(array: message)
+        
+    })
+        
+        
+        
+    
+    }
+    
+    class func cacheMessge(message:[[String:AnyObject]],type:String)
+
+    {
+       
+        print(type)
+        // 1.定义SQL语句
+        let sql = "INSERT INTO T_Message" +
+            "(messageId, messageText, type)" +
+            "VALUES" +
+        "(?, ?, ?);"
+        
+
+        SQLiteManager.shareManager().messageDbqueue?.inTransaction({ (db,rollback) in
             
-        NetworkTools.shareNetworkTools().GET(requestpath, parameters: params, success: { (_, JSON) in
-            let model = LoadMention(JSON!["comments"] as! [[String:AnyObject]])
-            finished(models: model, error: nil)
-            }) { (_, error) in
-                    finished(models: nil, error: error)
+            for dict in message
+            {
+       
+             let messageId = dict["id"]!
+            let data = try! NSJSONSerialization.dataWithJSONObject(dict, options: NSJSONWritingOptions.PrettyPrinted)
+            let messageText = String(data: data, encoding: NSUTF8StringEncoding)!
+            
+            
+            if !db.executeUpdate(sql,messageId, messageText, type)
+            {
+       
+                rollback.memory = true
+                
+                }
+            
+            
             }
             
+            
+        })
+    
+    
+    
+    
     }
+    
+    
+    
+    
+    
+    class func loadMessageData(isNew:Bool,path:String, finished:(models:[WDMention]?,error:NSError?) ->())
+        {
+            
+            
+            
+            if isNew
+            {
+                let requestpath = "https://api.weibo.com/2/comments/" + path + ".json"
+                let params = ["access_token": userAccount.loadAccount()!.access_token!]
+                
+                NetworkTools.shareNetworkTools().GET(requestpath, parameters: params, success: { (_, JSON) in
+                    
+                    let model = LoadMention(JSON!["comments"] as! [[String:AnyObject]])
+                    cacheMessge(JSON!["comments"] as! [[String:AnyObject]], type: path)
+                    finished(models: model, error: nil)
+                }) { (_, error) in
+                    finished(models: nil, error: error)
+                }
+            
+                return
+            }
+            
+        
+
+                        loadCacheMessage(path) { (array) in
+        
+        
+                        if !array.isEmpty
+                        {
+                        let model = LoadMention(array)
+                            finished(models: model, error: nil)
+                            return
+                        }
+                    
+                            let requestpath = "https://api.weibo.com/2/comments/" + path + ".json"
+                            let params = ["access_token": userAccount.loadAccount()!.access_token!]
+                            
+                            NetworkTools.shareNetworkTools().GET(requestpath, parameters: params, success: { (_, JSON) in
+                                
+                                let model = LoadMention(JSON!["comments"] as! [[String:AnyObject]])
+                                cacheMessge(JSON!["comments"] as! [[String:AnyObject]], type: path)
+                                finished(models: model, error: nil)
+                            }) { (_, error) in
+                                finished(models: nil, error: error)
+                            }
+
+                            
+
+            }
+                            
+            
+            
+            
+    }
+    
+    
     
     class func cancelData(id:Int,finished:(error:NSError?) -> ())
     {

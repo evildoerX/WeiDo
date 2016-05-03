@@ -10,6 +10,11 @@ import UIKit
 
 class WDBaseViewController: UITableViewController {
 
+    
+    
+    let height = UIScreen.mainScreen().bounds.height
+    let width = UIScreen.mainScreen().bounds.width
+
     override func viewDidLoad() {
         super.viewDidLoad()
                 self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
@@ -21,4 +26,20 @@ class WDBaseViewController: UITableViewController {
 
 
   
+
+//    override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+//        self.tabBarController?.tabBar.hidden = true
+//    }
+//    
+//    
+//    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+//        
+//        
+//        self.tabBarController?.tabBar.hidden = false
+//        
+//    
+//    }
+
+    
+    
 }

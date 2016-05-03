@@ -13,7 +13,7 @@
 
 #define boundsWidth self.view.bounds.size.width
 #define boundsHeight self.view.bounds.size.height
-@interface RxWebViewController ()<UIWebViewDelegate,UINavigationControllerDelegate,UINavigationBarDelegate,NJKWebViewProgressDelegate,UIGestureRecognizerDelegate>
+@interface RxWebViewController ()<UIWebViewDelegate,UINavigationControllerDelegate,UINavigationBarDelegate,NJKWebViewProgressDelegate,UIGestureRecognizerDelegate,UIScrollViewDelegate>
 
 @property (nonatomic)UIBarButtonItem* customBackBarItem;
 @property (nonatomic)UIBarButtonItem* closeButtonItem;
@@ -94,8 +94,10 @@
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
+      self.navigationController.navigationBar.hidden = NO;
     [self.progressView removeFromSuperview];
     self.webView.delegate = nil;
+    
 }
 
 
@@ -268,6 +270,7 @@
 }
 
 -(void)closeItemClicked{
+  
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -429,5 +432,15 @@
     }
     return _progressView;
 }
+
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    self.navigationController.navigationBar.hidden = YES;
+
+}
+
+
+
 
 @end

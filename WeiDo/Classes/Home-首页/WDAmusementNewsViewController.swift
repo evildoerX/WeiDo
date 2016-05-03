@@ -12,7 +12,7 @@ import MJRefresh
 import SVProgressHUD
 
 let WDAmusementNewsWillOpen = "WDAmusementNewsWillOpen"
-class WDAmusementNewsViewController: UITableViewController {
+class WDAmusementNewsViewController: WDBaseViewController {
 
     /// 数据源
     var amusementNew = [WDNews]()
@@ -40,8 +40,8 @@ class WDAmusementNewsViewController: UITableViewController {
 
     func setupTableView()
     {
-        tableView.contentInset = UIEdgeInsetsMake(-55 , 0, 49, 0)
-         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+//        tableView.contentInset = UIEdgeInsetsMake(-55 , 0, 49, 0)
+//         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         tableView.rowHeight = 150
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.registerNib(UINib(nibName: "WDNewsCell", bundle: nil), forCellReuseIdentifier: WDNewCellReuseIdentifier)

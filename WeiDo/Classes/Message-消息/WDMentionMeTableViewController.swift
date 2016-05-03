@@ -17,6 +17,7 @@ class WDMentionMeTableViewController: WDBaseViewController {
     var mention = [WDMention]()
     /// header
     var header:MJRefreshNormalHeader{
+        
         return (self.tableView.tableHeaderView as? MJRefreshNormalHeader)!
     }
     var sheet: UIActionSheet?
@@ -34,7 +35,8 @@ class WDMentionMeTableViewController: WDBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        loadMessage(false)
         setUpRefrshControl()
         setupTableview()
         
@@ -55,9 +57,33 @@ class WDMentionMeTableViewController: WDBaseViewController {
 
         tableView.registerNib(UINib(nibName: "WDMessageCell", bundle: nil), forCellReuseIdentifier: WDMessageCellReuseIdentifier)
         tableView.rowHeight = 150
-     
-        
+    }
+    
    
+        
+    func loadMessage(isNew:Bool)
+    {
+    
+    SVProgressHUD.showInfoWithStatus("正在加载数据")
+    WDMention.loadMessageData(isNew,path: "mentions") { (models, error) in
+        if error != nil
+        {
+            print(error)
+            SVProgressHUD.showErrorWithStatus("好像出错啦,重新登录试试", maskType: .Black)
+        }
+        else
+        {
+        
+            self.mention = models! + self.mention
+          
+            self.tableView.reloadData()
+            
+        }
+        
+        
+    
+        
+    }
         
         
     }
@@ -66,30 +92,20 @@ class WDMentionMeTableViewController: WDBaseViewController {
      */
    func setUpRefrshControl()
    {
+
+    
     /**
     上拉刷新
     */
     tableView.tableHeaderView = MJRefreshNormalHeader.init(refreshingBlock: { () -> Void in
 
-
-        WDMention.loadMessageData("mentions", finished: { (models, error) in
-            if error != nil
-            {
-            print(error)
-            SVProgressHUD.showErrorWithStatus("好像出错啦,重新登录试试", maskType: .Black)
-            }
-            else
-            {
-            self.mention = models!
+            self.loadMessage(true)
             self.tableView.reloadData()
             self.header.endRefreshing()
-            }
-        })
-        
         
     })
     header.automaticallyChangeAlpha = true
-    header.beginRefreshing()
+  
 
     
     }

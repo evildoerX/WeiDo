@@ -18,6 +18,8 @@ class SQLiteManager: NSObject {
     }
 
  var dbqueue:FMDatabaseQueue?
+    
+    var messageDbqueue:FMDatabaseQueue?
  ///打开数据库
       func openDB(DBName:String)
       {
@@ -28,12 +30,48 @@ class SQLiteManager: NSObject {
        dbqueue = FMDatabaseQueue(path: path)
         //打开数据库
       
-        //创建表
-        createTable()
+      createStatusTable()
+   
+    
+    //创建微博表
+    createStatusTable()
+  
 }
+    
+    func openMessageDB(DBName:String)
+    
+    {
+    let path = DBName.docDir()
+    print(path)
+        
+        
+        messageDbqueue = FMDatabaseQueue(path: path)
+        
+        createDiscoverTable()
+        
+    
+    
+    }
+    
+    
+    
 
-
-   private func createTable()
+    private func createDiscoverTable()
+    {
+    let sql = "CREATE TABLE IF NOT EXISTS T_Message( \n" +
+        "messageId INTEGER PRIMARY KEY, \n" +
+        "messageText TEXT, \n" +
+        "type TEXT \n" +
+        "); \n"
+    messageDbqueue?.inDatabase({ (db) in
+        db.executeUpdate(sql, withArgumentsInArray: nil)
+    })
+    
+ 
+    }
+    
+    
+   private func createStatusTable()
    {
       // 1.编写SQL语句
     let sql =  "CREATE TABLE IF NOT EXISTS T_Status( \n" +

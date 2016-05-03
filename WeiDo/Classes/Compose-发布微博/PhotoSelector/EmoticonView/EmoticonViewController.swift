@@ -79,8 +79,8 @@ class EmoticonViewController: UIViewController {
         var index = 0
         for title in ["最近", "默认", "emoji", "浪小花"]
         {
-            let item = UIBarButtonItem(title: title, style: UIBarButtonItemStyle.Plain, target: self, action: "itemClick:")
-            item.tag = index++
+            let item = UIBarButtonItem(title: title, style: UIBarButtonItemStyle.Plain, target: self, action: #selector(EmoticonViewController.itemClick(_:)))
+            item.tag += index
             items.append(item)
             items.append(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil))
         }
@@ -123,7 +123,7 @@ extension EmoticonViewController: UICollectionViewDataSource, UICollectionViewDe
         
         // 1.处理最近表情, 将当前使用的表情添加到最近表情的数组中
         let emoticon = packages[indexPath.section].emoticons![indexPath.item]
-        emoticon.times++
+        emoticon.times += 1
         packages[0].appendEmoticons(emoticon)
 //        collectionView.reloadSections(NSIndexSet(index: 0))
         
